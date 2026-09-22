@@ -4,7 +4,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://webvibez.com";
   const lastModified = new Date();
 
-  const routes = [
+  const staticRoutes = [
     { path: "", priority: 1.0, changeFrequency: "daily" as const },
     { path: "/services", priority: 0.9, changeFrequency: "weekly" as const },
     { path: "/services/website-development", priority: 0.9, changeFrequency: "weekly" as const },
@@ -26,7 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/disclaimer", priority: 0.4, changeFrequency: "monthly" as const },
   ];
 
-  return routes.map((route) => ({
+  return staticRoutes.map((route) => ({
     url: `${baseUrl}${route.path}`,
     lastModified,
     changeFrequency: route.changeFrequency,

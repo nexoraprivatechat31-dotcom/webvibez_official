@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://webvibez.com/api/og?title=Transparent%20Pricing%20%26%20Packages&category=Engineering%20Investment&tag=Zero%20Hidden%20Fees%20%E2%80%A2%20Direct%20Ownership",
+        url: "https://webvibez.com/logo.jpeg",
         width: 1200,
         height: 630,
         alt: "WebVibez Pricing and Investment Plans",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Explore transparent software engineering packages: custom mobile apps, web applications, and coaching management software with no hidden fees.",
     images: [
-      "https://webvibez.com/api/og?title=Transparent%20Pricing%20%26%20Packages&category=Engineering%20Investment&tag=Zero%20Hidden%20Fees%20%E2%80%A2%20Direct%20Ownership",
+      "https://webvibez.com/logo.jpeg",
     ],
   },
 };

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://webvibez.com/api/og?title=Cancellation%20%26%20Refund%20Policy&category=Client%20Protection%20%26%20Billing&tag=Transparent%20Agreements",
+        url: "https://webvibez.com/logo.jpeg",
         width: 1200,
         height: 630,
         alt: "WebVibez Cancellation and Refund Policy",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Cancellation and refund policy for WebVibez custom software development services, subscription tiers, and deployment contracts.",
     images: [
-      "https://webvibez.com/api/og?title=Cancellation%20%26%20Refund%20Policy&category=Client%20Protection%20%26%20Billing&tag=Transparent%20Agreements",
+      "https://webvibez.com/logo.jpeg",
     ],
   },
 };

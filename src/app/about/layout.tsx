@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://webvibez.com/api/og?title=About%20WebVibez%20Software%20Developer&category=Digital%20Product%20Studio&tag=Ahmedabad%2C%20Gujarat%20%E2%80%A2%20Full-Stack%20Team",
+        url: "https://webvibez.com/logo.jpeg",
         width: 1200,
         height: 630,
         alt: "About WebVibez Software Developer in Ahmedabad",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "WebVibez Software Developer is a digital product studio based in Ahmedabad, Gujarat, engineering high-impact mobile apps, websites, and institutional management systems.",
     images: [
-      "https://webvibez.com/api/og?title=About%20WebVibez%20Software%20Developer&category=Digital%20Product%20Studio&tag=Ahmedabad%2C%20Gujarat%20%E2%80%A2%20Full-Stack%20Team",
+      "https://webvibez.com/logo.jpeg",
     ],
   },
 };

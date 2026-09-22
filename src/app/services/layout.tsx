@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://webvibez.com/api/og?title=Custom%20Software%2C%20Web%20%26%20Mobile%20App%20Services&category=Software%20Engineering%20Studio&tag=Ahmedabad%2C%20Gujarat%20%E2%80%A2%20Full-Stack",
+        url: "https://webvibez.com/logo.jpeg",
         width: 1200,
         height: 630,
         alt: "WebVibez Software Development Services in Ahmedabad",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Explore WebVibez engineering services: custom software development, high-performance Next.js websites, React Native iOS and Android apps, and coaching management platforms in Ahmedabad, Gujarat.",
     images: [
-      "https://webvibez.com/api/og?title=Custom%20Software%2C%20Web%20%26%20Mobile%20App%20Services&category=Software%20Engineering%20Studio&tag=Ahmedabad%2C%20Gujarat%20%E2%80%A2%20Full-Stack",
+      "https://webvibez.com/logo.jpeg",
     ],
   },
 };

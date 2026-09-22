@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://webvibez.com/api/og?title=Privacy%20Policy&category=Data%20Protection%20%26%20Privacy&tag=GDPR%20%E2%80%A2%20DPDP%20India%20Compliance",
+        url: "https://webvibez.com/logo.jpeg",
         width: 1200,
         height: 630,
         alt: "WebVibez Privacy Policy",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Privacy Policy for WebVibez Software Developer. Details how customer, student, and organizational data is processed, protected, and retained under DPDP India and global standards.",
     images: [
-      "https://webvibez.com/api/og?title=Privacy%20Policy&category=Data%20Protection%20%26%20Privacy&tag=GDPR%20%E2%80%A2%20DPDP%20India%20Compliance",
+      "https://webvibez.com/logo.jpeg",
     ],
   },
 };

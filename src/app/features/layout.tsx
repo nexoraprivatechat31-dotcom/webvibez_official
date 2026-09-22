@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://webvibez.com/api/og?title=Platform%20Features%20%26%20Capabilities&category=Full-Stack%20Ecosystem&tag=Real-Time%20Analytics%20%E2%80%A2%20Biometric%20Attendance",
+        url: "https://webvibez.com/logo.jpeg",
         width: 1200,
         height: 630,
         alt: "WebVibez Platform Features & Capabilities",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Explore core features of WebVibez platforms: live biometric & mobile attendance, automated fee processing, test performance analytics, and role-based administrative control.",
     images: [
-      "https://webvibez.com/api/og?title=Platform%20Features%20%26%20Capabilities&category=Full-Stack%20Ecosystem&tag=Real-Time%20Analytics%20%E2%80%A2%20Biometric%20Attendance",
+      "https://webvibez.com/logo.jpeg",
     ],
   },
 };

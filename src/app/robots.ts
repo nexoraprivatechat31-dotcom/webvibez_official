@@ -6,7 +6,17 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: ["/", "/api/og"],
-        disallow: ["/api/checkout", "/api/payment", "/api/admin"],
+        disallow: [
+          "/admin",
+          "/admin/*",
+          "/blog",
+          "/blog/*",
+          "/api/checkout",
+          "/api/payment",
+          "/api/blog/cron",
+          "/api/blog/distribute",
+          "/api/blog/auth",
+        ],
       },
     ],
     sitemap: "https://webvibez.com/sitemap.xml",

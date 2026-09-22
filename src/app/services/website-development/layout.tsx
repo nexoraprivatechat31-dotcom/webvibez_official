@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://webvibez.com/api/og?title=Website%20Development%20Company&category=Next.js%20%26%20Web%20Engineering%20in%20Ahmedabad&tag=Next.js%20%E2%80%A2%20SEO-Ready%20%E2%80%A2%20Responsive",
+        url: "https://webvibez.com/logo.jpeg",
         width: 1200,
         height: 630,
         alt: "Website Development Company in Ahmedabad — WebVibez",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "High-performance Next.js websites, corporate portals, and responsive web applications built for speed, clean architecture, and conversion in Ahmedabad, Gujarat.",
     images: [
-      "https://webvibez.com/api/og?title=Website%20Development%20Company&category=Next.js%20%26%20Web%20Engineering%20in%20Ahmedabad&tag=Next.js%20%E2%80%A2%20SEO-Ready%20%E2%80%A2%20Responsive",
+      "https://webvibez.com/logo.jpeg",
     ],
   },
 };

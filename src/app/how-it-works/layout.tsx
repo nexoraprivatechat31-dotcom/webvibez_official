@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://webvibez.com/api/og?title=How%20WebVibez%20Works&category=3-Step%20Deployment%20Methodology&tag=Live%20in%207%20Days%20%E2%80%A2%20Zero-Downtime",
+        url: "https://webvibez.com/logo.jpeg",
         width: 1200,
         height: 630,
         alt: "How WebVibez Works — 3-Step Development & Deployment",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Discover the WebVibez agile development methodology: Architecture & Scoping, Rapid Iteration & Continuous QA, and Zero-Downtime Multi-Platform Production Launch in 7 days.",
     images: [
-      "https://webvibez.com/api/og?title=How%20WebVibez%20Works&category=3-Step%20Deployment%20Methodology&tag=Live%20in%207%20Days%20%E2%80%A2%20Zero-Downtime",
+      "https://webvibez.com/logo.jpeg",
     ],
   },
 };

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://webvibez.com/api/og?title=Enterprise%20Security%20%26%20DRM%20Protocols&category=Hardened%20Infrastructure&tag=AES-256%20Encryption%20%E2%80%A2%20Zero-Trust",
+        url: "https://webvibez.com/logo.jpeg",
         width: 1200,
         height: 630,
         alt: "WebVibez Security and DRM Protection",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Learn about WebVibez enterprise-grade security protocols: AES-256 data encryption, zero-trust role-based access, automated database backups, and privacy compliance.",
     images: [
-      "https://webvibez.com/api/og?title=Enterprise%20Security%20%26%20DRM%20Protocols&category=Hardened%20Infrastructure&tag=AES-256%20Encryption%20%E2%80%A2%20Zero-Trust",
+      "https://webvibez.com/logo.jpeg",
     ],
   },
 };

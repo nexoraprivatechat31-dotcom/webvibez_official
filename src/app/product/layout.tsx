@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://webvibez.com/api/og?title=Coaching%20Class%20Management%20Software&category=11%20Hardened%20Subsystems&tag=Mobile%20App%20%E2%80%A2%20DRM%20%E2%80%A2%20CBT%20Tests%20%E2%80%A2%20UPI",
+        url: "https://webvibez.com/logo.jpeg",
         width: 1200,
         height: 630,
         alt: "WebVibez Coaching Class Software & Mobile App Platform",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Explore WebVibez coaching institute software: 100% white-labeled iOS and Android mobile apps, live lecture streaming, CBT exam engine, hardware DRM anti-piracy, and automated UPI fee collection.",
     images: [
-      "https://webvibez.com/api/og?title=Coaching%20Class%20Management%20Software&category=11%20Hardened%20Subsystems&tag=Mobile%20App%20%E2%80%A2%20DRM%20%E2%80%A2%20CBT%20Tests%20%E2%80%A2%20UPI",
+      "https://webvibez.com/logo.jpeg",
     ],
   },
 };

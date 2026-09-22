@@ -71,10 +71,20 @@ export const metadata: Metadata = {
       "WebVibez is an Ahmedabad-based software development company engineering custom websites, React Native mobile apps, cloud web applications, and coaching institute platforms.",
     images: [
       {
-        url: "https://webvibez.com/api/og?title=Website%2C%20Mobile%20App%20%26%20Custom%20Software%20Company&category=Software%20Developer%20in%20Ahmedabad&tag=Next.js%20%E2%80%A2%20React%20Native%20%E2%80%A2%20Cloud%20ERP",
+        url: "https://webvibez.com/logo.jpeg",
+        secureUrl: "https://webvibez.com/logo.jpeg",
+        width: 1080,
+        height: 987,
+        type: "image/jpeg",
+        alt: "WebVibez Software Developer Logo",
+      },
+      {
+        url: "https://webvibez.com/og-image.jpeg",
+        secureUrl: "https://webvibez.com/og-image.jpeg",
         width: 1200,
         height: 630,
-        alt: "WebVibez Software Developer — Custom Software, Mobile Apps & Website Development in Ahmedabad",
+        type: "image/jpeg",
+        alt: "WebVibez Software Developer — Custom Software, Mobile Apps & Website Development",
       },
     ],
   },
@@ -84,7 +94,8 @@ export const metadata: Metadata = {
     description:
       "WebVibez is an Ahmedabad-based software development company engineering custom websites, React Native mobile apps, cloud web applications, and coaching institute platforms.",
     images: [
-      "https://webvibez.com/api/og?title=Website%2C%20Mobile%20App%20%26%20Custom%20Software%20Company&category=Software%20Developer%20in%20Ahmedabad&tag=Next.js%20%E2%80%A2%20React%20Native%20%E2%80%A2%20Cloud%20ERP",
+      "https://webvibez.com/og-image.jpeg",
+      "https://webvibez.com/logo.jpeg",
     ],
   },
   robots: {
@@ -198,8 +209,16 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.png?v=3" type="image/png" sizes="512x512" />
         <link rel="icon" href="/favicon.png?v=3" type="image/png" sizes="192x192" />
         <link rel="icon" href="/favicon.png?v=3" type="image/png" sizes="32x32" />
-        <link rel="apple-touch-icon" href="/favicon.png?v=3" sizes="180x180" />
-        <link rel="shortcut icon" href="/favicon.ico?v=3" />
+        <link rel="image_src" href="https://webvibez.com/logo.jpeg" />
+        <meta property="og:image" content="https://webvibez.com/logo.jpeg" />
+        <meta property="og:image:secure_url" content="https://webvibez.com/logo.jpeg" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="1080" />
+        <meta property="og:image:height" content="987" />
+        <meta property="og:image:alt" content="WebVibez Software Developer Logo" />
+        <meta name="twitter:image" content="https://webvibez.com/og-image.jpeg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta itemProp="image" content="https://webvibez.com/logo.jpeg" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGlobal) }}

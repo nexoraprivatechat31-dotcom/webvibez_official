@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://webvibez.com/api/og?title=Contact%20Our%20Engineering%20Team&category=Direct%20Consultation&tag=Ahmedabad%2C%20Gujarat%20%E2%80%A2%20%2B91%2092136%2015531",
+        url: "https://webvibez.com/logo.jpeg",
         width: 1200,
         height: 630,
         alt: "Contact WebVibez Software Developer in Ahmedabad",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Get in touch with WebVibez Software Developer. Discuss your custom software, mobile app, or coaching institute software requirements with our engineering team in Ahmedabad.",
     images: [
-      "https://webvibez.com/api/og?title=Contact%20Our%20Engineering%20Team&category=Direct%20Consultation&tag=Ahmedabad%2C%20Gujarat%20%E2%80%A2%20%2B91%2092136%2015531",
+      "https://webvibez.com/logo.jpeg",
     ],
   },
 };

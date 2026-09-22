@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://webvibez.com/api/og?title=Custom%20Software%20Development&category=Enterprise%20Software%20in%20Ahmedabad&tag=Tailored%20SaaS%20%E2%80%A2%20ERP%20%E2%80%A2%20Cloud%20APIs",
+        url: "https://webvibez.com/logo.jpeg",
         width: 1200,
         height: 630,
         alt: "Custom Software Development Company in Ahmedabad — WebVibez",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Bespoke enterprise software, scalable SaaS architectures, automated ERP workflows, and secure APIs engineered for growing businesses in Ahmedabad, Gujarat.",
     images: [
-      "https://webvibez.com/api/og?title=Custom%20Software%20Development&category=Enterprise%20Software%20in%20Ahmedabad&tag=Tailored%20SaaS%20%E2%80%A2%20ERP%20%E2%80%A2%20Cloud%20APIs",
+      "https://webvibez.com/logo.jpeg",
     ],
   },
 };

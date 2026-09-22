@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://webvibez.com/api/og?title=Disclaimer%20%26%20Warranties&category=Legal%20Notice&tag=Platform%20Terms%20%E2%80%A2%20Usage%20Policies",
+        url: "https://webvibez.com/logo.jpeg",
         width: 1200,
         height: 630,
         alt: "WebVibez Legal Disclaimer",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Legal disclaimer, accuracy notices, and technological limitation warranties regarding WebVibez products and development services.",
     images: [
-      "https://webvibez.com/api/og?title=Disclaimer%20%26%20Warranties&category=Legal%20Notice&tag=Platform%20Terms%20%E2%80%A2%20Usage%20Policies",
+      "https://webvibez.com/logo.jpeg",
     ],
   },
 };

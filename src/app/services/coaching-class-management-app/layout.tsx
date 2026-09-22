@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://webvibez.com/api/og?title=Coaching%20Class%20Management%20App&category=Institute%20Software%20in%20Ahmedabad&tag=Mobile%20App%20%E2%80%A2%20DRM%20%E2%80%A2%20CBT%20Tests%20%E2%80%A2%20UPI",
+        url: "https://webvibez.com/logo.jpeg",
         width: 1200,
         height: 630,
         alt: "Coaching Class Management App Development in Ahmedabad — WebVibez",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Custom branded coaching institute apps, NTA CBT mock exam engine, hardware DRM lecture protection, and automated UPI fee collection in Ahmedabad, Gujarat.",
     images: [
-      "https://webvibez.com/api/og?title=Coaching%20Class%20Management%20App&category=Institute%20Software%20in%20Ahmedabad&tag=Mobile%20App%20%E2%80%A2%20DRM%20%E2%80%A2%20CBT%20Tests%20%E2%80%A2%20UPI",
+      "https://webvibez.com/logo.jpeg",
     ],
   },
 };

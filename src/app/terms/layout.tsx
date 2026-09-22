@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://webvibez.com/api/og?title=Terms%20%26%20Conditions&category=Legal%20%26%20Compliance&tag=Service%20Agreements%20%E2%80%A2%20SLAs",
+        url: "https://webvibez.com/logo.jpeg",
         width: 1200,
         height: 630,
         alt: "WebVibez Terms and Conditions",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Terms and conditions for utilizing WebVibez Software Developer software products, development services, APIs, and client portals.",
     images: [
-      "https://webvibez.com/api/og?title=Terms%20%26%20Conditions&category=Legal%20%26%20Compliance&tag=Service%20Agreements%20%E2%80%A2%20SLAs",
+      "https://webvibez.com/logo.jpeg",
     ],
   },
 };

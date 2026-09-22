@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://webvibez.com/api/og?title=Mobile%20App%20Development%20Company&category=React%20Native%20%26%20Mobile%20Apps%20in%20Ahmedabad&tag=iOS%20%E2%80%A2%20Android%20%E2%80%A2%20React%20Native%20%E2%80%A2%20Offline%20Vault",
+        url: "https://webvibez.com/logo.jpeg",
         width: 1200,
         height: 630,
         alt: "Mobile App Development Company in Ahmedabad — WebVibez",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Native-performance iOS and Android mobile applications built with React Native, offline encryption, and official store publishing in Ahmedabad, Gujarat.",
     images: [
-      "https://webvibez.com/api/og?title=Mobile%20App%20Development%20Company&category=React%20Native%20%26%20Mobile%20Apps%20in%20Ahmedabad&tag=iOS%20%E2%80%A2%20Android%20%E2%80%A2%20React%20Native%20%E2%80%A2%20Offline%20Vault",
+      "https://webvibez.com/logo.jpeg",
     ],
   },
 };
