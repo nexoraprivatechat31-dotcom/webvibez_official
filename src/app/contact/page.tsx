@@ -254,41 +254,6 @@ export default function ContactPage() {
                   <ArrowRight className="w-4 h-4 text-emerald-600 dark:text-[#00E5A3] group-hover:translate-x-1 transition-transform shrink-0" />
                 </a>
 
-                {/* Direct Phone Line with Copy Button */}
-                <div className="flex items-center justify-between p-4 rounded-2xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200/80 dark:border-white/10 hover:border-[#0066FF]/60 shadow-sm transition-all duration-200 group">
-                  <a
-                    href="tel:+919213615331"
-                    className="flex items-center gap-3.5 flex-1 cursor-pointer"
-                  >
-                    <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#0066FF] text-white flex items-center justify-center shrink-0 shadow-md group-hover:scale-105 transition-transform">
-                      <Phone className="w-5 h-5 sm:w-6 sm:h-6" />
-                    </div>
-                    <div>
-                      <div className="text-[11px] font-mono font-bold text-[#0066FF] dark:text-[#38BDF8]">
-                        Direct Engineering Hotline
-                      </div>
-                      <div className="text-sm sm:text-base font-bold text-slate-900 dark:text-white">
-                        +91 92136 15331
-                      </div>
-                      <div className="text-[10.5px] text-slate-500 dark:text-slate-400 font-sans">
-                        Mon &ndash; Sat, 9:00 AM &ndash; 8:00 PM IST
-                      </div>
-                    </div>
-                  </a>
-                  <button
-                    type="button"
-                    onClick={() => handleCopy("+919213615331", "phone")}
-                    className="p-2 rounded-xl text-slate-400 hover:text-[#0066FF] hover:bg-slate-200/60 dark:hover:bg-white/10 transition-colors cursor-pointer shrink-0"
-                    title="Copy Phone Number"
-                    aria-label="Copy Phone Number"
-                  >
-                    {copiedPhone ? (
-                      <CheckCheck className="w-4 h-4 text-emerald-500" />
-                    ) : (
-                      <Copy className="w-4 h-4" />
-                    )}
-                  </button>
-                </div>
 
                 {/* Direct Official Email with Copy Button */}
                 <div className="flex items-center justify-between p-4 rounded-2xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200/80 dark:border-white/10 hover:border-[#7C3AED]/60 shadow-sm transition-all duration-200 group">
