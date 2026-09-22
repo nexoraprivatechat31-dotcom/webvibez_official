@@ -31,7 +31,7 @@ export default function ServicesPage() {
       subtitle: "Requirements, Schemas & Blueprint",
       color: "#0066FF",
       gradient: "from-[#0066FF]/20 via-[#6366F1]/10 to-transparent",
-      icon: <Compass className="w-6 h-6 text-[#0066FF]" />,
+      icon: <Compass className="w-5 h-5 text-white" />,
       desc: "We analyze your business flow, database schema, student load telemetry, and compliance requirements to build a comprehensive technical blueprint.",
       deliverables: [
         "Database ERD & Multi-Tenant Schema Map",
@@ -47,7 +47,7 @@ export default function ServicesPage() {
       subtitle: "Interactive Figma & UX Systems",
       color: "#8B00FF",
       gradient: "from-[#8B00FF]/20 via-[#A855F7]/10 to-transparent",
-      icon: <Palette className="w-6 h-6 text-[#8B00FF]" />,
+      icon: <Palette className="w-5 h-5 text-white" />,
       desc: "Interactive Figma designs, design system tokens, responsive UI components, and functional proof-of-concept validation with zero layout shift.",
       deliverables: [
         "Clickable iOS, Android & Web Prototypes",
@@ -63,7 +63,7 @@ export default function ServicesPage() {
       subtitle: "Clean TypeScript & Hardened Code",
       color: "#00E5A3",
       gradient: "from-[#00E5A3]/20 via-[#0066FF]/10 to-transparent",
-      icon: <Code2 className="w-6 h-6 text-[#00E5A3]" />,
+      icon: <Code2 className="w-5 h-5 text-white" />,
       desc: "Clean, typed TypeScript codebase with test-driven validation, native hardware DRM encryption, and automated CI/CD pipeline builds.",
       deliverables: [
         "Strict TypeScript 5 Clean Architecture",
@@ -79,7 +79,7 @@ export default function ServicesPage() {
       subtitle: "Stores Release & 24/7 SLA Uptime",
       color: "#38BDF8",
       gradient: "from-[#38BDF8]/20 via-[#00E5A3]/10 to-transparent",
-      icon: <Rocket className="w-6 h-6 text-[#38BDF8]" />,
+      icon: <Rocket className="w-5 h-5 text-white" />,
       desc: "App Store & Play Store release under your official brand, DNS edge acceleration, stress testing, and ongoing round-the-clock SLA maintenance.",
       deliverables: [
         "Apple App Store & Google Play Publishing",
@@ -98,6 +98,104 @@ export default function ServicesPage() {
         <SpatialServicesExperience />
 
         {/* ========================================================================================= */}
+        {/* CORE SPECIALIZED PRACTICES & DEEP-DIVE HUBS (INTERNAL LINKING & COMMERCIAL DESTINATIONS) */}
+        {/* ========================================================================================= */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-10">
+            <div className="text-center max-w-3xl mx-auto space-y-3">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#0066FF]/10 dark:bg-[#0066FF]/20 border border-[#0066FF]/30 text-[#0066FF] dark:text-[#38BDF8] text-[11px] font-mono uppercase tracking-wider font-bold">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>02 / SPECIALIZED PRACTICES · DEDICATED DOMAINS</span>
+              </div>
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold font-display text-slate-900 dark:text-white tracking-tight">
+                Explore Dedicated Service Practices
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-sans leading-relaxed max-w-2xl mx-auto">
+                Explore our full engineering capabilities, technical architectures, and project deliverables across our primary service divisions.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {[
+                {
+                  title: "Website Development",
+                  href: "/services/website-development",
+                  badge: "NEXT.JS & REACT",
+                  color: "#0066FF",
+                  desc: "High-performance business websites, web applications, and digital platforms engineered with Next.js, TypeScript, and modern SEO architecture.",
+                  highlights: ["SEO & Core Web Vitals Ready", "Responsive UI/UX Systems", "CMS & API Integration", "Global Edge CDN Deployment"],
+                },
+                {
+                  title: "Mobile App Development",
+                  href: "/services/mobile-app-development",
+                  badge: "REACT NATIVE & NATIVE",
+                  color: "#00E5A3",
+                  desc: "Cross-platform iOS and Android mobile applications engineered with React Native, hardware-level security, offline sync, and store publishing.",
+                  highlights: ["iOS & Android Native Performance", "App Store & Play Store Publishing", "Push Notifications & Real-Time Sync", "Offline SQLite Architecture"],
+                },
+                {
+                  title: "Custom Software Development",
+                  href: "/services/custom-software-development",
+                  badge: "ENTERPRISE & SAAS",
+                  color: "#8B00FF",
+                  desc: "Tailored enterprise software, SaaS platforms, ERP systems, and cloud architectures built around your exact business operational workflows.",
+                  highlights: ["Modular Microservices", "Role-Based Access Control (RBAC)", "Custom API & CRM Integration", "PostgreSQL / Redis High Concurrency"],
+                },
+                {
+                  title: "Coaching Class Management App",
+                  href: "/services/coaching-class-management-app",
+                  badge: "EDUCATION SOFTWARE",
+                  color: "#38BDF8",
+                  desc: "End-to-end coaching institute management applications with hardware DRM video protection, computerized mock test engines, and automated fees tracking.",
+                  highlights: ["Screen Recording Blackout (DRM)", "CBT Mock Test Simulator", "Live Attendance & QR Tracking", "Automated Fee Invoicing & Reminders"],
+                },
+              ].map((practice) => (
+                <Link
+                  key={practice.href}
+                  href={practice.href}
+                  className="group relative p-7 rounded-3xl bg-white dark:bg-[#0A0E1A] border border-slate-200/80 dark:border-white/10 hover:border-[#0066FF]/60 dark:hover:border-[#38BDF8]/60 transition-all duration-300 shadow-md hover:shadow-2xl flex flex-col justify-between space-y-5"
+                >
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span
+                        className="text-[10px] font-mono font-bold px-2.5 py-1 rounded-full uppercase tracking-wider"
+                        style={{
+                          color: practice.color,
+                          backgroundColor: `${practice.color}15`,
+                        }}
+                      >
+                        {practice.badge}
+                      </span>
+                      <div className="w-8 h-8 rounded-full bg-slate-100 dark:bg-white/5 flex items-center justify-center text-slate-400 group-hover:text-[#0066FF] dark:group-hover:text-[#38BDF8] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all">
+                        <ArrowRight className="w-4 h-4" />
+                      </div>
+                    </div>
+
+                    <h3 className="text-xl font-bold font-display text-slate-900 dark:text-white group-hover:text-[#0066FF] dark:group-hover:text-[#38BDF8] transition-colors">
+                      {practice.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-sans leading-relaxed">
+                      {practice.desc}
+                    </p>
+                  </div>
+
+                  <div className="pt-4 border-t border-slate-100 dark:border-white/5">
+                    <div className="grid grid-cols-2 gap-2">
+                      {practice.highlights.map((h, i) => (
+                        <div key={i} className="flex items-center gap-1.5 text-[11.5px] text-slate-700 dark:text-slate-300 font-sans">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                          <span className="truncate">{h}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* ========================================================================================= */}
         {/* DEVELOPMENT METHODOLOGY: 4-PHASE LIFECYCLE (CLEAN & UNCLUTTERED ARCHITECTURE) */}
         {/* ========================================================================================= */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -107,7 +205,7 @@ export default function ServicesPage() {
             <div className="text-center max-w-3xl mx-auto space-y-3">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#0066FF]/10 dark:bg-[#0066FF]/20 border border-[#0066FF]/30 text-[#0066FF] dark:text-[#38BDF8] text-[11px] font-mono uppercase tracking-wider font-bold">
                 <Sparkles className="w-3.5 h-3.5" />
-                <span>02 / METHODOLOGY · 4-PHASE LIFECYCLE</span>
+                <span>03 / METHODOLOGY · 4-PHASE LIFECYCLE</span>
               </div>
               <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold font-display text-slate-900 dark:text-white tracking-tight">
                 The WebVibez Engineering Lifecycle
@@ -127,9 +225,20 @@ export default function ServicesPage() {
                   {/* Top Step Header */}
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <span className="text-2xl sm:text-3xl font-extrabold font-display text-slate-300 dark:text-white/20 group-hover:text-[#0066FF] dark:group-hover:text-[#38BDF8] transition-colors">
-                        {phase.step}
-                      </span>
+                      <div className="flex items-center gap-3">
+                        <div
+                          className="w-10 h-10 rounded-xl flex items-center justify-center text-white shadow-md"
+                          style={{
+                            background: `linear-gradient(135deg, ${phase.color} 0%, #0A0E1A 140%)`,
+                            border: `1.5px solid ${phase.color}50`,
+                          }}
+                        >
+                          {phase.icon}
+                        </div>
+                        <span className="text-2xl sm:text-3xl font-extrabold font-display text-slate-300 dark:text-white/20 group-hover:text-[#0066FF] dark:group-hover:text-[#38BDF8] transition-colors">
+                          {phase.step}
+                        </span>
+                      </div>
                       <span
                         className="text-[10px] font-mono font-bold px-2.5 py-1 rounded-full uppercase tracking-wider"
                         style={{

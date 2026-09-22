@@ -1,17 +1,36 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Custom Software, Mobile App & Web Development Services",
+  title: "Software, Website & Mobile App Development Services in Ahmedabad",
   description:
-    "Explore WebVibez services: custom software development, high-performance iOS and Android mobile apps, responsive web applications, and coaching-class management platforms.",
+    "Explore WebVibez engineering services: custom software development, high-performance Next.js websites, React Native iOS and Android apps, and coaching management platforms in Ahmedabad, Gujarat.",
   alternates: {
-    canonical: "https://webvibez.in/services",
+    canonical: "https://webvibez.com/services",
   },
   openGraph: {
-    title: "Custom Software, Mobile App & Web Development Services | WebVibez",
+    title: "Software, Website & Mobile App Development Services in Ahmedabad | WebVibez",
     description:
-      "Explore WebVibez services: custom software development, high-performance iOS and Android mobile apps, responsive web applications, and coaching-class management platforms.",
-    url: "https://webvibez.in/services",
+      "Explore WebVibez engineering services: custom software development, high-performance Next.js websites, React Native iOS and Android apps, and coaching management platforms in Ahmedabad, Gujarat.",
+    url: "https://webvibez.com/services",
+    siteName: "WebVibez Software Developer",
+    type: "website",
+    images: [
+      {
+        url: "https://webvibez.com/api/og?title=Custom%20Software%2C%20Web%20%26%20Mobile%20App%20Services&category=Software%20Engineering%20Studio&tag=Ahmedabad%2C%20Gujarat%20%E2%80%A2%20Full-Stack",
+        width: 1200,
+        height: 630,
+        alt: "WebVibez Software Development Services in Ahmedabad",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Software, Website & Mobile App Development Services in Ahmedabad | WebVibez",
+    description:
+      "Explore WebVibez engineering services: custom software development, high-performance Next.js websites, React Native iOS and Android apps, and coaching management platforms in Ahmedabad, Gujarat.",
+    images: [
+      "https://webvibez.com/api/og?title=Custom%20Software%2C%20Web%20%26%20Mobile%20App%20Services&category=Software%20Engineering%20Studio&tag=Ahmedabad%2C%20Gujarat%20%E2%80%A2%20Full-Stack",
+    ],
   },
 };
 
@@ -25,30 +44,38 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://webvibez.in",
+          "item": "https://webvibez.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Services",
-          "item": "https://webvibez.in/services",
+          "item": "https://webvibez.com/services",
         },
       ],
     },
     {
       "@type": "Service",
-      "serviceType": "Custom Software, Mobile App & Web Development",
+      "name": "Software Development Services in Ahmedabad",
+      "serviceType": "Custom Software, Website Development & Mobile App Engineering",
       "provider": {
         "@type": "Organization",
         "name": "WebVibez Software Developer",
-        "url": "https://webvibez.in",
+        "url": "https://webvibez.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ahmedabad",
+          "addressRegion": "Gujarat",
+          "addressCountry": "IN",
+        },
       },
-      "areaServed": {
-        "@type": "Place",
-        "name": "Ahmedabad, Gujarat, India",
-      },
+      "areaServed": [
+        { "@type": "City", name: "Ahmedabad" },
+        { "@type": "State", name: "Gujarat" },
+        { "@type": "Country", name: "India" },
+      ],
       "description":
-        "End-to-end custom software development, React Native mobile apps, Next.js web applications, and coaching institute platforms.",
+        "End-to-end bespoke software engineering: Next.js responsive websites, React Native mobile apps, automated ERP workflows, and coaching institute platforms in Ahmedabad.",
     },
   ],
 };

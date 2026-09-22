@@ -18,24 +18,12 @@ export default function FeaturesSection({ onOpenConsultation }: FeaturesSectionP
   useEffect(() => {
     const unsubscribe = subscribePhysicsState(() => {
       setScrollProgress(scrollPhysicsState.scrollProgress);
-
-      // Map progress in features range (~0.52 to 0.72) to active row index
-      const p = scrollPhysicsState.scrollProgress;
-      if (p >= 0.50 && p <= 0.76) {
-        const localT = (p - 0.50) / 0.26;
-        const autoIdx = Math.min(
-          FEATURES_LIST.length - 1,
-          Math.max(0, Math.floor(localT * FEATURES_LIST.length))
-        );
-        setSelectedFeatureIndex(autoIdx);
-      }
     });
     return () => unsubscribe();
   }, []);
 
   const handleSelectFeature = (idx: number) => {
     setSelectedFeatureIndex(idx);
-    selectFeatureApp(idx);
   };
 
   const activeFeature = FEATURES_LIST[selectedFeatureIndex];
@@ -44,7 +32,7 @@ export default function FeaturesSection({ onOpenConsultation }: FeaturesSectionP
     <section
       ref={sectionRef}
       id="features"
-      className="relative w-full py-28 md:py-36 overflow-hidden border-t border-[var(--border-subtle)] bg-transparent transition-colors duration-300"
+      className="relative w-full py-16 md:py-32 overflow-hidden border-t border-[var(--border-subtle)] bg-transparent transition-colors duration-300"
     >
 
       {/* Ambient Radial Lighting */}
@@ -56,17 +44,17 @@ export default function FeaturesSection({ onOpenConsultation }: FeaturesSectionP
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
         {/* Section Header */}
-        <div className="mb-16 max-w-3xl">
+        <div className="mb-10 sm:mb-16 max-w-3xl">
           <div
-            className="flex items-center gap-2 mb-4 text-[11px] font-mono tracking-[0.22em] text-[#0066FF] dark:text-[#38BDF8] uppercase font-bold"
+            className="flex items-center gap-2 mb-3 sm:mb-4 text-[11px] font-mono tracking-[0.22em] text-[#0066FF] dark:text-[#38BDF8] uppercase font-bold"
           >
             <span>04 / ARCHITECTURE &middot; 11 CORE SYSTEMS</span>
           </div>
           <h2
-            className="font-bold text-slate-900 dark:text-[#F4F1EA] leading-[1.05] tracking-tight"
+            className="font-bold text-slate-900 dark:text-[#F4F1EA] leading-[1.08] tracking-tight"
             style={{
               fontFamily: "var(--font-display)",
-              fontSize: "clamp(2.4rem, 6vw, 5rem)",
+              fontSize: "clamp(1.75rem, 4.5vw, 4.2rem)",
             }}
           >
             11 core systems.
@@ -85,9 +73,6 @@ export default function FeaturesSection({ onOpenConsultation }: FeaturesSectionP
           <div className="lg:col-span-7 flex flex-col space-y-1">
             {FEATURES_LIST.map((feat, idx) => {
               const isSelected = idx === selectedFeatureIndex;
-              // Alternating horizontal shift driven by scroll
-              const dir = idx % 2 === 0 ? 1 : -1;
-              const rowShift = dir * ((scrollProgress - 0.5) * 45);
 
               return (
                 <button
@@ -99,9 +84,6 @@ export default function FeaturesSection({ onOpenConsultation }: FeaturesSectionP
                       ? "bg-white dark:bg-[#0B0F19] border-[#0066FF]/40 shadow-xl shadow-[#0066FF]/10 scale-[1.01]"
                       : "bg-transparent border-transparent hover:border-slate-200 dark:hover:border-white/10 opacity-70 hover:opacity-100"
                   }`}
-                  style={{
-                    transform: `translate3d(${rowShift}px, 0, 0)`,
-                  }}
                 >
                   {/* Active Indicator Pillar */}
                   {isSelected && (

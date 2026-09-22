@@ -52,13 +52,13 @@ export default function AboutPage() {
     },
     {
       label: "Security",
-      spec: "Hardware DRM Widevine L1",
-      badge: "ZERO-PIRACY SHIELD",
-      desc: "Hardware-level cryptographic screen blackout, dynamic student watermarking, and Widevine L1 + Apple FairPlay encryption.",
+      spec: "Hardware DRM & Anti-Piracy",
+      badge: "CONTENT PROTECTION",
+      desc: "Hardware-level screen blackout, dynamic student watermarking, and secure tokenized media stream encryption.",
       icon: Lock,
       color: "#00E5A3",
-      stat: "Widevine L1 Certified",
-      subdetails: ["Hardware Screen Recording Block", "Dynamic Moving Watermarks", "AES-256 DRM Token Vault"],
+      stat: "Hardware DRM Protected",
+      subdetails: ["Hardware Screen Recording Block", "Dynamic Moving Watermarks", "Encrypted Stream Delivery"],
     },
     {
       label: "Performance",
@@ -85,52 +85,52 @@ export default function AboutPage() {
   // Running Marquee Items (Right to Left Tech & Milestone Stream)
   const tickerItems = [
     { label: "Architecture", value: "Next.js 16 + React Native", icon: Code2, color: "#0066FF" },
-    { label: "Security", value: "Hardware DRM Widevine L1", icon: Lock, color: "#00E5A3" },
-    { label: "Performance", value: "60 FPS Native UI Engine", icon: Zap, color: "#7C3AED" },
-    { label: "Streaming", value: "< 1.2s Sub-second Latency", icon: Activity, color: "#38BDF8" },
-    { label: "Isolation", value: "100% Dedicated PostgreSQL", icon: Database, color: "#F59E0B" },
-    { label: "Deployment", value: "7-Day Production Release", icon: Clock, color: "#10B981" },
-    { label: "Revenue", value: "0% Commission Cut", icon: HeartHandshake, color: "#EC4899" },
-    { label: "Scale", value: "400,000+ Students Connected", icon: Users2, color: "#0066FF" },
+    { label: "Security", value: "Hardware DRM Anti-Piracy", icon: Lock, color: "#00E5A3" },
+    { label: "Performance", value: "Optimized 60 FPS Native UI", icon: Zap, color: "#7C3AED" },
+    { label: "Streaming", value: "Low-Latency HLS Video", icon: Activity, color: "#38BDF8" },
+    { label: "Isolation", value: "Dedicated Database Instances", icon: Database, color: "#F59E0B" },
+    { label: "Delivery", value: "Rapid Sprint Deployment", icon: Clock, color: "#10B981" },
+    { label: "Pricing", value: "Predictable Flat Rates", icon: HeartHandshake, color: "#EC4899" },
+    { label: "Scale", value: "Scalable Cloud Architecture", icon: Users2, color: "#0066FF" },
   ];
 
   // 4 Foundational Pillars with 3D Tilt capabilities
   const pillars = [
     {
       number: "01",
-      title: "100% Sovereign Whitelabel",
-      badge: "Brand Sovereignty",
-      desc: "Your app is published exclusively under your own Google Play & Apple developer account. Zero third-party marketplace logos or vendor distractions.",
+      title: "Direct Account Publishing",
+      badge: "Brand Identity",
+      desc: "Your app is published directly under your own Google Play & Apple developer accounts with full source code ownership.",
       icon: Smartphone,
       color: "#0066FF",
-      stat: "100% Branded",
+      stat: "100% White-Labeled",
     },
     {
       number: "02",
-      title: "Zero Revenue Commissions",
-      badge: "Pure Cash Flow",
-      desc: "Never pay 10% to 20% ongoing commissions on your student fees. Flat predictable pricing with direct in-app UPI settlements straight into your bank.",
+      title: "Direct Payment Settlement",
+      badge: "Transparent Model",
+      desc: "Direct in-app payment gateway integrations (Razorpay, Cashfree, UPI) settling student payments straight into your institute bank account.",
       icon: HeartHandshake,
       color: "#00E5A3",
-      stat: "0% Commission",
+      stat: "Direct UPI / PG",
     },
     {
       number: "03",
-      title: "7-Day Industrialized Launch",
-      badge: "Rapid Delivery",
-      desc: "Our battle-tested CI/CD automated pipeline and modular architecture launch your production iOS & Android apps in exactly 7 business days.",
+      title: "Structured Rapid Delivery",
+      badge: "Agile Sprints",
+      desc: "Our modular architecture and automated CI/CD build pipelines deliver fast turnaround on production iOS, Android & web releases.",
       icon: Zap,
       color: "#7C3AED",
-      stat: "7-Day SLA",
+      stat: "Agile Delivery",
     },
     {
       number: "04",
       title: "Hardware Content Security",
       badge: "Anti-Piracy Shield",
-      desc: "Widevine L1 hardware screen blackout and dynamic floating watermarks protect your premium lecture videos and test series from Telegram piracy.",
+      desc: "Hardware-level screen blackout protection and dynamic floating student watermarks safeguard course lectures and test papers.",
       icon: ShieldCheck,
       color: "#F59E0B",
-      stat: "Zero Leakage",
+      stat: "Content Protected",
     },
   ];
 
@@ -536,11 +536,11 @@ export default function AboutPage() {
               <ArrowRight className="w-4 h-4" />
             </button>
             <Link
-              href="https://wa.me/919213615331?text=Hi%20WebVibez%20Software%20Developer,%20I%20would%20like%20to%20consult%20about%20building%20an%20app"
+              href="https://wa.me/919213615531?text=Hi%20WebVibez%20Software%20Developer,%20I%20would%20like%20to%20consult%20about%20building%20an%20app"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white dark:bg-white/[0.06] text-slate-800 dark:text-white text-xs sm:text-sm font-semibold border border-slate-200 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/[0.1] transition cursor-pointer w-full sm:w-auto"
             >
               <WhatsAppIcon className="w-4 h-4 text-[#25D366] shrink-0" />
-              <span>Chat on WhatsApp (+91 92136 15331)</span>
+              <span>Chat on WhatsApp (+91 92136 15531)</span>
             </Link>
           </div>
         </div>

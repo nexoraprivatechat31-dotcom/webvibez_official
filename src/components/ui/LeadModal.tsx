@@ -227,7 +227,7 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
       (contactData.notes ? `\n\n📝 *Notes:* ${contactData.notes}` : "") +
       `\n\nPlease share the interactive demo APK and pricing.`;
 
-    return `https://wa.me/919213615331?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/919213615531?text=${encodeURIComponent(text)}`;
   };
 
   const copyBlueprint = () => {
@@ -240,7 +240,7 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
       `Students: ${students}\n` +
       `Features:\n` +
       selectedFeatures.map((f) => `- ${f}`).join("\n") +
-      `\nLaunch: ${timeline}\nContact: +91 92136 15331`;
+      `\nLaunch: ${timeline}\nContact: +91 92136 15531`;
 
     navigator.clipboard.writeText(text);
     setCopied(true);
@@ -257,9 +257,13 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
-      className="fixed inset-0 z-[999999] flex items-center justify-center p-3.5 sm:p-6 md:p-8 bg-slate-950/85 dark:bg-black/90 backdrop-blur-xl animate-in fade-in duration-200"
+      data-lenis-prevent="true"
+      className="fixed inset-0 z-[999999] flex items-center justify-center p-3 sm:p-6 md:p-8 bg-slate-950/85 dark:bg-black/90 backdrop-blur-xl animate-in fade-in duration-200"
     >
-      <div className="relative w-full max-w-5xl lg:max-w-6xl max-h-[92vh] overflow-hidden flex flex-col rounded-[2rem] bg-white dark:bg-[#070A12] border border-slate-200/90 dark:border-white/10 shadow-2xl text-slate-900 dark:text-white transition-all">
+      <div
+        data-lenis-prevent="true"
+        className="relative w-full max-w-5xl lg:max-w-6xl max-h-[92vh] overflow-hidden flex flex-col rounded-[2rem] bg-white dark:bg-[#070A12] border border-slate-200/90 dark:border-white/10 shadow-2xl text-slate-900 dark:text-white transition-all"
+      >
         
         {/* Top Gradient Glow Accent Bar */}
         <div className="h-1.5 w-full bg-gradient-to-r from-[#0066FF] via-[#7C3AED] to-[#00E5A3] shrink-0" />
@@ -313,7 +317,10 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
 
         {!submitted ? (
           /* ── 2-COLUMN DESKTOP SPLIT BODY (Generous Breathing Room) ── */
-          <div className="flex-1 overflow-y-auto grid grid-cols-1 lg:grid-cols-12 relative z-10 custom-scrollbar">
+          <div
+            data-lenis-prevent="true"
+            className="flex-1 overflow-y-auto grid grid-cols-1 lg:grid-cols-12 relative z-10 custom-scrollbar overscroll-contain"
+          >
             
             {/* ── LEFT PANE: CONFIGURATOR (7 Cols with Spacious Padding) ── */}
             <div className="lg:col-span-7 p-6 sm:p-8 lg:p-10 space-y-8 sm:space-y-10 border-b lg:border-b-0 lg:border-r border-slate-100 dark:border-white/[0.08]">
@@ -631,7 +638,7 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
               <div className="pt-4 border-t border-slate-200/80 dark:border-white/10 flex items-center justify-between text-xs font-mono text-slate-500 dark:text-slate-400">
                 <span className="flex items-center gap-2">
                   <Phone className="w-4 h-4 text-[#0066FF]" />
-                  Call: <strong className="text-slate-900 dark:text-white">+91 92136 15331</strong>
+                  Call: <strong className="text-slate-900 dark:text-white">+91 92136 15531</strong>
                 </span>
                 <span className="text-emerald-600 dark:text-[#00E5A3] font-bold">
                   ● Architect Online
@@ -641,7 +648,10 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
           </div>
         ) : (
           /* ── SUBMISSION CONFIRMATION SCREEN (Generous Padding) ── */
-          <div className="flex-1 overflow-y-auto p-8 sm:p-12 lg:p-16 space-y-7 text-center relative z-10 animate-in fade-in duration-300 custom-scrollbar">
+          <div
+            data-lenis-prevent="true"
+            className="flex-1 overflow-y-auto p-8 sm:p-12 lg:p-16 space-y-7 text-center relative z-10 animate-in fade-in duration-300 custom-scrollbar overscroll-contain"
+          >
             <div className="w-20 h-20 mx-auto rounded-3xl bg-emerald-500/15 border-2 border-emerald-500/30 flex items-center justify-center text-emerald-500 shadow-2xl shadow-emerald-500/20">
               <CheckCircle2 className="w-10 h-10 animate-in zoom-in-75 duration-300" />
             </div>

@@ -83,6 +83,7 @@ export default function SmoothScrollProvider({
     });
 
     lenisRef.current = lenis;
+    (window as any).__lenis = lenis;
 
     lenis.on("scroll", (e) => {
       const scroll = e.scroll;

@@ -767,11 +767,11 @@ export default function HowItWorksPage() {
               <ArrowRight className="w-4 h-4" />
             </button>
             <Link
-              href="https://wa.me/919213615331?text=Hi%20WebVibez%20Software%20Developer,%20I%20want%20to%20start%20the%207-day%20launch%20blueprint"
+              href="https://wa.me/919213615531?text=Hi%20WebVibez%20Software%20Developer,%20I%20want%20to%20start%20the%207-day%20launch%20blueprint"
               className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-white dark:bg-white/[0.06] text-slate-800 dark:text-white text-xs sm:text-sm font-semibold border border-slate-200 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/[0.1] transition cursor-pointer w-full sm:w-auto"
             >
               <WhatsAppIcon className="w-4 h-4 text-[#25D366] shrink-0" />
-              <span>Chat on WhatsApp (+91 92136 15331)</span>
+              <span>Chat on WhatsApp (+91 92136 15531)</span>
             </Link>
           </div>
         </div>

@@ -124,12 +124,8 @@ export function returnToHomeScreen() {
   notifyPhysicsListeners();
 }
 
-export function setActiveScreenModule(targetIndex: number) {
-  const moduleScreenMap = [2, 1, 3, 0, 2, 1, 3, 0];
-  const screenIdx = moduleScreenMap[targetIndex % moduleScreenMap.length] ?? 2;
-  scrollPhysicsState.activeScreenIndex = screenIdx;
-  scrollPhysicsState.targetScreenIndex = screenIdx;
-  notifyPhysicsListeners();
+export function setActiveScreenModule(_targetIndex: number) {
+  // Intentionally no-op to keep mobile image constant during 1-8 module exploration
 }
 
 export function setBrandThemeVariant(variant: string) {
@@ -138,11 +134,7 @@ export function setBrandThemeVariant(variant: string) {
   notifyPhysicsListeners();
 }
 
-// Map feature list index (0-10) to the best matching 3D app screen (0-3)
-export function selectFeatureApp(featureIndex: number) {
-  const featureScreenMap = [2, 1, 3, 0, 1, 2, 3, 0, 1, 2, 0];
-  const screenIdx = featureScreenMap[featureIndex % featureScreenMap.length] ?? 2;
-  scrollPhysicsState.activeScreenIndex = screenIdx;
-  scrollPhysicsState.targetScreenIndex = screenIdx;
-  notifyPhysicsListeners();
+// Map feature list index (0-10) — kept as a no-op so mobile screen image does not change on selection
+export function selectFeatureApp(_featureIndex: number) {
+  // Intentionally no-op to keep mobile image constant
 }

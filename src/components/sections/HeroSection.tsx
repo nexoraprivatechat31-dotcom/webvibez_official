@@ -77,13 +77,13 @@ export default function HeroSection({ onOpenConsultation }: HeroSectionProps) {
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse ml-0.5" />
             </div>
 
-            {/* Hero headline — Space Grotesk, very large */}
-            <div className="mb-6 overflow-hidden">
+            {/* Hero headline — Space Grotesk */}
+            <div className="mb-5 sm:mb-6 overflow-hidden">
               <h1
-                className="reveal-up reveal-up-2 leading-[1.06] font-bold text-slate-900 dark:text-[#F8FAFC] tracking-tight"
+                className="reveal-up reveal-up-2 leading-[1.08] font-bold text-slate-900 dark:text-[#F8FAFC] tracking-tight"
                 style={{
                   fontFamily: "var(--font-display)",
-                  fontSize: "clamp(2.8rem, 7vw, 5.8rem)",
+                  fontSize: "clamp(2.0rem, 5.8vw, 5.2rem)",
                 }}
               >
                 Custom Digital Solutions{" "}
@@ -96,10 +96,9 @@ export default function HeroSection({ onOpenConsultation }: HeroSectionProps) {
 
             {/* Supporting copy — Manrope */}
             <p
-              className="reveal-up reveal-up-3 text-slate-600 dark:text-[#94A3B8] leading-relaxed max-w-[48ch] mb-6"
+              className="reveal-up reveal-up-3 text-slate-600 dark:text-[#94A3B8] leading-relaxed max-w-[48ch] mb-6 text-sm sm:text-base"
               style={{
                 fontFamily: "var(--font-sans)",
-                fontSize: "clamp(0.95rem, 1.5vw, 1.1rem)",
               }}
             >
               WebVibez builds custom mobile apps, websites, web platforms and coaching-class management software for high-growth institutions.
@@ -187,11 +186,8 @@ export default function HeroSection({ onOpenConsultation }: HeroSectionProps) {
             </div>
           </div>
 
-          {/* Right Column: 3D Phone anchor — floating UI badges orbit */}
-          <div className="lg:col-span-6 xl:col-span-7 h-[480px] sm:h-[580px] lg:h-[700px] w-full relative flex items-center justify-center pointer-events-none">
-
-
-
+          {/* Right Column: 3D Phone anchor — hidden on mobile for clean full-width hero layout */}
+          <div className="hidden lg:flex lg:col-span-6 xl:col-span-7 lg:h-[700px] w-full relative items-center justify-center pointer-events-none">
           </div>
         </div>
       </div>

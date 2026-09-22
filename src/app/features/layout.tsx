@@ -3,33 +3,68 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Platform Features | Coaching Management & Custom Software Capabilities",
   description:
-    "Explore the core features of WebVibez platforms: live biometric & mobile attendance, automated fee processing, test performance analytics, and role-based administrative control.",
+    "Explore core features of WebVibez platforms: live biometric & mobile attendance, automated fee processing, test performance analytics, and role-based administrative control.",
   alternates: {
-    canonical: "https://webvibez.in/features",
+    canonical: "https://webvibez.com/features",
   },
   openGraph: {
     title: "Platform Features | Coaching Management & Custom Software Capabilities | WebVibez",
     description:
-      "Explore the core features of WebVibez platforms: live biometric & mobile attendance, automated fee processing, test performance analytics, and role-based administrative control.",
-    url: "https://webvibez.in/features",
+      "Explore core features of WebVibez platforms: live biometric & mobile attendance, automated fee processing, test performance analytics, and role-based administrative control.",
+    url: "https://webvibez.com/features",
+    siteName: "WebVibez Software Developer",
+    type: "website",
+    images: [
+      {
+        url: "https://webvibez.com/api/og?title=Platform%20Features%20%26%20Capabilities&category=Full-Stack%20Ecosystem&tag=Real-Time%20Analytics%20%E2%80%A2%20Biometric%20Attendance",
+        width: 1200,
+        height: 630,
+        alt: "WebVibez Platform Features & Capabilities",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Platform Features | Coaching Management & Custom Software Capabilities | WebVibez",
+    description:
+      "Explore core features of WebVibez platforms: live biometric & mobile attendance, automated fee processing, test performance analytics, and role-based administrative control.",
+    images: [
+      "https://webvibez.com/api/og?title=Platform%20Features%20%26%20Capabilities&category=Full-Stack%20Ecosystem&tag=Real-Time%20Analytics%20%E2%80%A2%20Biometric%20Attendance",
+    ],
   },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@graph": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://webvibez.in",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://webvibez.com",
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Features",
+          "item": "https://webvibez.com/features",
+        },
+      ],
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Features",
-      "item": "https://webvibez.in/features",
+      "@type": "WebPage",
+      "name": "WebVibez Platform Features & Technical Capabilities",
+      "url": "https://webvibez.com/features",
+      "description":
+        "Detailed architecture and capabilities of WebVibez software systems, including attendance tracking, automated fee receipts, and test analytics.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "WebVibez Software Developer",
+        "url": "https://webvibez.com",
+      },
     },
   ],
 };

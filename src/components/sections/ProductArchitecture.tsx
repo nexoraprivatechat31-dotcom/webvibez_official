@@ -71,7 +71,7 @@ export default function ProductArchitecture({ onOpenConsultation }: ProductArchi
   return (
     <section
       id="architecture"
-      className="relative w-full py-28 md:py-36 overflow-hidden border-t border-[var(--border-subtle)] bg-transparent transition-colors duration-300"
+      className="relative w-full py-16 md:py-32 overflow-hidden border-t border-[var(--border-subtle)] bg-transparent transition-colors duration-300"
     >
       {/* Background Ambience */}
       <div
@@ -83,16 +83,16 @@ export default function ProductArchitecture({ onOpenConsultation }: ProductArchi
       <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-16">
           <div>
-            <div className="flex items-center gap-2 mb-4 text-[11px] font-mono tracking-[0.22em] text-[#0066FF] dark:text-[#38BDF8] uppercase font-bold">
+            <div className="flex items-center gap-2 mb-3 sm:mb-4 text-[11px] font-mono tracking-[0.22em] text-[#0066FF] dark:text-[#38BDF8] uppercase font-bold">
               <span>06 / SCALE &middot; TECHNICAL TOPOLOGY</span>
             </div>
             <h2
               className="font-bold text-slate-900 dark:text-[#F8FAFC] leading-[1.08] tracking-tight"
               style={{
                 fontFamily: "var(--font-display)",
-                fontSize: "clamp(2.4rem, 5.5vw, 4.5rem)",
+                fontSize: "clamp(1.75rem, 4.2vw, 4.0rem)",
               }}
             >
               Enterprise data-flow.

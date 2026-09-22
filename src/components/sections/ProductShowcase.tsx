@@ -35,19 +35,16 @@ export default function ProductShowcase({ onOpenConsultation }: ProductShowcaseP
 
   const handleSelectModule = (idx: number) => {
     setActiveIndex(idx);
-    setActiveScreenModule(idx);
   };
 
   const handleNext = () => {
     const nextIdx = (activeIndex + 1) % SHOWCASE_SCREENS.length;
     setActiveIndex(nextIdx);
-    setActiveScreenModule(nextIdx);
   };
 
   const handlePrev = () => {
     const prevIdx = (activeIndex - 1 + SHOWCASE_SCREENS.length) % SHOWCASE_SCREENS.length;
     setActiveIndex(prevIdx);
-    setActiveScreenModule(prevIdx);
   };
 
   useEffect(() => {
@@ -75,20 +72,19 @@ export default function ProductShowcase({ onOpenConsultation }: ProductShowcaseP
       <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
 
         {/* Section header */}
-        <div className="mb-10 max-w-3xl">
-          <div className="flex items-center gap-2 mb-4 text-[11px] font-mono tracking-[0.22em] text-[#0066FF] dark:text-[#38BDF8] uppercase font-bold">
+        <div className="mb-8 sm:mb-10 max-w-3xl">
+          <div className="flex items-center gap-2 mb-3 sm:mb-4 text-[11px] font-mono tracking-[0.22em] text-[#0066FF] dark:text-[#38BDF8] uppercase font-bold">
             <Layers className="w-3.5 h-3.5" />
             <span>03 / PRODUCT &middot; THE ENZOCHAT ECOSYSTEM</span>
           </div>
           <h2
-            className="font-bold text-slate-900 dark:text-[#F4F1EA] leading-[1.06] tracking-tight mb-4"
-            style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 5.5vw, 4.5rem)" }}
+            className="font-bold text-slate-900 dark:text-[#F4F1EA] leading-[1.08] tracking-tight mb-3 sm:mb-4"
+            style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4.8vw, 4.2rem)" }}
           >
             Every screen engineered<br />for modern communication excellence.
           </h2>
-          <p className="text-slate-600 dark:text-[#A9B0BA] leading-relaxed max-w-[56ch]"
-            style={{ fontFamily: "var(--font-sans)", fontSize: "clamp(0.9rem, 1.3vw, 1rem)" }}>
-            Hover over any module or use the arrow controls to explore EnzoChat&apos;s 8 core subsystems in real-time 3D.
+          <p className="text-slate-600 dark:text-[#A9B0BA] leading-relaxed max-w-[56ch] text-xs sm:text-base font-sans">
+            Explore EnzoChat&apos;s 8 core subsystems engineered for native high-performance speed.
           </p>
         </div>
 
@@ -254,9 +250,9 @@ export default function ProductShowcase({ onOpenConsultation }: ProductShowcaseP
             </div>
           </div>
 
-          {/* RIGHT (col 8–12): Phone Stage Anchor — 3D Canvas renders BIG phone here */}
+          {/* RIGHT (col 8–12): Phone Stage Anchor — Hidden on mobile */}
           <div
-            className="lg:col-span-5 h-[480px] sm:h-[560px] lg:h-[660px] relative pointer-events-none sticky top-24"
+            className="hidden lg:block lg:col-span-5 lg:h-[660px] relative pointer-events-none sticky top-24"
             style={phoneBayStyles}
           />
         </div>

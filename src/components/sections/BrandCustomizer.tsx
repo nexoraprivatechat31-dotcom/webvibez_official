@@ -68,9 +68,9 @@ export default function BrandCustomizer({ onOpenConsultation }: BrandCustomizerP
   return (
     <section
       id="brand"
-      className="relative w-full pt-24 pb-32 md:pt-32 md:pb-44 overflow-hidden border-t border-[var(--border-subtle)] bg-transparent transition-colors duration-300"
+      className="relative w-full py-16 md:py-32 overflow-hidden border-t border-[var(--border-subtle)] bg-transparent transition-colors duration-300"
     >
-      {/* Dynamic background atmosphere */}
+      {/* Background ambient lighting */}
       <div
         className="absolute inset-0 pointer-events-none transition-all duration-1000"
         style={{
@@ -82,38 +82,39 @@ export default function BrandCustomizer({ onOpenConsultation }: BrandCustomizerP
       <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
 
         {/* Section header */}
-        <div className="mb-14 max-w-3xl">
+        <div className="mb-10 sm:mb-14 max-w-3xl">
           <div
-            className="flex items-center gap-2 mb-5"
+            className="flex items-center gap-2 mb-3 sm:mb-5"
             style={{ fontFamily: "var(--font-mono)" }}
           >
             <span className="w-6 h-[1px]" style={{ background: `${currentBrand.primaryAccent}80` }} />
             <span
-              className="text-[11px] tracking-[0.18em] uppercase transition-colors duration-500"
+              className="text-[11px] tracking-[0.18em] uppercase transition-colors duration-500 font-bold"
               style={{ color: currentBrand.primaryAccent, fontFamily: "var(--font-mono)" }}
             >
               100% Whitelabel Identity
             </span>
           </div>
           <h2
-            className="font-bold text-slate-900 dark:text-[#F4F1EA] leading-[1.05] tracking-tight mb-4"
+            className="font-bold text-slate-900 dark:text-[#F4F1EA] leading-[1.08] tracking-tight mb-3 sm:mb-4"
             style={{
               fontFamily: "var(--font-display)",
-              fontSize: "clamp(2rem, 5.5vw, 4.5rem)",
+              fontSize: "clamp(1.75rem, 4.5vw, 4.0rem)",
             }}
           >
             Not another generic
             <br />
             education app.
           </h2>
-          <p className="text-slate-600 dark:text-[#A9B0BA] leading-relaxed max-w-[52ch]"
-            style={{ fontFamily: "var(--font-sans)", fontSize: "clamp(0.9rem, 1.3vw, 1rem)" }}>
+          <p
+            className="text-slate-600 dark:text-[#A9B0BA] leading-relaxed max-w-[52ch] text-xs sm:text-base font-sans"
+          >
             Your coaching centre gets a digital experience built around your brand — creating instant credibility with students, parents, and alumni.
           </p>
         </div>
 
-        {/* Stage selector — large typographic cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-14">
+        {/* Stage selector — typographic cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 mb-10 sm:mb-14">
           {BRAND_VARIANTS.map((brand, idx) => {
             const isSelected = idx === selectedBrandIndex;
             const accent = stageAccents[idx];
@@ -121,9 +122,9 @@ export default function BrandCustomizer({ onOpenConsultation }: BrandCustomizerP
               <button
                 key={brand.id}
                 onClick={() => handleSelectBrand(idx)}
-                className={`text-left p-7 rounded-2xl border transition-all duration-300 relative overflow-hidden group cursor-pointer active:scale-95 select-none ${
+                className={`text-left p-5 sm:p-7 rounded-2xl border transition-all duration-300 relative overflow-hidden group cursor-pointer active:scale-95 select-none ${
                   isSelected
-                    ? "border-[#0066FF]/40 surface-card shadow-2xl scale-[1.02]"
+                    ? "border-[#0066FF]/40 surface-card shadow-2xl scale-[1.01]"
                     : "border-[var(--border-subtle)] hover:border-slate-300 dark:hover:border-white/10 hover:bg-slate-100/50 dark:hover:bg-white/[0.025]"
                 }`}
               >
@@ -168,9 +169,9 @@ export default function BrandCustomizer({ onOpenConsultation }: BrandCustomizerP
         {/* Split showcase */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
 
-          {/* Left: 3D phone space — Pure Unobstructed Canvas Anchor */}
+          {/* Left: 3D phone space — Hidden on mobile */}
           <div
-            className="lg:col-span-5 h-[460px] sm:h-[560px] lg:h-[620px] w-full relative pointer-events-none"
+            className="hidden lg:block lg:col-span-5 lg:h-[620px] w-full relative pointer-events-none"
             style={phoneBayStyles}
           />
 

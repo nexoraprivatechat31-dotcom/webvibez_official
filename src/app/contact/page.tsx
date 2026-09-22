@@ -151,7 +151,7 @@ export default function ContactPage() {
     const text = encodeURIComponent(
       `Hi WebVibez Software Developer,\n\nName: ${formData.name || "Institute Director"}\nInstitute: ${formData.organization || "Coaching Center"}\nPhone: ${formData.phone || "Not provided"}\nEmail: ${formData.email || "Not provided"}\nSolution: ${formData.solutionType}\nStudents: ${formData.studentVolume}\nTimeline: ${formData.timeline}\nNotes: ${formData.message || "I would like to discuss building my app."}`
     );
-    return `https://wa.me/919213615331?text=${text}`;
+    return `https://wa.me/919213615531?text=${text}`;
   };
 
   return (
@@ -229,7 +229,7 @@ export default function ContactPage() {
               <div className="space-y-3.5 pt-2">
                 {/* VIP WhatsApp Channel */}
                 <a
-                  href="https://wa.me/919213615331?text=Hi%20WebVibez%20Software%20Developer,%20I%20would%20like%20to%20consult%20about%20building%20an%20app"
+                  href="https://wa.me/919213615531?text=Hi%20WebVibez%20Software%20Developer,%20I%20would%20like%20to%20consult%20about%20building%20an%20app"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-between p-4 rounded-2xl bg-emerald-500/[0.08] dark:bg-emerald-950/20 border border-emerald-500/30 hover:border-emerald-500 shadow-sm transition-all duration-200 group cursor-pointer"
@@ -244,7 +244,7 @@ export default function ContactPage() {
                         <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                       </div>
                       <div className="text-sm sm:text-base font-bold text-slate-900 dark:text-white">
-                        +91 92136 15331
+                        +91 92136 15531
                       </div>
                       <div className="text-[10.5px] text-slate-500 dark:text-slate-400 font-sans">
                         Chat directly with lead architect

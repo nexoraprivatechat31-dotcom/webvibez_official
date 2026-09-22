@@ -1324,7 +1324,7 @@ export default function PricingPage() {
 
             <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full md:w-auto">
               <a
-                href="https://wa.me/919213615331?text=Hi%20WebVibez%20Software%20Developer,%20I%20have%20a%20question%20about%20your%20coaching%20plans%20and%20pricing."
+                href="https://wa.me/919213615531?text=Hi%20WebVibez%20Software%20Developer,%20I%20have%20a%20question%20about%20your%20coaching%20plans%20and%20pricing."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-slate-950 text-xs font-bold font-sans shadow-lg shadow-emerald-700/25 transition flex items-center justify-center gap-2 cursor-pointer"
@@ -1334,11 +1334,11 @@ export default function PricingPage() {
               </a>
 
               <a
-                href="tel:+919213615331"
+                href="tel:+919213615531"
                 className="w-full sm:w-auto px-5 py-3.5 rounded-xl bg-slate-100 dark:bg-white/[0.08] text-slate-800 dark:text-white text-xs font-semibold border border-slate-200 dark:border-white/10 hover:bg-slate-200 dark:hover:bg-white/15 transition flex items-center justify-center gap-2 cursor-pointer shadow-sm"
               >
                 <Phone className="w-3.5 h-3.5 text-[#0066FF]" />
-                <span>+91 92136 15331</span>
+                <span>+91 92136 15531</span>
               </a>
             </div>
           </div>
@@ -1384,7 +1384,7 @@ export default function PricingPage() {
               <ArrowRight className="w-4 h-4" />
             </button>
             <a
-              href="https://wa.me/919213615331?text=Hi%20WebVibez%20Software%20Developer,%20I%20am%20interested%20in%20deploying%20a%20coaching%20app%20for%20my%20institute."
+              href="https://wa.me/919213615531?text=Hi%20WebVibez%20Software%20Developer,%20I%20am%20interested%20in%20deploying%20a%20coaching%20app%20for%20my%20institute."
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white dark:bg-white/[0.08] text-slate-800 dark:text-white text-xs sm:text-sm font-semibold border border-slate-200 dark:border-white/15 hover:bg-slate-100 dark:hover:bg-white/20 transition cursor-pointer shadow-sm"

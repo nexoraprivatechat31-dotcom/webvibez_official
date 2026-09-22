@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, Manrope, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import SmoothScrollProvider from "@/components/ui/SmoothScrollProvider";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -32,56 +33,59 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://webvibez.in"),
+  metadataBase: new URL("https://webvibez.com"),
   title: {
-    default: "WebVibez Software Developer | Custom Software, Mobile Apps & Websites",
+    default: "WebVibez Software Developer | Website, Mobile App & Custom Software Company in Ahmedabad",
     template: "%s | WebVibez Software Developer",
   },
   description:
-    "WebVibez builds custom mobile apps, websites, web applications and coaching-class management software for businesses and education institutes.",
+    "WebVibez is an Ahmedabad-based software development company. We build custom websites, iOS and Android mobile apps, cloud ERPs, and coaching management software with 100% white-labeled delivery.",
   applicationName: "WebVibez Software Developer",
-  authors: [{ name: "WebVibez Software Developer", url: "https://webvibez.in" }],
+  authors: [{ name: "WebVibez Software Developer", url: "https://webvibez.com" }],
   creator: "WebVibez Software Developer",
   publisher: "WebVibez Software Developer",
   alternates: {
-    canonical: "https://webvibez.in",
+    canonical: "https://webvibez.com",
   },
   icons: {
     icon: [
-      { url: "/favicon.png", type: "image/png", sizes: "512x512" },
-      { url: "/favicon.png", type: "image/png", sizes: "192x192" },
-      { url: "/favicon.png", type: "image/png", sizes: "32x32" },
-      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.svg?v=3", type: "image/svg+xml" },
+      { url: "/favicon.png?v=3", type: "image/png", sizes: "512x512" },
+      { url: "/favicon.png?v=3", type: "image/png", sizes: "192x192" },
+      { url: "/favicon.png?v=3", type: "image/png", sizes: "32x32" },
+      { url: "/favicon.ico?v=3", sizes: "any" },
     ],
     apple: [
-      { url: "/favicon.png", sizes: "180x180", type: "image/png" },
+      { url: "/favicon.png?v=3", sizes: "180x180", type: "image/png" },
     ],
-    shortcut: "/favicon.png",
+    shortcut: "/favicon.png?v=3",
   },
   manifest: "/manifest.webmanifest",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://webvibez.in",
+    url: "https://webvibez.com",
     siteName: "WebVibez Software Developer",
-    title: "WebVibez Software Developer | Custom Software, Mobile Apps & Websites",
+    title: "WebVibez Software Developer | Website, Mobile App & Custom Software Company in Ahmedabad",
     description:
-      "WebVibez builds custom mobile apps, websites, web applications and coaching-class management software for businesses and education institutes.",
+      "WebVibez is an Ahmedabad-based software development company engineering custom websites, React Native mobile apps, cloud web applications, and coaching institute platforms.",
     images: [
       {
-        url: "/images/square-image.jpg",
+        url: "https://webvibez.com/api/og?title=Website%2C%20Mobile%20App%20%26%20Custom%20Software%20Company&category=Software%20Developer%20in%20Ahmedabad&tag=Next.js%20%E2%80%A2%20React%20Native%20%E2%80%A2%20Cloud%20ERP",
         width: 1200,
         height: 630,
-        alt: "WebVibez Software Developer — Custom Software, Mobile Apps & Websites",
+        alt: "WebVibez Software Developer — Custom Software, Mobile Apps & Website Development in Ahmedabad",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "WebVibez Software Developer | Custom Software, Mobile Apps & Websites",
+    title: "WebVibez Software Developer | Website, Mobile App & Custom Software Company in Ahmedabad",
     description:
-      "WebVibez builds custom mobile apps, websites, web applications and coaching-class management software for businesses and education institutes.",
-    images: ["/images/square-image.jpg"],
+      "WebVibez is an Ahmedabad-based software development company engineering custom websites, React Native mobile apps, cloud web applications, and coaching institute platforms.",
+    images: [
+      "https://webvibez.com/api/og?title=Website%2C%20Mobile%20App%20%26%20Custom%20Software%20Company&category=Software%20Developer%20in%20Ahmedabad&tag=Next.js%20%E2%80%A2%20React%20Native%20%E2%80%A2%20Cloud%20ERP",
+    ],
   },
   robots: {
     index: true,
@@ -97,14 +101,16 @@ export const metadata: Metadata = {
   keywords: [
     "WebVibez",
     "WebVibez Software Developer",
-    "custom software development",
-    "mobile app development",
-    "website development",
-    "web application development",
+    "website development company in Ahmedabad",
+    "mobile app development company Ahmedabad",
+    "custom software development company Ahmedabad",
+    "web development Ahmedabad",
+    "React Native development Ahmedabad",
+    "Next.js development Ahmedabad",
     "coaching class management software",
-    "Ahmedabad software developer",
-    "Gujarat tech studio",
-    "coaching institute app",
+    "coaching class management app",
+    "software development company Ahmedabad",
+    "Ahmedabad Gujarat India",
   ],
 };
 
@@ -113,13 +119,15 @@ const jsonLdGlobal = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://webvibez.in/#organization",
+      "@id": "https://webvibez.com/#organization",
       name: "WebVibez Software Developer",
       alternateName: "WebVibez",
-      url: "https://webvibez.in",
-      logo: "https://webvibez.in/images/square-image.jpg",
+      url: "https://webvibez.com",
+      logo: "https://webvibez.com/favicon.png",
       description:
-        "WebVibez builds custom mobile apps, websites, web applications and coaching-class management software for businesses and education institutes.",
+        "WebVibez is a digital product studio and software development company based in Ahmedabad, Gujarat, India, specializing in custom websites, mobile applications, cloud software, and institute management platforms.",
+      telephone: "+91-92136-15531",
+      email: "contact@webvibez.com",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Ahmedabad",
@@ -131,15 +139,21 @@ const jsonLdGlobal = {
         { "@type": "State", name: "Gujarat" },
         { "@type": "Country", name: "India" },
       ],
+      sameAs: [
+        "https://www.linkedin.com/company/webvibez",
+        "https://x.com/webvibez",
+        "https://github.com/webvibez",
+      ],
     },
     {
       "@type": "LocalBusiness",
-      "@id": "https://webvibez.in/#localbusiness",
+      "@id": "https://webvibez.com/#localbusiness",
       name: "WebVibez Software Developer",
-      image: "https://webvibez.in/images/square-image.jpg",
-      url: "https://webvibez.in",
+      image: "https://webvibez.com/favicon.png",
+      url: "https://webvibez.com",
+      telephone: "+91-92136-15531",
       description:
-        "Custom software, mobile apps, websites, web applications and coaching-class management platforms in Ahmedabad, Gujarat.",
+        "Custom software, mobile app development, Next.js websites, and coaching-class management software company in Ahmedabad, Gujarat, India.",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Ahmedabad",
@@ -155,13 +169,13 @@ const jsonLdGlobal = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://webvibez.in/#website",
-      url: "https://webvibez.in",
+      "@id": "https://webvibez.com/#website",
+      url: "https://webvibez.com",
       name: "WebVibez Software Developer",
       description:
-        "Custom software, mobile apps, websites, web applications and coaching-class management platforms.",
+        "Custom software, mobile app development, Next.js websites, and coaching-class management platforms in Ahmedabad.",
       publisher: {
-        "@id": "https://webvibez.in/#organization",
+        "@id": "https://webvibez.com/#organization",
       },
     },
   ],
@@ -180,11 +194,12 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        <link rel="icon" href="/favicon.png" type="image/png" sizes="512x512" />
-        <link rel="icon" href="/favicon.png" type="image/png" sizes="192x192" />
-        <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
-        <link rel="apple-touch-icon" href="/favicon.png" sizes="180x180" />
-        <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+        <link rel="icon" href="/favicon.svg?v=3" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.png?v=3" type="image/png" sizes="512x512" />
+        <link rel="icon" href="/favicon.png?v=3" type="image/png" sizes="192x192" />
+        <link rel="icon" href="/favicon.png?v=3" type="image/png" sizes="32x32" />
+        <link rel="apple-touch-icon" href="/favicon.png?v=3" sizes="180x180" />
+        <link rel="shortcut icon" href="/favicon.ico?v=3" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGlobal) }}
@@ -212,7 +227,10 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-[var(--ink)] text-[var(--text-primary)] transition-colors duration-300 font-sans selection:bg-[#0066FF]/30 selection:text-[#0066FF] antialiased overflow-x-hidden">
-        <SmoothScrollProvider>{children}</SmoothScrollProvider>
+        <SmoothScrollProvider>
+          {children}
+          <ScrollToTop />
+        </SmoothScrollProvider>
       </body>
     </html>
   );

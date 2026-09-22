@@ -38,7 +38,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     categoryLabel: "Full-Stack Web SaaS",
     title: "Custom Web Application Development",
     subtitle: "Ultra-fast, responsive web platforms built with Next.js, React 19 & Node.js",
-    icon: <Globe className="w-5 h-5 sm:w-6 sm:h-6 text-[#0066FF]" />,
+    icon: <Globe className="w-5 h-5 sm:w-6 sm:h-6 text-white stroke-[2.2]" />,
     gradient: "from-[#0066FF]/25 via-[#6366F1]/15 to-[#8B00FF]/10",
     accentColor: "#0066FF",
     features: [
@@ -55,7 +55,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     categoryLabel: "iOS & Android Native",
     title: "High-Performance iOS & Android Apps",
     subtitle: "Fluid 60 FPS native & cross-platform mobile experiences with offline vault",
-    icon: <Smartphone className="w-5 h-5 sm:w-6 sm:h-6 text-[#8B00FF]" />,
+    icon: <Smartphone className="w-5 h-5 sm:w-6 sm:h-6 text-white stroke-[2.2]" />,
     gradient: "from-[#8B00FF]/25 via-[#A855F7]/15 to-[#0066FF]/10",
     accentColor: "#8B00FF",
     features: [
@@ -72,7 +72,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     categoryLabel: "High-Scale Backend",
     title: "Cloud Infrastructure & Scalable Backends",
     subtitle: "High-concurrency microservices, GraphQL, REST & edge networks",
-    icon: <Server className="w-5 h-5 sm:w-6 sm:h-6 text-[#00E5A3]" />,
+    icon: <Server className="w-5 h-5 sm:w-6 sm:h-6 text-white stroke-[2.2]" />,
     gradient: "from-[#00E5A3]/25 via-[#0066FF]/15 to-[#8B00FF]/10",
     accentColor: "#00E5A3",
     features: [
@@ -89,7 +89,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     categoryLabel: "Executive Hub & ERP",
     title: "Executive Admin Panels & ERP Systems",
     subtitle: "Full-control command centers for revenue, users, staff & telemetry",
-    icon: <Layers className="w-5 h-5 sm:w-6 sm:h-6 text-[#38BDF8]" />,
+    icon: <Layers className="w-5 h-5 sm:w-6 sm:h-6 text-white stroke-[2.2]" />,
     gradient: "from-[#38BDF8]/25 via-[#0066FF]/15 to-[#8B00FF]/10",
     accentColor: "#38BDF8",
     features: [
@@ -106,7 +106,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     categoryLabel: "AI & Workflow Automation",
     title: "AI & Intelligent Workflow Automation",
     subtitle: "LLM agents, automated grading, conversational assistants & predictive models",
-    icon: <Cpu className="w-5 h-5 sm:w-6 sm:h-6 text-[#F59E0B]" />,
+    icon: <Cpu className="w-5 h-5 sm:w-6 sm:h-6 text-white stroke-[2.2]" />,
     gradient: "from-[#F59E0B]/25 via-[#EF4444]/15 to-[#8B00FF]/10",
     accentColor: "#F59E0B",
     features: [
@@ -123,7 +123,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     categoryLabel: "24/7 Managed SLA",
     title: "24/7 Managed DevOps & Enterprise SLA",
     subtitle: "Guaranteed 99.99% uptime, proactive threat detection & swift response",
-    icon: <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 text-[#10B981]" />,
+    icon: <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 text-white stroke-[2.2]" />,
     gradient: "from-[#10B981]/25 via-[#00E5A3]/15 to-[#0066FF]/10",
     accentColor: "#10B981",
     features: [
@@ -395,19 +395,28 @@ export default function SpatialServicesExperience() {
             >
               {/* Card Top: Icon + Category Badge + IN FOCUS Live Radar */}
               <div className="flex items-center justify-between gap-3 mb-3 sm:mb-4">
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3.5">
                   <div
-                    className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl flex items-center justify-center text-white shadow-lg border border-white/20"
-                    style={{ backgroundColor: service.accentColor }}
+                    className="w-12 h-12 sm:w-13 sm:h-13 rounded-2xl flex items-center justify-center text-white shadow-xl relative overflow-hidden transition-all duration-300"
+                    style={{
+                      background: `linear-gradient(135deg, ${service.accentColor} 0%, #080C14 140%)`,
+                      border: `1.5px solid ${service.accentColor}70`,
+                      boxShadow: `0 8px 24px -4px ${service.accentColor}50, inset 0 1px 2px rgba(255,255,255,0.45)`,
+                    }}
                   >
-                    {service.icon}
+                    {/* Subtle internal shine beam */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-white/20 via-transparent to-transparent pointer-events-none" />
+                    <div className="relative z-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
+                      {service.icon}
+                    </div>
                   </div>
                   <div>
-                    <span className="text-[10px] sm:text-[11px] font-mono tracking-widest font-bold uppercase text-slate-500 dark:text-slate-400">
+                    <span className="text-[10px] sm:text-[11px] font-mono tracking-widest font-bold uppercase text-slate-500 dark:text-slate-400 block">
                       // {service.categoryLabel}
                     </span>
-                    <div className="text-xs sm:text-sm font-mono font-bold text-slate-800 dark:text-slate-200">
-                      SERVICE 0{idx + 1}
+                    <div className="text-xs sm:text-sm font-mono font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
+                      <span>SERVICE 0{idx + 1}</span>
+                      <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: service.accentColor }} />
                     </div>
                   </div>
                 </div>

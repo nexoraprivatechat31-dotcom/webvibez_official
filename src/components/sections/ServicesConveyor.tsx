@@ -130,7 +130,7 @@ export default function ServicesConveyor({ onOpenConsultation }: ServicesConveyo
   return (
     <section
       id="services"
-      className="relative w-full py-28 md:py-36 overflow-hidden border-t border-[var(--border-subtle)] bg-transparent transition-colors duration-300"
+      className="relative w-full py-16 md:py-32 overflow-hidden border-t border-[var(--border-subtle)] bg-transparent transition-colors duration-300"
     >
       {/* Background Radial Glow */}
       <div
@@ -138,17 +138,17 @@ export default function ServicesConveyor({ onOpenConsultation }: ServicesConveyo
         style={{ background: "radial-gradient(circle, rgba(139,0,255,0.05) 0%, transparent 70%)" }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10 mb-14">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10 mb-10 sm:mb-14">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
           <div>
-            <div className="flex items-center gap-2 mb-4 text-[11px] font-mono tracking-[0.22em] text-[#0066FF] dark:text-[#38BDF8] uppercase font-bold">
+            <div className="flex items-center gap-2 mb-3 sm:mb-4 text-[11px] font-mono tracking-[0.22em] text-[#0066FF] dark:text-[#38BDF8] uppercase font-bold">
               <span>05 / SERVICES &middot; WHAT WE BUILD</span>
             </div>
             <h2
               className="font-bold text-slate-900 dark:text-[#F8FAFC] leading-[1.08] tracking-tight"
               style={{
                 fontFamily: "var(--font-display)",
-                fontSize: "clamp(2.2rem, 5vw, 4.2rem)",
+                fontSize: "clamp(1.75rem, 4.2vw, 3.8rem)",
               }}
             >
               Enterprise software.
@@ -157,7 +157,7 @@ export default function ServicesConveyor({ onOpenConsultation }: ServicesConveyo
             </h2>
           </div>
 
-          <p className="text-sm text-slate-600 dark:text-[#94A3B8] max-w-md leading-relaxed font-sans">
+          <p className="text-xs sm:text-sm text-slate-600 dark:text-[#94A3B8] max-w-md leading-relaxed font-sans">
             WebVibez Software Developer creates complete digital ecosystems — from bespoke mobile apps and high-conversion web platforms to resilient cloud infrastructure.
           </p>
         </div>
@@ -186,7 +186,7 @@ export default function ServicesConveyor({ onOpenConsultation }: ServicesConveyo
                   <div
                     key={i}
                     onClick={onOpenConsultation}
-                    className="group min-w-[340px] sm:min-w-[420px] max-w-[420px] p-6 rounded-3xl border border-slate-200/80 dark:border-white/10 bg-white/55 dark:bg-[#070B14]/55 backdrop-blur-2xl shadow-xl shadow-[#0066FF]/5 hover:border-[#0066FF]/60 hover:shadow-2xl hover:shadow-[#0066FF]/15 transition-all duration-300 cursor-pointer flex flex-col justify-between"
+                    className="group min-w-[280px] sm:min-w-[380px] max-w-[380px] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-slate-200/80 dark:border-white/10 bg-white/55 dark:bg-[#070B14]/55 backdrop-blur-2xl shadow-xl shadow-[#0066FF]/5 hover:border-[#0066FF]/60 hover:shadow-2xl hover:shadow-[#0066FF]/15 transition-all duration-300 cursor-pointer flex flex-col justify-between"
                   >
                     <div>
                       {/* Top Bar: Icon + Category Badge */}

@@ -1,11 +1,9 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import PageWrapper from "@/components/layout/PageWrapper";
 import Link from "next/link";
-import IPhoneMockup from "@/components/ui/IPhoneMockup";
 import LeadModal from "@/components/ui/LeadModal";
-import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 import {
   Video,
   Shield,
@@ -53,154 +51,12 @@ import {
   Code2,
 } from "lucide-react";
 
-// =========================================================================
-// Browser Window Mockup for Web Applications & Desktop Portals
-// =========================================================================
-interface BrowserWindowMockupProps {
-  url?: string;
-  imageSrc?: string;
-  accentColor?: string;
-  className?: string;
-  title?: string;
-}
-
-function BrowserWindowMockup({
-  url = "https://portal.webvibez.app",
-  imageSrc,
-  accentColor = "#0066FF",
-  className = "",
-  title = "WebVibez Cloud Enterprise Portal",
-}: BrowserWindowMockupProps) {
-  return (
-    <div className={`relative mx-auto w-full select-none ${className}`}>
-      {/* Outer Chassis */}
-      <div className="relative rounded-2xl p-1 bg-gradient-to-b from-slate-200 via-slate-300 to-slate-400 dark:from-[#2A303C] dark:via-[#1B202A] dark:to-[#111620] shadow-[0_20px_50px_-15px_rgba(0,0,0,0.3),0_0_30px_rgba(0,102,255,0.12)] border border-slate-300 dark:border-white/10 overflow-hidden">
-        {/* Browser Top Navigation Bar */}
-        <div className="px-4 py-2.5 bg-slate-100 dark:bg-[#0D1424] border-b border-slate-200 dark:border-white/10 flex items-center justify-between gap-3">
-          {/* macOS Window Controls */}
-          <div className="flex items-center gap-1.5 shrink-0">
-            <span className="w-3 h-3 rounded-full bg-[#FF5F56] border border-[#E0443E]/50 shadow-xs inline-block" />
-            <span className="w-3 h-3 rounded-full bg-[#FFBD2E] border border-[#DEA123]/50 shadow-xs inline-block" />
-            <span className="w-3 h-3 rounded-full bg-[#27C93F] border border-[#1AAB29]/50 shadow-xs inline-block" />
-          </div>
-
-          {/* Centered URL Address Bar */}
-          <div className="flex-1 max-w-md mx-auto flex items-center gap-2 px-3 py-1 rounded-lg bg-white dark:bg-[#070B16] border border-slate-200 dark:border-white/10 text-[11px] font-mono text-slate-600 dark:text-slate-300 shadow-inner truncate">
-            <Lock className="w-3 h-3 text-emerald-500 shrink-0" />
-            <span className="truncate">{url}</span>
-            <span className="ml-auto text-[9px] font-mono uppercase px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-500 font-bold shrink-0">
-              SSL 256-Bit
-            </span>
-          </div>
-
-          {/* Right Action Icons */}
-          <div className="hidden sm:flex items-center gap-2 text-slate-400">
-            <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-[10px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400">
-              Edge Live
-            </span>
-          </div>
-        </div>
-
-        {/* Browser Window Content Frame */}
-        <div className="relative aspect-[16/10] bg-slate-900 overflow-hidden rounded-b-xl flex items-center justify-center">
-          {imageSrc ? (
-            <img
-              src={imageSrc}
-              alt={title}
-              className="w-full h-full object-cover object-top"
-            />
-          ) : (
-            <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-slate-900 via-[#0B101E] to-[#070B16] text-white space-y-3">
-              <Laptop className="w-12 h-12 text-[#0066FF]" />
-              <div className="text-sm font-bold font-display">{title}</div>
-            </div>
-          )}
-
-          {/* Glare overlay */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.03] to-transparent pointer-events-none" />
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export default function ProductPage() {
-  const [selectedProject, setSelectedProject] = useState(0);
-  const [projectFilter, setProjectFilter] = useState<"all" | "mobile" | "web">("all");
   const [filter, setFilter] = useState<"all" | "academics" | "security" | "growth" | "admin">("all");
   const [activeSubsystem, setActiveSubsystem] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
 
-  const scrollTrackRef = useRef<HTMLDivElement>(null);
   const subsystemTrackRef = useRef<HTMLDivElement>(null);
-
-  // =========================================================================
-  // Featured Client Applications & Web Platforms
-  // 💡 EDIT HERE: Replace dummy projects, screenshots (/mobile-images/...),
-  // and stats with your real client apps and web projects anytime!
-  // =========================================================================
-  const featuredProjects = [
-    {
-      id: "apex-jee",
-      type: "mobile" as const,
-      number: "01",
-      client: "Apex IIT-JEE & NEET Academy",
-      industry: "Competitive Entrance Coaching",
-      tag: "JEE & NEET Native Mobile App",
-      title: "Apex Learning & CBT Exam Native App",
-      subtitle: "Hardware DRM live classes, 0.2s CBT mock exam engine & parent progress sync",
-      color: "#0066FF",
-      imageSrc: "/mobile-images/home.jpeg", // Replace with your client's mobile app screenshot
-      description:
-        "Apex was struggling with leaked Telegram video links and slow 4-day paper test evaluations. WebVibez engineered a 100% white-labeled native mobile app for iOS & Android with hardware DRM blackout protection and instant 0.2s computerized exam evaluations.",
-      stats: [
-        { label: "Active Mobile Users", value: "18,400+" },
-        { label: "CBT Mock Tests Taken", value: "320,000+" },
-        { label: "Video Piracy Leaks", value: "0 Incidents" },
-      ],
-      capabilities: [
-        "Ultra-low latency 1080p live classes with real-time polls, doubts queue & automatic cloud archiving",
-        "Exact NTA/JEE/NEET CBT exam simulator with instant percentile rank & negative marking validation",
-        "Hardware Widevine L1 & FairPlay screen recording blackout with dynamic student watermark overlay",
-        "Encrypted offline video & PDF vault preventing file extraction or unauthorized Telegram sharing",
-      ],
-      tech: ["React Native", "PostgreSQL", "Widevine L1", "DRM FairPlay", "AWS CloudFront", "Redis"],
-      quote:
-        "Switching to WebVibez eliminated video leaks completely and allowed us to expand our classroom batches into full state-wide online batches within 1 year.",
-      author: "Rajesh Sharma, Founder & Managing Director",
-    },
-    {
-      id: "kavach-cbt",
-      type: "web" as const,
-      number: "02",
-      client: "Kavach CBT — Online Test & Examination Portal",
-      industry: "Online Examination & Testing Platform",
-      tag: "Web CBT Exam Simulator",
-      title: "Kavach CBT Desktop Browser Exam Portal",
-      subtitle: "Full NTA/JEE/NEET browser exam simulator with sub-150ms evaluation & anti-cheat",
-      color: "#F59E0B",
-      imageSrc: "/mobile-images/quickpic.jpeg", // Replace with your client's web portal screenshot
-      webUrl: "https://kavach-cbt.webvibez.app",
-      description:
-        "A high-concurrency desktop web examination simulator engineered for government exam candidates and major coaching test series. Simulates the exact NTA/JEE computerized test screen with 14+ question patterns, anti-cheat tab monitoring, and instantaneous percentile rankings.",
-      stats: [
-        { label: "Mock Tests Evaluated", value: "1.2M+ Solved" },
-        { label: "Grading Speed", value: "< 150ms Instant" },
-        { label: "Server Uptime", value: "99.99% Cloud" },
-      ],
-      capabilities: [
-        "Exact NTA examination interface with multi-section navigation, review tags, and question palette",
-        "Anti-cheating window blur detector, full-screen lock enforcement, and tab-switch logger",
-        "Deep diagnostic radar reports: accuracy breakdown, time-spent per question, and weak topic alerts",
-        "Automated batch percentile rankings with parent WhatsApp scorecard broadcasting",
-      ],
-      tech: ["Next.js 15", "TypeScript", "Tailwind CSS", "LaTeX Engine", "PostgreSQL", "Redis"],
-      quote:
-        "Conducting state-level mock exams for 15,000 students at once used to crash our old portal. WebVibez handled peak loads with zero lag.",
-      author: "Anand Verma, Chief Controller of Examinations",
-    },
-  ];
 
   // 11 Core Subsystems
   const subsystems = [
@@ -218,7 +74,7 @@ export default function ProductPage() {
       ],
       metric: "< 1.2s Latency",
       color: "#0066FF",
-      icon: <Video className="w-5 h-5 text-[#0066FF]" />,
+      icon: <Video className="w-5 h-5 text-white stroke-[2.4]" />,
     },
     {
       number: "02",
@@ -234,7 +90,7 @@ export default function ProductPage() {
       ],
       metric: "Zero Leakage",
       color: "#8B00FF",
-      icon: <ShieldCheck className="w-5 h-5 text-[#8B00FF]" />,
+      icon: <ShieldCheck className="w-5 h-5 text-white stroke-[2.4]" />,
     },
     {
       number: "03",
@@ -250,7 +106,7 @@ export default function ProductPage() {
       ],
       metric: "0.2s Evaluation",
       color: "#059669",
-      icon: <FileCheck2 className="w-5 h-5 text-white" />,
+      icon: <FileCheck2 className="w-5 h-5 text-white stroke-[2.4]" />,
     },
     {
       number: "04",
@@ -266,7 +122,7 @@ export default function ProductPage() {
       ],
       metric: "+42% On-Time Fees",
       color: "#0284C7",
-      icon: <CreditCard className="w-5 h-5 text-white" />,
+      icon: <CreditCard className="w-5 h-5 text-white stroke-[2.4]" />,
     },
     {
       number: "05",
@@ -282,7 +138,7 @@ export default function ProductPage() {
       ],
       metric: "Direct In-App Sales",
       color: "#D97706",
-      icon: <Zap className="w-5 h-5 text-white" />,
+      icon: <Zap className="w-5 h-5 text-white stroke-[2.4]" />,
     },
     {
       number: "06",
@@ -298,7 +154,7 @@ export default function ProductPage() {
       ],
       metric: "AES-256 Encrypted",
       color: "#059669",
-      icon: <HardDriveDownload className="w-5 h-5 text-white" />,
+      icon: <HardDriveDownload className="w-5 h-5 text-white stroke-[2.4]" />,
     },
     {
       number: "07",
@@ -314,7 +170,7 @@ export default function ProductPage() {
       ],
       metric: "Instant Parent Alert",
       color: "#DB2777",
-      icon: <Users className="w-5 h-5 text-white" />,
+      icon: <Users className="w-5 h-5 text-white stroke-[2.4]" />,
     },
     {
       number: "08",
@@ -330,7 +186,7 @@ export default function ProductPage() {
       ],
       metric: "98% Open Rate",
       color: "#0066FF",
-      icon: <Bell className="w-5 h-5 text-white" />,
+      icon: <Bell className="w-5 h-5 text-white stroke-[2.4]" />,
     },
     {
       number: "09",
@@ -346,7 +202,7 @@ export default function ProductPage() {
       ],
       metric: "7 Enterprise Tiers",
       color: "#7C3AED",
-      icon: <Users2 className="w-5 h-5 text-white" />,
+      icon: <Users2 className="w-5 h-5 text-white stroke-[2.4]" />,
     },
     {
       number: "10",
@@ -362,7 +218,7 @@ export default function ProductPage() {
       ],
       metric: "Multi-Branch Command",
       color: "#059669",
-      icon: <BarChart3 className="w-5 h-5 text-white" />,
+      icon: <BarChart3 className="w-5 h-5 text-white stroke-[2.4]" />,
     },
     {
       number: "11",
@@ -378,23 +234,10 @@ export default function ProductPage() {
       ],
       metric: "100% Whitelabel",
       color: "#F59E0B",
-      icon: <Palette className="w-5 h-5 text-[#F59E0B]" />,
+      icon: <Palette className="w-5 h-5 text-white stroke-[2.4]" />,
     },
   ];
 
-  // Filtered active projects
-  const filteredProjects =
-    projectFilter === "all"
-      ? featuredProjects
-      : featuredProjects.filter((p) => p.type === projectFilter);
-
-  const activeProject =
-    filteredProjects[selectedProject] || filteredProjects[0] || featuredProjects[0];
-
-  const handleFilterChange = (newFilter: "all" | "mobile" | "web") => {
-    setProjectFilter(newFilter);
-    setSelectedProject(0);
-  };
 
   const filteredSubsystems =
     filter === "all"
@@ -607,12 +450,19 @@ export default function ProductPage() {
                     </div>
 
                     {/* Subsystem Title & Icon */}
-                    <div className="flex items-start gap-3 pt-1">
+                    <div className="flex items-start gap-3.5 pt-1">
                       <div
-                        className="w-11 h-11 rounded-2xl flex items-center justify-center text-white shrink-0 shadow-md border border-white/20"
-                        style={{ backgroundColor: item.color }}
+                        className="w-12 h-12 rounded-2xl flex items-center justify-center text-white shrink-0 shadow-lg relative overflow-hidden transition-all duration-300"
+                        style={{
+                          background: `linear-gradient(135deg, ${item.color} 0%, #080C14 140%)`,
+                          border: `1.5px solid ${item.color}70`,
+                          boxShadow: `0 8px 24px -4px ${item.color}50, inset 0 1px 2px rgba(255,255,255,0.45)`,
+                        }}
                       >
-                        {item.icon}
+                        <div className="absolute inset-0 bg-gradient-to-tr from-white/20 via-transparent to-transparent pointer-events-none" />
+                        <div className="relative z-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
+                          {item.icon}
+                        </div>
                       </div>
                       <div>
                         <h3 className="text-lg sm:text-xl font-bold font-display text-slate-900 dark:text-white leading-snug">
@@ -725,370 +575,7 @@ export default function ProductPage() {
         </div>
 
         {/* ========================================================================================= */}
-        {/* UNIFIED SECTION 2 & 3: CLIENT APPS & WEB PLATFORMS PORTFOLIO SHOWCASE */}
-        {/* ========================================================================================= */}
-        <div id="client-showcase" className="space-y-8 pt-4">
-          {/* Section Header */}
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-slate-200 dark:border-white/10">
-            <div className="space-y-2 max-w-2xl">
-              <div className="text-[11px] font-mono tracking-widest text-[#0066FF] dark:text-[#38BDF8] uppercase font-bold flex items-center gap-2">
-                <Layers className="w-4 h-4" />
-                <span>02 &middot; CLIENT APPS &amp; WEB PLATFORMS DEPLOYED AT SCALE</span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-display text-slate-900 dark:text-white tracking-tight">
-                Live Client Applications &amp; Web Showcase
-              </h2>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-sans leading-relaxed">
-                Explore real-world native iOS/Android mobile apps and high-scale cloud web portals engineered by WebVibez for leading institutes, schools, and coaching academies.
-              </p>
-            </div>
-
-            {/* Platform Filter Tabs (All / Mobile Apps / Web Platforms) */}
-            <div className="flex items-center gap-1.5 p-1.5 rounded-2xl bg-slate-100 dark:bg-white/[0.05] border border-slate-200 dark:border-white/10 shrink-0 self-start lg:self-auto">
-              <button
-                onClick={() => handleFilterChange("all")}
-                className={`px-3.5 py-2 rounded-xl text-xs font-mono font-bold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
-                  projectFilter === "all"
-                    ? "bg-white dark:bg-[#0D1424] text-[#0066FF] dark:text-[#38BDF8] shadow-sm ring-1 ring-slate-200 dark:ring-white/15"
-                    : "text-slate-500 hover:text-slate-900 dark:hover:text-white"
-                }`}
-              >
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>All Projects ({featuredProjects.length})</span>
-              </button>
-              <button
-                onClick={() => handleFilterChange("mobile")}
-                className={`px-3.5 py-2 rounded-xl text-xs font-mono font-bold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
-                  projectFilter === "mobile"
-                    ? "bg-white dark:bg-[#0D1424] text-[#0066FF] dark:text-[#38BDF8] shadow-sm ring-1 ring-slate-200 dark:ring-white/15"
-                    : "text-slate-500 hover:text-slate-900 dark:hover:text-white"
-                }`}
-              >
-                <Smartphone className="w-3.5 h-3.5" />
-                <span>📱 Mobile Apps ({featuredProjects.filter((p) => p.type === "mobile").length})</span>
-              </button>
-              <button
-                onClick={() => handleFilterChange("web")}
-                className={`px-3.5 py-2 rounded-xl text-xs font-mono font-bold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
-                  projectFilter === "web"
-                    ? "bg-white dark:bg-[#0D1424] text-[#0066FF] dark:text-[#38BDF8] shadow-sm ring-1 ring-slate-200 dark:ring-white/15"
-                    : "text-slate-500 hover:text-slate-900 dark:hover:text-white"
-                }`}
-              >
-                <Laptop className="w-3.5 h-3.5" />
-                <span>💻 Web Platforms ({featuredProjects.filter((p) => p.type === "web").length})</span>
-              </button>
-            </div>
-          </div>
-
-          {/* Quick Project Switcher Pills */}
-          <div className="flex items-center gap-2 p-1.5 rounded-2xl bg-slate-100 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 overflow-x-auto max-w-full">
-            {filteredProjects.map((p, idx) => {
-              const isSelected = activeProject.id === p.id;
-              return (
-                <button
-                  key={p.id}
-                  onClick={() => setSelectedProject(idx)}
-                  className={`px-4 py-2.5 rounded-xl text-xs font-mono font-bold transition-all cursor-pointer whitespace-nowrap flex items-center gap-2.5 ${
-                    isSelected
-                      ? "bg-white dark:bg-[#0D1424] text-slate-900 dark:text-white shadow-md ring-1 ring-slate-200 dark:ring-white/20"
-                      : "text-slate-500 hover:text-slate-900 dark:hover:text-white"
-                  }`}
-                >
-                  <span
-                    className="w-2.5 h-2.5 rounded-full shrink-0 animate-pulse"
-                    style={{ backgroundColor: p.color }}
-                  />
-                  <span className="font-mono text-[#0066FF] dark:text-[#38BDF8]">
-                    0{idx + 1}
-                  </span>
-                  <span className="font-sans font-semibold text-xs">{p.client.split(" ")[0]}</span>
-                  <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded-md bg-slate-200/80 dark:bg-white/10 text-slate-700 dark:text-slate-300">
-                    {p.type === "mobile" ? "App" : "Web Portal"}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Deep-Dive Active Project Showcase Card */}
-          <div className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-white dark:bg-[#0D1424] border border-slate-200 dark:border-white/10 shadow-xl space-y-8 relative overflow-hidden">
-            {/* Top Bar with Client Info & Status Badge */}
-            <div className="flex flex-wrap items-center justify-between gap-4 pb-5 border-b border-slate-200 dark:border-white/10">
-              <div className="flex items-center gap-3.5">
-                <div
-                  className="w-12 h-12 rounded-2xl flex items-center justify-center text-white shadow-lg shrink-0"
-                  style={{ backgroundColor: activeProject.color }}
-                >
-                  {activeProject.type === "mobile" ? (
-                    <Smartphone className="w-6 h-6" />
-                  ) : (
-                    <Laptop className="w-6 h-6" />
-                  )}
-                </div>
-                <div>
-                  <div className="flex flex-wrap items-center gap-2">
-                    <h3 className="text-lg sm:text-xl font-bold font-display text-slate-900 dark:text-white">
-                      {activeProject.client}
-                    </h3>
-                    <span className="text-[10.5px] font-mono px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-white/10 text-[#0066FF] dark:text-[#38BDF8] font-bold">
-                      {activeProject.industry}
-                    </span>
-                  </div>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 font-sans mt-0.5">
-                    {activeProject.subtitle}
-                  </p>
-                </div>
-              </div>
-
-              {/* Live Deployment Status Tag */}
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-[#00E5A3] text-xs font-mono font-bold">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-                <span>LIVE IN PRODUCTION</span>
-              </div>
-            </div>
-
-            {/* Main Content & Device Mockup Grid */}
-            <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 items-start">
-              {/* Left Column: Narrative, Metrics, Capabilities, Quote & Stack */}
-              <div className="xl:col-span-7 space-y-6">
-                <p className="text-slate-700 dark:text-slate-300 text-xs sm:text-sm leading-relaxed font-sans">
-                  {activeProject.description}
-                </p>
-
-                {/* 3 Key Performance & Scale Metrics */}
-                <div className="grid grid-cols-3 gap-2.5 sm:gap-3 py-1">
-                  {activeProject.stats.map((s, idx) => (
-                    <div
-                      key={idx}
-                      className="p-3.5 rounded-2xl bg-slate-50 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 text-center space-y-1 shadow-xs"
-                    >
-                      <div className="text-[9.5px] text-slate-500 dark:text-slate-400 font-mono uppercase leading-tight font-semibold">
-                        {s.label}
-                      </div>
-                      <div
-                        className="text-base sm:text-xl font-extrabold font-display"
-                        style={{ color: activeProject.color }}
-                      >
-                        {s.value}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Delivered Platform Capabilities */}
-                <div className="space-y-3 pt-1">
-                  <div className="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white font-sans flex items-center gap-2">
-                    <span
-                      className="w-2 h-2 rounded-full"
-                      style={{ backgroundColor: activeProject.color }}
-                    />
-                    <span>Delivered Modules &amp; Architecture</span>
-                  </div>
-                  <div className="grid grid-cols-1 gap-2.5">
-                    {activeProject.capabilities.map((cap, idx) => (
-                      <div
-                        key={idx}
-                        className="p-3 rounded-xl bg-slate-50 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 flex items-start gap-3 shadow-2xs"
-                      >
-                        <CheckCircle2 className="w-4 h-4 text-[#00E5A3] shrink-0 mt-0.5" />
-                        <span className="text-xs text-slate-700 dark:text-slate-300 font-sans leading-relaxed">
-                          {cap}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Verified Client Testimonial Box */}
-                <div className="p-4 rounded-2xl bg-gradient-to-r from-slate-50 to-slate-100 dark:from-white/[0.03] dark:to-white/[0.01] border border-slate-200 dark:border-white/10 space-y-2">
-                  <div className="flex items-center gap-1 text-[#F59E0B]">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-[#F59E0B]" />
-                    ))}
-                    <span className="text-[10px] font-mono font-bold text-slate-500 dark:text-slate-400 ml-2">
-                      Verified Client Review
-                    </span>
-                  </div>
-                  <p className="text-xs italic text-slate-800 dark:text-slate-200 font-sans leading-relaxed">
-                    &quot;{activeProject.quote}&quot;
-                  </p>
-                  <div className="text-[11px] font-mono text-[#0066FF] dark:text-[#38BDF8] font-bold">
-                    — {activeProject.author}
-                  </div>
-                </div>
-
-                {/* Tech Stack Pills */}
-                <div className="space-y-2 pt-1">
-                  <div className="text-[11px] font-mono text-slate-500 dark:text-slate-400 uppercase font-semibold">
-                    Core Engineering Stack:
-                  </div>
-                  <div className="flex flex-wrap gap-1.5">
-                    {activeProject.tech.map((tech) => (
-                      <span
-                        key={tech}
-                        className="text-[10.5px] font-mono px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-white/[0.05] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10 font-medium"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Action CTA Row */}
-                <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-slate-200 dark:border-white/10">
-                  <div className="text-xs text-slate-500 dark:text-slate-400 font-sans">
-                    {activeProject.type === "mobile"
-                      ? "100% White-Labeled on Play Store & App Store"
-                      : "Cloud Edge Deployed on Custom Domain & SSL"}
-                  </div>
-                  <div className="flex items-center gap-3 w-full sm:w-auto">
-                    <a
-                      href={`https://wa.me/918320490919?text=${encodeURIComponent(
-                        `Hi WebVibez! I want to see a live demo and discuss a similar software solution for ${activeProject.client}.`
-                      )}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-600 dark:text-[#25D366] border border-emerald-500/30 text-xs font-bold font-mono tracking-wider transition-all flex items-center justify-center gap-2 shrink-0 cursor-pointer"
-                    >
-                      <WhatsAppIcon className="w-4 h-4" />
-                      <span>WhatsApp</span>
-                    </a>
-                    <button
-                      onClick={() => setModalOpen(true)}
-                      className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#0066FF] via-[#7C3AED] to-[#8B00FF] text-white text-xs font-bold font-mono tracking-wider uppercase shadow-md shadow-[#0066FF]/25 hover:opacity-95 transition-all cursor-pointer flex items-center justify-center gap-2"
-                    >
-                      <span>Request Live Demo</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Column: Device Mockup (iPhone for Mobile, Browser Window for Web) */}
-              <div className="xl:col-span-5 flex flex-col items-center justify-center pt-4 xl:pt-0">
-                <div className="relative w-full flex flex-col items-center">
-                  <div
-                    className="absolute -inset-6 rounded-full blur-3xl opacity-25 pointer-events-none transition-all duration-700"
-                    style={{ backgroundColor: activeProject.color }}
-                  />
-
-                  {activeProject.type === "mobile" ? (
-                    <IPhoneMockup
-                      screenType="image"
-                      imageSrc={activeProject.imageSrc}
-                      accentColor={activeProject.color}
-                    />
-                  ) : (
-                    <BrowserWindowMockup
-                      url={activeProject.webUrl}
-                      imageSrc={activeProject.imageSrc}
-                      accentColor={activeProject.color}
-                      title={activeProject.title}
-                    />
-                  )}
-
-                  <div className="mt-4 text-[11px] font-mono text-slate-600 dark:text-slate-400 flex items-center gap-2 bg-slate-100 dark:bg-white/[0.06] px-3.5 py-1.5 rounded-full border border-slate-200 dark:border-white/10 shadow-xs">
-                    <span
-                      className="w-2 h-2 rounded-full animate-pulse"
-                      style={{ backgroundColor: activeProject.color }}
-                    />
-                    <span className="uppercase tracking-wider font-bold">
-                      {activeProject.type === "mobile"
-                        ? "Native Mobile App · Play Store & App Store Live"
-                        : "Cloud Web Portal · Desktop & Tablet Optimized"}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom Grid: All Projects Quick Gallery */}
-          <div className="space-y-4 pt-2">
-            <div className="flex items-center justify-between">
-              <h3 className="text-base sm:text-lg font-bold font-display text-slate-900 dark:text-white flex items-center gap-2">
-                <span>All Featured Client Projects &amp; Web Platforms</span>
-                <span className="text-xs font-mono px-2 py-0.5 rounded-md bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-400 font-semibold">
-                  {featuredProjects.length} Deployed
-                </span>
-              </h3>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {featuredProjects.map((p, pIdx) => {
-                const isCurrent = activeProject.id === p.id;
-                return (
-                  <div
-                    key={p.id}
-                    onClick={() => {
-                      setProjectFilter("all");
-                      setSelectedProject(pIdx);
-                      document
-                        .getElementById("client-showcase")
-                        ?.scrollIntoView({ behavior: "smooth" });
-                    }}
-                    className={`p-5 rounded-2xl bg-white dark:bg-[#0D1424] border transition-all duration-300 cursor-pointer flex flex-col justify-between space-y-4 shadow-sm hover:shadow-lg ${
-                      isCurrent
-                        ? "border-[#0066FF] dark:border-[#38BDF8] ring-2 ring-[#0066FF]/20"
-                        : "border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20"
-                    }`}
-                  >
-                    <div className="space-y-3">
-                      <div className="flex items-center justify-between gap-2">
-                        <div className="flex items-center gap-2">
-                          <span
-                            className="w-2.5 h-2.5 rounded-full"
-                            style={{ backgroundColor: p.color }}
-                          />
-                          <span className="text-[10.5px] font-mono font-bold text-slate-500 dark:text-slate-400">
-                            0{pIdx + 1} &middot; {p.type === "mobile" ? "📱 Mobile App" : "💻 Web Portal"}
-                          </span>
-                        </div>
-                        <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-white/10 text-[#0066FF] dark:text-[#38BDF8] font-bold">
-                          {p.industry.split(" ")[0]}
-                        </span>
-                      </div>
-
-                      <h4 className="text-sm font-bold font-display text-slate-900 dark:text-white leading-snug">
-                        {p.client}
-                      </h4>
-
-                      <p className="text-xs text-slate-600 dark:text-slate-400 font-sans line-clamp-2">
-                        {p.subtitle}
-                      </p>
-
-                      {/* Mini Key Stat */}
-                      <div className="grid grid-cols-2 gap-2 pt-1 border-t border-slate-100 dark:border-white/5">
-                        {p.stats.slice(0, 2).map((st, stIdx) => (
-                          <div key={stIdx} className="space-y-0.5">
-                            <div className="text-[9px] font-mono text-slate-500 dark:text-slate-400 uppercase">
-                              {st.label}
-                            </div>
-                            <div
-                              className="text-xs font-bold font-display"
-                              style={{ color: p.color }}
-                            >
-                              {st.value}
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="pt-2 flex items-center justify-between border-t border-slate-100 dark:border-white/5 text-xs font-semibold text-[#0066FF] dark:text-[#38BDF8]">
-                      <span>{isCurrent ? "Currently Active" : "Inspect Project & Screenshots"}</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-
-        {/* ========================================================================================= */}
-        {/* SECTION 4: Premier Architectural Comparison Battle Arena */}
+        {/* SECTION 3: Premier Architectural Comparison Battle Arena */}
         {/* ========================================================================================= */}
         {(() => {
           const comparisonCriteria = [
@@ -1204,7 +691,7 @@ export default function ProductPage() {
               <div className="text-center max-w-3xl mx-auto space-y-3 relative z-10">
                 <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#0066FF]/10 dark:bg-[#0066FF]/20 border border-[#0066FF]/30 text-[#0066FF] dark:text-[#38BDF8] text-[11px] font-mono uppercase tracking-wider font-semibold">
                   <Sparkles className="w-3.5 h-3.5" />
-                  <span>04 / STRATEGIC ARCHITECTURE · PLATFORM SOVEREIGNTY</span>
+                  <span>03 / STRATEGIC ARCHITECTURE · PLATFORM SOVEREIGNTY</span>
                 </div>
                 <h2 className="text-2xl sm:text-4xl font-extrabold font-display text-slate-900 dark:text-white tracking-tight">
                   Why Premier Institutes Choose WebVibez

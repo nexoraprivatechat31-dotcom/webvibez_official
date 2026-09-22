@@ -247,9 +247,9 @@ export default function ProblemSection({ onOpenConsultation }: ProblemSectionPro
         {/* 2-Column Split: Left = Dedicated 3D Phone Bay, Right = Redesigned Content & Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
           
-          {/* LEFT: Dedicated 3D iPhone Stage Anchor (Clean Whitespace, No Floating Chips) */}
+          {/* LEFT: Dedicated 3D iPhone Stage Anchor (Hidden on mobile for clean tight layout) */}
           <div
-            className="lg:col-span-5 h-[460px] sm:h-[560px] lg:h-[720px] w-full relative pointer-events-none order-2 lg:order-1"
+            className="hidden lg:block lg:col-span-5 lg:h-[720px] w-full relative pointer-events-none order-2 lg:order-1"
             style={phoneBayStyles}
           />
 
@@ -271,7 +271,7 @@ export default function ProblemSection({ onOpenConsultation }: ProblemSectionPro
               className="font-bold leading-[1.08] tracking-tight text-slate-900 dark:text-white"
               style={{
                 fontFamily: "var(--font-display)",
-                fontSize: "clamp(2rem, 4.2vw, 3.75rem)",
+                fontSize: "clamp(1.65rem, 3.8vw, 3.5rem)",
               }}
             >
               Your coaching centre deserves more than{" "}
@@ -282,13 +282,13 @@ export default function ProblemSection({ onOpenConsultation }: ProblemSectionPro
             </h2>
 
             {/* Explanatory Paragraph */}
-            <p className="text-slate-600 dark:text-slate-300 max-w-[54ch] leading-relaxed font-sans text-sm sm:text-base">
+            <p className="text-slate-600 dark:text-slate-300 max-w-[54ch] leading-relaxed font-sans text-xs sm:text-base">
               Right now your institute runs on disjointed tools &mdash; lost PDFs in chat groups, torn attendance registers, and manual fee follow-ups that erode student trust.
             </p>
 
             {/* SEGMENTED SWITCH: Daily Chaos vs WebVibez Unified OS (Services HUD Style) */}
             <div
-              className="w-full sm:w-auto p-1.5 rounded-2xl flex items-center gap-1.5 bg-white/90 dark:bg-[#0D1424]/90 border border-slate-200/90 dark:border-white/10 shadow-md backdrop-blur-xl"
+              className="w-full sm:w-auto p-1 rounded-xl sm:rounded-2xl flex items-center gap-1 sm:gap-1.5 bg-white/90 dark:bg-[#0D1424]/90 border border-slate-200/90 dark:border-white/10 shadow-md backdrop-blur-xl"
               role="tablist"
               aria-label="Reality comparison mode"
             >
@@ -300,16 +300,16 @@ export default function ProblemSection({ onOpenConsultation }: ProblemSectionPro
                   setActiveTab("chaos");
                   setSelectedPitfall(null);
                 }}
-                className={`flex-1 sm:flex-initial flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl text-xs font-mono font-bold transition-all duration-300 cursor-pointer ${
+                className={`flex-1 sm:flex-initial flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-mono font-bold transition-all duration-300 cursor-pointer ${
                   activeTab === "chaos"
                     ? "bg-rose-500 text-white shadow-md shadow-rose-500/30 scale-102"
                     : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/[0.06]"
                 }`}
               >
                 <AlertTriangle className="w-3.5 h-3.5 shrink-0" />
-                <span>The 6 Daily Pitfalls</span>
+                <span>The 6 Pitfalls</span>
                 <span
-                  className={`text-[9.5px] px-2 py-0.5 rounded-full font-bold uppercase ${
+                  className={`hidden sm:inline-block text-[9.5px] px-2 py-0.5 rounded-full font-bold uppercase ${
                     activeTab === "chaos"
                       ? "bg-white/20 text-white"
                       : "bg-rose-500/10 text-rose-600 dark:text-rose-400"
@@ -327,16 +327,16 @@ export default function ProblemSection({ onOpenConsultation }: ProblemSectionPro
                   setActiveTab("unified");
                   setSelectedPitfall(null);
                 }}
-                className={`flex-1 sm:flex-initial flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl text-xs font-mono font-bold transition-all duration-300 cursor-pointer ${
+                className={`flex-1 sm:flex-initial flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-mono font-bold transition-all duration-300 cursor-pointer ${
                   activeTab === "unified"
                     ? "bg-gradient-to-r from-[#0066FF] to-[#8B00FF] text-white shadow-md shadow-[#0066FF]/30 scale-102"
                     : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/[0.06]"
                 }`}
               >
                 <Zap className="w-3.5 h-3.5 shrink-0" />
-                <span>WebVibez Unified OS</span>
+                <span>Unified OS</span>
                 <span
-                  className={`text-[9.5px] px-2 py-0.5 rounded-full font-bold uppercase ${
+                  className={`hidden sm:inline-block text-[9.5px] px-2 py-0.5 rounded-full font-bold uppercase ${
                     activeTab === "unified"
                       ? "bg-white/20 text-white"
                       : "bg-[#0066FF]/10 text-[#0066FF] dark:text-[#38BDF8]"

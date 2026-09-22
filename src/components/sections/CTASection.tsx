@@ -9,7 +9,7 @@ interface CTASectionProps {
 
 export default function CTASection({ onOpenConsultation }: CTASectionProps) {
   return (
-    <section className="relative w-full py-36 md:py-52 overflow-hidden border-t border-[var(--border-subtle)] text-center bg-transparent transition-colors duration-300">
+    <section className="relative w-full py-20 md:py-40 overflow-hidden border-t border-[var(--border-subtle)] text-center bg-transparent transition-colors duration-300">
 
       {/* Massive Azure atmospheric glow from below */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] rounded-full pointer-events-none"
@@ -18,11 +18,10 @@ export default function CTASection({ onOpenConsultation }: CTASectionProps) {
       {/* Fine grid */}
       <div className="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none" />
 
-
       <div className="max-w-5xl mx-auto px-6 sm:px-8 relative z-10">
 
         {/* Editorial Section Label */}
-        <div className="mb-8">
+        <div className="mb-6 sm:mb-8">
           <span
             className="text-[11px] tracking-[0.22em] text-[#0066FF] dark:text-[#38BDF8] uppercase font-bold"
             style={{ fontFamily: "var(--font-mono)" }}
@@ -32,12 +31,12 @@ export default function CTASection({ onOpenConsultation }: CTASectionProps) {
         </div>
 
         {/* Cinematic headline — three-line statement */}
-        <div className="mb-8">
+        <div className="mb-6 sm:mb-8">
           <h2
-            className="font-bold text-slate-900 dark:text-[#F8FAFC] leading-[1.04] tracking-tight"
+            className="font-bold text-slate-900 dark:text-[#F8FAFC] leading-[1.08] tracking-tight"
             style={{
               fontFamily: "var(--font-display)",
-              fontSize: "clamp(3rem, 9vw, 7.5rem)",
+              fontSize: "clamp(2.0rem, 6.5vw, 6.0rem)",
             }}
           >
             Your campus.

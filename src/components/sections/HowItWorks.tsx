@@ -66,7 +66,7 @@ export default function HowItWorks({ onOpenConsultation }: HowItWorksProps) {
   return (
     <section
       id="how-it-works"
-      className="relative w-full pt-24 pb-24 md:pt-32 md:pb-32 bg-[var(--ink)] text-[var(--text-primary)] transition-colors duration-300 overflow-x-hidden border-t border-[var(--border-subtle)]"
+      className="relative w-full pt-16 pb-16 md:pt-32 md:pb-32 bg-[var(--ink)] text-[var(--text-primary)] transition-colors duration-300 overflow-x-hidden border-t border-[var(--border-subtle)]"
     >
       {/* Background ambient lighting */}
       <div
@@ -78,7 +78,7 @@ export default function HowItWorks({ onOpenConsultation }: HowItWorksProps) {
       />
       <div className="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10 space-y-12">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10 space-y-10 sm:space-y-12">
         {/* 1. Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-3 max-w-2xl">
@@ -88,7 +88,7 @@ export default function HowItWorks({ onOpenConsultation }: HowItWorksProps) {
             </div>
 
             <h2
-              className="font-bold text-slate-900 dark:text-white leading-[1.06] tracking-tight text-3xl sm:text-5xl lg:text-6xl"
+              className="font-bold text-slate-900 dark:text-white leading-[1.08] tracking-tight text-2xl sm:text-4xl lg:text-5xl"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Live on student phones{" "}
@@ -99,7 +99,7 @@ export default function HowItWorks({ onOpenConsultation }: HowItWorksProps) {
             </h2>
           </div>
 
-          <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed max-w-md font-sans">
+          <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed max-w-md font-sans">
             We eliminate the standard 6-month software development cycle. Our dedicated coaching engineers deploy your fully custom branded platform in 3 streamlined steps.
           </p>
         </div>

@@ -5,11 +5,11 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "*",
-        allow: "/",
-        disallow: ["/api/"],
+        allow: ["/", "/api/og"],
+        disallow: ["/api/checkout", "/api/payment", "/api/admin"],
       },
     ],
-    sitemap: "https://webvibez.in/sitemap.xml",
-    host: "https://webvibez.in",
+    sitemap: "https://webvibez.com/sitemap.xml",
+    host: "https://webvibez.com",
   };
 }

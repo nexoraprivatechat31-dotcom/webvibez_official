@@ -502,38 +502,40 @@ html.light .btn-cta-nav {
   background: var(--surface);
 }
 
-/* ── Custom Slim Scrollbar for Popups & Drawers ── */
+/* ── Custom Scrollbar for Popups & Drawers ── */
 .custom-scrollbar::-webkit-scrollbar,
 .slim-scrollbar::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 7px;
+  height: 7px;
 }
 .custom-scrollbar::-webkit-scrollbar-track,
 .slim-scrollbar::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.04);
+  background: rgba(0, 0, 0, 0.06);
   border-radius: 9999px;
-  margin: 6px 0;
+  margin: 4px 0;
 }
 html.dark .custom-scrollbar::-webkit-scrollbar-track,
 html.dark .slim-scrollbar::-webkit-scrollbar-track,
 [data-theme="dark"] .custom-scrollbar::-webkit-scrollbar-track,
 [data-theme="dark"] .slim-scrollbar::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.06);
 }
 .custom-scrollbar::-webkit-scrollbar-thumb,
 .slim-scrollbar::-webkit-scrollbar-thumb {
-  background: rgba(0, 102, 255, 0.4);
+  background: rgba(0, 102, 255, 0.6);
   border-radius: 9999px;
   transition: background 0.2s ease;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb:hover,
 .slim-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 102, 255, 0.8);
+  background: rgba(0, 102, 255, 0.95);
 }
 .custom-scrollbar,
 .slim-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: rgba(0, 102, 255, 0.4) transparent;
+  scrollbar-color: rgba(0, 102, 255, 0.6) rgba(0, 0, 0, 0.05);
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* ============================================================

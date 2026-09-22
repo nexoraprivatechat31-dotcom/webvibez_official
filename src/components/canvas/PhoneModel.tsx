@@ -556,8 +556,8 @@ export default function PhoneModel({
       rotZ = 0.00;
       sc = THREE.MathUtils.lerp(0.28, 0.95, smoothT); // Expands to full big mode right at Transformation Impact!
 
-    } else if (p <= 0.83) {
-      // 9B. TRANSFORMATION IMPACT & CUSTOMIZATION PILLARS (0.70 - 0.83) — FULL BIG MODE ON LEFT BAY!
+    } else if (p <= 0.73) {
+      // 9B. TRANSFORMATION IMPACT & CUSTOMIZATION PILLARS (0.70 - 0.73) — FULL BIG MODE ON LEFT BAY!
       // Phone is in FULL BIG SHOWCASE SIZE on the LEFT side (x = -3.2) throughout "Transformation Impact / Empowering 2,400+ Future Rankers"
       x = -3.2;
       y = -0.28;
@@ -567,31 +567,46 @@ export default function PhoneModel({
       rotZ = 0.00;
       sc = 0.95; // FULL BIG SIZE on the Left side!
 
-    } else if (p <= 0.85) {
-      // 10. RAPID CLEAN CUT EXIT INTO HOW IT WORKS (0.83 - 0.85)
-      // As user scrolls past Brand Customizer towards "07 / DEPLOYMENT · STREAMLINED ONBOARDING",
-      // the phone cuts / vanishes completely away into the distance!
-      const t = (p - 0.83) / 0.02;
+    } else if (p <= 0.86) {
+      // 10. SECTION 07 / DEPLOYMENT · STREAMLINED ONBOARDING (0.73 - 0.86)
+      // "aama niche aavo joi ae phone nano nano thay aem"
+      // As user scrolls through Section 07 (DAY 01, DAYS 02-07, DAY 08 & BEYOND),
+      // the phone glides smoothly downwards in Y and gets progressively smaller and smaller (nano)!
+      const t = (p - 0.73) / 0.13;
       const smoothT = t * t * (3 - 2 * t);
 
-      x = THREE.MathUtils.lerp(-3.2, 0.0, smoothT);
-      y = THREE.MathUtils.lerp(-0.28, -2.5, smoothT);
-      z = THREE.MathUtils.lerp(0.24, -25.0, smoothT);
-      rotX = THREE.MathUtils.lerp(-0.01, 0.35, smoothT);
-      rotY = THREE.MathUtils.lerp(0.15, 0.00, smoothT);
+      x = THREE.MathUtils.lerp(-3.2, 3.1, smoothT);
+      y = THREE.MathUtils.lerp(-0.28, -1.95, smoothT); // Glides downwards
+      z = THREE.MathUtils.lerp(0.24, -1.8, smoothT);
+      rotX = THREE.MathUtils.lerp(-0.01, 0.12, smoothT);
+      rotY = THREE.MathUtils.lerp(0.15, -0.15, smoothT);
+      rotZ = THREE.MathUtils.lerp(0.00, 0.02, smoothT);
+      sc = THREE.MathUtils.lerp(0.95, 0.22, smoothT); // Progressively shrinks down smaller and smaller (nano nano)
+
+    } else if (p <= 0.92) {
+      // 11. CTA SECTION TRANSITION (0.86 - 0.92)
+      // Vanishes gracefully into background as CTA finishes
+      const t = (p - 0.86) / 0.06;
+      const smoothT = t * t * (3 - 2 * t);
+
+      x = THREE.MathUtils.lerp(3.1, 0.0, smoothT);
+      y = THREE.MathUtils.lerp(-1.95, -5.0, smoothT);
+      z = THREE.MathUtils.lerp(-1.8, -25.0, smoothT);
+      rotX = THREE.MathUtils.lerp(0.12, 0.35, smoothT);
+      rotY = THREE.MathUtils.lerp(-0.15, 0.00, smoothT);
       rotZ = 0.00;
-      sc = THREE.MathUtils.lerp(0.95, 0.0001, smoothT); // Cuts to 0 immediately!
+      sc = THREE.MathUtils.lerp(0.22, 0.0001, smoothT);
 
     } else {
-      // 11. HOW IT WORKS, PRICING, CTA & FOOTER (p > 0.85)
-      // Completely hidden / vanished for zero obstruction in subsequent sections!
+      // 12. FOOTER (p > 0.92)
+      // Completely hidden / vanished
       x = 0.0;
       y = -10.0;
       z = -30.0;
       rotX = 0.0;
       rotY = 0.0;
       rotZ = 0.0;
-      sc = 0.0001; // Completely cut away
+      sc = 0.0001;
     }
 
     if (isMobile) {
