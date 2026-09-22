@@ -100,16 +100,23 @@ export function notifyPhysicsListeners() {
 }
 
 export function openPhoneApp(appIndex: number) {
-  // Screen image is permanently locked on home flagship image as requested
-  return;
+  scrollPhysicsState.activeScreenIndex = appIndex % 6;
+  scrollPhysicsState.targetScreenIndex = appIndex % 6;
+  notifyPhysicsListeners();
 }
 
 export function returnToHomeScreen() {
-  return;
+  scrollPhysicsState.activeScreenIndex = 0;
+  scrollPhysicsState.targetScreenIndex = 0;
+  notifyPhysicsListeners();
 }
 
 export function setActiveScreenModule(targetIndex: number) {
-  return;
+  const moduleScreenMap = [2, 1, 5, 0, 3, 4, 2, 1];
+  const screenIdx = moduleScreenMap[targetIndex % moduleScreenMap.length] ?? 2;
+  scrollPhysicsState.activeScreenIndex = screenIdx;
+  scrollPhysicsState.targetScreenIndex = screenIdx;
+  notifyPhysicsListeners();
 }
 
 export function setBrandThemeVariant(variant: string) {
@@ -120,5 +127,9 @@ export function setBrandThemeVariant(variant: string) {
 
 // Map feature list index (0-10) to the best matching 3D app screen (1-8)
 export function selectFeatureApp(featureIndex: number) {
-  return;
+  const featureScreenMap = [3, 1, 2, 0, 4, 5, 2, 3, 1, 4, 0];
+  const screenIdx = featureScreenMap[featureIndex % featureScreenMap.length] ?? 3;
+  scrollPhysicsState.activeScreenIndex = screenIdx;
+  scrollPhysicsState.targetScreenIndex = screenIdx;
+  notifyPhysicsListeners();
 }

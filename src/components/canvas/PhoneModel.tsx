@@ -759,6 +759,38 @@ export default function PhoneModel({
       rimGlintRef.current.roughness = THREE.MathUtils.damp(rimGlintRef.current.roughness, targetRoughness, 3.5, delta);
     }
 
+    // 7B. Dynamic Scroll-Driven Screen Changing
+    // As the mobile travels down through sections, dynamically change the screen image:
+    // - Hero (p <= 0.02) -> home.jpeg (index 0)
+    // - Problem section (0.02 < p <= 0.18) -> chat.jpeg (index 1)
+    // - Product Showcase (0.18 < p <= 0.40) -> conversation.jpeg (index 2)
+    // - Features section (0.40 < p <= 0.55) -> videocall.jpeg (index 3)
+    // - Services & Conveyor (0.55 < p <= 0.68) -> quickpic.jpeg (index 5)
+    // - Brand Customizer / Profile (0.68 < p) -> profile.jpeg (index 4)
+    if (!standalone) {
+      let computedScreen = 0;
+      if (p <= 0.02) {
+        computedScreen = 0; // home.jpeg
+      } else if (p <= 0.18) {
+        computedScreen = 1; // chat.jpeg
+      } else if (p <= 0.40) {
+        computedScreen = 2; // conversation.jpeg
+      } else if (p <= 0.55) {
+        computedScreen = 3; // videocall.jpeg
+      } else if (p <= 0.68) {
+        computedScreen = 5; // quickpic.jpeg
+      } else {
+        computedScreen = 4; // profile.jpeg
+      }
+
+      if (computedScreen !== targetScreenRef.current) {
+        currentScreenRef.current = targetScreenRef.current;
+        targetScreenRef.current = computedScreen;
+        transitionTRef.current = 0;
+        scrollPhysicsState.targetScreenIndex = computedScreen;
+      }
+    }
+
     // 8. Screen Transition & Hover Refresh
     const isHoverChanged =
       scrollPhysicsState.hoveredIconIndex !== prevHoveredIconRef.current ||
