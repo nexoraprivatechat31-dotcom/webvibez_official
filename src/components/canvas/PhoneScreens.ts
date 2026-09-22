@@ -25,22 +25,10 @@ export const MOBILE_SCREENS: MobileScreenDef[] = [
     category: "Communication",
   },
   {
-    id: "videocall",
-    name: "HD Video Call",
-    src: "/mobile-images/videocall.jpeg",
-    category: "Live Sessions",
-  },
-  {
     id: "profile",
     name: "Member Profile",
     src: "/mobile-images/profile.jpeg",
     category: "Account & Hub",
-  },
-  {
-    id: "quickpic",
-    name: "Quick Camera & Media",
-    src: "/mobile-images/quickpic.jpeg",
-    category: "Media",
   },
 ];
 

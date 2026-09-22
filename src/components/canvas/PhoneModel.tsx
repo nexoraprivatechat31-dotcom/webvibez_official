@@ -759,28 +759,21 @@ export default function PhoneModel({
       rimGlintRef.current.roughness = THREE.MathUtils.damp(rimGlintRef.current.roughness, targetRoughness, 3.5, delta);
     }
 
-    // 7B. Dynamic Scroll-Driven Screen Changing
-    // As the mobile travels down through sections, dynamically change the screen image:
-    // - Hero (p <= 0.02) -> home.jpeg (index 0)
-    // - Problem section (0.02 < p <= 0.18) -> chat.jpeg (index 1)
-    // - Product Showcase (0.18 < p <= 0.40) -> conversation.jpeg (index 2)
-    // - Features section (0.40 < p <= 0.55) -> videocall.jpeg (index 3)
-    // - Services & Conveyor (0.55 < p <= 0.68) -> quickpic.jpeg (index 5)
-    // - Brand Customizer / Profile (0.68 < p) -> profile.jpeg (index 4)
+    // 7B. Dynamic Scroll-Driven Screen Changing for the 4 Big Mobile Stages:
+    // 1. Hero Big Stage (p <= 0.02) -> home.jpeg (index 0)
+    // 2. Problem Big Stage (0.02 < p <= 0.18) -> chat.jpeg (index 1)
+    // 3. Product Showcase Big Stage (0.18 < p <= 0.50) -> conversation.jpeg (index 2)
+    // 4. Brand Customizer Big Stage (0.50 < p) -> profile.jpeg (index 3)
     if (!standalone) {
       let computedScreen = 0;
       if (p <= 0.02) {
         computedScreen = 0; // home.jpeg
       } else if (p <= 0.18) {
         computedScreen = 1; // chat.jpeg
-      } else if (p <= 0.40) {
+      } else if (p <= 0.50) {
         computedScreen = 2; // conversation.jpeg
-      } else if (p <= 0.55) {
-        computedScreen = 3; // videocall.jpeg
-      } else if (p <= 0.68) {
-        computedScreen = 5; // quickpic.jpeg
       } else {
-        computedScreen = 4; // profile.jpeg
+        computedScreen = 3; // profile.jpeg
       }
 
       if (computedScreen !== targetScreenRef.current) {

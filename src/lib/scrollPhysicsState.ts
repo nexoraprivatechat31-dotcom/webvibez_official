@@ -113,8 +113,8 @@ export function notifyPhysicsListeners() {
 }
 
 export function openPhoneApp(appIndex: number) {
-  scrollPhysicsState.activeScreenIndex = appIndex % 6;
-  scrollPhysicsState.targetScreenIndex = appIndex % 6;
+  scrollPhysicsState.activeScreenIndex = appIndex % 4;
+  scrollPhysicsState.targetScreenIndex = appIndex % 4;
   notifyPhysicsListeners();
 }
 
@@ -125,7 +125,7 @@ export function returnToHomeScreen() {
 }
 
 export function setActiveScreenModule(targetIndex: number) {
-  const moduleScreenMap = [2, 1, 5, 0, 3, 4, 2, 1];
+  const moduleScreenMap = [2, 1, 3, 0, 2, 1, 3, 0];
   const screenIdx = moduleScreenMap[targetIndex % moduleScreenMap.length] ?? 2;
   scrollPhysicsState.activeScreenIndex = screenIdx;
   scrollPhysicsState.targetScreenIndex = screenIdx;
@@ -138,10 +138,10 @@ export function setBrandThemeVariant(variant: string) {
   notifyPhysicsListeners();
 }
 
-// Map feature list index (0-10) to the best matching 3D app screen (1-8)
+// Map feature list index (0-10) to the best matching 3D app screen (0-3)
 export function selectFeatureApp(featureIndex: number) {
-  const featureScreenMap = [3, 1, 2, 0, 4, 5, 2, 3, 1, 4, 0];
-  const screenIdx = featureScreenMap[featureIndex % featureScreenMap.length] ?? 3;
+  const featureScreenMap = [2, 1, 3, 0, 1, 2, 3, 0, 1, 2, 0];
+  const screenIdx = featureScreenMap[featureIndex % featureScreenMap.length] ?? 2;
   scrollPhysicsState.activeScreenIndex = screenIdx;
   scrollPhysicsState.targetScreenIndex = screenIdx;
   notifyPhysicsListeners();
