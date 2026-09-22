@@ -95,8 +95,21 @@ export function subscribePhysicsState(listener: Listener): () => void {
   };
 }
 
+let isNotifying = false;
 export function notifyPhysicsListeners() {
-  listeners.forEach((fn) => fn());
+  if (isNotifying) return;
+  isNotifying = true;
+  try {
+    listeners.forEach((fn) => {
+      try {
+        fn();
+      } catch (err) {
+        console.error("Physics listener error:", err);
+      }
+    });
+  } finally {
+    isNotifying = false;
+  }
 }
 
 export function openPhoneApp(appIndex: number) {

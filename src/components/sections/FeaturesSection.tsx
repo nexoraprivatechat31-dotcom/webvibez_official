@@ -28,7 +28,6 @@ export default function FeaturesSection({ onOpenConsultation }: FeaturesSectionP
           Math.max(0, Math.floor(localT * FEATURES_LIST.length))
         );
         setSelectedFeatureIndex(autoIdx);
-        selectFeatureApp(autoIdx);
       }
     });
     return () => unsubscribe();
