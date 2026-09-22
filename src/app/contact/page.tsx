@@ -373,9 +373,9 @@ export default function ContactPage() {
           </div>
 
           {/* Right Column: Interactive Consultation & Scoping Workspace (7 Cols) */}
-          <div className="lg:col-span-7 p-5 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl bg-white/95 dark:bg-[#0D1424]/95 border border-slate-200/90 dark:border-white/10 shadow-2xl space-y-6 backdrop-blur-xl">
+          <div className="lg:col-span-7 p-6 sm:p-10 lg:p-12 rounded-2xl sm:rounded-3xl bg-white/95 dark:bg-[#0D1424]/95 border border-slate-200/90 dark:border-white/10 shadow-2xl backdrop-blur-xl">
             {formSubmitted ? (
-              <div className="text-center py-10 sm:py-16 space-y-5 animate-in fade-in duration-300">
+              <div className="text-center py-10 sm:py-16 space-y-6 animate-in fade-in duration-300">
                 <div className="w-16 h-16 rounded-2xl bg-emerald-500/20 text-emerald-600 dark:text-[#00E5A3] border border-emerald-500/30 flex items-center justify-center mx-auto shadow-lg shadow-emerald-500/15">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
@@ -392,29 +392,29 @@ export default function ContactPage() {
                 </div>
 
                 {/* Configuration Summary Pill */}
-                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 max-w-md mx-auto text-left space-y-2 text-xs font-mono">
-                  <div className="text-slate-500 dark:text-slate-400 font-bold uppercase text-[10px]">
+                <div className="p-5 rounded-2xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 max-w-md mx-auto text-left space-y-3 text-xs font-mono">
+                  <div className="text-slate-500 dark:text-slate-400 font-bold uppercase text-[10.5px]">
                     Captured Blueprint Specs:
                   </div>
-                  <div className="flex flex-wrap gap-1.5 text-[11px]">
-                    <span className="px-2 py-0.5 rounded bg-[#0066FF]/10 text-[#0066FF] dark:text-[#38BDF8] border border-[#0066FF]/20">
+                  <div className="flex flex-wrap gap-2 text-[11.5px]">
+                    <span className="px-2.5 py-1 rounded-lg bg-[#0066FF]/10 text-[#0066FF] dark:text-[#38BDF8] border border-[#0066FF]/20">
                       {formData.solutionType}
                     </span>
-                    <span className="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-600 dark:text-[#00E5A3] border border-emerald-500/20">
+                    <span className="px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-[#00E5A3] border border-emerald-500/20">
                       {formData.studentVolume}
                     </span>
-                    <span className="px-2 py-0.5 rounded bg-[#7C3AED]/10 text-[#7C3AED] dark:text-[#A78BFA] border border-[#7C3AED]/20">
+                    <span className="px-2.5 py-1 rounded-lg bg-[#7C3AED]/10 text-[#7C3AED] dark:text-[#A78BFA] border border-[#7C3AED]/20">
                       {formData.timeline}
                     </span>
                   </div>
                 </div>
 
-                <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+                <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3.5">
                   <a
                     href={createWhatsAppUrl()}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#059669] hover:bg-[#047857] text-white text-xs sm:text-sm font-bold shadow-lg shadow-emerald-700/25 transition cursor-pointer w-full sm:w-auto"
+                    className="inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-[#059669] hover:bg-[#047857] text-white text-xs sm:text-sm font-bold shadow-lg shadow-emerald-700/25 transition cursor-pointer w-full sm:w-auto"
                   >
                     <MessageCircle className="w-4 h-4" />
                     <span>Open VIP WhatsApp Bridge Now</span>
@@ -423,33 +423,39 @@ export default function ContactPage() {
                   <button
                     type="button"
                     onClick={() => setFormSubmitted(false)}
-                    className="px-5 py-3.5 rounded-xl bg-slate-100 dark:bg-white/[0.06] text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-white/10 transition cursor-pointer w-full sm:w-auto"
+                    className="px-6 py-4 rounded-xl bg-slate-100 dark:bg-white/[0.06] text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-white/10 transition cursor-pointer w-full sm:w-auto"
                   >
                     Submit Another Inquiry
                   </button>
                 </div>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <div className="text-[10px] font-mono uppercase text-[#0066FF] dark:text-[#38BDF8] font-bold tracking-wider">
-                    // TECHNICAL BLUEPRINT INTAKE
+              <form onSubmit={handleSubmit} className="space-y-8 sm:space-y-10">
+                {/* Header block */}
+                <div className="space-y-2 pb-2">
+                  <div className="inline-flex items-center gap-2 text-[11px] font-mono uppercase text-[#0066FF] dark:text-[#38BDF8] font-bold tracking-wider">
+                    <Sparkles className="w-3.5 h-3.5" />
+                    <span>// TECHNICAL BLUEPRINT INTAKE</span>
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold font-display text-slate-900 dark:text-white mt-1">
+                  <h3 className="text-2xl sm:text-3xl font-extrabold font-display text-slate-900 dark:text-white tracking-tight">
                     Tell Us About Your Project
                   </h3>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 font-sans">
+                  <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-sans leading-relaxed">
                     Configure your coaching ecosystem below for an exact scope blueprint and guaranteed quote.
                   </p>
                 </div>
 
                 {/* 1. Solution Type Selector Cards */}
-                <div className="space-y-2">
-                  <label className="text-xs font-mono uppercase tracking-wider text-slate-700 dark:text-slate-300 font-bold flex items-center justify-between">
-                    <span>1. Required Platform Solution *</span>
-                    <span className="text-[10px] font-normal text-slate-400">Click to select</span>
-                  </label>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                <div className="space-y-3.5">
+                  <div className="flex items-center justify-between">
+                    <label className="text-xs sm:text-[13px] font-mono uppercase tracking-wider text-slate-900 dark:text-slate-200 font-bold flex items-center gap-2">
+                      <span className="w-5 h-5 rounded-md bg-[#0066FF]/10 dark:bg-[#0066FF]/20 text-[#0066FF] dark:text-[#38BDF8] flex items-center justify-center text-[10.5px]">1</span>
+                      <span>Required Platform Solution *</span>
+                    </label>
+                    <span className="text-[11px] font-sans text-slate-400">Select one option</span>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5">
                     {solutionOptions.map((opt) => {
                       const isSelected = formData.solutionType === opt.label;
                       const OptIcon = opt.icon;
@@ -458,39 +464,55 @@ export default function ContactPage() {
                           type="button"
                           key={opt.id}
                           onClick={() => setFormData({ ...formData, solutionType: opt.label })}
-                          className={`p-3.5 rounded-2xl border text-left transition-all duration-200 cursor-pointer flex items-center justify-between ${
+                          className={`p-4 rounded-2xl border text-left transition-all duration-200 cursor-pointer flex items-center justify-between gap-3 ${
                             isSelected
-                              ? "bg-[#0066FF]/10 dark:bg-[#0066FF]/15 border-[#0066FF] text-[#0066FF] dark:text-[#38BDF8] shadow-sm ring-1 ring-[#0066FF]/30"
-                              : "bg-slate-50/80 dark:bg-white/[0.02] border-slate-200/80 dark:border-white/10 hover:border-slate-300 text-slate-700 dark:text-slate-300"
+                              ? "bg-[#0066FF]/10 dark:bg-[#0066FF]/15 border-[#0066FF] text-[#0066FF] dark:text-[#38BDF8] shadow-md shadow-[#0066FF]/10 ring-2 ring-[#0066FF]/40"
+                              : "bg-slate-50/80 dark:bg-white/[0.02] border-slate-200/80 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20 text-slate-700 dark:text-slate-300"
                           }`}
                         >
-                          <div className="flex items-center gap-2.5 min-w-0">
+                          <div className="flex items-center gap-3 min-w-0">
                             <div
-                              className="w-8 h-8 rounded-xl flex items-center justify-center text-white shrink-0 shadow-xs"
+                              className="w-9 h-9 rounded-xl flex items-center justify-center text-white shrink-0 shadow-sm"
                               style={{ backgroundColor: opt.color }}
                             >
-                              <OptIcon className="w-4 h-4" />
+                              <OptIcon className="w-4.5 h-4.5" />
                             </div>
-                            <div className="min-w-0">
-                              <div className="flex items-center gap-1.5">
-                                <span className="text-xs font-bold font-display truncate">{opt.label}</span>
+                            <div className="min-w-0 space-y-0.5">
+                              <div className="text-xs sm:text-[13px] font-bold font-display truncate text-slate-900 dark:text-white">
+                                {opt.label}
                               </div>
-                              <div className="text-[10px] text-slate-500 dark:text-slate-400 font-sans truncate">{opt.desc}</div>
+                              <div className="text-[11px] text-slate-500 dark:text-slate-400 font-sans truncate leading-normal">
+                                {opt.desc}
+                              </div>
                             </div>
                           </div>
-                          {isSelected && <Check className="w-4 h-4 text-[#0066FF] dark:text-[#38BDF8] shrink-0 ml-1" />}
+                          {isSelected && <Check className="w-4 h-4 text-[#0066FF] dark:text-[#38BDF8] shrink-0" />}
                         </button>
                       );
                     })}
                   </div>
                 </div>
 
+                {/* Divider */}
+                <div className="border-t border-slate-200/70 dark:border-white/10" />
+
                 {/* 2. Contact Details Inputs */}
-                <div className="space-y-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 font-sans">
-                        Your Full Name *
+                <div className="space-y-4 sm:space-y-5">
+                  <div className="space-y-1">
+                    <label className="text-xs sm:text-[13px] font-mono uppercase tracking-wider text-slate-900 dark:text-slate-200 font-bold flex items-center gap-2">
+                      <span className="w-5 h-5 rounded-md bg-[#0066FF]/10 dark:bg-[#0066FF]/20 text-[#0066FF] dark:text-[#38BDF8] flex items-center justify-center text-[10.5px]">2</span>
+                      <span>Director &amp; Academy Details</span>
+                    </label>
+                    <p className="text-[11px] text-slate-500 dark:text-slate-400 font-sans">
+                      Our lead architect will prepare the proposal addressed to your leadership.
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                    <div className="space-y-2">
+                      <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 font-sans flex items-center justify-between">
+                        <span>Your Full Name</span>
+                        <span className="text-rose-500 font-mono text-[11px]">*Required</span>
                       </label>
                       <input
                         type="text"
@@ -498,13 +520,14 @@ export default function ContactPage() {
                         placeholder="e.g. Dr. Rajesh Patel"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 focus:border-[#0066FF] focus:ring-2 focus:ring-[#0066FF]/20 outline-none text-xs sm:text-sm text-slate-900 dark:text-white transition placeholder:text-slate-400"
+                        className="w-full px-4.5 py-3.5 rounded-xl bg-slate-50 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 focus:border-[#0066FF] focus:ring-2 focus:ring-[#0066FF]/20 outline-none text-xs sm:text-sm text-slate-900 dark:text-white transition placeholder:text-slate-400"
                       />
                     </div>
 
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 font-sans">
-                        Academy / Institute Name *
+                    <div className="space-y-2">
+                      <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 font-sans flex items-center justify-between">
+                        <span>Academy / Institute Name</span>
+                        <span className="text-rose-500 font-mono text-[11px]">*Required</span>
                       </label>
                       <input
                         type="text"
@@ -512,15 +535,16 @@ export default function ContactPage() {
                         placeholder="e.g. Apex Premier Academy"
                         value={formData.organization}
                         onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 focus:border-[#0066FF] focus:ring-2 focus:ring-[#0066FF]/20 outline-none text-xs sm:text-sm text-slate-900 dark:text-white transition placeholder:text-slate-400"
+                        className="w-full px-4.5 py-3.5 rounded-xl bg-slate-50 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 focus:border-[#0066FF] focus:ring-2 focus:ring-[#0066FF]/20 outline-none text-xs sm:text-sm text-slate-900 dark:text-white transition placeholder:text-slate-400"
                       />
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 font-sans">
-                        WhatsApp / Phone Number *
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                    <div className="space-y-2">
+                      <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 font-sans flex items-center justify-between">
+                        <span>WhatsApp / Phone Number</span>
+                        <span className="text-rose-500 font-mono text-[11px]">*Required</span>
                       </label>
                       <input
                         type="tel"
@@ -528,13 +552,14 @@ export default function ContactPage() {
                         placeholder="e.g. +91 98765 43210"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 focus:border-[#0066FF] focus:ring-2 focus:ring-[#0066FF]/20 outline-none text-xs sm:text-sm text-slate-900 dark:text-white transition placeholder:text-slate-400"
+                        className="w-full px-4.5 py-3.5 rounded-xl bg-slate-50 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 focus:border-[#0066FF] focus:ring-2 focus:ring-[#0066FF]/20 outline-none text-xs sm:text-sm text-slate-900 dark:text-white transition placeholder:text-slate-400"
                       />
                     </div>
 
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 font-sans">
-                        Email Address *
+                    <div className="space-y-2">
+                      <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 font-sans flex items-center justify-between">
+                        <span>Email Address</span>
+                        <span className="text-rose-500 font-mono text-[11px]">*Required</span>
                       </label>
                       <input
                         type="email"
@@ -542,101 +567,119 @@ export default function ContactPage() {
                         placeholder="e.g. director@academy.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 focus:border-[#0066FF] focus:ring-2 focus:ring-[#0066FF]/20 outline-none text-xs sm:text-sm text-slate-900 dark:text-white transition placeholder:text-slate-400"
+                        className="w-full px-4.5 py-3.5 rounded-xl bg-slate-50 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 focus:border-[#0066FF] focus:ring-2 focus:ring-[#0066FF]/20 outline-none text-xs sm:text-sm text-slate-900 dark:text-white transition placeholder:text-slate-400"
                       />
                     </div>
                   </div>
                 </div>
 
-                {/* 3. Student Volume Selector */}
-                <div className="space-y-1.5">
-                  <label className="text-xs font-mono uppercase tracking-wider text-slate-700 dark:text-slate-300 font-bold">
-                    2. Enrolled Student Volume
-                  </label>
-                  <div className="flex flex-wrap gap-2">
-                    {studentOptions.map((st) => {
-                      const isSelected = formData.studentVolume === st;
-                      return (
-                        <button
-                          type="button"
-                          key={st}
-                          onClick={() => setFormData({ ...formData, studentVolume: st })}
-                          className={`px-3 sm:px-3.5 py-1.5 rounded-xl text-xs font-mono font-semibold transition-all cursor-pointer ${
-                            isSelected
-                              ? "bg-emerald-500/15 border border-emerald-500/40 text-emerald-800 dark:text-[#00E5A3] font-bold shadow-xs"
-                              : "bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400 hover:border-slate-300"
-                          }`}
-                        >
-                          {st}
-                        </button>
-                      );
-                    })}
+                {/* Divider */}
+                <div className="border-t border-slate-200/70 dark:border-white/10" />
+
+                {/* 3. Student Volume & Timeline Selector */}
+                <div className="space-y-6">
+                  {/* 3.1 Student Volume */}
+                  <div className="space-y-3">
+                    <label className="text-xs sm:text-[13px] font-mono uppercase tracking-wider text-slate-900 dark:text-slate-200 font-bold flex items-center gap-2">
+                      <span className="w-5 h-5 rounded-md bg-[#0066FF]/10 dark:bg-[#0066FF]/20 text-[#0066FF] dark:text-[#38BDF8] flex items-center justify-center text-[10.5px]">3</span>
+                      <span>Enrolled Student Volume</span>
+                    </label>
+                    <div className="flex flex-wrap gap-2.5">
+                      {studentOptions.map((st) => {
+                        const isSelected = formData.studentVolume === st;
+                        return (
+                          <button
+                            type="button"
+                            key={st}
+                            onClick={() => setFormData({ ...formData, studentVolume: st })}
+                            className={`px-4 py-2.5 rounded-xl text-xs sm:text-[12.5px] font-mono font-semibold transition-all cursor-pointer ${
+                              isSelected
+                                ? "bg-emerald-500/15 border-2 border-emerald-500/60 text-emerald-800 dark:text-[#00E5A3] font-bold shadow-sm"
+                                : "bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400 hover:border-slate-300 dark:hover:border-white/20"
+                            }`}
+                          >
+                            {st}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* 3.2 Timeline Selector */}
+                  <div className="space-y-3">
+                    <label className="text-xs sm:text-[13px] font-mono uppercase tracking-wider text-slate-900 dark:text-slate-200 font-bold flex items-center gap-2">
+                      <span className="w-5 h-5 rounded-md bg-[#7C3AED]/10 dark:bg-[#7C3AED]/20 text-[#7C3AED] dark:text-[#A78BFA] flex items-center justify-center text-[10.5px]">4</span>
+                      <span>Target Deployment Speed</span>
+                    </label>
+                    <div className="flex flex-wrap gap-2.5">
+                      {timelineOptions.map((tl) => {
+                        const isSelected = formData.timeline === tl;
+                        return (
+                          <button
+                            type="button"
+                            key={tl}
+                            onClick={() => setFormData({ ...formData, timeline: tl })}
+                            className={`px-4 py-2.5 rounded-xl text-xs sm:text-[12.5px] font-mono font-semibold transition-all cursor-pointer ${
+                              isSelected
+                                ? "bg-[#7C3AED]/15 border-2 border-[#7C3AED]/60 text-[#7C3AED] dark:text-[#A78BFA] font-bold shadow-sm"
+                                : "bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400 hover:border-slate-300 dark:hover:border-white/20"
+                            }`}
+                          >
+                            {tl}
+                          </button>
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
 
-                {/* 4. Timeline Selector */}
-                <div className="space-y-1.5">
-                  <label className="text-xs font-mono uppercase tracking-wider text-slate-700 dark:text-slate-300 font-bold">
-                    3. Target Deployment Speed
-                  </label>
-                  <div className="flex flex-wrap gap-2">
-                    {timelineOptions.map((tl) => {
-                      const isSelected = formData.timeline === tl;
-                      return (
-                        <button
-                          type="button"
-                          key={tl}
-                          onClick={() => setFormData({ ...formData, timeline: tl })}
-                          className={`px-3 sm:px-3.5 py-1.5 rounded-xl text-xs font-mono font-semibold transition-all cursor-pointer ${
-                            isSelected
-                              ? "bg-[#7C3AED]/15 border border-[#7C3AED]/40 text-[#7C3AED] dark:text-[#A78BFA] font-bold shadow-xs"
-                              : "bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400 hover:border-slate-300"
-                          }`}
-                        >
-                          {tl}
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
+                {/* Divider */}
+                <div className="border-t border-slate-200/70 dark:border-white/10" />
 
-                {/* 5. Additional Notes */}
-                <div className="space-y-1.5">
-                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 font-sans">
-                    Additional Requirements / Curricula Notes
+                {/* 4. Additional Notes */}
+                <div className="space-y-2.5">
+                  <label className="text-xs sm:text-[13px] font-mono uppercase tracking-wider text-slate-900 dark:text-slate-200 font-bold flex items-center gap-2">
+                    <span className="w-5 h-5 rounded-md bg-[#0066FF]/10 dark:bg-[#0066FF]/20 text-[#0066FF] dark:text-[#38BDF8] flex items-center justify-center text-[10.5px]">5</span>
+                    <span>Additional Requirements / Curricula Notes</span>
                   </label>
                   <textarea
-                    rows={3}
+                    rows={4}
                     placeholder="Tell us about specific target exams (IIT-JEE, NEET, UPSC, K-12), current software pain points, or custom integrations needed..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 focus:border-[#0066FF] focus:ring-2 focus:ring-[#0066FF]/20 outline-none text-xs sm:text-sm text-slate-900 dark:text-white transition resize-none placeholder:text-slate-400"
+                    className="w-full px-4.5 py-3.5 rounded-xl bg-slate-50 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 focus:border-[#0066FF] focus:ring-2 focus:ring-[#0066FF]/20 outline-none text-xs sm:text-sm text-slate-900 dark:text-white transition resize-none placeholder:text-slate-400 leading-relaxed"
                   />
                 </div>
 
                 {/* Submit & Instant WhatsApp Buttons */}
-                <div className="pt-2 space-y-3">
+                <div className="pt-2 space-y-4">
                   <button
                     type="submit"
-                    className="w-full py-4 rounded-xl bg-gradient-to-r from-[#0066FF] via-[#7C3AED] to-[#8B00FF] text-white text-xs sm:text-sm font-bold shadow-lg shadow-[#0066FF]/25 hover:brightness-110 active:scale-98 transition flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full py-4.5 rounded-2xl bg-gradient-to-r from-[#0066FF] via-[#7C3AED] to-[#8B00FF] hover:from-[#0055D4] hover:to-[#7800E0] text-white text-sm sm:text-base font-bold shadow-xl shadow-[#0066FF]/25 hover:brightness-105 active:scale-[0.99] transition-all flex items-center justify-center gap-2.5 cursor-pointer"
                   >
-                    <Send className="w-4 h-4" />
+                    <Send className="w-4.5 h-4.5" />
                     <span>Submit Technical Consultation Request</span>
                   </button>
 
-                  <div className="text-center pt-1">
-                    <span className="text-[11px] text-slate-500 dark:text-slate-400 font-mono">
-                      Prefer direct chat?{" "}
-                      <a
-                        href={createWhatsAppUrl()}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-emerald-700 dark:text-[#00E5A3] font-bold hover:underline inline-flex items-center gap-1"
-                      >
-                        <span>Launch Direct WhatsApp Bridge</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </a>
-                    </span>
+                  <div className="p-4 rounded-2xl bg-emerald-500/[0.06] dark:bg-emerald-950/20 border border-emerald-500/20 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+                    <div className="space-y-0.5">
+                      <div className="text-xs font-bold text-slate-900 dark:text-white flex items-center justify-center sm:justify-start gap-1.5">
+                        <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
+                        <span>Need instant consultation?</span>
+                      </div>
+                      <div className="text-[11px] text-slate-500 dark:text-slate-400 font-sans">
+                        Skip the form and chat directly with our lead software architect on WhatsApp.
+                      </div>
+                    </div>
+                    <a
+                      href={createWhatsAppUrl()}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-slate-950 text-xs font-bold shadow-sm transition inline-flex items-center gap-1.5 shrink-0"
+                    >
+                      <span>Launch WhatsApp</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </a>
                   </div>
                 </div>
               </form>
