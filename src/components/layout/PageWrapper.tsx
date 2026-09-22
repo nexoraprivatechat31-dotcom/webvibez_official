@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import LeadModal from "@/components/ui/LeadModal";
@@ -41,14 +42,18 @@ interface PageWrapperProps {
 
 export default function PageWrapper({ children }: PageWrapperProps) {
   const [modalOpen, setModalOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <div className="min-h-screen bg-[var(--ink)] text-[var(--text-primary)] flex flex-col relative selection:bg-[#0066FF]/30 selection:text-[#FFFFFF] transition-colors duration-300 overflow-x-clip">
       <AmbientCursorLight />
       <Navbar onOpenConsultation={() => setModalOpen(true)} />
       
-      {/* Main Page Content with top clearance for fixed Navbar */}
-      <main className="flex-1 pt-24 sm:pt-28 pb-16 relative z-10">
+      {/* Main Page Content with top clearance and smooth entrance animation */}
+      <main
+        key={pathname}
+        className="flex-1 pt-24 sm:pt-28 pb-16 relative z-10 animate-page-enter"
+      >
         {children}
       </main>
 

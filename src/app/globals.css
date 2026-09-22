@@ -655,6 +655,24 @@ html.dark .slim-scrollbar::-webkit-scrollbar-track,
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
+@keyframes pageEnterTransition {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+}
+
+.animate-page-enter {
+  animation: pageEnterTransition 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity, filter;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal-up,
   .fade-blur-in,
@@ -665,6 +683,7 @@ html.dark .slim-scrollbar::-webkit-scrollbar-track,
   .animate-orbit-3,
   .animate-orbit-4,
   .animate-marquee,
+  .animate-page-enter,
   .line-grow {
     animation: none !important;
     opacity: 1 !important;

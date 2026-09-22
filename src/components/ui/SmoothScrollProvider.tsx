@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 import { scrollPhysicsState, notifyPhysicsListeners } from "@/lib/scrollPhysicsState";
 
@@ -10,6 +11,28 @@ export default function SmoothScrollProvider({
   children: React.ReactNode;
 }) {
   const lenisRef = useRef<Lenis | null>(null);
+  const pathname = usePathname();
+
+  // Reset scroll to top on route change
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    // Reset native scroll
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" as ScrollBehavior });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+
+    // Reset Lenis scroll
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(0, { immediate: true, force: true });
+    }
+
+    // Reset physics state
+    scrollPhysicsState.scrollProgress = 0;
+    scrollPhysicsState.scrollY = 0;
+    scrollPhysicsState.scrollVelocity = 0;
+    notifyPhysicsListeners();
+  }, [pathname]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
