@@ -5,7 +5,7 @@ export const WebflowAdapter: DistributionAdapter = {
   platform: "WEBFLOW",
 
   getCapability(): PlatformConfig {
-    const apiKey = process.env.WEBFLOW_API_KEY;
+    const apiKey = process.env.WEBFLOW_API_TOKEN || process.env.WEBFLOW_API_KEY;
     const isConfigured = Boolean(apiKey);
     return {
       platform: "WEBFLOW",
@@ -19,7 +19,7 @@ export const WebflowAdapter: DistributionAdapter = {
 
   async publish(article: Article): Promise<DistributionResult> {
     const timestamp = new Date().toISOString();
-    const apiKey = process.env.WEBFLOW_API_KEY;
+    const apiKey = process.env.WEBFLOW_API_TOKEN || process.env.WEBFLOW_API_KEY;
 
     if (!apiKey) {
       return {

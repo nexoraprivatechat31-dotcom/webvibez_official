@@ -77,9 +77,9 @@ async function ensureTursoInitialized(): Promise<void> {
               category, tags, author, featured_image, featured_image_alt, publication_date,
               modified_date, reading_time, status, featured, canonical_url, seo_title,
               seo_description, og_title, og_description, related_services, related_article_slugs,
-              faq, table_of_contents, distribution, created_at, updated_at
+              faq, table_of_contents, distribution, language, language_group_key, created_at, updated_at
             ) VALUES (
-              ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+              ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
             );
           `,
           args: [
@@ -111,6 +111,8 @@ async function ensureTursoInitialized(): Promise<void> {
             JSON.stringify(article.faq || []),
             JSON.stringify(article.tableOfContents || []),
             JSON.stringify(article.distribution || {}),
+            (article as any).language || "en",
+            (article as any).languageGroupKey || null,
             article.createdAt,
             article.updatedAt,
           ],

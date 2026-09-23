@@ -54,6 +54,7 @@ export async function initTursoSchema(): Promise<boolean> {
         related_services TEXT,
         related_article_slugs TEXT,
         faq TEXT,
+        table_of_contents TEXT,
         distribution TEXT,
         language TEXT DEFAULT 'en',
         language_group_key TEXT,

@@ -31,14 +31,12 @@ export const metadata: Metadata = {
   },
 };
 
+import PageWrapper from "@/components/layout/PageWrapper";
+
 export default function BlogLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <div className="min-h-screen bg-[#07090E] text-white pt-24 pb-20 selection:bg-cyan-500/30 selection:text-cyan-200">
-      {children}
-    </div>
-  );
+  return <PageWrapper>{children}</PageWrapper>;
 }

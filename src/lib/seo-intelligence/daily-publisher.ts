@@ -578,15 +578,13 @@ export const DailyPublishingEngine = {
         publishedTitles.push(updatedArticle.title);
 
         // Distribute to platforms & notify Telegram
-        DistributionManager.distributeAll(candidate.id)
-          .then((distResults) => {
-            TelegramNotifier.sendPublishedAlert(updatedArticle, distResults).catch((err) =>
-              console.error("Telegram alert error:", err)
-            );
-          })
-          .catch(() => {
-            TelegramNotifier.sendPublishedAlert(updatedArticle).catch(() => {});
-          });
+        try {
+          const distResults = await DistributionManager.distributeAll(candidate.id);
+          await TelegramNotifier.sendPublishedAlert(updatedArticle, distResults);
+        } catch (err) {
+          console.error("Distribution/Telegram alert error:", err);
+          await TelegramNotifier.sendPublishedAlert(updatedArticle).catch(() => {});
+        }
       }
     }
 

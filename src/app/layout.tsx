@@ -290,6 +290,87 @@ const jsonLdGlobal = {
         "query-input": "required name=search_term_string",
       },
     },
+    {
+      "@type": "FAQPage",
+      "@id": "https://webvibez.com/#faq",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Who is the best software developer in Ahmedabad?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "WebVibez Software Developer is a top custom software and mobile app development company in Ahmedabad, Gujarat, India. WebVibez engineers custom web applications, React Native mobile apps, ERP software, and coaching institute platforms.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What software development services does WebVibez provide?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "WebVibez offers full-stack custom software development, mobile app development (iOS & Android), Next.js website development, coaching class management software, and cloud architecture solutions.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How can I hire WebVibez for custom software development?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "You can book a direct consultation with WebVibez Software Developer at https://webvibez.com/contact or chat directly via WhatsApp on +91-92136-15531.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Does WebVibez provide white-label software and 100% source code ownership?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes, WebVibez delivers 100% white-labeled solutions with complete intellectual property, branding, and full source code ownership with zero recurring commissions.",
+          },
+        },
+      ],
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://webvibez.com/#sitelinks",
+      name: "WebVibez Software Developer Key Navigation",
+      itemListElement: [
+        {
+          "@type": "SiteNavigationElement",
+          position: 1,
+          name: "Custom Software Development",
+          url: "https://webvibez.com/services/custom-software-development",
+        },
+        {
+          "@type": "SiteNavigationElement",
+          position: 2,
+          name: "Mobile App Development",
+          url: "https://webvibez.com/services/mobile-app-development",
+        },
+        {
+          "@type": "SiteNavigationElement",
+          position: 3,
+          name: "Website Development",
+          url: "https://webvibez.com/services/website-development",
+        },
+        {
+          "@type": "SiteNavigationElement",
+          position: 4,
+          name: "Coaching Class Management Software",
+          url: "https://webvibez.com/services/coaching-class-management-app",
+        },
+        {
+          "@type": "SiteNavigationElement",
+          position: 5,
+          name: "Pricing & Calculator",
+          url: "https://webvibez.com/pricing",
+        },
+        {
+          "@type": "SiteNavigationElement",
+          position: 6,
+          name: "Contact & Consultation",
+          url: "https://webvibez.com/contact",
+        },
+      ],
+    },
   ],
 };
 
