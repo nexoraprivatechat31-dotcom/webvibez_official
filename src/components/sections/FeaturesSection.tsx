@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { FEATURES_LIST } from "@/lib/data";
 import { ArrowUpRight, CheckCircle2, Shield, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
-import { selectFeatureApp, scrollPhysicsState, subscribePhysicsState } from "@/lib/scrollPhysicsState";
 
 interface FeaturesSectionProps {
   onOpenConsultation: () => void;
@@ -11,7 +10,6 @@ interface FeaturesSectionProps {
 
 export default function FeaturesSection({ onOpenConsultation }: FeaturesSectionProps) {
   const [selectedFeatureIndex, setSelectedFeatureIndex] = useState(0);
-  const [scrollProgress, setScrollProgress] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
   const mobilePillsRef = useRef<HTMLDivElement>(null);
 

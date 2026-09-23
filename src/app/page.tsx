@@ -24,14 +24,16 @@ const UnifiedPhoneCanvas = dynamic(
 );
 
 function AmbientCursorLight() {
-  const [pos, setPos] = useState({ x: -1000, y: -1000 });
+  const lightRef = React.useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let ticking = false;
     const handleMove = (e: MouseEvent) => {
       if (!ticking) {
         requestAnimationFrame(() => {
-          setPos({ x: e.clientX, y: e.clientY });
+          if (lightRef.current) {
+            lightRef.current.style.transform = `translate3d(${e.clientX - 350}px, ${e.clientY - 350}px, 0)`;
+          }
           ticking = false;
         });
         ticking = true;
@@ -43,9 +45,10 @@ function AmbientCursorLight() {
 
   return (
     <div
+      ref={lightRef}
       className="pointer-events-none fixed top-0 left-0 w-[700px] h-[700px] rounded-full z-0 will-change-transform"
       style={{
-        transform: `translate3d(${pos.x - 350}px, ${pos.y - 350}px, 0)`,
+        transform: "translate3d(-1000px, -1000px, 0)",
         background: "radial-gradient(circle, rgba(0,102,255,0.08) 0%, rgba(139,0,255,0.05) 40%, transparent 70%)",
       }}
     />

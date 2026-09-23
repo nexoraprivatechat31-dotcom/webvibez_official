@@ -21,8 +21,8 @@ export default function UnifiedPhoneCanvas() {
         eventSource={eventSource}
         eventPrefix="client"
         camera={{ position: [0, 0, 8.2], fov: 42 }}
-        dpr={[1, 2]}
-        gl={{ antialias: true, powerPreference: "high-performance", alpha: true }}
+        dpr={[1, 1.75]}
+        gl={{ antialias: true, powerPreference: "high-performance", alpha: true, stencil: false, depth: true }}
         className="w-full h-full"
       >
         <Suspense fallback={null}>

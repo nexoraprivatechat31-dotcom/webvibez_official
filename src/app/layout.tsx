@@ -53,16 +53,15 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.svg?v=4", type: "image/svg+xml" },
-      { url: "/favicon.png?v=4", type: "image/png", sizes: "512x512" },
-      { url: "/favicon.png?v=4", type: "image/png", sizes: "192x192" },
-      { url: "/favicon.png?v=4", type: "image/png", sizes: "32x32" },
-      { url: "/favicon.ico?v=4", sizes: "any" },
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.png", type: "image/png", sizes: "512x512" },
+      { url: "/favicon.png", type: "image/png", sizes: "192x192" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
     ],
     apple: [
-      { url: "/favicon.png?v=4", sizes: "180x180", type: "image/png" },
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
     ],
-    shortcut: "/favicon.png?v=4",
+    shortcut: "/favicon.ico",
   },
   manifest: "/manifest.webmanifest",
   openGraph: {
@@ -421,10 +420,12 @@ export default function RootLayout({
     >
       <head>
         <meta name="color-scheme" content="light" />
-        <link rel="icon" href="/favicon.svg?v=4" type="image/svg+xml" />
-        <link rel="icon" href="/favicon.png?v=4" type="image/png" sizes="512x512" />
-        <link rel="icon" href="/favicon.png?v=4" type="image/png" sizes="192x192" />
-        <link rel="icon" href="/favicon.png?v=4" type="image/png" sizes="32x32" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon.png" type="image/png" sizes="512x512" />
+        <link rel="icon" href="/favicon.png" type="image/png" sizes="192x192" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" sizes="180x180" />
+        <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="image_src" href="https://webvibez.com/logo.jpeg" />
         <meta property="og:image" content="https://webvibez.com/logo.jpeg" />
         <meta property="og:image:secure_url" content="https://webvibez.com/logo.jpeg" />

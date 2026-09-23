@@ -80,12 +80,10 @@
   html {
     background-color: var(--ink);
     color: var(--text-primary);
-    scroll-behavior: smooth;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: var(--font-sans);
-    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   body {
@@ -94,13 +92,63 @@
     overflow-x: hidden;
     min-height: 100vh;
     font-family: var(--font-sans);
-    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Lenis smooth scroll optimization */
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display), system-ui, sans-serif;
     letter-spacing: -0.02em;
   }
+}
+
+/* GPU Accelerated Marquee Animations */
+@keyframes conveyor-left {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes conveyor-right {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-conveyor-left {
+  animation: conveyor-left 40s linear infinite;
+  will-change: transform;
+}
+
+.animate-conveyor-right {
+  animation: conveyor-right 40s linear infinite;
+  will-change: transform;
+}
+
+.conveyor-row:hover .animate-conveyor-left,
+.conveyor-row:hover .animate-conveyor-right {
+  animation-play-state: paused;
 }
 
 /* ============================================================

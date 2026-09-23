@@ -71,15 +71,16 @@ export default function SmoothScrollProvider({
     window.addEventListener("mousemove", handleMouseMove, { passive: true });
     document.addEventListener("mouseleave", handleMouseLeave);
 
-    // Initialize Lenis Smooth Scroll
+    // Initialize Lenis Smooth Scroll with optimal 60/120Hz sync
     const lenis = new Lenis({
-      duration: 1.1,
+      duration: 1.0,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      wheelMultiplier: 0.9,
-      touchMultiplier: 1.5,
+      wheelMultiplier: 1.0,
+      touchMultiplier: 1.0,
+      syncTouch: false,
     });
 
     lenisRef.current = lenis;
@@ -97,6 +98,21 @@ export default function SmoothScrollProvider({
       notifyPhysicsListeners();
     });
 
+    // Intercept internal anchor clicks for smooth gliding
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement).closest("a");
+      if (!target) return;
+      const href = target.getAttribute("href");
+      if (href && href.startsWith("#") && href.length > 1) {
+        const el = document.querySelector(href);
+        if (el) {
+          e.preventDefault();
+          lenis.scrollTo(el as HTMLElement, { offset: -80, duration: 1.2 });
+        }
+      }
+    };
+    document.addEventListener("click", handleAnchorClick);
+
     let reqId: number;
     function raf(time: number) {
       lenis.raf(time);
@@ -110,6 +126,7 @@ export default function SmoothScrollProvider({
       reducedMotionQuery.removeEventListener("change", handleReducedMotionChange);
       window.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("mouseleave", handleMouseLeave);
+      document.removeEventListener("click", handleAnchorClick);
       cancelAnimationFrame(reqId);
       lenis.destroy();
     };

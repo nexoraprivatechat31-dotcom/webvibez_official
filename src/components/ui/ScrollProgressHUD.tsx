@@ -16,13 +16,16 @@ const CHAPTERS = [
 const CHAPTER_THRESHOLDS = [0.06, 0.20, 0.38, 0.52, 0.65, 0.76, 1.0];
 
 export default function ScrollProgressHUD() {
-  const [progress, setProgress] = useState(0);
   const [activeChapterIndex, setActiveChapterIndex] = useState(0);
+  const trackRef = React.useRef<HTMLDivElement>(null);
+  const chapterRef = React.useRef(0);
 
   useEffect(() => {
     const unsubscribe = subscribePhysicsState(() => {
       const p = scrollPhysicsState.scrollProgress;
-      setProgress(p);
+      if (trackRef.current) {
+        trackRef.current.style.height = `${Math.max(6, p * 100)}%`;
+      }
 
       let idx = 0;
       for (let i = 0; i < CHAPTER_THRESHOLDS.length; i++) {
@@ -31,7 +34,11 @@ export default function ScrollProgressHUD() {
           break;
         }
       }
-      setActiveChapterIndex(Math.min(CHAPTERS.length - 1, idx));
+      const safeIdx = Math.min(CHAPTERS.length - 1, idx);
+      if (safeIdx !== chapterRef.current) {
+        chapterRef.current = safeIdx;
+        setActiveChapterIndex(safeIdx);
+      }
     });
 
     return () => unsubscribe();
@@ -60,8 +67,9 @@ export default function ScrollProgressHUD() {
       {/* Vertical Track with Electric Glow Head */}
       <div className="w-[2px] h-28 bg-slate-200 dark:bg-white/10 rounded-full relative overflow-hidden">
         <div
-          className="w-full bg-gradient-to-b from-[#0066FF] via-[#7C3AED] to-[#A855F7] rounded-full transition-all duration-150 ease-out"
-          style={{ height: `${Math.max(6, progress * 100)}%` }}
+          ref={trackRef}
+          className="w-full bg-gradient-to-b from-[#0066FF] via-[#7C3AED] to-[#A855F7] rounded-full will-change-[height]"
+          style={{ height: "6%" }}
         />
       </div>
 

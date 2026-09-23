@@ -1,7 +1,4 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
-import { scrollPhysicsState, subscribePhysicsState } from "@/lib/scrollPhysicsState";
+import React from "react";
 import { ArrowRight, Smartphone, Globe, Code2, Database, LayoutDashboard, ShoppingCart, Server, Palette, Cloud, Wrench } from "lucide-react";
 
 interface ServicesConveyorProps {
@@ -104,29 +101,6 @@ const SERVICES_ROWS = [
 ];
 
 export default function ServicesConveyor({ onOpenConsultation }: ServicesConveyorProps) {
-  const [scrollP, setScrollP] = useState(0);
-  const [time, setTime] = useState(0);
-
-  useEffect(() => {
-    const unsubscribe = subscribePhysicsState(() => {
-      setScrollP(scrollPhysicsState.scrollProgress);
-    });
-    return () => unsubscribe();
-  }, []);
-
-  useEffect(() => {
-    let animId: number;
-    const startTime = performance.now();
-
-    const update = (now: number) => {
-      const elapsed = (now - startTime) / 1000;
-      setTime(elapsed);
-      animId = requestAnimationFrame(update);
-    };
-    animId = requestAnimationFrame(update);
-    return () => cancelAnimationFrame(animId);
-  }, []);
-
   return (
     <section
       id="services"
@@ -163,66 +137,64 @@ export default function ServicesConveyor({ onOpenConsultation }: ServicesConveyo
         </div>
       </div>
 
-      {/* Horizontal Alternating Rows Container */}
+      {/* Horizontal Alternating Rows Container — 100% GPU Hardware Accelerated */}
       <div className="w-full flex flex-col gap-4 sm:gap-6 overflow-hidden select-none">
         {SERVICES_ROWS.map((row, rowIdx) => {
-          // Continuous slow graceful Left <-> Right oscillation + scroll synchronization
-          const autoShift = Math.sin(time * 0.22 + rowIdx * 1.4) * 160 * row.direction;
-          const scrollShift = row.direction * ((scrollP - 0.5) * 180);
-          const shift = autoShift + scrollShift;
+          const animationClass = row.direction === 1 ? "animate-conveyor-left" : "animate-conveyor-right";
 
           return (
             <div
               key={rowIdx}
-              className={`items-center gap-4 sm:gap-6 will-change-transform transition-transform duration-75 ease-out ${
+              className={`conveyor-row w-full overflow-hidden flex ${
                 rowIdx >= 2 ? "hidden md:flex" : "flex"
               }`}
-              style={{
-                transform: `translate3d(${shift}px, 0, 0)`,
-              }}
             >
-              {/* Duplicate array to allow seamless scrolling runway */}
-              {[...row.items, ...row.items, ...row.items].map((service, i) => {
-                const IconComponent = service.icon;
-                return (
-                  <div
-                    key={i}
-                    onClick={onOpenConsultation}
-                    className="group min-w-[280px] sm:min-w-[380px] max-w-[380px] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-slate-200/80 dark:border-white/10 bg-white/55 dark:bg-[#070B14]/55 backdrop-blur-2xl shadow-xl shadow-[#0066FF]/5 hover:border-[#0066FF]/60 hover:shadow-2xl hover:shadow-[#0066FF]/15 transition-all duration-300 cursor-pointer flex flex-col justify-between"
-                  >
-                    <div>
-                      {/* Top Bar: Icon + Category Badge */}
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#0066FF]/15 to-[#8B00FF]/15 border border-[#0066FF]/30 flex items-center justify-center text-[#0066FF] group-hover:scale-110 transition-transform">
-                          <IconComponent className="w-5 h-5" />
+              <div
+                className={`flex shrink-0 items-center gap-4 sm:gap-6 ${animationClass}`}
+              >
+                {/* 4 loops of items creates infinite seamless continuous scrolling on any screen size */}
+                {[...row.items, ...row.items, ...row.items, ...row.items].map((service, i) => {
+                  const IconComponent = service.icon;
+                  return (
+                    <div
+                      key={i}
+                      onClick={onOpenConsultation}
+                      className="group min-w-[280px] sm:min-w-[380px] max-w-[380px] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-slate-200/80 dark:border-white/10 bg-white/55 dark:bg-[#070B14]/55 backdrop-blur-2xl shadow-xl shadow-[#0066FF]/5 hover:border-[#0066FF]/60 hover:shadow-2xl hover:shadow-[#0066FF]/15 transition-all duration-300 cursor-pointer flex flex-col justify-between"
+                    >
+                      <div>
+                        {/* Top Bar: Icon + Category Badge */}
+                        <div className="flex items-center justify-between mb-4">
+                          <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#0066FF]/15 to-[#8B00FF]/15 border border-[#0066FF]/30 flex items-center justify-center text-[#0066FF] group-hover:scale-110 transition-transform">
+                            <IconComponent className="w-5 h-5" />
+                          </div>
+                          <span className="text-[10px] font-mono tracking-widest font-bold uppercase text-slate-500 dark:text-slate-300 group-hover:text-[#0066FF] dark:group-hover:text-[#38BDF8] transition-colors">
+                            // {service.tag}
+                          </span>
                         </div>
-                        <span className="text-[10px] font-mono tracking-widest font-bold uppercase text-slate-500 dark:text-slate-300 group-hover:text-[#0066FF] dark:group-hover:text-[#38BDF8] transition-colors">
-                          // {service.tag}
-                        </span>
+
+                        {/* Service Name */}
+                        <h3
+                          className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white group-hover:text-[#0066FF] transition-colors mb-2"
+                          style={{ fontFamily: "var(--font-display)" }}
+                        >
+                          {service.title}
+                        </h3>
+
+                        {/* Description */}
+                        <p className="text-xs text-slate-600 dark:text-slate-200 leading-relaxed font-medium">
+                          {service.desc}
+                        </p>
                       </div>
 
-                      {/* Service Name */}
-                      <h3
-                        className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white group-hover:text-[#0066FF] transition-colors mb-2"
-                        style={{ fontFamily: "var(--font-display)" }}
-                      >
-                        {service.title}
-                      </h3>
-
-                      {/* Description */}
-                      <p className="text-xs text-slate-600 dark:text-slate-200 leading-relaxed font-medium">
-                        {service.desc}
-                      </p>
+                      {/* Bottom Action Link */}
+                      <div className="mt-5 pt-3 border-t border-slate-100 dark:border-white/10 flex items-center justify-between text-xs font-mono text-slate-600 dark:text-slate-300 group-hover:text-[#0066FF] dark:group-hover:text-[#38BDF8] transition-colors">
+                        <span className="font-bold">Explore Solution</span>
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </div>
                     </div>
-
-                    {/* Bottom Action Link */}
-                    <div className="mt-5 pt-3 border-t border-slate-100 dark:border-white/10 flex items-center justify-between text-xs font-mono text-slate-600 dark:text-slate-300 group-hover:text-[#0066FF] dark:group-hover:text-[#38BDF8] transition-colors">
-                      <span className="font-bold">Explore Solution</span>
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
           );
         })}

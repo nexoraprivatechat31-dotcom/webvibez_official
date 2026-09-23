@@ -15,7 +15,11 @@ export default function HeroSection({ onOpenConsultation }: HeroSectionProps) {
 
   useEffect(() => {
     const unsubscribe = subscribePhysicsState(() => {
-      setScrollP(scrollPhysicsState.scrollProgress);
+      const p = scrollPhysicsState.scrollProgress;
+      setScrollP((prev) => {
+        if (p > 0.25 && prev >= 0.25) return prev;
+        return p;
+      });
     });
     return () => unsubscribe();
   }, []);

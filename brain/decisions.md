@@ -26,3 +26,11 @@
 - **Decision**: Prominently feature Rudram Joshi as Founder & Lead Developer across Contact desk, About page leadership section, Footer bio, and Schema.org Organization/Person graphs.
 - **Reason**: Establishes high trust with institutional decision-makers, direct engineering transparency, and clear accountability.
 - **Date**: September 2026
+
+### D06: Zero-Jank 60/120 FPS Rendering & Lenis Harmony
+- **Decision**: 
+  1. Remove native `scroll-behavior: smooth` from CSS `html` to prevent dual-interpolation conflict with Lenis RAF engine.
+  2. Replace React JS RAF loops in `ServicesConveyor` and `AmbientCursorLight` with GPU-accelerated CSS keyframe marquees and direct DOM ref transforms.
+  3. Pre-allocate all Three.js `Vector3` and `Color` instances in module scope to eliminate frame-by-frame Garbage Collection micro-stutters.
+- **Reason**: Guarantees buttery-smooth 60/120 FPS scrolling across both desktop mice/trackpads and high-refresh mobile touchscreens.
+- **Date**: September 2026

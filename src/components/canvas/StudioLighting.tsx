@@ -5,6 +5,10 @@ import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
 import { scrollPhysicsState } from "@/lib/scrollPhysicsState";
 
+const _keyColor = new THREE.Color("#ffffff");
+const _rimLeftColor = new THREE.Color("#0066FF");
+const _bounceColor = new THREE.Color("#8B00FF");
+
 export default function StudioLighting() {
   const ambientRef = useRef<THREE.AmbientLight>(null);
   const keyLightRef = useRef<THREE.DirectionalLight>(null);
@@ -24,61 +28,65 @@ export default function StudioLighting() {
     // Section contextual light targets — new Azure/Iris/Apricot/Mint palette
     let baseAmbient = 0.60;
     let baseKey = 1.75;
-    let keyColor = new THREE.Color("#ffffff");
-    let rimLeftColor = new THREE.Color("#0066FF");
-    let bounceColor = new THREE.Color("#8B00FF");
+    let keyColorHex = "#ffffff";
+    let rimLeftHex = "#0066FF";
+    let bounceHex = "#8B00FF";
 
     if (p <= 0.15) {
       // HERO: Electric Blue + Violet studio — clean, premium brand aesthetic
       baseAmbient = 0.62;
       baseKey = 1.80;
-      keyColor.set("#f8fafc");
-      rimLeftColor.set("#0066FF"); // Electric Blue
-      bounceColor.set("#8B00FF"); // Electric Violet
+      keyColorHex = "#f8fafc";
+      rimLeftHex = "#0066FF"; // Electric Blue
+      bounceHex = "#8B00FF"; // Electric Violet
     } else if (p <= 0.30) {
       // PROBLEM: Restrained warm — subtle Apricot edge creates tension
       baseAmbient = 0.48;
       baseKey = 1.35;
-      keyColor.set("#e2e8f0");
-      rimLeftColor.set("#FF9A6B"); // Apricot — warm tension
-      bounceColor.set("#4A5568"); // Neutral graphite
+      keyColorHex = "#e2e8f0";
+      rimLeftHex = "#FF9A6B"; // Apricot — warm tension
+      bounceHex = "#4A5568"; // Neutral graphite
     } else if (p <= 0.55) {
       // PRODUCT SHOWCASE: High contrast — Electric Violet + Blue premium product studio
       baseAmbient = 0.68;
       baseKey = 2.10;
-      keyColor.set("#ffffff");
-      rimLeftColor.set("#8B00FF"); // Violet
-      bounceColor.set("#0066FF"); // Blue
+      keyColorHex = "#ffffff";
+      rimLeftHex = "#8B00FF"; // Violet
+      bounceHex = "#0066FF"; // Blue
     } else if (p <= 0.72) {
       // FEATURES: Architectural — Mint + Azure technical environment
       baseAmbient = 0.60;
       baseKey = 1.75;
-      keyColor.set("#f8fafc");
-      rimLeftColor.set("#72D7B0"); // Mint
-      bounceColor.set("#5B8CFF"); // Azure
+      keyColorHex = "#f8fafc";
+      rimLeftHex = "#72D7B0"; // Mint
+      bounceHex = "#5B8CFF"; // Azure
     } else if (p <= 0.88) {
       // BRAND: Warm, aspirational — Apricot + Iris brand glow
       baseAmbient = 0.65;
       baseKey = 1.85;
-      keyColor.set("#ffffff");
+      keyColorHex = "#ffffff";
       if (scrollPhysicsState.brandVariant === "branded-institute") {
-        rimLeftColor.set("#72D7B0"); // Mint — success state
-        bounceColor.set("#FF9A6B"); // Apricot — warmth
+        rimLeftHex = "#72D7B0"; // Mint — success state
+        bounceHex = "#FF9A6B"; // Apricot — warmth
       } else if (scrollPhysicsState.brandVariant === "generic") {
-        rimLeftColor.set("#A9B0BA"); // Muted neutral
-        bounceColor.set("#4A5568");
+        rimLeftHex = "#A9B0BA"; // Muted neutral
+        bounceHex = "#4A5568";
       } else {
-        rimLeftColor.set("#8B7CFF"); // Iris — WebVibez brand
-        bounceColor.set("#5B8CFF"); // Azure
+        rimLeftHex = "#8B7CFF"; // Iris — WebVibez brand
+        bounceHex = "#5B8CFF"; // Azure
       }
     } else {
       // CTA FINALE: Atmospheric Azure — cinematic, expansive
       baseAmbient = 0.55;
       baseKey = 1.65;
-      keyColor.set("#dbeafe");
-      rimLeftColor.set("#5B8CFF"); // Azure
-      bounceColor.set("#8B7CFF"); // Iris
+      keyColorHex = "#dbeafe";
+      rimLeftHex = "#5B8CFF"; // Azure
+      bounceHex = "#8B7CFF"; // Iris
     }
+
+    _keyColor.set(keyColorHex);
+    _rimLeftColor.set(rimLeftHex);
+    _bounceColor.set(bounceHex);
 
     if (ambientRef.current) {
       const targetAmbient = baseAmbient + proximity * 0.15 + drift * 0.02;
@@ -98,7 +106,7 @@ export default function StudioLighting() {
         3.5,
         delta
       );
-      keyLightRef.current.color.lerp(keyColor, delta * 2.5);
+      keyLightRef.current.color.lerp(_keyColor, delta * 2.5);
     }
 
     if (rimLightLeftRef.current) {
@@ -109,7 +117,7 @@ export default function StudioLighting() {
         3.5,
         delta
       );
-      rimLightLeftRef.current.color.lerp(rimLeftColor, delta * 2.5);
+      rimLightLeftRef.current.color.lerp(_rimLeftColor, delta * 2.5);
     }
 
     if (rimLightRightRef.current) {
@@ -130,7 +138,7 @@ export default function StudioLighting() {
         3.5,
         delta
       );
-      bounceLightRef.current.color.lerp(bounceColor, delta * 2.5);
+      bounceLightRef.current.color.lerp(_bounceColor, delta * 2.5);
     }
   });
 

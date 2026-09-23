@@ -92,6 +92,9 @@ function createRoundedRectBorderGeometry(w: number, h: number, r: number, border
   return new THREE.ShapeGeometry(outer, 36);
 }
 
+const _worldPos = new THREE.Vector3();
+const _screenPos = new THREE.Vector3();
+
 export default function PhoneModel({
   screenIndex,
   brandVariant,
@@ -662,9 +665,8 @@ export default function PhoneModel({
     const p = scrollPhysicsState.scrollProgress;
 
     // 1. Screen Space Proximity & Raycasting
-    const worldPos = new THREE.Vector3();
-    groupRef.current.getWorldPosition(worldPos);
-    const screenPos = worldPos.clone().project(camera); // [-1, 1]
+    groupRef.current.getWorldPosition(_worldPos);
+    _screenPos.copy(_worldPos).project(camera); // [-1, 1]
 
     let proximity = 0;
     let isOverScreen = false;
@@ -676,8 +678,8 @@ export default function PhoneModel({
     const isInside = mousePos ? true : scrollPhysicsState.isMouseInside;
 
     if (!isMobile && isInside) {
-      const dx = currentMouseX - screenPos.x;
-      const dy = currentMouseY - screenPos.y;
+      const dx = currentMouseX - _screenPos.x;
+      const dy = currentMouseY - _screenPos.y;
       const dist = Math.sqrt(dx * dx + dy * dy);
 
       proximity = Math.max(0, Math.min(1, 1 - dist / 0.85));

@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { scrollPhysicsState, subscribePhysicsState } from "@/lib/scrollPhysicsState";
+import React, { useState } from "react";
 import { Users, Smartphone, Zap, Server, Database, Monitor, ArrowRight, ShieldCheck, Activity } from "lucide-react";
 
 interface ProductArchitectureProps {

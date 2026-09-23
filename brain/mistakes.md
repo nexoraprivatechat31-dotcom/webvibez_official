@@ -56,3 +56,15 @@
 - **Fix**: (a) Created `public/webvibez-indexnow-key.txt` for IndexNow protocol. (b) Created `scripts/ping-search-engines.mjs` to ping IndexNow (Bing/Yandex accepted 202). (c) Sitemap must be manually submitted in Google Search Console.
 - **Manual Steps Required**: Go to Google Search Console → Sitemaps → Submit `sitemap.xml`. Then use URL Inspection → Request Indexing for priority pages.
 - **Status**: Partially resolved (IndexNow submitted, GSC manual submission pending).
+
+### M-010: Favicon Not Displaying in Search Indexing Results
+- **Problem**: Favicon was not appearing on Google Search or Bing indexing results.
+- **Root Cause**:
+  1. `layout.tsx` metadata and `<head>` contained cache-busting query strings (`?v=4` like `/favicon.ico?v=4`), which Googlebot-Image and Bingbot reject or treat as uncacheable dynamic assets.
+  2. `shortcut` icon was pointing to `/favicon.png?v=4` instead of canonical `/favicon.ico`.
+  3. `src/app/favicon.ico` was missing from Next.js App Router root, causing Next.js automatic favicon resolution to fail.
+- **Fix**:
+  1. Copied `favicon.ico` directly to `src/app/favicon.ico` for native Next.js serving.
+  2. Removed all `?v=4` query params from `layout.tsx` `metadata.icons` and `<head>` link tags.
+  3. Updated `manifest.ts` with `purpose: "maskable any"` icons for PWA & Android/Google discoverability.
+- **Status**: Resolved.

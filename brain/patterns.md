@@ -46,3 +46,10 @@
 ## Pattern 5: Clean Phone Stage & Clean Background
 - **Rule**: Never place duplicate background ghost headings or floating satellite pill cards around the 3D phone stage.
 - **Hierarchy**: 1. Main Heading ➔ 2. 3D Phone / Product UI ➔ 3. Supporting UI Card ➔ 4. Small Metadata ➔ 5. Background Decoration (< 5% opacity).
+
+## Pattern 6: High-Performance Scroll & Zero-Jank Rendering
+- **Rule**:
+  1. Never put `scroll-behavior: smooth` in CSS when using Lenis; use Lenis RAF easing.
+  2. For high-frequency mouse/scroll animations (like conveyors or cursor light), use GPU CSS keyframes or direct DOM `ref` transforms instead of continuous React `setState`.
+  3. Pre-allocate Three.js vectors and colors in module scope outside the `useFrame` loop.
+  4. Intercept anchor links (`a[href^="#"]`) through Lenis smooth scrollTo with offset (`-80px`).
