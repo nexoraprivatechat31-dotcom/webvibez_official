@@ -42,9 +42,9 @@ export default function FeaturesSection({ onOpenConsultation }: FeaturesSectionP
       />
       <div className="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="mb-10 sm:mb-16 max-w-3xl">
+        <div className="mb-10 sm:mb-14 max-w-3xl">
           <div
             className="flex items-center gap-2 mb-3 sm:mb-4 text-[11px] font-mono tracking-[0.22em] text-[#0066FF] dark:text-[#38BDF8] uppercase font-bold"
           >
@@ -66,11 +66,11 @@ export default function FeaturesSection({ onOpenConsultation }: FeaturesSectionP
           </p>
         </div>
 
-        {/* Main Split: Full-width Horizontal Feature List Left, Telemetry HUD Right */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
+        {/* Side-by-Side 3-Column Grid: [ 11-System List ] [ Spec HUD Card ] [ 3D Phone Stage Anchor ] */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 xl:gap-8 items-start">
           
-          {/* LEFT: Full-width horizontal feature list */}
-          <div className="lg:col-span-7 flex flex-col space-y-1">
+          {/* COLUMN 1 (lg:col-span-4): 11 Core Systems List */}
+          <div className="lg:col-span-4 flex flex-col space-y-1">
             {FEATURES_LIST.map((feat, idx) => {
               const isSelected = idx === selectedFeatureIndex;
 
@@ -79,7 +79,7 @@ export default function FeaturesSection({ onOpenConsultation }: FeaturesSectionP
                   key={feat.id}
                   onClick={() => handleSelectFeature(idx)}
                   onMouseEnter={() => handleSelectFeature(idx)}
-                  className={`group relative flex items-center justify-between py-4 px-4 sm:px-6 rounded-2xl text-left transition-all duration-300 border cursor-pointer ${
+                  className={`group relative flex items-center justify-between py-3.5 px-3.5 sm:px-5 rounded-2xl text-left transition-all duration-300 border cursor-pointer ${
                     isSelected
                       ? "bg-white dark:bg-[#0B0F19] border-[#0066FF]/40 shadow-xl shadow-[#0066FF]/10 scale-[1.01]"
                       : "bg-transparent border-transparent hover:border-slate-200 dark:hover:border-white/10 opacity-70 hover:opacity-100"
@@ -90,7 +90,7 @@ export default function FeaturesSection({ onOpenConsultation }: FeaturesSectionP
                     <div className="absolute left-0 top-2 bottom-2 w-[4px] bg-gradient-to-b from-[#0066FF] to-[#8B00FF] rounded-r-full shadow-[0_0_12px_#0066FF]" />
                   )}
 
-                  <div className="flex items-center gap-4 sm:gap-6 flex-1 min-w-0">
+                  <div className="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
                     {/* Monospace Animated Numeral */}
                     <span
                       className={`shrink-0 text-xs sm:text-sm font-mono tracking-widest transition-colors ${
@@ -106,8 +106,8 @@ export default function FeaturesSection({ onOpenConsultation }: FeaturesSectionP
                     <span
                       className={`font-bold tracking-tight truncate transition-all duration-200 ${
                         isSelected
-                          ? "text-slate-900 dark:text-white text-base sm:text-xl translate-x-1"
-                          : "text-slate-700 dark:text-slate-200 text-sm sm:text-lg group-hover:text-slate-900 dark:group-hover:text-white font-semibold"
+                          ? "text-slate-900 dark:text-white text-sm sm:text-base translate-x-1"
+                          : "text-slate-700 dark:text-slate-200 text-xs sm:text-sm group-hover:text-slate-900 dark:group-hover:text-white font-semibold"
                       }`}
                       style={{ fontFamily: "var(--font-display)" }}
                     >
@@ -115,13 +115,13 @@ export default function FeaturesSection({ onOpenConsultation }: FeaturesSectionP
                     </span>
                   </div>
 
-                  {/* Right: Clean Category Label & Link Arrow */}
-                  <div className="flex items-center gap-3 shrink-0 ml-3">
-                    <span className="text-[10px] sm:text-[11px] font-mono tracking-widest uppercase font-semibold text-slate-400 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
+                  {/* Right: Category Label & Link Arrow */}
+                  <div className="flex items-center gap-2 shrink-0 ml-2">
+                    <span className="text-[9.5px] sm:text-[10.5px] font-mono tracking-widest uppercase font-semibold text-slate-400 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
                       {feat.category}
                     </span>
                     <ArrowUpRight
-                      className={`w-4 h-4 transition-all duration-300 ${
+                      className={`w-3.5 h-3.5 transition-all duration-300 ${
                         isSelected
                           ? "text-[#0066FF] dark:text-[#38BDF8] opacity-100 translate-x-0.5 -translate-y-0.5"
                           : "text-slate-400 opacity-0 group-hover:opacity-70"
@@ -133,28 +133,26 @@ export default function FeaturesSection({ onOpenConsultation }: FeaturesSectionP
             })}
           </div>
 
-          {/* RIGHT: Phone Stage Anchor Above + Floating Telemetry HUD Below */}
-          <div className="lg:col-span-5 lg:sticky lg:top-8 flex flex-col items-center">
-            
-            {/* 3D Phone Stage Anchor - Extra generous height to push the box far below the phone */}
-            <div className="w-full h-[460px] sm:h-[500px] lg:h-[540px] relative pointer-events-none mb-4" />
-
+          {/* COLUMN 2 (lg:col-span-5): Active Feature Spec HUD Detail Box (Placed SIDE-BY-SIDE!) */}
+          <div className="lg:col-span-5 lg:sticky lg:top-24 space-y-3">
             {/* System Status Banner */}
-            <div className="w-full flex items-center justify-between px-2 mb-3 text-[10px] font-mono text-slate-500 dark:text-slate-300">
+            <div className="w-full flex items-center justify-between px-2 text-[10.5px] font-mono text-slate-500 dark:text-slate-300">
               <span className="tracking-[0.2em] text-[#0066FF] dark:text-[#38BDF8] uppercase font-bold flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF] dark:bg-[#38BDF8] animate-pulse" />
                 SYSTEM 04 // SYS {String(selectedFeatureIndex + 1).padStart(2, "0")}
               </span>
-              <span className="tracking-widest uppercase text-emerald-500 dark:text-emerald-400 font-bold">
+              <span className="tracking-widest uppercase text-emerald-600 dark:text-emerald-400 font-bold">
                 ● 100% PRODUCTION READY
               </span>
             </div>
 
-            {/* Frosted Glass Spec HUD (Positioned Cleanly Below Phone) */}
-            <div className="w-full p-5 sm:p-6 rounded-3xl border border-slate-200 dark:border-white/10 bg-white/80 dark:bg-[#0B0F19]/80 backdrop-blur-xl shadow-2xl shadow-[#0066FF]/10 relative overflow-hidden">
-              <div className="flex items-center justify-between pb-3.5 border-b border-slate-200 dark:border-white/10 mb-3.5">
+            {/* Frosted Glass Spec HUD Card */}
+            <div className="w-full p-5 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-white/10 bg-white/95 dark:bg-[#0B0F19]/95 backdrop-blur-2xl shadow-2xl shadow-[#0066FF]/10 relative overflow-hidden space-y-5">
+              
+              {/* Header: Category + Feature Name */}
+              <div className="flex items-start justify-between pb-4 border-b border-slate-200/80 dark:border-white/10">
                 <div>
-                  <span className="text-[10px] uppercase tracking-widest text-[#0066FF] dark:text-[#38BDF8] font-mono font-bold block">
+                  <span className="text-[10.5px] uppercase tracking-widest text-[#0066FF] dark:text-[#38BDF8] font-mono font-bold block">
                     {activeFeature.category} Architecture
                   </span>
                   <h3
@@ -164,20 +162,21 @@ export default function FeaturesSection({ onOpenConsultation }: FeaturesSectionP
                     {activeFeature.name}
                   </h3>
                 </div>
-                <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#0066FF]/15 to-[#8B00FF]/15 border border-[#0066FF]/30 flex items-center justify-center">
-                  <Sparkles className="w-4 h-4 text-[#0066FF]" />
+                <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#0066FF]/15 to-[#8B00FF]/15 border border-[#0066FF]/30 flex items-center justify-center shrink-0">
+                  <Sparkles className="w-5 h-5 text-[#0066FF]" />
                 </div>
               </div>
 
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-200 leading-relaxed mb-5 font-sans">
+              {/* Description */}
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-200 leading-relaxed font-sans">
                 {activeFeature.short} {activeFeature.details}
               </p>
 
-              {/* Subsystem Specifications / Core Capabilities */}
-              <div className="space-y-2 mb-5">
+              {/* Core Capabilities */}
+              <div className="space-y-2.5">
                 {activeFeature.id === "fees" ? (
                   <>
-                    <div className="p-3 rounded-2xl bg-gradient-to-r from-[#0066FF]/10 to-[#8B00FF]/10 border border-[#0066FF]/20 flex items-center justify-between mb-3">
+                    <div className="p-3.5 rounded-2xl bg-gradient-to-r from-[#0066FF]/10 to-[#8B00FF]/10 border border-[#0066FF]/20 flex items-center justify-between mb-3">
                       <div>
                         <div className="text-[9.5px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-300 font-semibold">
                           On-Time Fee Collection Rate
@@ -186,7 +185,7 @@ export default function FeaturesSection({ onOpenConsultation }: FeaturesSectionP
                           91.4%
                         </div>
                       </div>
-                      <span className="text-[10px] font-mono font-bold tracking-widest text-emerald-500 uppercase">
+                      <span className="text-[10.5px] font-mono font-bold tracking-widest text-emerald-600 dark:text-emerald-400 uppercase">
                         ● 1-CLICK UPI
                       </span>
                     </div>
@@ -199,18 +198,18 @@ export default function FeaturesSection({ onOpenConsultation }: FeaturesSectionP
                       "GST Invoices & Installment Tracking",
                     ].map((cap, i) => (
                       <div key={i} className="flex items-center gap-2 text-xs text-slate-800 dark:text-slate-100 font-medium">
-                        <CheckCircle2 className="w-4 h-4 text-[#00E5A3] shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
                         <span>{cap}</span>
                       </div>
                     ))}
                   </>
                 ) : (
                   <>
-                    <div className="flex items-center gap-2 text-xs text-slate-800 dark:text-slate-100 font-medium">
+                    <div className="flex items-center gap-2.5 text-xs text-slate-800 dark:text-slate-100 font-medium">
                       <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                      <span>Real-time instant synchronization across iOS, Android & Web</span>
+                      <span>Real-time instant synchronization across iOS, Android &amp; Web</span>
                     </div>
-                    <div className="flex items-center gap-2 text-xs text-slate-800 dark:text-slate-100 font-medium">
+                    <div className="flex items-center gap-2.5 text-xs text-slate-800 dark:text-slate-100 font-medium">
                       <Shield className="w-4 h-4 text-[#0066FF] shrink-0" />
                       <span>End-to-end encrypted student records with role-based security</span>
                     </div>
@@ -219,7 +218,7 @@ export default function FeaturesSection({ onOpenConsultation }: FeaturesSectionP
               </div>
 
               {/* Multi-Role Access Matrix */}
-              <div className="grid grid-cols-4 gap-2 mb-5">
+              <div className="grid grid-cols-4 gap-2 pt-1">
                 {[
                   { role: "Students", access: "Full App" },
                   { role: "Parents", access: "SMS/Portal" },
@@ -228,9 +227,9 @@ export default function FeaturesSection({ onOpenConsultation }: FeaturesSectionP
                 ].map((item, i) => (
                   <div
                     key={i}
-                    className="p-2 rounded-xl border border-slate-200/80 dark:border-white/10 text-center bg-slate-50/80 dark:bg-white/[0.03]"
+                    className="p-2.5 rounded-xl border border-slate-200/90 dark:border-white/10 text-center bg-slate-50/80 dark:bg-white/[0.03]"
                   >
-                    <div className="text-[9px] text-slate-600 dark:text-slate-300 font-mono font-bold">
+                    <div className="text-[9.5px] text-slate-600 dark:text-slate-300 font-mono font-bold">
                       {item.role}
                     </div>
                     <div className="text-[11px] font-bold text-[#0066FF] dark:text-[#38BDF8] font-mono mt-0.5">
@@ -243,13 +242,17 @@ export default function FeaturesSection({ onOpenConsultation }: FeaturesSectionP
               {/* Action Button */}
               <button
                 onClick={onOpenConsultation}
-                className="w-full py-3 rounded-xl bg-gradient-to-r from-[#0066FF] via-[#7C3AED] to-[#8B00FF] text-white text-xs font-mono font-bold tracking-wider uppercase shadow-lg shadow-[#0066FF]/25 hover:opacity-95 transition-opacity cursor-pointer flex items-center justify-center gap-2"
+                className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#0066FF] via-[#7C3AED] to-[#8B00FF] text-white text-xs font-mono font-bold tracking-wider uppercase shadow-lg shadow-[#0066FF]/25 hover:brightness-110 active:scale-98 transition-all cursor-pointer flex items-center justify-center gap-2"
               >
                 <span>Deploy {activeFeature.name}</span>
                 <ArrowUpRight className="w-4 h-4" />
               </button>
             </div>
           </div>
+
+          {/* COLUMN 3 (lg:col-span-3): Pure Unobstructed 3D Phone Stage Anchor (Right Bay) */}
+          <div className="hidden lg:flex lg:col-span-3 lg:sticky lg:top-24 items-center justify-center min-h-[580px] pointer-events-none relative" />
+
         </div>
       </div>
     </section>

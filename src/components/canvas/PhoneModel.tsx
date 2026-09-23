@@ -500,61 +500,55 @@ export default function PhoneModel({
       rotZ = 0.00;
       sc = 0.95; // Full BIG mode on the Right bay
 
-    } else if (p <= 0.43) {
-      // 6. EARLY SHRINK BEFORE FEATURES BOX (0.38 - 0.43)
-      // Phone starts shrinking to small mode WELL BEFORE the user reaches the Features box!
-      const t = (p - 0.38) / 0.05;
+    } else if (p <= 0.48) {
+      // 6. FEATURES SECTION (11 CORE SYSTEMS) (0.38 - 0.48)
+      // Phone rests cleanly in the RIGHT bay side-by-side with the Spec HUD Card
+      x = 3.2;
+      y = -0.28;
+      z = 0.24;
+      rotX = 0.00;
+      rotY = -0.15; // Angled facing the center Spec HUD card
+      rotZ = 0.00;
+      sc = 0.92; // Full crisp showcase scale in right bay
+
+    } else if (p <= 0.52) {
+      // 7. SMOOTH TRANSITION TO DEEP BACKGROUND BEFORE SERVICES CONVEYOR (0.48 - 0.52)
+      // Glides smoothly away so it NEVER covers Services Conveyor cards or Architecture diagrams
+      const t = (p - 0.48) / 0.04;
       const smoothT = t * t * (3 - 2 * t);
 
-      x = THREE.MathUtils.lerp(3.2, 3.10, smoothT);
-      y = THREE.MathUtils.lerp(-0.28, 1.72, smoothT);
-      z = THREE.MathUtils.lerp(0.24, -1.8, smoothT);
-      rotX = THREE.MathUtils.lerp(0.00, 0.05, smoothT);
-      rotY = THREE.MathUtils.lerp(-0.15, -0.10, smoothT);
-      rotZ = THREE.MathUtils.lerp(0.00, 0.01, smoothT);
-      sc = THREE.MathUtils.lerp(0.95, 0.40, smoothT); // Shrinks down to small mode early
-
-    } else if (p <= 0.48) {
-      // 7. FEATURES SECTION (11 CORE SYSTEMS) (0.43 - 0.48)
-      // Phone is already small and seated above the card
-      x = 3.10;
-      y = 1.72 + Math.sin((p - 0.43) * 20) * 0.02;
-      z = -1.8;
-      rotX = 0.05;
-      rotY = -0.10;
-      rotZ = 0.01;
-      sc = 0.40; // Small mode comfortably positioned above the card
+      x = THREE.MathUtils.lerp(3.2, 0.0, smoothT);
+      y = THREE.MathUtils.lerp(-0.28, -6.0, smoothT);
+      z = THREE.MathUtils.lerp(0.24, -30.0, smoothT);
+      rotX = THREE.MathUtils.lerp(0.00, 0.25, smoothT);
+      rotY = THREE.MathUtils.lerp(-0.15, 0.00, smoothT);
+      rotZ = 0.00;
+      sc = THREE.MathUtils.lerp(0.92, 0.0001, smoothT);
 
     } else if (p <= 0.67) {
-      // 8. SERVICES CONVEYOR, ARCHITECTURE & BRAND HEADER (0.48 - 0.67)
-      // Phone stays cleanly in compact nano mode in deep background so it doesn't block "100% Whitelabel Identity" header or stage cards
-      const t = (p - 0.48) / 0.19;
-      const smoothExit = Math.min(1, t * 2.5);
-      const sweepAngle = t * Math.PI * 2;
-      const xVel = -Math.sin(sweepAngle);
-
-      x = THREE.MathUtils.lerp(3.10, -3.3, t) + Math.sin(t * Math.PI) * 0.25;
-      y = THREE.MathUtils.lerp(1.72, -0.18, smoothExit);
-      z = THREE.MathUtils.lerp(-1.8, -4.5, smoothExit);
-      rotX = THREE.MathUtils.lerp(0.05, 0.00, smoothExit);
-      rotY = xVel * 0.18;
-      rotZ = -xVel * 0.02;
-      sc = THREE.MathUtils.lerp(0.40, 0.28, smoothExit); // Stays compact in background
+      // 8. SERVICES CONVEYOR & PRODUCT ARCHITECTURE (0.52 - 0.67)
+      // Phone stays completely tucked in deep background with zero visual interference
+      x = 0.0;
+      y = -10.0;
+      z = -30.0;
+      rotX = 0.0;
+      rotY = 0.0;
+      rotZ = 0.0;
+      sc = 0.0001;
 
     } else if (p <= 0.70) {
       // 9A. TIGHT ENTRY TO TRANSFORMATION IMPACT (0.67 - 0.70)
-      // Right AFTER "100% Whitelabel Identity" and stage cards, as "Transformation Impact" arrives,
-      // the phone swoops from background to Left Bay and smoothly expands to FULL BIG SIZE!
+      // As "Transformation Impact" arrives, phone swoops from background to Left Bay and expands to FULL BIG SIZE!
       const t = (p - 0.67) / 0.03;
       const smoothT = t * t * (3 - 2 * t);
 
-      x = THREE.MathUtils.lerp(-3.3, -3.2, smoothT);
-      y = THREE.MathUtils.lerp(-0.18, -0.28, smoothT);
-      z = THREE.MathUtils.lerp(-4.5, 0.24, smoothT);
-      rotX = THREE.MathUtils.lerp(0.00, -0.01, smoothT);
+      x = THREE.MathUtils.lerp(0.0, -3.2, smoothT);
+      y = THREE.MathUtils.lerp(-6.0, -0.28, smoothT);
+      z = THREE.MathUtils.lerp(-30.0, 0.24, smoothT);
+      rotX = THREE.MathUtils.lerp(0.25, -0.01, smoothT);
       rotY = THREE.MathUtils.lerp(0.00, 0.15, smoothT);
       rotZ = 0.00;
-      sc = THREE.MathUtils.lerp(0.28, 0.95, smoothT); // Expands to full big mode right at Transformation Impact!
+      sc = THREE.MathUtils.lerp(0.0001, 0.95, smoothT); // Expands to full big mode at Transformation Impact!
 
     } else if (p <= 0.73) {
       // 9B. TRANSFORMATION IMPACT & CUSTOMIZATION PILLARS (0.70 - 0.73) — FULL BIG MODE ON LEFT BAY!
