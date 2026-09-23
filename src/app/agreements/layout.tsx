@@ -1,14 +1,14 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Service Agreements & Legal Framework | WebVibez Software Developer",
+  title: "Service Agreements & Legal Framework",
   description:
     "Master service agreements, intellectual property assignments, and service level commitments between WebVibez and client organizations.",
   alternates: {
     canonical: "https://webvibez.com/agreements",
   },
   openGraph: {
-    title: "Service Agreements & Legal Framework | WebVibez Software Developer",
+    title: "Service Agreements & Legal Framework",
     description:
       "Master service agreements, intellectual property assignments, and service level commitments between WebVibez and client organizations.",
     url: "https://webvibez.com/agreements",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Service Agreements & Legal Framework | WebVibez Software Developer",
+    title: "Service Agreements & Legal Framework",
     description:
       "Master service agreements, intellectual property assignments, and service level commitments between WebVibez and client organizations.",
     images: [

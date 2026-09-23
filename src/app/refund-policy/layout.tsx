@@ -1,14 +1,14 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Cancellation & Refund Policy | WebVibez Software Developer",
+  title: "Cancellation & Refund Policy",
   description:
     "Cancellation and refund policy for WebVibez custom software development services, subscription tiers, and deployment contracts.",
   alternates: {
     canonical: "https://webvibez.com/refund-policy",
   },
   openGraph: {
-    title: "Cancellation & Refund Policy | WebVibez Software Developer",
+    title: "Cancellation & Refund Policy",
     description:
       "Cancellation and refund policy for WebVibez custom software development services, subscription tiers, and deployment contracts.",
     url: "https://webvibez.com/refund-policy",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cancellation & Refund Policy | WebVibez Software Developer",
+    title: "Cancellation & Refund Policy",
     description:
       "Cancellation and refund policy for WebVibez custom software development services, subscription tiers, and deployment contracts.",
     images: [

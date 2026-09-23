@@ -1,14 +1,14 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact WebVibez Software Developer | Ahmedabad, Gujarat",
+  title: "Contact WebVibez | Ahmedabad, Gujarat",
   description:
     "Get in touch with WebVibez Software Developer. Discuss your custom software, mobile app, or coaching institute software requirements with our engineering team in Ahmedabad.",
   alternates: {
     canonical: "https://webvibez.com/contact",
   },
   openGraph: {
-    title: "Contact WebVibez Software Developer | Ahmedabad, Gujarat",
+    title: "Contact WebVibez | Ahmedabad, Gujarat",
     description:
       "Get in touch with WebVibez Software Developer. Discuss your custom software, mobile app, or coaching institute software requirements with our engineering team in Ahmedabad.",
     url: "https://webvibez.com/contact",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact WebVibez Software Developer | Ahmedabad, Gujarat",
+    title: "Contact WebVibez | Ahmedabad, Gujarat",
     description:
       "Get in touch with WebVibez Software Developer. Discuss your custom software, mobile app, or coaching institute software requirements with our engineering team in Ahmedabad.",
     images: [

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     canonical: "https://webvibez.com/portfolio",
   },
   openGraph: {
-    title: "Engineering Portfolio & Client Case Studies | WebVibez",
+    title: "Engineering Portfolio & Client Case Studies",
     description:
       "Explore real-world software engineering case studies, mobile applications, and web platforms delivered by WebVibez Software Developer.",
     url: "https://webvibez.com/portfolio",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Engineering Portfolio & Client Case Studies | WebVibez",
+    title: "Engineering Portfolio & Client Case Studies",
     description:
       "Explore real-world software engineering case studies, mobile applications, and web platforms delivered by WebVibez Software Developer.",
     images: [

@@ -1,14 +1,14 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Website Development Company in Ahmedabad | WebVibez",
+  title: "Website Development Company in Ahmedabad",
   description:
     "WebVibez is a website development company in Ahmedabad, Gujarat. We build high-performance Next.js websites, corporate web portals, and responsive business applications.",
   alternates: {
     canonical: "https://webvibez.com/services/website-development",
   },
   openGraph: {
-    title: "Website Development Company in Ahmedabad | WebVibez",
+    title: "Website Development Company in Ahmedabad",
     description:
       "High-performance Next.js websites, corporate portals, and responsive web applications built for speed, clean architecture, and conversion in Ahmedabad, Gujarat.",
     url: "https://webvibez.com/services/website-development",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Website Development Company in Ahmedabad | WebVibez",
+    title: "Website Development Company in Ahmedabad",
     description:
       "High-performance Next.js websites, corporate portals, and responsive web applications built for speed, clean architecture, and conversion in Ahmedabad, Gujarat.",
     images: [

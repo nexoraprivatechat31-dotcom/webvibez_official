@@ -1,14 +1,14 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | WebVibez Software Developer",
+  title: "Privacy Policy",
   description:
     "Privacy Policy for WebVibez Software Developer. Details how customer, student, and organizational data is processed, protected, and retained under DPDP India and global standards.",
   alternates: {
     canonical: "https://webvibez.com/privacy",
   },
   openGraph: {
-    title: "Privacy Policy | WebVibez Software Developer",
+    title: "Privacy Policy",
     description:
       "Privacy Policy for WebVibez Software Developer. Details how customer, student, and organizational data is processed, protected, and retained under DPDP India and global standards.",
     url: "https://webvibez.com/privacy",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Privacy Policy | WebVibez Software Developer",
+    title: "Privacy Policy",
     description:
       "Privacy Policy for WebVibez Software Developer. Details how customer, student, and organizational data is processed, protected, and retained under DPDP India and global standards.",
     images: [

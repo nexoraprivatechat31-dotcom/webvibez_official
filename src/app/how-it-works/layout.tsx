@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     canonical: "https://webvibez.com/how-it-works",
   },
   openGraph: {
-    title: "How WebVibez Works | 3-Step Development & 7-Day Launch | WebVibez",
+    title: "How WebVibez Works | 3-Step Development & 7-Day Launch",
     description:
       "Discover the WebVibez agile development methodology: Architecture & Scoping, Rapid Iteration & Continuous QA, and Zero-Downtime Multi-Platform Production Launch in 7 days.",
     url: "https://webvibez.com/how-it-works",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "How WebVibez Works | 3-Step Development & 7-Day Launch | WebVibez",
+    title: "How WebVibez Works | 3-Step Development & 7-Day Launch",
     description:
       "Discover the WebVibez agile development methodology: Architecture & Scoping, Rapid Iteration & Continuous QA, and Zero-Downtime Multi-Platform Production Launch in 7 days.",
     images: [

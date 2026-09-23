@@ -1,14 +1,14 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms and Conditions | WebVibez Software Developer",
+  title: "Terms and Conditions",
   description:
     "Terms and conditions for utilizing WebVibez Software Developer software products, development services, APIs, and client portals.",
   alternates: {
     canonical: "https://webvibez.com/terms",
   },
   openGraph: {
-    title: "Terms and Conditions | WebVibez Software Developer",
+    title: "Terms and Conditions",
     description:
       "Terms and conditions for utilizing WebVibez Software Developer software products, development services, APIs, and client portals.",
     url: "https://webvibez.com/terms",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Terms and Conditions | WebVibez Software Developer",
+    title: "Terms and Conditions",
     description:
       "Terms and conditions for utilizing WebVibez Software Developer software products, development services, APIs, and client portals.",
     images: [

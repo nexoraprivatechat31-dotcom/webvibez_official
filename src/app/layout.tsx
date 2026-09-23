@@ -36,8 +36,8 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://webvibez.com"),
   title: {
-    default: "WebVibez Software Developer | Custom Software, Website & Mobile App Development Company in Ahmedabad",
-    template: "%s | WebVibez Software Developer",
+    default: "WebVibez | Software & App Development Company Ahmedabad",
+    template: "%s | WebVibez",
   },
   description:
     "WebVibez is a leading custom software development company in Ahmedabad, Gujarat, India. Expert software developers creating high-performance websites, React Native mobile apps, enterprise cloud software, and white-label coaching management systems.",
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://webvibez.com",
     siteName: "WebVibez Software Developer",
-    title: "WebVibez Software Developer | Custom Software, Website & Mobile App Development",
+    title: "WebVibez | Custom Software & Mobile App Development",
     description:
       "Looking for top software developers? WebVibez engineers custom software, high-speed Next.js websites, iOS & Android mobile apps, and coaching institute ERP platforms.",
     images: [
@@ -94,7 +94,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "WebVibez Software Developer | Custom Software, Website & Mobile App Development",
+    title: "WebVibez | Custom Software & Mobile App Development",
     description:
       "Top custom software developers in Ahmedabad. We build custom websites, iOS/Android mobile apps, and cloud software platforms.",
     images: [

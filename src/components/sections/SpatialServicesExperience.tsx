@@ -247,9 +247,9 @@ export default function SpatialServicesExperience() {
             <Sparkles className="w-3.5 h-3.5" />
             <span>01 / CAPABILITIES &middot; SPATIAL 3D SERVICES STAGE</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-display text-slate-900 dark:text-white tracking-tight">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-display text-slate-900 dark:text-white tracking-tight">
             Software Services &amp; Architecture
-          </h2>
+          </h1>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-sans">
             Click, drag, or use arrows to explore our full-stack engineering disciplines.
           </p>

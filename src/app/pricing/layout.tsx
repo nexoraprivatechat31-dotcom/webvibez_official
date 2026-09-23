@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     canonical: "https://webvibez.com/pricing",
   },
   openGraph: {
-    title: "Predictable Investment & Pricing Plans | WebVibez",
+    title: "Predictable Investment & Pricing Plans",
     description:
       "Explore transparent software engineering packages: custom mobile apps, web applications, and coaching management software with no hidden fees.",
     url: "https://webvibez.com/pricing",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Predictable Investment & Pricing Plans | WebVibez",
+    title: "Predictable Investment & Pricing Plans",
     description:
       "Explore transparent software engineering packages: custom mobile apps, web applications, and coaching management software with no hidden fees.",
     images: [

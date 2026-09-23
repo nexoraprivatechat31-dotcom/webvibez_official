@@ -1,14 +1,14 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Mobile App Development Company in Ahmedabad | WebVibez",
+  title: "Mobile App Development Company in Ahmedabad",
   description:
     "WebVibez is a mobile app development company in Ahmedabad, Gujarat. We engineer high-performance cross-platform iOS and Android mobile apps using React Native.",
   alternates: {
     canonical: "https://webvibez.com/services/mobile-app-development",
   },
   openGraph: {
-    title: "Mobile App Development Company in Ahmedabad | WebVibez",
+    title: "Mobile App Development Company in Ahmedabad",
     description:
       "Native-performance iOS and Android mobile applications built with React Native, offline encryption, and official store publishing in Ahmedabad, Gujarat.",
     url: "https://webvibez.com/services/mobile-app-development",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mobile App Development Company in Ahmedabad | WebVibez",
+    title: "Mobile App Development Company in Ahmedabad",
     description:
       "Native-performance iOS and Android mobile applications built with React Native, offline encryption, and official store publishing in Ahmedabad, Gujarat.",
     images: [

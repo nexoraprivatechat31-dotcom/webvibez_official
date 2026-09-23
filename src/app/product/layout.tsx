@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     canonical: "https://webvibez.com/product",
   },
   openGraph: {
-    title: "Coaching Class Management Software & Mobile Platform | WebVibez",
+    title: "Coaching Class Management Software & Mobile Platform",
     description:
       "Explore WebVibez coaching institute software: 100% white-labeled iOS and Android mobile apps, live lecture streaming, CBT exam engine, hardware DRM anti-piracy, and automated UPI fee collection.",
     url: "https://webvibez.com/product",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Coaching Class Management Software & Mobile Platform | WebVibez",
+    title: "Coaching Class Management Software & Mobile Platform",
     description:
       "Explore WebVibez coaching institute software: 100% white-labeled iOS and Android mobile apps, live lecture streaming, CBT exam engine, hardware DRM anti-piracy, and automated UPI fee collection.",
     images: [

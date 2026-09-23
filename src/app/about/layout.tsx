@@ -1,14 +1,14 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About WebVibez | Digital Product Studio & Software Developer in Ahmedabad",
+  title: "About WebVibez | Product Studio & Developer, Ahmedabad",
   description:
     "WebVibez Software Developer is a digital product studio based in Ahmedabad, Gujarat, engineering high-impact mobile apps, websites, and institutional management systems.",
   alternates: {
     canonical: "https://webvibez.com/about",
   },
   openGraph: {
-    title: "About WebVibez | Digital Product Studio & Software Developer",
+    title: "About WebVibez | Product Studio & Developer, Ahmedabad",
     description:
       "WebVibez Software Developer is a digital product studio based in Ahmedabad, Gujarat, engineering high-impact mobile apps, websites, and institutional management systems.",
     url: "https://webvibez.com/about",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About WebVibez | Digital Product Studio & Software Developer",
+    title: "About WebVibez | Product Studio & Developer, Ahmedabad",
     description:
       "WebVibez Software Developer is a digital product studio based in Ahmedabad, Gujarat, engineering high-impact mobile apps, websites, and institutional management systems.",
     images: [

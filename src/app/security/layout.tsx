@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     canonical: "https://webvibez.com/security",
   },
   openGraph: {
-    title: "Enterprise Security & Data Protection Standards | WebVibez",
+    title: "Enterprise Security & Data Protection Standards",
     description:
       "Learn about WebVibez enterprise-grade security protocols: AES-256 data encryption, zero-trust role-based access, automated database backups, and privacy compliance.",
     url: "https://webvibez.com/security",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Enterprise Security & Data Protection Standards | WebVibez",
+    title: "Enterprise Security & Data Protection Standards",
     description:
       "Learn about WebVibez enterprise-grade security protocols: AES-256 data encryption, zero-trust role-based access, automated database backups, and privacy compliance.",
     images: [

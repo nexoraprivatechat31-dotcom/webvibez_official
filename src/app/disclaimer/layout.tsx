@@ -1,14 +1,14 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Disclaimer | WebVibez Software Developer",
+  title: "Disclaimer",
   description:
     "Legal disclaimer, accuracy notices, and technological limitation warranties regarding WebVibez products and development services.",
   alternates: {
     canonical: "https://webvibez.com/disclaimer",
   },
   openGraph: {
-    title: "Disclaimer | WebVibez Software Developer",
+    title: "Disclaimer",
     description:
       "Legal disclaimer, accuracy notices, and technological limitation warranties regarding WebVibez products and development services.",
     url: "https://webvibez.com/disclaimer",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Disclaimer | WebVibez Software Developer",
+    title: "Disclaimer",
     description:
       "Legal disclaimer, accuracy notices, and technological limitation warranties regarding WebVibez products and development services.",
     images: [

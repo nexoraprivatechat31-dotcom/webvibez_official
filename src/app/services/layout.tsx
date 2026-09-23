@@ -1,14 +1,14 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Software, Website & Mobile App Development Services in Ahmedabad",
+  title: "Software & App Development Services in Ahmedabad",
   description:
     "Explore WebVibez engineering services: custom software development, high-performance Next.js websites, React Native iOS and Android apps, and coaching management platforms in Ahmedabad, Gujarat.",
   alternates: {
     canonical: "https://webvibez.com/services",
   },
   openGraph: {
-    title: "Software, Website & Mobile App Development Services in Ahmedabad | WebVibez",
+    title: "Software & App Development Services Ahmedabad | WebVibez",
     description:
       "Explore WebVibez engineering services: custom software development, high-performance Next.js websites, React Native iOS and Android apps, and coaching management platforms in Ahmedabad, Gujarat.",
     url: "https://webvibez.com/services",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Software, Website & Mobile App Development Services in Ahmedabad | WebVibez",
+    title: "Software & App Development Services Ahmedabad | WebVibez",
     description:
       "Explore WebVibez engineering services: custom software development, high-performance Next.js websites, React Native iOS and Android apps, and coaching management platforms in Ahmedabad, Gujarat.",
     images: [

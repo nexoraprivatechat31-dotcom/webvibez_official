@@ -1,14 +1,14 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Custom Software Development Company in Ahmedabad | WebVibez",
+  title: "Custom Software Development in Ahmedabad",
   description:
     "WebVibez is a custom software development company in Ahmedabad, Gujarat. We engineer tailored enterprise software, scalable SaaS platforms, automated ERPs, and cloud APIs.",
   alternates: {
     canonical: "https://webvibez.com/services/custom-software-development",
   },
   openGraph: {
-    title: "Custom Software Development Company in Ahmedabad | WebVibez",
+    title: "Custom Software Development in Ahmedabad",
     description:
       "Bespoke enterprise software, scalable SaaS architectures, automated ERP workflows, and secure APIs engineered for growing businesses in Ahmedabad, Gujarat.",
     url: "https://webvibez.com/services/custom-software-development",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Custom Software Development Company in Ahmedabad | WebVibez",
+    title: "Custom Software Development in Ahmedabad",
     description:
       "Bespoke enterprise software, scalable SaaS architectures, automated ERP workflows, and secure APIs engineered for growing businesses in Ahmedabad, Gujarat.",
     images: [

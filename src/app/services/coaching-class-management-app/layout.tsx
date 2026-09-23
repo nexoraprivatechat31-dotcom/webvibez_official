@@ -1,14 +1,14 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Coaching Class Management App Development | WebVibez",
+  title: "Coaching Class Management App Development",
   description:
     "WebVibez builds custom branded coaching class management applications, student portal systems, CBT exam engines, and automated fee collection platforms in Ahmedabad, Gujarat.",
   alternates: {
     canonical: "https://webvibez.com/services/coaching-class-management-app",
   },
   openGraph: {
-    title: "Coaching Class Management App Development | WebVibez",
+    title: "Coaching Class Management App Development",
     description:
       "Custom branded coaching institute apps, NTA CBT mock exam engine, hardware DRM lecture protection, and automated UPI fee collection in Ahmedabad, Gujarat.",
     url: "https://webvibez.com/services/coaching-class-management-app",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Coaching Class Management App Development | WebVibez",
+    title: "Coaching Class Management App Development",
     description:
       "Custom branded coaching institute apps, NTA CBT mock exam engine, hardware DRM lecture protection, and automated UPI fee collection in Ahmedabad, Gujarat.",
     images: [

@@ -1,14 +1,14 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Platform Features | Coaching Management & Custom Software Capabilities",
+  title: "Platform Features | Coaching & Software Capabilities",
   description:
     "Explore core features of WebVibez platforms: live biometric & mobile attendance, automated fee processing, test performance analytics, and role-based administrative control.",
   alternates: {
     canonical: "https://webvibez.com/features",
   },
   openGraph: {
-    title: "Platform Features | Coaching Management & Custom Software Capabilities | WebVibez",
+    title: "Platform Features | Coaching & Software | WebVibez",
     description:
       "Explore core features of WebVibez platforms: live biometric & mobile attendance, automated fee processing, test performance analytics, and role-based administrative control.",
     url: "https://webvibez.com/features",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Platform Features | Coaching Management & Custom Software Capabilities | WebVibez",
+    title: "Platform Features | Coaching & Software | WebVibez",
     description:
       "Explore core features of WebVibez platforms: live biometric & mobile attendance, automated fee processing, test performance analytics, and role-based administrative control.",
     images: [
