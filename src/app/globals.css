@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* ============================================================
    WEBVIBEZ — DESIGN SYSTEM v2.0
-   Art Direction: Deep Ink / Pristine Pearl • Electric Blue • Electric Violet
+   Art Direction: Pristine Pearl (Light Mode Default) • Electric Blue • Electric Violet
    ============================================================ */
 
 @theme {
@@ -14,16 +16,17 @@
 
 @layer base {
   :root {
-    /* ── WebVibez Official Brand Colors from Logo ── */
-    --ink:        #06080D;
-    --graphite:   #0C1018;
-    --surface:    #121722;
-    --surface-hi: #19202E;
+    color-scheme: light;
+    /* ── WebVibez Official Brand Colors (Light Theme Default) ── */
+    --ink:        #F8FAFC;
+    --graphite:   #F1F5F9;
+    --surface:    #FFFFFF;
+    --surface-hi: #E2E8F0;
 
     /* ── Text ── */
-    --text-primary:  #F8FAFC;
-    --text-muted:    #94A3B8;
-    --text-faint:    #475569;
+    --text-primary:  #0F172A;
+    --text-muted:    #334155;
+    --text-faint:    #64748B;
 
     /* ── Logo Accent System (Electric Blue & Electric Violet) ── */
     --azure:           #0066FF; /* Electric Blue */
@@ -36,35 +39,36 @@
     --mint:            #00E5A3;
 
     /* ── Borders ── */
-    --border-subtle: rgba(255, 255, 255, 0.07);
-    --border-mid:    rgba(255, 255, 255, 0.14);
-    --border-azure:  rgba(0, 102, 255, 0.35);
-
-    /* ── Card & Glass ── */
-    --glass-bg:      rgba(17, 21, 26, 0.72);
-    --glass-border:  rgba(255, 255, 255, 0.08);
-    --surface-card-bg: rgba(23, 28, 35, 0.80);
-  }
-
-  /* ── Light Mode Token Overrides ── */
-  html.light,
-  [data-theme="light"] {
-    --ink:        #F8FAFC;
-    --graphite:   #F1F5F9;
-    --surface:    #FFFFFF;
-    --surface-hi: #E2E8F0;
-
-    --text-primary:  #0F172A;
-    --text-muted:    #334155;
-    --text-faint:    #64748B;
-
     --border-subtle: rgba(15, 23, 42, 0.08);
     --border-mid:    rgba(15, 23, 42, 0.16);
     --border-azure:  rgba(0, 102, 255, 0.35);
 
+    /* ── Card & Glass ── */
     --glass-bg:      rgba(255, 255, 255, 0.85);
     --glass-border:  rgba(15, 23, 42, 0.10);
     --surface-card-bg: rgba(255, 255, 255, 0.90);
+  }
+
+  /* ── Explicit Dark Mode Token Overrides ── */
+  html.dark,
+  [data-theme="dark"] {
+    color-scheme: dark;
+    --ink:        #06080D;
+    --graphite:   #0C1018;
+    --surface:    #121722;
+    --surface-hi: #19202E;
+
+    --text-primary:  #F8FAFC;
+    --text-muted:    #94A3B8;
+    --text-faint:    #475569;
+
+    --border-subtle: rgba(255, 255, 255, 0.07);
+    --border-mid:    rgba(255, 255, 255, 0.14);
+    --border-azure:  rgba(0, 102, 255, 0.35);
+
+    --glass-bg:      rgba(17, 21, 26, 0.72);
+    --glass-border:  rgba(255, 255, 255, 0.08);
+    --surface-card-bg: rgba(23, 28, 35, 0.80);
   }
 
   * {

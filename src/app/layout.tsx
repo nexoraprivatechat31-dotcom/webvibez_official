@@ -30,6 +30,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   themeColor: "#F8FAFC",
+  colorScheme: "light",
 };
 
 export const metadata: Metadata = {
@@ -202,9 +203,11 @@ export default function RootLayout({
       lang="en"
       className={`${spaceGrotesk.variable} ${manrope.variable} ${jetbrainsMono.variable} light`}
       data-theme="light"
+      style={{ colorScheme: "light" }}
       suppressHydrationWarning
     >
       <head>
+        <meta name="color-scheme" content="light" />
         <link rel="icon" href="/favicon.svg?v=3" type="image/svg+xml" />
         <link rel="icon" href="/favicon.png?v=3" type="image/png" sizes="512x512" />
         <link rel="icon" href="/favicon.png?v=3" type="image/png" sizes="192x192" />
@@ -228,17 +231,11 @@ export default function RootLayout({
             __html: `
               (function() {
                 try {
-                  var saved = localStorage.getItem('webvibez-theme');
                   var root = document.documentElement;
-                  if (saved === 'dark') {
-                    root.classList.add('dark');
-                    root.classList.remove('light');
-                    root.setAttribute('data-theme', 'dark');
-                  } else {
-                    root.classList.add('light');
-                    root.classList.remove('dark');
-                    root.setAttribute('data-theme', 'light');
-                  }
+                  root.classList.remove('dark');
+                  root.classList.add('light');
+                  root.setAttribute('data-theme', 'light');
+                  root.style.colorScheme = 'light';
                 } catch(e) {}
               })();
             `,
