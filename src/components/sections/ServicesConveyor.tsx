@@ -174,7 +174,9 @@ export default function ServicesConveyor({ onOpenConsultation }: ServicesConveyo
           return (
             <div
               key={rowIdx}
-              className="flex items-center gap-4 sm:gap-6 will-change-transform transition-transform duration-75 ease-out"
+              className={`items-center gap-4 sm:gap-6 will-change-transform transition-transform duration-75 ease-out ${
+                rowIdx >= 2 ? "hidden md:flex" : "flex"
+              }`}
               style={{
                 transform: `translate3d(${shift}px, 0, 0)`,
               }}
