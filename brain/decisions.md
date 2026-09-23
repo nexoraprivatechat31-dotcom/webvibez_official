@@ -34,3 +34,8 @@
   3. Pre-allocate all Three.js `Vector3` and `Color` instances in module scope to eliminate frame-by-frame Garbage Collection micro-stutters.
 - **Reason**: Guarantees buttery-smooth 60/120 FPS scrolling across both desktop mice/trackpads and high-refresh mobile touchscreens.
 - **Date**: September 2026
+
+### D07: Removal of Admin Panel UI Routes
+- **Decision**: Completely remove `/admin` frontend routes (`/admin/login`, `/admin/blog/*`) and UI components (`ArticleEditorForm`).
+- **Reason**: Blog articles are distributed and published directly via automated 3rd party syndication channels and Vercel Cron without needing a dedicated on-site CMS portal.
+- **Date**: September 2026
