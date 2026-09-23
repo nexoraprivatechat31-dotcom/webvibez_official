@@ -275,7 +275,7 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
         {/* ── MODAL HEADER (Generous Padding) ── */}
         <div className="px-6 py-5 sm:px-8 sm:py-6 border-b border-slate-100 dark:border-white/[0.08] flex items-center justify-between gap-4 shrink-0 bg-white/95 dark:bg-[#070A12]/95 backdrop-blur-md relative z-20">
           <div className="flex items-center gap-4">
-            <div className="relative h-12 w-12 rounded-2xl overflow-hidden p-0.5 bg-white/[0.08] border border-slate-200 dark:border-white/[0.15] flex items-center justify-center shadow-lg shadow-[#0066FF]/20 shrink-0">
+            <div className="relative h-12 w-12 rounded-2xl overflow-hidden p-0.5 bg-white dark:bg-white/[0.08] border border-slate-200/90 dark:border-white/[0.15] flex items-center justify-center shadow-md shadow-[#0066FF]/15 shrink-0">
               <img
                 src="/images/square-image.jpg"
                 alt="WebVibez Software Developer"

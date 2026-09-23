@@ -73,11 +73,11 @@ export default function Footer({ onOpenConsultation }: FooterProps) {
           <div className="lg:col-span-4 space-y-5 pr-0 lg:pr-4">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3.5 w-fit group">
-              <div className="h-13 w-13 sm:h-14 sm:w-14 rounded-xl sm:rounded-2xl overflow-hidden p-0.5 bg-slate-100 dark:bg-white/[0.08] border border-slate-200 dark:border-white/18 flex items-center justify-center shadow-lg group-hover:border-[#0066FF] group-hover:scale-105 transition-all duration-300 shrink-0">
+              <div className="h-13 w-13 sm:h-14 sm:w-14 rounded-2xl overflow-hidden p-0.5 bg-white dark:bg-white/[0.08] border border-slate-200/90 dark:border-white/18 flex items-center justify-center shadow-md shadow-[#0066FF]/15 group-hover:border-[#0066FF] group-hover:scale-105 transition-all duration-300 shrink-0">
                 <img
-                  src="/favicon.png"
+                  src="/images/square-image.jpg"
                   alt="WebVibez Software Developer"
-                  className="w-full h-full object-contain rounded-lg sm:rounded-xl"
+                  className="w-full h-full object-cover rounded-xl"
                 />
               </div>
               <div className="flex flex-col">

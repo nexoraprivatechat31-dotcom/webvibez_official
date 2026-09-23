@@ -43,11 +43,11 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
       <div className="max-w-[1440px] mx-auto px-6 sm:px-8 xl:px-10 flex items-center justify-between">
         {/* Official Brand Logo */}
         <Link href="/" className="flex items-center gap-3 sm:gap-3.5 group">
-          <div className="relative h-11 w-11 sm:h-12 sm:w-12 rounded-xl sm:rounded-2xl overflow-hidden p-0.5 bg-white/[0.08] border border-white/[0.18] flex items-center justify-center shadow-lg shadow-[#0066FF]/20 group-hover:border-[#0066FF]/80 group-hover:scale-105 transition-all duration-300">
+          <div className="relative h-11 w-11 sm:h-12 sm:w-12 rounded-2xl overflow-hidden p-0.5 bg-white dark:bg-white/[0.08] border border-slate-200/90 dark:border-white/[0.18] flex items-center justify-center shadow-md shadow-[#0066FF]/15 group-hover:border-[#0066FF]/80 group-hover:scale-105 transition-all duration-300 shrink-0">
             <img
               src="/images/square-image.jpg"
               alt="WebVibez Software Developer"
-              className="w-full h-full object-cover rounded-lg sm:rounded-xl"
+              className="w-full h-full object-cover rounded-xl"
             />
           </div>
           <div className="flex flex-col text-left">
