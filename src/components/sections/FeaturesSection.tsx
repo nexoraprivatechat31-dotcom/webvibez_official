@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { FEATURES_LIST } from "@/lib/data";
-import { ArrowUpRight, CheckCircle2, Shield, Sparkles } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, Shield, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
 import { selectFeatureApp, scrollPhysicsState, subscribePhysicsState } from "@/lib/scrollPhysicsState";
 
 interface FeaturesSectionProps {
@@ -13,17 +13,26 @@ export default function FeaturesSection({ onOpenConsultation }: FeaturesSectionP
   const [selectedFeatureIndex, setSelectedFeatureIndex] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
-
-
-  useEffect(() => {
-    const unsubscribe = subscribePhysicsState(() => {
-      setScrollProgress(scrollPhysicsState.scrollProgress);
-    });
-    return () => unsubscribe();
-  }, []);
+  const mobilePillsRef = useRef<HTMLDivElement>(null);
 
   const handleSelectFeature = (idx: number) => {
     setSelectedFeatureIndex(idx);
+    if (mobilePillsRef.current) {
+      const activeEl = mobilePillsRef.current.children[idx] as HTMLElement;
+      if (activeEl) {
+        activeEl.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      }
+    }
+  };
+
+  const handlePrevFeature = () => {
+    const nextIdx = (selectedFeatureIndex - 1 + FEATURES_LIST.length) % FEATURES_LIST.length;
+    handleSelectFeature(nextIdx);
+  };
+
+  const handleNextFeature = () => {
+    const nextIdx = (selectedFeatureIndex + 1) % FEATURES_LIST.length;
+    handleSelectFeature(nextIdx);
   };
 
   const activeFeature = FEATURES_LIST[selectedFeatureIndex];
@@ -66,11 +75,47 @@ export default function FeaturesSection({ onOpenConsultation }: FeaturesSectionP
           </p>
         </div>
 
-        {/* Side-by-Side 3-Column Grid: [ 11-System List ] [ Spec HUD Card ] [ 3D Phone Stage Anchor ] */}
+        {/* Mobile Horizontal Pill Selector (< lg) */}
+        <div className="lg:hidden mb-6 space-y-2">
+          <div className="flex items-center justify-between text-xs font-mono px-1">
+            <span className="text-[#0066FF] dark:text-[#38BDF8] font-bold flex items-center gap-1.5">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>SELECT SYSTEM ({String(selectedFeatureIndex + 1).padStart(2, "0")}/11)</span>
+            </span>
+            <span className="text-slate-500 dark:text-slate-400 text-[10.5px]">Swipe to switch &rarr;</span>
+          </div>
+          <div
+            ref={mobilePillsRef}
+            className="flex items-center gap-2 overflow-x-auto pb-2 pt-1 px-1 scroll-smooth"
+            style={{ scrollbarWidth: "none" }}
+          >
+            {FEATURES_LIST.map((feat, idx) => {
+              const isSelected = idx === selectedFeatureIndex;
+              return (
+                <button
+                  key={feat.id}
+                  onClick={() => handleSelectFeature(idx)}
+                  className={`shrink-0 flex items-center gap-2 px-3.5 py-2.5 rounded-xl text-xs font-mono font-bold border transition-all cursor-pointer ${
+                    isSelected
+                      ? "bg-gradient-to-r from-[#0066FF] to-[#7C3AED] text-white border-transparent shadow-md shadow-[#0066FF]/25 scale-102"
+                      : "bg-white/95 dark:bg-[#0B0F19]/95 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-white/10 hover:border-[#0066FF]/40"
+                  }`}
+                >
+                  <span className={isSelected ? "text-white/80" : "text-[#0066FF] dark:text-[#38BDF8]"}>
+                    {String(idx + 1).padStart(2, "0")}
+                  </span>
+                  <span>{feat.name}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Side-by-Side 3-Column Grid: [ 11-System List (Desktop) ] [ Spec HUD Card ] [ 3D Phone Stage Anchor (Desktop) ] */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 xl:gap-8 items-start">
           
-          {/* COLUMN 1 (lg:col-span-4): 11 Core Systems List */}
-          <div className="lg:col-span-4 flex flex-col space-y-1">
+          {/* COLUMN 1 (Desktop only: hidden on mobile, lg:flex): 11 Core Systems List */}
+          <div className="hidden lg:flex lg:col-span-4 flex-col space-y-1">
             {FEATURES_LIST.map((feat, idx) => {
               const isSelected = idx === selectedFeatureIndex;
 
@@ -247,6 +292,34 @@ export default function FeaturesSection({ onOpenConsultation }: FeaturesSectionP
                 <span>Deploy {activeFeature.name}</span>
                 <ArrowUpRight className="w-4 h-4" />
               </button>
+
+              {/* Mobile Quick-Switch Bar (< lg) */}
+              <div className="lg:hidden flex items-center justify-between pt-3 border-t border-slate-200/80 dark:border-white/10 text-xs font-mono">
+                <button
+                  type="button"
+                  onClick={handlePrevFeature}
+                  className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-white/[0.06] dark:hover:bg-white/[0.12] text-slate-800 dark:text-slate-200 font-bold active:scale-95 transition-all cursor-pointer"
+                >
+                  <ChevronLeft className="w-4 h-4 text-[#0066FF] dark:text-[#38BDF8]" />
+                  <span>Prev</span>
+                </button>
+                <div className="flex flex-col items-center">
+                  <span className="text-[11px] font-mono font-bold text-slate-700 dark:text-slate-300">
+                    SYS {String(selectedFeatureIndex + 1).padStart(2, "0")} / 11
+                  </span>
+                  <span className="text-[9.5px] text-slate-400">
+                    {activeFeature.category}
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  onClick={handleNextFeature}
+                  className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-white/[0.06] dark:hover:bg-white/[0.12] text-slate-800 dark:text-slate-200 font-bold active:scale-95 transition-all cursor-pointer"
+                >
+                  <span>Next</span>
+                  <ChevronRight className="w-4 h-4 text-[#0066FF] dark:text-[#38BDF8]" />
+                </button>
+              </div>
             </div>
           </div>
 
