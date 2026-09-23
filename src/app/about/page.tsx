@@ -32,6 +32,9 @@ import {
   Radio,
   Eye,
   CheckCheck,
+  Mail,
+  Phone,
+  MapPin,
 } from "lucide-react";
 
 export default function AboutPage() {
@@ -448,6 +451,124 @@ export default function AboutPage() {
                 </div>
               );
             })}
+          </div>
+        </div>
+
+        {/* ========================================================================================= */}
+        {/* SECTION 5.5: Leadership & Founder Spotlight — Rudram Joshi */}
+        {/* ========================================================================================= */}
+        <div className="p-6 sm:p-10 md:p-12 rounded-3xl bg-gradient-to-br from-white via-slate-50 to-[#0066FF]/5 dark:from-[#0B101E] dark:via-[#0C1222] dark:to-[#0066FF]/10 border border-slate-200 dark:border-white/10 shadow-2xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#0066FF]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#7C3AED]/10 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Founder Avatar & Badge Card */}
+            <div className="lg:col-span-5 flex flex-col items-center sm:items-start text-center sm:text-left space-y-5">
+              <div className="relative group">
+                <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-3xl bg-gradient-to-br from-[#0066FF] via-[#7C3AED] to-[#00E5A3] p-1 shadow-2xl shadow-[#0066FF]/25 transition-transform duration-300 group-hover:scale-105">
+                  <img
+                    src="/images/square-image.jpg"
+                    alt="Rudram Joshi - Founder & Lead Developer at WebVibez"
+                    className="w-full h-full object-cover rounded-[22px] bg-slate-100 dark:bg-slate-900"
+                  />
+                </div>
+                <div className="absolute -bottom-2 -right-2 px-3 py-1 rounded-full bg-emerald-500 text-slate-950 font-mono text-[11px] font-extrabold shadow-md flex items-center gap-1.5 border-2 border-white dark:border-[#0B101E]">
+                  <span className="w-2 h-2 rounded-full bg-slate-950 animate-pulse" />
+                  <span>ACTIVE DESK</span>
+                </div>
+              </div>
+
+              <div className="space-y-1.5">
+                <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#0066FF]/10 text-[#0066FF] dark:text-[#38BDF8] border border-[#0066FF]/20 text-[11px] font-mono font-bold uppercase tracking-wider">
+                  <Sparkles className="w-3.5 h-3.5" />
+                  <span>Leadership &amp; Engineering Direction</span>
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-extrabold font-display text-slate-900 dark:text-white">
+                  Rudram Joshi
+                </h3>
+                <p className="text-sm font-mono font-bold text-[#0066FF] dark:text-[#38BDF8]">
+                  Founder &amp; Lead Developer
+                </p>
+                <div className="flex items-center gap-2 text-xs font-mono text-slate-500 dark:text-slate-400 pt-1">
+                  <MapPin className="w-3.5 h-3.5 text-[#0066FF] shrink-0" />
+                  <span>Ahmedabad, Gujarat, India</span>
+                </div>
+              </div>
+
+              {/* Direct Founder Channels */}
+              <div className="flex flex-wrap gap-2.5 w-full pt-1">
+                <a
+                  href="https://wa.me/919213615531?text=Hi%20Rudram%20Joshi%20(WebVibez%20Founder),%20I%20would%20like%20to%20consult%20about%20building%20an%20app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-slate-950 font-bold text-xs shadow-md transition-all active:scale-95 cursor-pointer"
+                >
+                  <WhatsAppIcon className="w-4 h-4 text-slate-950" />
+                  <span>WhatsApp Rudram</span>
+                </a>
+                <a
+                  href="mailto:webvibezsoftdev@gmail.com"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white dark:bg-white/10 border border-slate-200 dark:border-white/15 text-slate-800 dark:text-white font-mono text-xs hover:border-[#0066FF] transition-all cursor-pointer"
+                >
+                  <Mail className="w-4 h-4 text-[#0066FF] dark:text-[#38BDF8]" />
+                  <span>Email Desk</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Founder Story & Core Engineering Pillars */}
+            <div className="lg:col-span-7 space-y-5">
+              <div className="space-y-3">
+                <h4 className="text-xl sm:text-2xl font-bold font-display text-slate-900 dark:text-white leading-snug">
+                  &ldquo;We don&apos;t just write code — we architect scalable software assets that empower institutes to own their digital destiny.&rdquo;
+                </h4>
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-sans leading-relaxed">
+                  Founded and led by <strong className="text-slate-900 dark:text-white">Rudram Joshi</strong>, WebVibez Software Developer was established with a singular focus: delivering zero-compromise, 100% white-labeled mobile apps and custom enterprise platforms without SaaS commission traps.
+                </p>
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-sans leading-relaxed">
+                  Rudram directly oversees the engineering roadmap, architecture design, DRM anti-piracy hardening, and rapid 7-day deployment cycles for every client partner.
+                </p>
+              </div>
+
+              {/* Founder Technical Badges */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                <div className="p-3.5 rounded-2xl bg-white dark:bg-[#070B16] border border-slate-200/80 dark:border-white/10 space-y-1">
+                  <div className="text-[11px] font-mono font-bold text-[#0066FF] dark:text-[#38BDF8] uppercase">
+                    Full-Stack Core
+                  </div>
+                  <div className="text-xs font-semibold text-slate-800 dark:text-slate-200">
+                    Next.js 16 &amp; React Native
+                  </div>
+                  <div className="text-[10.5px] text-slate-500 dark:text-slate-400">
+                    60 FPS native rendering
+                  </div>
+                </div>
+
+                <div className="p-3.5 rounded-2xl bg-white dark:bg-[#070B16] border border-slate-200/80 dark:border-white/10 space-y-1">
+                  <div className="text-[11px] font-mono font-bold text-emerald-600 dark:text-[#00E5A3] uppercase">
+                    Security Lead
+                  </div>
+                  <div className="text-xs font-semibold text-slate-800 dark:text-slate-200">
+                    Hardware DRM &amp; IP Protection
+                  </div>
+                  <div className="text-[10.5px] text-slate-500 dark:text-slate-400">
+                    Zero screenshot piracy
+                  </div>
+                </div>
+
+                <div className="p-3.5 rounded-2xl bg-white dark:bg-[#070B16] border border-slate-200/80 dark:border-white/10 space-y-1">
+                  <div className="text-[11px] font-mono font-bold text-[#7C3AED] dark:text-[#A78BFA] uppercase">
+                    Execution
+                  </div>
+                  <div className="text-xs font-semibold text-slate-800 dark:text-slate-200">
+                    7-Day Fast Track
+                  </div>
+                  <div className="text-[10.5px] text-slate-500 dark:text-slate-400">
+                    Direct developer oversight
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 

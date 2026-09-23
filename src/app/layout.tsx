@@ -42,8 +42,11 @@ export const metadata: Metadata = {
   description:
     "WebVibez is a leading custom software development company in Ahmedabad, Gujarat, India. Expert software developers creating high-performance websites, React Native mobile apps, enterprise cloud software, and white-label coaching management systems.",
   applicationName: "WebVibez Software Developer",
-  authors: [{ name: "WebVibez Software Developer", url: "https://webvibez.com" }],
-  creator: "WebVibez Software Developer",
+  authors: [
+    { name: "Rudram Joshi", url: "https://webvibez.com/about" },
+    { name: "WebVibez Software Developer", url: "https://webvibez.com" },
+  ],
+  creator: "Rudram Joshi — WebVibez Software Developer",
   publisher: "WebVibez Software Developer",
   alternates: {
     canonical: "https://webvibez.com",
@@ -194,6 +197,18 @@ const jsonLdGlobal = {
       image: "https://webvibez.com/logo.jpeg",
       description:
         "WebVibez Software Developer is a premier software development company in Ahmedabad, Gujarat, India. We build custom web applications, React Native mobile apps, institute management platforms, and enterprise cloud software solutions.",
+      founder: {
+        "@type": "Person",
+        "@id": "https://webvibez.com/#founder",
+        name: "Rudram Joshi",
+        jobTitle: "Founder & Lead Developer",
+        image: "https://webvibez.com/images/square-image.jpg",
+        url: "https://webvibez.com/about",
+        sameAs: [
+          "https://wa.me/919213615531",
+          "https://github.com/webvibez",
+        ],
+      },
       telephone: "+91-92136-15531",
       email: "contact@webvibez.com",
       priceRange: "$$",
@@ -369,6 +384,23 @@ const jsonLdGlobal = {
           name: "Contact & Consultation",
           url: "https://webvibez.com/contact",
         },
+      ],
+    },
+    {
+      "@type": "Person",
+      "@id": "https://webvibez.com/#founder",
+      name: "Rudram Joshi",
+      jobTitle: "Founder & Lead Developer",
+      worksFor: {
+        "@id": "https://webvibez.com/#organization",
+      },
+      image: "https://webvibez.com/images/square-image.jpg",
+      url: "https://webvibez.com/about",
+      description:
+        "Rudram Joshi is the Founder and Lead Developer of WebVibez Software Developer, architecting full-stack custom web applications, React Native mobile apps, and institutional management software.",
+      sameAs: [
+        "https://wa.me/919213615531",
+        "https://github.com/webvibez",
       ],
     },
   ],

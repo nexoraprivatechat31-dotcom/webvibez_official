@@ -92,7 +92,7 @@ export default function Footer({ onOpenConsultation }: FooterProps) {
 
             {/* Studio Bio */}
             <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-[15px] leading-relaxed max-w-lg">
-              <strong className="text-slate-900 dark:text-white font-semibold">Build Smart. Scale Fast.</strong> We engineer high-performance mobile applications, custom web platforms, and complete management software for coaching institutes, businesses, and startups.
+              <strong className="text-slate-900 dark:text-white font-semibold">Build Smart. Scale Fast.</strong> Founded and engineered by <strong className="text-slate-900 dark:text-white font-semibold">Rudram Joshi</strong> (Founder &amp; Lead Developer). We engineer high-performance mobile applications, custom web platforms, and complete management software for coaching institutes, businesses, and startups.
             </p>
 
             {/* Direct Connect Action Buttons */}
@@ -233,6 +233,8 @@ export default function Footer({ onOpenConsultation }: FooterProps) {
             <span className="font-bold text-slate-900 dark:text-white">
               WebVibez <span className="font-semibold text-slate-700 dark:text-slate-300">Software Developer</span>.
             </span>
+            <span className="text-slate-300 dark:text-slate-700 select-none">•</span>
+            <span className="text-slate-600 dark:text-slate-400 font-medium">Founded &amp; Led by Rudram Joshi</span>
             <span className="text-slate-300 dark:text-slate-700 select-none">•</span>
             <span className="text-slate-600 dark:text-slate-400">All rights reserved.</span>
             <span className="hidden md:inline text-slate-300 dark:text-slate-700 select-none">•</span>

@@ -227,9 +227,42 @@ export default function ContactPage() {
               </div>
 
               <div className="space-y-3.5 pt-2">
+                {/* Founder & Lead Developer Spotlight */}
+                <div className="p-4 rounded-2xl bg-gradient-to-r from-[#0066FF]/10 via-[#7C3AED]/10 to-transparent border border-[#0066FF]/30 space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#0066FF] dark:text-[#38BDF8] flex items-center gap-1.5">
+                      <Sparkles className="w-3.5 h-3.5 text-[#0066FF]" />
+                      Founder &amp; Lead Developer
+                    </span>
+                    <span className="px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-[#00E5A3] border border-emerald-500/20 text-[10px] font-mono font-bold">
+                      Direct Desk
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-3.5">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#0066FF] to-[#8B00FF] p-0.5 shadow-md shrink-0">
+                      <img
+                        src="/images/square-image.jpg"
+                        alt="Rudram Joshi - Founder & Lead Developer @ WebVibez"
+                        className="w-full h-full object-cover rounded-[14px]"
+                      />
+                    </div>
+                    <div>
+                      <div className="text-base font-bold text-slate-900 dark:text-white font-display">
+                        Rudram Joshi
+                      </div>
+                      <div className="text-xs text-slate-600 dark:text-slate-300 font-sans">
+                        Founder &amp; Senior Full-Stack Architect
+                      </div>
+                      <div className="text-[10.5px] text-slate-400 font-mono">
+                        Ahmedabad, Gujarat, India
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 {/* VIP WhatsApp Channel */}
                 <a
-                  href="https://wa.me/919213615531?text=Hi%20WebVibez%20Software%20Developer,%20I%20would%20like%20to%20consult%20about%20building%20an%20app"
+                  href="https://wa.me/919213615531?text=Hi%20Rudram%20Joshi%20(WebVibez%20Founder),%20I%20would%20like%20to%20consult%20about%20building%20an%20app"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-between p-4 rounded-2xl bg-emerald-500/[0.08] dark:bg-emerald-950/20 border border-emerald-500/30 hover:border-emerald-500 shadow-sm transition-all duration-200 group cursor-pointer"
@@ -240,14 +273,14 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <div className="text-[11px] font-mono font-bold text-emerald-800 dark:text-[#00E5A3] flex items-center gap-2">
-                        <span>VIP WhatsApp Bridge</span>
+                        <span>VIP WhatsApp (Direct to Rudram)</span>
                         <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                       </div>
                       <div className="text-sm sm:text-base font-bold text-slate-900 dark:text-white">
                         +91 92136 15531
                       </div>
                       <div className="text-[10.5px] text-slate-500 dark:text-slate-400 font-sans">
-                        Chat directly with lead architect
+                        Direct consultation with Rudram Joshi
                       </div>
                     </div>
                   </div>
