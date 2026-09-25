@@ -5,8 +5,10 @@ export async function POST(request: Request) {
   try {
     const { password } = await request.json();
     
-    // Check against environment variable (not hardcoded)
-    if (password === process.env.ADMIN_PASSWORD) {
+    // Remove potential surrounding quotes and whitespace from env var
+    const envPassword = (process.env.ADMIN_PASSWORD || "").replace(/^["']|["']$/g, "").trim();
+    
+    if (password === envPassword) {
       // Set a secure HTTP-only cookie
       const cookieStore = await cookies();
       cookieStore.set("webvibez_admin_session", "authenticated", {
