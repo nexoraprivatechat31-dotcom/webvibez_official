@@ -282,8 +282,10 @@ const jsonLdGlobal = {
         ],
       },
       sameAs: [
-        "https://www.linkedin.com/company/webvibez",
-        "https://x.com/webvibez",
+        "https://www.linkedin.com/company/webvibez-software-devlopers/",
+        "https://www.instagram.com/webvibez_softdev?stkn=amd6a3B4MDF4bzJy",
+        "https://x.com/Rudram9524",
+        "https://www.facebook.com/share/19k7jWKD2H/",
         "https://github.com/webvibez",
       ],
     },
@@ -399,6 +401,7 @@ const jsonLdGlobal = {
         "Rudram Joshi is the Founder and Lead Developer of WebVibez Software Developer, architecting full-stack custom web applications, React Native mobile apps, and institutional management software.",
       sameAs: [
         "https://wa.me/919213615531",
+        "https://x.com/Rudram9524",
         "https://github.com/webvibez",
       ],
     },

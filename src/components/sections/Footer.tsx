@@ -13,6 +13,10 @@ import {
   MapPin,
   Clock,
   Sparkles,
+  Linkedin,
+  Instagram,
+  Twitter,
+  Facebook,
 } from "lucide-react";
 
 interface FooterProps {
@@ -153,6 +157,20 @@ export default function Footer({ onOpenConsultation }: FooterProps) {
               <div className="flex items-center gap-2.5 text-[11.5px] sm:text-xs">
                 <Clock className="w-4 h-4 text-emerald-500 shrink-0" />
                 <span>Mon – Sat: 9:30 AM – 7:30 PM IST (Response SLA &lt; 2h)</span>
+              </div>
+              <div className="flex flex-wrap items-center gap-3 pt-3">
+                <a href="https://www.linkedin.com/company/webvibez-software-devlopers/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-9 h-9 rounded-full bg-slate-100 hover:bg-[#0077b5] dark:bg-white/[0.06] dark:hover:bg-[#0077b5] flex items-center justify-center text-slate-500 hover:text-white dark:text-slate-400 dark:hover:text-white transition-all shadow-sm">
+                  <Linkedin className="w-4 h-4" />
+                </a>
+                <a href="https://www.instagram.com/webvibez_softdev?stkn=amd6a3B4MDF4bzJy" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-9 h-9 rounded-full bg-slate-100 hover:bg-[#E1306C] dark:bg-white/[0.06] dark:hover:bg-[#E1306C] flex items-center justify-center text-slate-500 hover:text-white dark:text-slate-400 dark:hover:text-white transition-all shadow-sm">
+                  <Instagram className="w-4 h-4" />
+                </a>
+                <a href="https://x.com/Rudram9524" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-900 dark:bg-white/[0.06] dark:hover:bg-white flex items-center justify-center text-slate-500 hover:text-white dark:text-slate-400 dark:hover:text-slate-900 transition-all shadow-sm">
+                  <Twitter className="w-4 h-4" />
+                </a>
+                <a href="https://www.facebook.com/share/19k7jWKD2H/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-9 h-9 rounded-full bg-slate-100 hover:bg-[#1877F2] dark:bg-white/[0.06] dark:hover:bg-[#1877F2] flex items-center justify-center text-slate-500 hover:text-white dark:text-slate-400 dark:hover:text-white transition-all shadow-sm">
+                  <Facebook className="w-4 h-4" />
+                </a>
               </div>
             </div>
           </div>
