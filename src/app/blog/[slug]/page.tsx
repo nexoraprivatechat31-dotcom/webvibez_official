@@ -34,8 +34,8 @@ export async function generateMetadata({
 
   const title = article.seoTitle || article.title;
   const description = article.seoDescription || article.description || article.excerpt;
-  const url = `https://webvibez.com/blog/${article.slug}`;
-  const image = article.featuredImage || "https://webvibez.com/og-image.jpeg";
+  const url = `https://www.webvibez.com/blog/${article.slug}`;
+  const image = article.featuredImage || "https://www.webvibez.com/og-image.jpeg";
 
   return {
     title,
@@ -83,27 +83,27 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     "@type": "TechArticle",
     headline: article.title,
     description: article.description || article.excerpt,
-    image: [article.featuredImage || "https://webvibez.com/og-image.jpeg"],
+    image: [article.featuredImage || "https://www.webvibez.com/og-image.jpeg"],
     datePublished: article.publicationDate,
     dateModified: article.modifiedDate || article.publicationDate,
     author: {
       "@type": "Person",
       name: article.author?.name || "Rudram Joshi",
       jobTitle: article.author?.role || "Lead Software Architect",
-      url: article.author?.url || "https://webvibez.com/about",
+      url: article.author?.url || "https://www.webvibez.com/about",
     },
     publisher: {
       "@type": "Organization",
       name: "WebVibez Software Developer",
-      url: "https://webvibez.com",
+      url: "https://www.webvibez.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://webvibez.com/favicon.png",
+        url: "https://www.webvibez.com/favicon.png",
       },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://webvibez.com/blog/${article.slug}`,
+      "@id": `https://www.webvibez.com/blog/${article.slug}`,
     },
   };
 

@@ -100,7 +100,7 @@ export const QualityGateEngine = {
     });
 
     // 8. Canonical URL integrity
-    const expectedCanonical = `https://webvibez.com/blog/${article.slug}`;
+    const expectedCanonical = `https://www.webvibez.com/blog/${article.slug}`;
     const hasValidCanonical = article.canonicalUrl === expectedCanonical;
     checks.push({
       rule: "Canonical URL Integrity",

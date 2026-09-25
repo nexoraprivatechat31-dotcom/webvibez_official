@@ -5,18 +5,18 @@ export const metadata: Metadata = {
   description:
     "Explore transparent software engineering packages: custom mobile apps, web applications, and coaching management software with no hidden fees.",
   alternates: {
-    canonical: "https://webvibez.com/pricing",
+    canonical: "https://www.webvibez.com/pricing",
   },
   openGraph: {
     title: "Predictable Investment & Pricing Plans",
     description:
       "Explore transparent software engineering packages: custom mobile apps, web applications, and coaching management software with no hidden fees.",
-    url: "https://webvibez.com/pricing",
+    url: "https://www.webvibez.com/pricing",
     siteName: "WebVibez Software Developer",
     type: "website",
     images: [
       {
-        url: "https://webvibez.com/logo.jpeg",
+        url: "https://www.webvibez.com/logo.jpeg",
         width: 1200,
         height: 630,
         alt: "WebVibez Pricing and Investment Plans",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Explore transparent software engineering packages: custom mobile apps, web applications, and coaching management software with no hidden fees.",
     images: [
-      "https://webvibez.com/logo.jpeg",
+      "https://www.webvibez.com/logo.jpeg",
     ],
   },
 };
@@ -44,26 +44,26 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://webvibez.com",
+          "item": "https://www.webvibez.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Pricing",
-          "item": "https://webvibez.com/pricing",
+          "item": "https://www.webvibez.com/pricing",
         },
       ],
     },
     {
       "@type": "WebPage",
       "name": "WebVibez Pricing & Plans",
-      "url": "https://webvibez.com/pricing",
+      "url": "https://www.webvibez.com/pricing",
       "description":
         "Transparent software pricing packages for custom apps, websites, and coaching platforms.",
       "provider": {
         "@type": "Organization",
         "name": "WebVibez Software Developer",
-        "url": "https://webvibez.com",
+        "url": "https://www.webvibez.com",
       },
     },
   ],

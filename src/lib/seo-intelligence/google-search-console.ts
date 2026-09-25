@@ -4,7 +4,7 @@ import { GSCRow, GSCSnapshot } from "./types";
 const FIRST_PARTY_SEARCH_DATA: GSCRow[] = [
   {
     query: "coaching class management software",
-    page: "https://webvibez.com/services/coaching-class-management-app",
+    page: "https://www.webvibez.com/services/coaching-class-management-app",
     country: "IND",
     device: "DESKTOP",
     clicks: 142,
@@ -15,7 +15,7 @@ const FIRST_PARTY_SEARCH_DATA: GSCRow[] = [
   },
   {
     query: "tuition class student attendance app",
-    page: "https://webvibez.com/services/coaching-class-management-app",
+    page: "https://www.webvibez.com/services/coaching-class-management-app",
     country: "IND",
     device: "MOBILE",
     clicks: 89,
@@ -26,7 +26,7 @@ const FIRST_PARTY_SEARCH_DATA: GSCRow[] = [
   },
   {
     query: "mobile app development cost in india",
-    page: "https://webvibez.com/services/mobile-app-development",
+    page: "https://www.webvibez.com/services/mobile-app-development",
     country: "IND",
     device: "MOBILE",
     clicks: 210,
@@ -37,7 +37,7 @@ const FIRST_PARTY_SEARCH_DATA: GSCRow[] = [
   },
   {
     query: "custom software development company ahmedabad",
-    page: "https://webvibez.com/services/custom-software-development",
+    page: "https://www.webvibez.com/services/custom-software-development",
     country: "IND",
     device: "DESKTOP",
     clicks: 64,
@@ -48,7 +48,7 @@ const FIRST_PARTY_SEARCH_DATA: GSCRow[] = [
   },
   {
     query: "react native vs flutter cost",
-    page: "https://webvibez.com/services/mobile-app-development",
+    page: "https://www.webvibez.com/services/mobile-app-development",
     country: "GLOBAL",
     device: "DESKTOP",
     clicks: 45,
@@ -59,7 +59,7 @@ const FIRST_PARTY_SEARCH_DATA: GSCRow[] = [
   },
   {
     query: "nextjs enterprise business website architecture",
-    page: "https://webvibez.com/services/website-development",
+    page: "https://www.webvibez.com/services/website-development",
     country: "GLOBAL",
     device: "DESKTOP",
     clicks: 76,
@@ -70,7 +70,7 @@ const FIRST_PARTY_SEARCH_DATA: GSCRow[] = [
   },
   {
     query: "coaching institute fee collection automated whatsapp",
-    page: "https://webvibez.com/services/coaching-class-management-app",
+    page: "https://www.webvibez.com/services/coaching-class-management-app",
     country: "IND",
     device: "MOBILE",
     clicks: 58,
@@ -81,7 +81,7 @@ const FIRST_PARTY_SEARCH_DATA: GSCRow[] = [
   },
   {
     query: "build vs buy custom business software",
-    page: "https://webvibez.com/services/custom-software-development",
+    page: "https://www.webvibez.com/services/custom-software-development",
     country: "GLOBAL",
     device: "DESKTOP",
     clicks: 34,
@@ -111,7 +111,7 @@ export const GoogleSearchConsoleService = {
     // If official Google Search Console API credentials are provided:
     if (isConfigured && process.env.GSC_ACCESS_TOKEN) {
       try {
-        const siteUrl = encodeURIComponent(process.env.GSC_SITE_URL || "https://webvibez.com");
+        const siteUrl = encodeURIComponent(process.env.GSC_SITE_URL || "https://www.webvibez.com");
         const res = await fetch(
           `https://www.googleapis.com/webmasters/v3/sites/${siteUrl}/searchAnalytics/query`,
           {

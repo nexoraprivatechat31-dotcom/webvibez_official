@@ -241,7 +241,7 @@ export const BlogRepository = {
       id: article.id || `art-${Date.now()}`,
       createdAt: article.createdAt || now,
       updatedAt: now,
-      canonicalUrl: `https://webvibez.com/blog/${article.slug}`,
+      canonicalUrl: `https://www.webvibez.com/blog/${article.slug}`,
     };
 
     const client = getTursoClient();
@@ -313,7 +313,7 @@ export const BlogRepository = {
       ...existing,
       ...updates,
       updatedAt: now,
-      canonicalUrl: updates.slug ? `https://webvibez.com/blog/${updates.slug}` : existing.canonicalUrl,
+      canonicalUrl: updates.slug ? `https://www.webvibez.com/blog/${updates.slug}` : existing.canonicalUrl,
     };
 
     const client = getTursoClient();

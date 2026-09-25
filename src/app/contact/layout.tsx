@@ -5,18 +5,18 @@ export const metadata: Metadata = {
   description:
     "Get in touch with WebVibez Software Developer. Discuss your custom software, mobile app, or coaching institute software requirements with our engineering team in Ahmedabad.",
   alternates: {
-    canonical: "https://webvibez.com/contact",
+    canonical: "https://www.webvibez.com/contact",
   },
   openGraph: {
     title: "Contact WebVibez | Ahmedabad, Gujarat",
     description:
       "Get in touch with WebVibez Software Developer. Discuss your custom software, mobile app, or coaching institute software requirements with our engineering team in Ahmedabad.",
-    url: "https://webvibez.com/contact",
+    url: "https://www.webvibez.com/contact",
     siteName: "WebVibez Software Developer",
     type: "website",
     images: [
       {
-        url: "https://webvibez.com/logo.jpeg",
+        url: "https://www.webvibez.com/logo.jpeg",
         width: 1200,
         height: 630,
         alt: "Contact WebVibez Software Developer in Ahmedabad",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Get in touch with WebVibez Software Developer. Discuss your custom software, mobile app, or coaching institute software requirements with our engineering team in Ahmedabad.",
     images: [
-      "https://webvibez.com/logo.jpeg",
+      "https://www.webvibez.com/logo.jpeg",
     ],
   },
 };
@@ -44,26 +44,26 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://webvibez.com",
+          "item": "https://www.webvibez.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Contact",
-          "item": "https://webvibez.com/contact",
+          "item": "https://www.webvibez.com/contact",
         },
       ],
     },
     {
       "@type": "ContactPage",
       "name": "Contact WebVibez Software Developer",
-      "url": "https://webvibez.com/contact",
+      "url": "https://www.webvibez.com/contact",
       "description":
         "Contact page for WebVibez Software Developer in Ahmedabad, Gujarat, India.",
       "mainEntity": {
         "@type": "LocalBusiness",
         "name": "WebVibez Software Developer",
-        "url": "https://webvibez.com",
+        "url": "https://www.webvibez.com",
         "telephone": "+91-92136-15531",
         "address": {
           "@type": "PostalAddress",

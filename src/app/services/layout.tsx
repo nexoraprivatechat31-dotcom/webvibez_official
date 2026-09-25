@@ -5,18 +5,18 @@ export const metadata: Metadata = {
   description:
     "Explore WebVibez engineering services: custom software development, high-performance Next.js websites, React Native iOS and Android apps, and coaching management platforms in Ahmedabad, Gujarat.",
   alternates: {
-    canonical: "https://webvibez.com/services",
+    canonical: "https://www.webvibez.com/services",
   },
   openGraph: {
     title: "Software & App Development Services Ahmedabad | WebVibez",
     description:
       "Explore WebVibez engineering services: custom software development, high-performance Next.js websites, React Native iOS and Android apps, and coaching management platforms in Ahmedabad, Gujarat.",
-    url: "https://webvibez.com/services",
+    url: "https://www.webvibez.com/services",
     siteName: "WebVibez Software Developer",
     type: "website",
     images: [
       {
-        url: "https://webvibez.com/logo.jpeg",
+        url: "https://www.webvibez.com/logo.jpeg",
         width: 1200,
         height: 630,
         alt: "WebVibez Software Development Services in Ahmedabad",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Explore WebVibez engineering services: custom software development, high-performance Next.js websites, React Native iOS and Android apps, and coaching management platforms in Ahmedabad, Gujarat.",
     images: [
-      "https://webvibez.com/logo.jpeg",
+      "https://www.webvibez.com/logo.jpeg",
     ],
   },
 };
@@ -44,13 +44,13 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://webvibez.com",
+          "item": "https://www.webvibez.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Services",
-          "item": "https://webvibez.com/services",
+          "item": "https://www.webvibez.com/services",
         },
       ],
     },
@@ -61,7 +61,7 @@ const jsonLd = {
       "provider": {
         "@type": "Organization",
         "name": "WebVibez Software Developer",
-        "url": "https://webvibez.com",
+        "url": "https://www.webvibez.com",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Ahmedabad",

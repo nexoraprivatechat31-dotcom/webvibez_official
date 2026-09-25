@@ -34,7 +34,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://webvibez.com"),
+  metadataBase: new URL("https://www.webvibez.com"),
   title: {
     default: "WebVibez | Software & App Development Company Ahmedabad",
     template: "%s | WebVibez",
@@ -43,13 +43,13 @@ export const metadata: Metadata = {
     "WebVibez is a leading custom software development company in Ahmedabad, Gujarat, India. Expert software developers creating high-performance websites, React Native mobile apps, enterprise cloud software, and white-label coaching management systems.",
   applicationName: "WebVibez Software Developer",
   authors: [
-    { name: "Rudram Joshi", url: "https://webvibez.com/about" },
-    { name: "WebVibez Software Developer", url: "https://webvibez.com" },
+    { name: "Rudram Joshi", url: "https://www.webvibez.com/about" },
+    { name: "WebVibez Software Developer", url: "https://www.webvibez.com" },
   ],
   creator: "Rudram Joshi — WebVibez Software Developer",
   publisher: "WebVibez Software Developer",
   alternates: {
-    canonical: "https://webvibez.com",
+    canonical: "https://www.webvibez.com",
   },
   icons: {
     icon: [
@@ -67,23 +67,23 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://webvibez.com",
+    url: "https://www.webvibez.com",
     siteName: "WebVibez Software Developer",
     title: "WebVibez | Custom Software & Mobile App Development",
     description:
       "Looking for top software developers? WebVibez engineers custom software, high-speed Next.js websites, iOS & Android mobile apps, and coaching institute ERP platforms.",
     images: [
       {
-        url: "https://webvibez.com/logo.jpeg",
-        secureUrl: "https://webvibez.com/logo.jpeg",
+        url: "https://www.webvibez.com/logo.jpeg",
+        secureUrl: "https://www.webvibez.com/logo.jpeg",
         width: 1080,
         height: 987,
         type: "image/jpeg",
         alt: "WebVibez Software Developer Logo",
       },
       {
-        url: "https://webvibez.com/og-image.jpeg",
-        secureUrl: "https://webvibez.com/og-image.jpeg",
+        url: "https://www.webvibez.com/og-image.jpeg",
+        secureUrl: "https://www.webvibez.com/og-image.jpeg",
         width: 1200,
         height: 630,
         type: "image/jpeg",
@@ -97,8 +97,8 @@ export const metadata: Metadata = {
     description:
       "Top custom software developers in Ahmedabad. We build custom websites, iOS/Android mobile apps, and cloud software platforms.",
     images: [
-      "https://webvibez.com/og-image.jpeg",
-      "https://webvibez.com/logo.jpeg",
+      "https://www.webvibez.com/og-image.jpeg",
+      "https://www.webvibez.com/logo.jpeg",
     ],
   },
   robots: {
@@ -181,7 +181,7 @@ const jsonLdGlobal = {
   "@graph": [
     {
       "@type": ["Organization", "SoftwareApplication", "ProfessionalService"],
-      "@id": "https://webvibez.com/#organization",
+      "@id": "https://www.webvibez.com/#organization",
       name: "WebVibez Software Developer",
       alternateName: [
         "WebVibez",
@@ -191,18 +191,18 @@ const jsonLdGlobal = {
         "WebVibez Technologies",
         "webvibez.com",
       ],
-      url: "https://webvibez.com",
-      logo: "https://webvibez.com/favicon.png",
-      image: "https://webvibez.com/logo.jpeg",
+      url: "https://www.webvibez.com",
+      logo: "https://www.webvibez.com/favicon.png",
+      image: "https://www.webvibez.com/logo.jpeg",
       description:
         "WebVibez Software Developer is a premier software development company in Ahmedabad, Gujarat, India. We build custom web applications, React Native mobile apps, institute management platforms, and enterprise cloud software solutions.",
       founder: {
         "@type": "Person",
-        "@id": "https://webvibez.com/#founder",
+        "@id": "https://www.webvibez.com/#founder",
         name: "Rudram Joshi",
         jobTitle: "Founder & Lead Developer",
-        image: "https://webvibez.com/images/square-image.jpg",
-        url: "https://webvibez.com/about",
+        image: "https://www.webvibez.com/images/square-image.jpg",
+        url: "https://www.webvibez.com/about",
         sameAs: [
           "https://wa.me/919213615531",
           "https://github.com/webvibez",
@@ -289,24 +289,24 @@ const jsonLdGlobal = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://webvibez.com/#website",
-      url: "https://webvibez.com",
+      "@id": "https://www.webvibez.com/#website",
+      url: "https://www.webvibez.com",
       name: "WebVibez Software Developer",
       alternateName: "WebVibez",
       description:
         "Official website of WebVibez Software Developer - Custom software, mobile app development, Next.js websites, and coaching-class management platforms in Ahmedabad.",
       publisher: {
-        "@id": "https://webvibez.com/#organization",
+        "@id": "https://www.webvibez.com/#organization",
       },
       potentialAction: {
         "@type": "SearchAction",
-        target: "https://webvibez.com/blog?q={search_term_string}",
+        target: "https://www.webvibez.com/blog?q={search_term_string}",
         "query-input": "required name=search_term_string",
       },
     },
     {
       "@type": "FAQPage",
-      "@id": "https://webvibez.com/#faq",
+      "@id": "https://www.webvibez.com/#faq",
       mainEntity: [
         {
           "@type": "Question",
@@ -329,7 +329,7 @@ const jsonLdGlobal = {
           name: "How can I hire WebVibez for custom software development?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "You can book a direct consultation with WebVibez Software Developer at https://webvibez.com/contact or chat directly via WhatsApp on +91-92136-15531.",
+            text: "You can book a direct consultation with WebVibez Software Developer at https://www.webvibez.com/contact or chat directly via WhatsApp on +91-92136-15531.",
           },
         },
         {
@@ -344,57 +344,57 @@ const jsonLdGlobal = {
     },
     {
       "@type": "ItemList",
-      "@id": "https://webvibez.com/#sitelinks",
+      "@id": "https://www.webvibez.com/#sitelinks",
       name: "WebVibez Software Developer Key Navigation",
       itemListElement: [
         {
           "@type": "SiteNavigationElement",
           position: 1,
           name: "Custom Software Development",
-          url: "https://webvibez.com/services/custom-software-development",
+          url: "https://www.webvibez.com/services/custom-software-development",
         },
         {
           "@type": "SiteNavigationElement",
           position: 2,
           name: "Mobile App Development",
-          url: "https://webvibez.com/services/mobile-app-development",
+          url: "https://www.webvibez.com/services/mobile-app-development",
         },
         {
           "@type": "SiteNavigationElement",
           position: 3,
           name: "Website Development",
-          url: "https://webvibez.com/services/website-development",
+          url: "https://www.webvibez.com/services/website-development",
         },
         {
           "@type": "SiteNavigationElement",
           position: 4,
           name: "Coaching Class Management Software",
-          url: "https://webvibez.com/services/coaching-class-management-app",
+          url: "https://www.webvibez.com/services/coaching-class-management-app",
         },
         {
           "@type": "SiteNavigationElement",
           position: 5,
           name: "Pricing & Calculator",
-          url: "https://webvibez.com/pricing",
+          url: "https://www.webvibez.com/pricing",
         },
         {
           "@type": "SiteNavigationElement",
           position: 6,
           name: "Contact & Consultation",
-          url: "https://webvibez.com/contact",
+          url: "https://www.webvibez.com/contact",
         },
       ],
     },
     {
       "@type": "Person",
-      "@id": "https://webvibez.com/#founder",
+      "@id": "https://www.webvibez.com/#founder",
       name: "Rudram Joshi",
       jobTitle: "Founder & Lead Developer",
       worksFor: {
-        "@id": "https://webvibez.com/#organization",
+        "@id": "https://www.webvibez.com/#organization",
       },
-      image: "https://webvibez.com/images/square-image.jpg",
-      url: "https://webvibez.com/about",
+      image: "https://www.webvibez.com/images/square-image.jpg",
+      url: "https://www.webvibez.com/about",
       description:
         "Rudram Joshi is the Founder and Lead Developer of WebVibez Software Developer, architecting full-stack custom web applications, React Native mobile apps, and institutional management software.",
       sameAs: [
@@ -426,16 +426,16 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-icon.png" sizes="180x180" />
         <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="image_src" href="https://webvibez.com/logo.jpeg" />
-        <meta property="og:image" content="https://webvibez.com/logo.jpeg" />
-        <meta property="og:image:secure_url" content="https://webvibez.com/logo.jpeg" />
+        <link rel="image_src" href="https://www.webvibez.com/logo.jpeg" />
+        <meta property="og:image" content="https://www.webvibez.com/logo.jpeg" />
+        <meta property="og:image:secure_url" content="https://www.webvibez.com/logo.jpeg" />
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="1080" />
         <meta property="og:image:height" content="987" />
         <meta property="og:image:alt" content="WebVibez Software Developer Logo" />
-        <meta name="twitter:image" content="https://webvibez.com/og-image.jpeg" />
+        <meta name="twitter:image" content="https://www.webvibez.com/og-image.jpeg" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta itemProp="image" content="https://webvibez.com/logo.jpeg" />
+        <meta itemProp="image" content="https://www.webvibez.com/logo.jpeg" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGlobal) }}

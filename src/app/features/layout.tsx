@@ -5,18 +5,18 @@ export const metadata: Metadata = {
   description:
     "Explore core features of WebVibez platforms: live biometric & mobile attendance, automated fee processing, test performance analytics, and role-based administrative control.",
   alternates: {
-    canonical: "https://webvibez.com/features",
+    canonical: "https://www.webvibez.com/features",
   },
   openGraph: {
     title: "Platform Features | Coaching & Software | WebVibez",
     description:
       "Explore core features of WebVibez platforms: live biometric & mobile attendance, automated fee processing, test performance analytics, and role-based administrative control.",
-    url: "https://webvibez.com/features",
+    url: "https://www.webvibez.com/features",
     siteName: "WebVibez Software Developer",
     type: "website",
     images: [
       {
-        url: "https://webvibez.com/logo.jpeg",
+        url: "https://www.webvibez.com/logo.jpeg",
         width: 1200,
         height: 630,
         alt: "WebVibez Platform Features & Capabilities",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Explore core features of WebVibez platforms: live biometric & mobile attendance, automated fee processing, test performance analytics, and role-based administrative control.",
     images: [
-      "https://webvibez.com/logo.jpeg",
+      "https://www.webvibez.com/logo.jpeg",
     ],
   },
 };
@@ -44,26 +44,26 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://webvibez.com",
+          "item": "https://www.webvibez.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Features",
-          "item": "https://webvibez.com/features",
+          "item": "https://www.webvibez.com/features",
         },
       ],
     },
     {
       "@type": "WebPage",
       "name": "WebVibez Platform Features & Technical Capabilities",
-      "url": "https://webvibez.com/features",
+      "url": "https://www.webvibez.com/features",
       "description":
         "Detailed architecture and capabilities of WebVibez software systems, including attendance tracking, automated fee receipts, and test analytics.",
       "publisher": {
         "@type": "Organization",
         "name": "WebVibez Software Developer",
-        "url": "https://webvibez.com",
+        "url": "https://www.webvibez.com",
       },
     },
   ],

@@ -5,18 +5,18 @@ export const metadata: Metadata = {
   description:
     "Cancellation and refund policy for WebVibez custom software development services, subscription tiers, and deployment contracts.",
   alternates: {
-    canonical: "https://webvibez.com/refund-policy",
+    canonical: "https://www.webvibez.com/refund-policy",
   },
   openGraph: {
     title: "Cancellation & Refund Policy",
     description:
       "Cancellation and refund policy for WebVibez custom software development services, subscription tiers, and deployment contracts.",
-    url: "https://webvibez.com/refund-policy",
+    url: "https://www.webvibez.com/refund-policy",
     siteName: "WebVibez Software Developer",
     type: "website",
     images: [
       {
-        url: "https://webvibez.com/logo.jpeg",
+        url: "https://www.webvibez.com/logo.jpeg",
         width: 1200,
         height: 630,
         alt: "WebVibez Cancellation and Refund Policy",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Cancellation and refund policy for WebVibez custom software development services, subscription tiers, and deployment contracts.",
     images: [
-      "https://webvibez.com/logo.jpeg",
+      "https://www.webvibez.com/logo.jpeg",
     ],
   },
 };
@@ -44,20 +44,20 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://webvibez.com",
+          "item": "https://www.webvibez.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Refund Policy",
-          "item": "https://webvibez.com/refund-policy",
+          "item": "https://www.webvibez.com/refund-policy",
         },
       ],
     },
     {
       "@type": "WebPage",
       "name": "WebVibez Cancellation & Refund Policy",
-      "url": "https://webvibez.com/refund-policy",
+      "url": "https://www.webvibez.com/refund-policy",
     },
   ],
 };

@@ -5,18 +5,18 @@ export const metadata: Metadata = {
   description:
     "Terms and conditions for utilizing WebVibez Software Developer software products, development services, APIs, and client portals.",
   alternates: {
-    canonical: "https://webvibez.com/terms",
+    canonical: "https://www.webvibez.com/terms",
   },
   openGraph: {
     title: "Terms and Conditions",
     description:
       "Terms and conditions for utilizing WebVibez Software Developer software products, development services, APIs, and client portals.",
-    url: "https://webvibez.com/terms",
+    url: "https://www.webvibez.com/terms",
     siteName: "WebVibez Software Developer",
     type: "website",
     images: [
       {
-        url: "https://webvibez.com/logo.jpeg",
+        url: "https://www.webvibez.com/logo.jpeg",
         width: 1200,
         height: 630,
         alt: "WebVibez Terms and Conditions",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Terms and conditions for utilizing WebVibez Software Developer software products, development services, APIs, and client portals.",
     images: [
-      "https://webvibez.com/logo.jpeg",
+      "https://www.webvibez.com/logo.jpeg",
     ],
   },
 };
@@ -44,20 +44,20 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://webvibez.com",
+          "item": "https://www.webvibez.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Terms and Conditions",
-          "item": "https://webvibez.com/terms",
+          "item": "https://www.webvibez.com/terms",
         },
       ],
     },
     {
       "@type": "WebPage",
       "name": "WebVibez Terms and Conditions",
-      "url": "https://webvibez.com/terms",
+      "url": "https://www.webvibez.com/terms",
     },
   ],
 };

@@ -5,18 +5,18 @@ export const metadata: Metadata = {
   description:
     "Legal disclaimer, accuracy notices, and technological limitation warranties regarding WebVibez products and development services.",
   alternates: {
-    canonical: "https://webvibez.com/disclaimer",
+    canonical: "https://www.webvibez.com/disclaimer",
   },
   openGraph: {
     title: "Disclaimer",
     description:
       "Legal disclaimer, accuracy notices, and technological limitation warranties regarding WebVibez products and development services.",
-    url: "https://webvibez.com/disclaimer",
+    url: "https://www.webvibez.com/disclaimer",
     siteName: "WebVibez Software Developer",
     type: "website",
     images: [
       {
-        url: "https://webvibez.com/logo.jpeg",
+        url: "https://www.webvibez.com/logo.jpeg",
         width: 1200,
         height: 630,
         alt: "WebVibez Legal Disclaimer",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Legal disclaimer, accuracy notices, and technological limitation warranties regarding WebVibez products and development services.",
     images: [
-      "https://webvibez.com/logo.jpeg",
+      "https://www.webvibez.com/logo.jpeg",
     ],
   },
 };
@@ -44,20 +44,20 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://webvibez.com",
+          "item": "https://www.webvibez.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Disclaimer",
-          "item": "https://webvibez.com/disclaimer",
+          "item": "https://www.webvibez.com/disclaimer",
         },
       ],
     },
     {
       "@type": "WebPage",
       "name": "WebVibez Disclaimer",
-      "url": "https://webvibez.com/disclaimer",
+      "url": "https://www.webvibez.com/disclaimer",
     },
   ],
 };

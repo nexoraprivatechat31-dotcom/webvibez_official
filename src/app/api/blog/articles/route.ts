@@ -84,7 +84,7 @@ export async function POST(request: NextRequest) {
         role: "Founder & Lead Architect @ WebVibez",
         bio: "Full-stack developer and founder of WebVibez, specializing in Next.js web applications, React Native mobile architectures, and scalable business software.",
         avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
-        url: "https://webvibez.com/about",
+        url: "https://www.webvibez.com/about",
       },
       featuredImage:
         body.featuredImage ||
@@ -95,7 +95,7 @@ export async function POST(request: NextRequest) {
       readingTime,
       status: body.status || "DRAFT",
       featured: Boolean(body.featured),
-      canonicalUrl: `https://webvibez.com/blog/${body.slug}`,
+      canonicalUrl: `https://www.webvibez.com/blog/${body.slug}`,
       seoTitle: body.seoTitle || body.title,
       seoDescription: body.seoDescription || body.description,
       ogTitle: body.ogTitle || body.title,

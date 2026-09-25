@@ -5,18 +5,18 @@ export const metadata: Metadata = {
   description:
     "WebVibez is a custom software development company in Ahmedabad, Gujarat. We engineer tailored enterprise software, scalable SaaS platforms, automated ERPs, and cloud APIs.",
   alternates: {
-    canonical: "https://webvibez.com/services/custom-software-development",
+    canonical: "https://www.webvibez.com/services/custom-software-development",
   },
   openGraph: {
     title: "Custom Software Development in Ahmedabad",
     description:
       "Bespoke enterprise software, scalable SaaS architectures, automated ERP workflows, and secure APIs engineered for growing businesses in Ahmedabad, Gujarat.",
-    url: "https://webvibez.com/services/custom-software-development",
+    url: "https://www.webvibez.com/services/custom-software-development",
     siteName: "WebVibez Software Developer",
     type: "website",
     images: [
       {
-        url: "https://webvibez.com/logo.jpeg",
+        url: "https://www.webvibez.com/logo.jpeg",
         width: 1200,
         height: 630,
         alt: "Custom Software Development Company in Ahmedabad — WebVibez",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Bespoke enterprise software, scalable SaaS architectures, automated ERP workflows, and secure APIs engineered for growing businesses in Ahmedabad, Gujarat.",
     images: [
-      "https://webvibez.com/logo.jpeg",
+      "https://www.webvibez.com/logo.jpeg",
     ],
   },
 };
@@ -44,19 +44,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://webvibez.com",
+          "item": "https://www.webvibez.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Services",
-          "item": "https://webvibez.com/services",
+          "item": "https://www.webvibez.com/services",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Custom Software Development",
-          "item": "https://webvibez.com/services/custom-software-development",
+          "item": "https://www.webvibez.com/services/custom-software-development",
         },
       ],
     },
@@ -67,7 +67,7 @@ const jsonLd = {
       "provider": {
         "@type": "Organization",
         "name": "WebVibez Software Developer",
-        "url": "https://webvibez.com",
+        "url": "https://www.webvibez.com",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Ahmedabad",

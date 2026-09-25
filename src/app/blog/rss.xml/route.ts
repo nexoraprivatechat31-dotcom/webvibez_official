@@ -3,7 +3,7 @@ import { BlogRepository } from "@/lib/blog/repository";
 
 export async function GET() {
   const articles = await BlogRepository.getPublishedArticles();
-  const baseUrl = "https://webvibez.com";
+  const baseUrl = "https://www.webvibez.com";
 
   const feedItems = articles
     .map(

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "WebVibez Engineering & Technology Blog",
     description:
       "Explore articles on Next.js, React Native, custom business software, mobile app development costs, and educational tech platforms.",
-    url: "https://webvibez.com/blog",
+    url: "https://www.webvibez.com/blog",
     siteName: "WebVibez",
     type: "website",
     locale: "en_US",
@@ -24,9 +24,9 @@ export const metadata: Metadata = {
       "In-depth engineering guides, mobile app cost breakdowns, and tech architecture insights.",
   },
   alternates: {
-    canonical: "https://webvibez.com/blog",
+    canonical: "https://www.webvibez.com/blog",
     types: {
-      "application/rss+xml": "https://webvibez.com/blog/rss.xml",
+      "application/rss+xml": "https://www.webvibez.com/blog/rss.xml",
     },
   },
 };

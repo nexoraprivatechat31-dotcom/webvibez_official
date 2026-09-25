@@ -5,18 +5,18 @@ export const metadata: Metadata = {
   description:
     "Explore real-world software engineering case studies, mobile applications, and web platforms delivered by WebVibez Software Developer.",
   alternates: {
-    canonical: "https://webvibez.com/portfolio",
+    canonical: "https://www.webvibez.com/portfolio",
   },
   openGraph: {
     title: "Engineering Portfolio & Client Case Studies",
     description:
       "Explore real-world software engineering case studies, mobile applications, and web platforms delivered by WebVibez Software Developer.",
-    url: "https://webvibez.com/portfolio",
+    url: "https://www.webvibez.com/portfolio",
     siteName: "WebVibez Software Developer",
     type: "website",
     images: [
       {
-        url: "https://webvibez.com/logo.jpeg",
+        url: "https://www.webvibez.com/logo.jpeg",
         width: 1200,
         height: 630,
         alt: "WebVibez Engineering Portfolio and Case Studies",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Explore real-world software engineering case studies, mobile applications, and web platforms delivered by WebVibez Software Developer.",
     images: [
-      "https://webvibez.com/logo.jpeg",
+      "https://www.webvibez.com/logo.jpeg",
     ],
   },
 };
@@ -44,26 +44,26 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://webvibez.com",
+          "item": "https://www.webvibez.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Portfolio",
-          "item": "https://webvibez.com/portfolio",
+          "item": "https://www.webvibez.com/portfolio",
         },
       ],
     },
     {
       "@type": "CollectionPage",
       "name": "WebVibez Software Development Portfolio",
-      "url": "https://webvibez.com/portfolio",
+      "url": "https://www.webvibez.com/portfolio",
       "description":
         "Featured software engineering projects, mobile apps, and coaching management portals.",
       "publisher": {
         "@type": "Organization",
         "name": "WebVibez Software Developer",
-        "url": "https://webvibez.com",
+        "url": "https://www.webvibez.com",
       },
     },
   ],

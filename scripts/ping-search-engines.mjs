@@ -9,7 +9,7 @@
  * 3. IndexNow (covers Bing, Yandex, Seznam, Naver)
  */
 
-const SITE_URL = "https://webvibez.com";
+const SITE_URL = "https://www.webvibez.com";
 const SITEMAP_URL = `${SITE_URL}/sitemap.xml`;
 
 // All public URLs from sitemap
@@ -120,7 +120,7 @@ async function main() {
   console.log("   → This tells Google to discover ALL 19 URLs at once");
   console.log("");
   console.log("2. Bing Webmaster Tools (https://www.bing.com/webmasters):");
-  console.log("   → Sitemaps → Submit sitemap → 'https://webvibez.com/sitemap.xml'");
+  console.log("   → Sitemaps → Submit sitemap → 'https://www.webvibez.com/sitemap.xml'");
   console.log("");
   console.log("3. For IndexNow to work, create this key file:");
   console.log(`   → Create file: public/webvibez-indexnow-key.txt`);

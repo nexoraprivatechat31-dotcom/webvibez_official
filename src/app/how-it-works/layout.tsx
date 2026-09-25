@@ -5,18 +5,18 @@ export const metadata: Metadata = {
   description:
     "Discover the WebVibez agile development methodology: Architecture & Scoping, Rapid Iteration & Continuous QA, and Zero-Downtime Multi-Platform Production Launch in 7 days.",
   alternates: {
-    canonical: "https://webvibez.com/how-it-works",
+    canonical: "https://www.webvibez.com/how-it-works",
   },
   openGraph: {
     title: "How WebVibez Works | 3-Step Development & 7-Day Launch",
     description:
       "Discover the WebVibez agile development methodology: Architecture & Scoping, Rapid Iteration & Continuous QA, and Zero-Downtime Multi-Platform Production Launch in 7 days.",
-    url: "https://webvibez.com/how-it-works",
+    url: "https://www.webvibez.com/how-it-works",
     siteName: "WebVibez Software Developer",
     type: "website",
     images: [
       {
-        url: "https://webvibez.com/logo.jpeg",
+        url: "https://www.webvibez.com/logo.jpeg",
         width: 1200,
         height: 630,
         alt: "How WebVibez Works — 3-Step Development & Deployment",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Discover the WebVibez agile development methodology: Architecture & Scoping, Rapid Iteration & Continuous QA, and Zero-Downtime Multi-Platform Production Launch in 7 days.",
     images: [
-      "https://webvibez.com/logo.jpeg",
+      "https://www.webvibez.com/logo.jpeg",
     ],
   },
 };
@@ -44,13 +44,13 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://webvibez.com",
+          "item": "https://www.webvibez.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "How It Works",
-          "item": "https://webvibez.com/how-it-works",
+          "item": "https://www.webvibez.com/how-it-works",
         },
       ],
     },

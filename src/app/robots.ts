@@ -17,7 +17,7 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
     ],
-    sitemap: "https://webvibez.com/sitemap.xml",
-    host: "https://webvibez.com",
+    sitemap: "https://www.webvibez.com/sitemap.xml",
+    host: "https://www.webvibez.com",
   };
 }

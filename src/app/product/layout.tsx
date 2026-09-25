@@ -5,18 +5,18 @@ export const metadata: Metadata = {
   description:
     "Explore WebVibez coaching institute software: 100% white-labeled iOS and Android mobile apps, live lecture streaming, CBT exam engine, hardware DRM anti-piracy, and automated UPI fee collection.",
   alternates: {
-    canonical: "https://webvibez.com/product",
+    canonical: "https://www.webvibez.com/product",
   },
   openGraph: {
     title: "Coaching Class Management Software & Mobile Platform",
     description:
       "Explore WebVibez coaching institute software: 100% white-labeled iOS and Android mobile apps, live lecture streaming, CBT exam engine, hardware DRM anti-piracy, and automated UPI fee collection.",
-    url: "https://webvibez.com/product",
+    url: "https://www.webvibez.com/product",
     siteName: "WebVibez Software Developer",
     type: "website",
     images: [
       {
-        url: "https://webvibez.com/logo.jpeg",
+        url: "https://www.webvibez.com/logo.jpeg",
         width: 1200,
         height: 630,
         alt: "WebVibez Coaching Class Software & Mobile App Platform",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Explore WebVibez coaching institute software: 100% white-labeled iOS and Android mobile apps, live lecture streaming, CBT exam engine, hardware DRM anti-piracy, and automated UPI fee collection.",
     images: [
-      "https://webvibez.com/logo.jpeg",
+      "https://www.webvibez.com/logo.jpeg",
     ],
   },
 };
@@ -44,13 +44,13 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://webvibez.com",
+          "item": "https://www.webvibez.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Product",
-          "item": "https://webvibez.com/product",
+          "item": "https://www.webvibez.com/product",
         },
       ],
     },
@@ -64,7 +64,7 @@ const jsonLd = {
       "provider": {
         "@type": "Organization",
         "name": "WebVibez Software Developer",
-        "url": "https://webvibez.com",
+        "url": "https://www.webvibez.com",
       },
     },
   ],

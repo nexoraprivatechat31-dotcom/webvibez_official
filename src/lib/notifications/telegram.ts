@@ -181,7 +181,7 @@ export const TelegramNotifier = {
     
     const companyBtnText = isHindi ? "🚀 WebVibez सॉफ्टवेयर सॉल्यूशंस" : "🚀 WebVibez Software Solutions";
     inlineButtons.push([
-      { text: companyBtnText, url: "https://webvibez.com/services" },
+      { text: companyBtnText, url: "https://www.webvibez.com/services" },
     ]);
 
     let message = "";
@@ -199,7 +199,7 @@ export const TelegramNotifier = {
 🏷️ <b>श्रेणी:</b> ${article.category} | ⏱️ ${article.readingTime || "7 मिनट"}
 👨‍💻 <b>लेखक:</b> ${article.author?.name || "Rudram Joshi"} (WebVibez)
 ✉️ <b>ईमेल:</b> webvibezsoftdev@gmail.com
-🌐 <b>वेबसाइट:</b> https://webvibez.com
+🌐 <b>वेबसाइट:</b> https://www.webvibez.com
 🕒 <b>समय:</b> ${pubDateIST}${directAns}${syndicatedChannels}
 
 ✅ <i>रियल बैकलिंक्स और कैनोनिकल SEO के साथ ऑटोमैटिक डिस्ट्रीब्यूटेड!</i>
@@ -217,7 +217,7 @@ export const TelegramNotifier = {
 🏷️ <b>Category:</b> ${article.category} | ⏱️ ${article.readingTime || "7 min read"}
 👨‍💻 <b>Author:</b> ${article.author?.name || "Rudram Joshi"} (Founder & Lead Architect)
 ✉️ <b>Email:</b> webvibezsoftdev@gmail.com
-🌐 <b>Website:</b> https://webvibez.com
+🌐 <b>Website:</b> https://www.webvibez.com
 🕒 <b>Time:</b> ${pubDateIST}${directAns}${syndicatedChannels}
 
 ✅ <i>Distributed automatically with real backlinks & canonical SEO!</i>

@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
 
 ✅ <b>Status:</b> Ready for Daily 09:30 AM IST Automated Publishing Alerts.
 📌 <b>Chat ID:</b> <code>${process.env.TELEGRAM_CHAT_ID}</code>
-🔗 <b>Website:</b> <a href="https://webvibez.com">https://webvibez.com</a>
+🔗 <b>Website:</b> <a href="https://www.webvibez.com">https://www.webvibez.com</a>
 
 <i>You will receive instant alerts with live blog URLs and syndication status whenever a post is published.</i>
     `.trim();

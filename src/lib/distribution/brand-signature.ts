@@ -11,7 +11,7 @@ export const BrandSignature = {
     const authorRole = isHindi 
       ? "संस्थापक एवं लीड आर्किटेक्ट, WebVibez" 
       : (article.author?.role || "Founder & Lead Architect, WebVibez");
-    const canonical = article.canonicalUrl || `https://webvibez.com/blog/${article.slug}`;
+    const canonical = article.canonicalUrl || `https://www.webvibez.com/blog/${article.slug}`;
 
     if (isHindi) {
       return `
@@ -22,8 +22,8 @@ export const BrandSignature = {
 - **लेखक (Author):** ${authorName} (${authorRole})
 - **कंपनी (Company):** WebVibez Software Developer
 - **ईमेल (Official Email):** [webvibezsoftdev@gmail.com](mailto:webvibezsoftdev@gmail.com)
-- **ऑफिशियल वेबसाइट (Website):** [https://webvibez.com](https://webvibez.com)
-- **सॉफ्टवेयर सॉल्यूशंस (Services):** [https://webvibez.com/services](https://webvibez.com/services)
+- **ऑफिशियल वेबसाइट (Website):** [https://www.webvibez.com](https://www.webvibez.com)
+- **सॉफ्टवेयर सॉल्यूशंस (Services):** [https://www.webvibez.com/services](https://www.webvibez.com/services)
 - **मूल स्रोत (Canonical Source):** [*मूल रूप से WebVibez पर प्रकाशित*](${canonical})
 
 *कस्टम सॉफ्टवेयर, कोचिंग मैनेजमेंट ऐप्स और वेब आर्किटेक्चर समाधान के लिए WebVibez से संपर्क करें।*
@@ -38,8 +38,8 @@ export const BrandSignature = {
 - **Author:** ${authorName} (${authorRole})
 - **Company:** WebVibez Software Developer
 - **Official Email:** [webvibezsoftdev@gmail.com](mailto:webvibezsoftdev@gmail.com)
-- **Official Website:** [https://webvibez.com](https://webvibez.com)
-- **Enterprise Solutions:** [https://webvibez.com/services](https://webvibez.com/services)
+- **Official Website:** [https://www.webvibez.com](https://www.webvibez.com)
+- **Enterprise Solutions:** [https://www.webvibez.com/services](https://www.webvibez.com/services)
 - **Original Source:** [*Originally published at WebVibez*](${canonical})
 
 *Building bespoke coaching management platforms, high-performance web systems, and mobile applications.*
@@ -52,7 +52,7 @@ export const BrandSignature = {
     const authorRole = isHindi 
       ? "संस्थापक एवं लीड आर्किटेक्ट, WebVibez" 
       : (article.author?.role || "Founder & Lead Architect, WebVibez");
-    const canonical = article.canonicalUrl || `https://webvibez.com/blog/${article.slug}`;
+    const canonical = article.canonicalUrl || `https://www.webvibez.com/blog/${article.slug}`;
 
     if (isHindi) {
       return `
@@ -62,8 +62,8 @@ export const BrandSignature = {
           <p style="margin: 6px 0;"><strong>लेखक (Author):</strong> ${authorName} (${authorRole})</p>
           <p style="margin: 6px 0;"><strong>कंपनी (Company):</strong> WebVibez Software Developer</p>
           <p style="margin: 6px 0;"><strong>ईमेल (Official Email):</strong> <a href="mailto:webvibezsoftdev@gmail.com" style="color: #0066FF;">webvibezsoftdev@gmail.com</a></p>
-          <p style="margin: 6px 0;"><strong>ऑफिशियल वेबसाइट (Website):</strong> <a href="https://webvibez.com" style="color: #0066FF;">https://webvibez.com</a></p>
-          <p style="margin: 6px 0;"><strong>सॉफ्टवेयर सॉल्यूशंस (Services):</strong> <a href="https://webvibez.com/services" style="color: #0066FF;">https://webvibez.com/services</a></p>
+          <p style="margin: 6px 0;"><strong>ऑफिशियल वेबसाइट (Website):</strong> <a href="https://www.webvibez.com" style="color: #0066FF;">https://www.webvibez.com</a></p>
+          <p style="margin: 6px 0;"><strong>सॉफ्टवेयर सॉल्यूशंस (Services):</strong> <a href="https://www.webvibez.com/services" style="color: #0066FF;">https://www.webvibez.com/services</a></p>
           <p style="margin: 6px 0;"><strong>मूल स्रोत:</strong> <a href="${canonical}" style="color: #0066FF;">WebVibez पर पूरा तकनीकी लेख पढ़ें</a></p>
         </div>
       `.trim();
@@ -76,8 +76,8 @@ export const BrandSignature = {
         <p style="margin: 6px 0;"><strong>Author:</strong> ${authorName} (${authorRole})</p>
         <p style="margin: 6px 0;"><strong>Company:</strong> WebVibez Software Developer</p>
         <p style="margin: 6px 0;"><strong>Official Email:</strong> <a href="mailto:webvibezsoftdev@gmail.com" style="color: #0066FF;">webvibezsoftdev@gmail.com</a></p>
-        <p style="margin: 6px 0;"><strong>Official Website:</strong> <a href="https://webvibez.com" style="color: #0066FF;">https://webvibez.com</a></p>
-        <p style="margin: 6px 0;"><strong>Enterprise Solutions:</strong> <a href="https://webvibez.com/services" style="color: #0066FF;">https://webvibez.com/services</a></p>
+        <p style="margin: 6px 0;"><strong>Official Website:</strong> <a href="https://www.webvibez.com" style="color: #0066FF;">https://www.webvibez.com</a></p>
+        <p style="margin: 6px 0;"><strong>Enterprise Solutions:</strong> <a href="https://www.webvibez.com/services" style="color: #0066FF;">https://www.webvibez.com/services</a></p>
         <p style="margin: 6px 0;"><strong>Original Source:</strong> <a href="${canonical}" style="color: #0066FF;">Read complete article at WebVibez</a></p>
       </div>
     `.trim();

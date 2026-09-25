@@ -5,18 +5,18 @@ export const metadata: Metadata = {
   description:
     "WebVibez is a mobile app development company in Ahmedabad, Gujarat. We engineer high-performance cross-platform iOS and Android mobile apps using React Native.",
   alternates: {
-    canonical: "https://webvibez.com/services/mobile-app-development",
+    canonical: "https://www.webvibez.com/services/mobile-app-development",
   },
   openGraph: {
     title: "Mobile App Development Company in Ahmedabad",
     description:
       "Native-performance iOS and Android mobile applications built with React Native, offline encryption, and official store publishing in Ahmedabad, Gujarat.",
-    url: "https://webvibez.com/services/mobile-app-development",
+    url: "https://www.webvibez.com/services/mobile-app-development",
     siteName: "WebVibez Software Developer",
     type: "website",
     images: [
       {
-        url: "https://webvibez.com/logo.jpeg",
+        url: "https://www.webvibez.com/logo.jpeg",
         width: 1200,
         height: 630,
         alt: "Mobile App Development Company in Ahmedabad — WebVibez",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Native-performance iOS and Android mobile applications built with React Native, offline encryption, and official store publishing in Ahmedabad, Gujarat.",
     images: [
-      "https://webvibez.com/logo.jpeg",
+      "https://www.webvibez.com/logo.jpeg",
     ],
   },
 };
@@ -44,19 +44,19 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://webvibez.com",
+          "item": "https://www.webvibez.com",
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Services",
-          "item": "https://webvibez.com/services",
+          "item": "https://www.webvibez.com/services",
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Mobile App Development",
-          "item": "https://webvibez.com/services/mobile-app-development",
+          "item": "https://www.webvibez.com/services/mobile-app-development",
         },
       ],
     },
@@ -67,7 +67,7 @@ const jsonLd = {
       "provider": {
         "@type": "Organization",
         "name": "WebVibez Software Developer",
-        "url": "https://webvibez.com",
+        "url": "https://www.webvibez.com",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Ahmedabad",
