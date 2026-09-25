@@ -254,7 +254,7 @@ export default function ServicesPage() {
                       <h3 className="text-lg font-bold font-display text-slate-900 dark:text-white">
                         {phase.title}
                       </h3>
-                      <div className="text-xs font-mono text-slate-500 dark:text-slate-400">
+                      <div className="text-xs font-mono text-slate-600 dark:text-slate-400">
                         {phase.subtitle}
                       </div>
                     </div>
@@ -285,7 +285,7 @@ export default function ServicesPage() {
                     </ul>
 
                     <div className="pt-2">
-                      <span className="text-[10.5px] font-mono text-slate-400 dark:text-slate-500 block truncate">
+                      <span className="text-[10.5px] font-mono text-slate-400 dark:text-slate-600 block truncate">
                         // {phase.artifact}
                       </span>
                     </div>

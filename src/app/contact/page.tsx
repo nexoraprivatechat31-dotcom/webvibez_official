@@ -221,7 +221,7 @@ export default function ContactPage() {
                 <h2 className="text-xl sm:text-2xl font-bold font-display text-slate-900 dark:text-white">
                   Direct Engineering Channels
                 </h2>
-                <p className="text-xs text-slate-500 dark:text-slate-400 font-sans">
+                <p className="text-xs text-slate-600 dark:text-slate-400 font-sans">
                   Reach our engineering studio directly without waiting on call centers or ticket queues.
                 </p>
               </div>
@@ -279,7 +279,7 @@ export default function ContactPage() {
                       <div className="text-sm sm:text-base font-bold text-slate-900 dark:text-white">
                         +91 92136 15531
                       </div>
-                      <div className="text-[10.5px] text-slate-500 dark:text-slate-400 font-sans">
+                      <div className="text-[10.5px] text-slate-600 dark:text-slate-400 font-sans">
                         Direct consultation with Rudram Joshi
                       </div>
                     </div>
@@ -304,7 +304,7 @@ export default function ContactPage() {
                       <div className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white truncate">
                         webvibezsoftdev@gmail.com
                       </div>
-                      <div className="text-[10.5px] text-slate-500 dark:text-slate-400 font-sans">
+                      <div className="text-[10.5px] text-slate-600 dark:text-slate-400 font-sans">
                         Technical proposals &amp; scopes
                       </div>
                     </div>
@@ -336,7 +336,7 @@ export default function ContactPage() {
                     <div className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white">
                       Guaranteed within 2 Business Hours
                     </div>
-                    <div className="text-[10.5px] text-slate-500 dark:text-slate-400 font-sans">
+                    <div className="text-[10.5px] text-slate-600 dark:text-slate-400 font-sans">
                       Direct senior software architect review
                     </div>
                   </div>
@@ -369,22 +369,22 @@ export default function ContactPage() {
 
               <div className="space-y-2 text-xs font-sans">
                 <div className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200/60 dark:border-white/5">
-                  <span className="text-slate-500 dark:text-slate-400 font-mono text-[11px]">Architecture:</span>
+                  <span className="text-slate-600 dark:text-slate-400 font-mono text-[11px]">Architecture:</span>
                   <strong className="text-slate-900 dark:text-white font-mono text-[11.5px]">Next.js 16 + React Native</strong>
                 </div>
 
                 <div className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200/60 dark:border-white/5">
-                  <span className="text-slate-500 dark:text-slate-400 font-mono text-[11px]">Security:</span>
+                  <span className="text-slate-600 dark:text-slate-400 font-mono text-[11px]">Security:</span>
                   <strong className="text-emerald-800 dark:text-[#00E5A3] font-mono text-[11.5px]">Hardware DRM Widevine L1</strong>
                 </div>
 
                 <div className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200/60 dark:border-white/5">
-                  <span className="text-slate-500 dark:text-slate-400 font-mono text-[11px]">Performance:</span>
+                  <span className="text-slate-600 dark:text-slate-400 font-mono text-[11px]">Performance:</span>
                   <strong className="text-[#7C3AED] dark:text-[#A78BFA] font-mono text-[11.5px]">60 FPS Native UI Engine</strong>
                 </div>
 
                 <div className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200/60 dark:border-white/5">
-                  <span className="text-slate-500 dark:text-slate-400 font-mono text-[11px]">Streaming:</span>
+                  <span className="text-slate-600 dark:text-slate-400 font-mono text-[11px]">Streaming:</span>
                   <strong className="text-[#0066FF] dark:text-[#38BDF8] font-mono text-[11.5px]">&lt; 1.2s Sub-second Latency</strong>
                 </div>
               </div>
@@ -399,7 +399,7 @@ export default function ContactPage() {
               <div className="text-xs sm:text-sm font-bold font-display text-slate-900 dark:text-white">
                 WebVibez Software Developer
               </div>
-              <p className="text-xs text-slate-500 dark:text-slate-400 font-sans leading-relaxed">
+              <p className="text-xs text-slate-600 dark:text-slate-400 font-sans leading-relaxed">
                 Gujarat &bull; New Delhi &bull; Pan-India Cloud Deployments
               </p>
             </div>
@@ -426,7 +426,7 @@ export default function ContactPage() {
 
                 {/* Configuration Summary Pill */}
                 <div className="p-5 rounded-2xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 max-w-md mx-auto text-left space-y-3 text-xs font-mono">
-                  <div className="text-slate-500 dark:text-slate-400 font-bold uppercase text-[10.5px]">
+                  <div className="text-slate-600 dark:text-slate-400 font-bold uppercase text-[10.5px]">
                     Captured Blueprint Specs:
                   </div>
                   <div className="flex flex-wrap gap-2 text-[11.5px]">
@@ -473,7 +473,7 @@ export default function ContactPage() {
                   <h3 className="text-2xl sm:text-3xl font-extrabold font-display text-slate-900 dark:text-white tracking-tight">
                     Tell Us About Your Project
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-sans leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-sans leading-relaxed">
                     Configure your coaching ecosystem below for an exact scope blueprint and guaranteed quote.
                   </p>
                 </div>
@@ -514,7 +514,7 @@ export default function ContactPage() {
                               <div className="text-xs sm:text-[13px] font-bold font-display truncate text-slate-900 dark:text-white">
                                 {opt.label}
                               </div>
-                              <div className="text-[11px] text-slate-500 dark:text-slate-400 font-sans truncate leading-normal">
+                              <div className="text-[11px] text-slate-600 dark:text-slate-400 font-sans truncate leading-normal">
                                 {opt.desc}
                               </div>
                             </div>
@@ -536,7 +536,7 @@ export default function ContactPage() {
                       <span className="w-5 h-5 rounded-md bg-[#0066FF]/10 dark:bg-[#0066FF]/20 text-[#0066FF] dark:text-[#38BDF8] flex items-center justify-center text-[10.5px]">2</span>
                       <span>Director &amp; Academy Details</span>
                     </label>
-                    <p className="text-[11px] text-slate-500 dark:text-slate-400 font-sans">
+                    <p className="text-[11px] text-slate-600 dark:text-slate-400 font-sans">
                       Our lead architect will prepare the proposal addressed to your leadership.
                     </p>
                   </div>
@@ -700,7 +700,7 @@ export default function ContactPage() {
                         <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
                         <span>Need instant consultation?</span>
                       </div>
-                      <div className="text-[11px] text-slate-500 dark:text-slate-400 font-sans">
+                      <div className="text-[11px] text-slate-600 dark:text-slate-400 font-sans">
                         Skip the form and chat directly with our lead software architect on WhatsApp.
                       </div>
                     </div>
@@ -753,7 +753,7 @@ export default function ContactPage() {
                     <span className="text-xs sm:text-sm font-bold font-display text-slate-900 dark:text-white">
                       {faq.q}
                     </span>
-                    <div className={`p-1.5 rounded-lg border transition-transform duration-200 shrink-0 ${isOpen ? "bg-[#0066FF] text-white border-[#0066FF] rotate-180" : "bg-slate-100 dark:bg-white/5 text-slate-500 border-slate-200 dark:border-white/10"}`}>
+                    <div className={`p-1.5 rounded-lg border transition-transform duration-200 shrink-0 ${isOpen ? "bg-[#0066FF] text-white border-[#0066FF] rotate-180" : "bg-slate-100 dark:bg-white/5 text-slate-600 border-slate-200 dark:border-white/10"}`}>
                       <ChevronDown className="w-4 h-4" />
                     </div>
                   </button>

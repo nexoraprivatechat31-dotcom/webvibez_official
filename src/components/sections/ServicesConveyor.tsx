@@ -167,7 +167,7 @@ export default function ServicesConveyor({ onOpenConsultation }: ServicesConveyo
                           <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#0066FF]/15 to-[#8B00FF]/15 border border-[#0066FF]/30 flex items-center justify-center text-[#0066FF] group-hover:scale-110 transition-transform">
                             <IconComponent className="w-5 h-5" />
                           </div>
-                          <span className="text-[10px] font-mono tracking-widest font-bold uppercase text-slate-500 dark:text-slate-300 group-hover:text-[#0066FF] dark:group-hover:text-[#38BDF8] transition-colors">
+                          <span className="text-[10px] font-mono tracking-widest font-bold uppercase text-slate-600 dark:text-slate-300 group-hover:text-[#0066FF] dark:group-hover:text-[#38BDF8] transition-colors">
                             // {service.tag}
                           </span>
                         </div>

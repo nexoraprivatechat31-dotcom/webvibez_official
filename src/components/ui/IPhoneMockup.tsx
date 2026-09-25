@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 import {
   ShieldCheck,
@@ -85,11 +86,12 @@ export default function IPhoneMockup({
                 {/* Institute & Student Header */}
                 <div className="flex items-center justify-between pt-1">
                   <div className="flex items-center gap-2">
-                    <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#0066FF] to-[#8B00FF] p-[1px] shrink-0 shadow-sm">
-                      <img
+                    <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#0066FF] to-[#8B00FF] p-[1px] shrink-0 shadow-sm relative overflow-hidden">
+                      <Image
                         src="/images/square-image.jpg"
                         alt="Institute Logo"
-                        className="w-full h-full object-cover rounded-[7px]"
+                        fill
+                        className="object-cover rounded-[7px]"
                       />
                     </div>
                     <div>

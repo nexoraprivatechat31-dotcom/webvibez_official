@@ -26,7 +26,7 @@ export default function DisclaimerPage() {
           <h1 className="text-3xl sm:text-5xl font-extrabold font-display text-slate-900 dark:text-white tracking-tight">
             Legal Disclaimer &amp; Fair Use
           </h1>
-          <p className="text-xs text-slate-500 dark:text-slate-400 font-mono">
+          <p className="text-xs text-slate-600 dark:text-slate-400 font-mono">
             Last Updated: March 2025 &middot; WebVibez Software Developer &middot; Gujarat, India
           </p>
         </div>
@@ -79,7 +79,7 @@ export default function DisclaimerPage() {
           </section>
 
           <section className="space-y-3 pt-4 border-t border-slate-200 dark:border-white/10">
-            <p className="text-xs text-slate-500">
+            <p className="text-xs text-slate-600">
               For legal inquiries or statutory notifications, contact our legal counsel at <a href="mailto:webvibezsoftdev@gmail.com" className="text-[#0066FF] dark:text-[#38BDF8] underline font-semibold">webvibezsoftdev@gmail.com</a>.
             </p>
           </section>

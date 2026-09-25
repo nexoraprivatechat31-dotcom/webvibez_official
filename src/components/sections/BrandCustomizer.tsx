@@ -136,7 +136,7 @@ export default function BrandCustomizer({ onOpenConsultation }: BrandCustomizerP
 
                 <div className="mb-6">
                   <span
-                    className="text-[10px] font-bold uppercase tracking-widest text-slate-500 dark:text-slate-300 mb-3 block"
+                    className="text-[10px] font-bold uppercase tracking-widest text-slate-600 dark:text-slate-300 mb-3 block"
                     style={{ fontFamily: "var(--font-mono)" }}
                   >
                     Stage 0{idx + 1}

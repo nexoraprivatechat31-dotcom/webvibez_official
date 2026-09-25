@@ -8,12 +8,20 @@ import PhoneModel from "./PhoneModel";
 
 export default function UnifiedPhoneCanvas() {
   const [eventSource, setEventSource] = useState<HTMLElement | undefined>(undefined);
+  const [shouldRender, setShouldRender] = useState(false);
 
   useEffect(() => {
     if (typeof document !== "undefined") {
       setEventSource(document.body);
     }
+    // Delay rendering the 3D scene to prioritize initial page load (fixes Lighthouse TBT)
+    const timer = setTimeout(() => {
+      setShouldRender(true);
+    }, 1500);
+    return () => clearTimeout(timer);
   }, []);
+
+  if (!shouldRender) return null;
 
   return (
     <div className="hidden lg:block fixed inset-0 pointer-events-none z-0 overflow-hidden">

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowUpRight } from "lucide-react";
@@ -44,10 +45,11 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
         {/* Official Brand Logo */}
         <Link href="/" className="flex items-center gap-3 sm:gap-3.5 group">
           <div className="relative h-11 w-11 sm:h-12 sm:w-12 rounded-2xl overflow-hidden p-0.5 bg-white dark:bg-white/[0.08] border border-slate-200/90 dark:border-white/[0.18] flex items-center justify-center shadow-md shadow-[#0066FF]/15 group-hover:border-[#0066FF]/80 group-hover:scale-105 transition-all duration-300 shrink-0">
-            <img
+            <Image
               src="/images/square-image.jpg"
               alt="WebVibez Software Developer"
-              className="w-full h-full object-cover rounded-xl"
+              fill
+              className="object-cover rounded-xl"
             />
           </div>
           <div className="flex flex-col text-left">

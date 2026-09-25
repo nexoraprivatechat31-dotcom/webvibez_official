@@ -77,7 +77,7 @@ export default function TermsPage() {
           </section>
 
           <section className="space-y-3 pt-4 border-t border-slate-200 dark:border-white/10">
-            <p className="text-xs text-slate-500">
+            <p className="text-xs text-slate-600">
               For legal inquiries regarding our terms, reach us at <a href="mailto:webvibezsoftdev@gmail.com" className="text-[#0066FF] dark:text-[#38BDF8] underline font-semibold">webvibezsoftdev@gmail.com</a>.
             </p>
           </section>

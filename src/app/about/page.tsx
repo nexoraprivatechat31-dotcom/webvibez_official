@@ -221,7 +221,7 @@ export default function AboutPage() {
                     <IconComponent className="w-3.5 h-3.5" />
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-mono uppercase text-slate-400 dark:text-slate-500 font-semibold">
+                    <span className="text-[10px] font-mono uppercase text-slate-400 dark:text-slate-600 font-semibold">
                       {item.label}:
                     </span>
                     <span className="text-xs font-bold font-sans text-slate-800 dark:text-slate-200">
@@ -275,7 +275,7 @@ export default function AboutPage() {
                           <SpecIcon className="w-6 h-6" />
                         </div>
                         <div>
-                          <div className="text-[10.5px] font-mono font-bold uppercase text-slate-400 dark:text-slate-500">
+                          <div className="text-[10.5px] font-mono font-bold uppercase text-slate-400 dark:text-slate-600">
                             {item.label}
                           </div>
                           <h3 className="text-lg sm:text-xl font-extrabold font-display text-slate-900 dark:text-white">
@@ -317,7 +317,7 @@ export default function AboutPage() {
                   </div>
 
                   <div className="pt-4 border-t border-slate-100 dark:border-white/5 flex items-center justify-between text-xs font-mono relative z-10">
-                    <span className="text-slate-400 dark:text-slate-500">Verified Metric:</span>
+                    <span className="text-slate-400 dark:text-slate-600">Verified Metric:</span>
                     <span className="font-bold" style={{ color: item.color }}>
                       {item.stat}
                     </span>
@@ -400,7 +400,7 @@ export default function AboutPage() {
             <h2 className="text-2xl sm:text-4xl font-extrabold font-display text-slate-900 dark:text-white">
               The 4 Pillars of WebVibez
             </h2>
-            <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-sans">
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-sans">
               Why leading educators, top coaching centers, and ambitious institutions choose us over generic marketplace tools.
             </p>
           </div>
@@ -438,7 +438,7 @@ export default function AboutPage() {
                   </div>
 
                   <div className="pt-3 border-t border-slate-100 dark:border-white/5 flex items-center justify-between">
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 dark:text-slate-500">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 dark:text-slate-600">
                       {pillar.badge}
                     </span>
                     <span
@@ -489,7 +489,7 @@ export default function AboutPage() {
                 <p className="text-sm font-mono font-bold text-[#0066FF] dark:text-[#38BDF8]">
                   Founder &amp; Lead Developer
                 </p>
-                <div className="flex items-center gap-2 text-xs font-mono text-slate-500 dark:text-slate-400 pt-1">
+                <div className="flex items-center gap-2 text-xs font-mono text-slate-600 dark:text-slate-400 pt-1">
                   <MapPin className="w-3.5 h-3.5 text-[#0066FF] shrink-0" />
                   <span>Ahmedabad, Gujarat, India</span>
                 </div>
@@ -539,7 +539,7 @@ export default function AboutPage() {
                   <div className="text-xs font-semibold text-slate-800 dark:text-slate-200">
                     Next.js 16 &amp; React Native
                   </div>
-                  <div className="text-[10.5px] text-slate-500 dark:text-slate-400">
+                  <div className="text-[10.5px] text-slate-600 dark:text-slate-400">
                     60 FPS native rendering
                   </div>
                 </div>
@@ -551,7 +551,7 @@ export default function AboutPage() {
                   <div className="text-xs font-semibold text-slate-800 dark:text-slate-200">
                     Hardware DRM &amp; IP Protection
                   </div>
-                  <div className="text-[10.5px] text-slate-500 dark:text-slate-400">
+                  <div className="text-[10.5px] text-slate-600 dark:text-slate-400">
                     Zero screenshot piracy
                   </div>
                 </div>
@@ -563,7 +563,7 @@ export default function AboutPage() {
                   <div className="text-xs font-semibold text-slate-800 dark:text-slate-200">
                     7-Day Fast Track
                   </div>
-                  <div className="text-[10.5px] text-slate-500 dark:text-slate-400">
+                  <div className="text-[10.5px] text-slate-600 dark:text-slate-400">
                     Direct developer oversight
                   </div>
                 </div>
@@ -584,7 +584,7 @@ export default function AboutPage() {
             <h2 className="text-2xl sm:text-3xl font-extrabold font-display text-slate-900 dark:text-white">
               Built on Modern Industry Standards
             </h2>
-            <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-sans">
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-sans">
               We never use legacy CMS plugins, low-code wrappers, or outdated PHP templates. We build strictly with high-throughput modern stacks.
             </p>
           </div>

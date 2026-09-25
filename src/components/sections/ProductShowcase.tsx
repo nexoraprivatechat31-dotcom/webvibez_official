@@ -212,7 +212,7 @@ export default function ProductShowcase({ onOpenConsultation }: ProductShowcaseP
 
               {/* Core Capabilities */}
               <div className="space-y-2 pt-1">
-                <div className="text-[10px] font-mono uppercase tracking-widest text-slate-500 dark:text-slate-300 font-bold">
+                <div className="text-[10px] font-mono uppercase tracking-widest text-slate-600 dark:text-slate-300 font-bold">
                   // Core Capabilities
                 </div>
                 <div className="grid grid-cols-1 gap-2">
@@ -231,7 +231,7 @@ export default function ProductShowcase({ onOpenConsultation }: ProductShowcaseP
               {/* Metric + CTA Bar */}
               <div className="p-3.5 rounded-2xl flex items-center justify-between border border-slate-200/80 dark:border-white/5 bg-slate-50/60 dark:bg-white/[0.03] pt-3">
                 <div>
-                  <div className="text-[10px] uppercase font-mono tracking-wider text-slate-500 dark:text-slate-300 font-bold">
+                  <div className="text-[10px] uppercase font-mono tracking-wider text-slate-600 dark:text-slate-300 font-bold">
                     {currentScreen.stats.label}
                   </div>
                   <div className="text-xl font-bold font-mono"

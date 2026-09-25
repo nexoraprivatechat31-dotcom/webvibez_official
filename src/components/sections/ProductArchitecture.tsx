@@ -145,7 +145,7 @@ export default function ProductArchitecture({ onOpenConsultation }: ProductArchi
                       <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: node.color }} />
                       {node.step} // NODE
                     </span>
-                    <span className="text-[10px] font-mono tracking-wider uppercase text-slate-500 dark:text-slate-400 font-semibold px-2 py-0.5 rounded-md bg-slate-100 dark:bg-white/[0.04] border border-slate-200/60 dark:border-white/5">
+                    <span className="text-[10px] font-mono tracking-wider uppercase text-slate-600 dark:text-slate-400 font-semibold px-2 py-0.5 rounded-md bg-slate-100 dark:bg-white/[0.04] border border-slate-200/60 dark:border-white/5">
                       {node.tech}
                     </span>
                   </div>
@@ -163,7 +163,7 @@ export default function ProductArchitecture({ onOpenConsultation }: ProductArchi
                       <IconComp className="w-5 h-5" />
                     </div>
                     <div>
-                      <div className="text-[10px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-300 font-bold">
+                      <div className="text-[10px] font-mono uppercase tracking-wider text-slate-600 dark:text-slate-300 font-bold">
                         {node.subtitle}
                       </div>
                       <h3

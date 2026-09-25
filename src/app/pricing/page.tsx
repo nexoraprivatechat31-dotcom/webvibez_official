@@ -146,7 +146,7 @@ function InteractivePricingCard({
               <PlanIcon className="w-6 h-6" />
             </div>
             <div>
-              <span className="text-[10px] sm:text-[11px] font-mono tracking-widest font-bold uppercase text-slate-500 dark:text-slate-400 block">
+              <span className="text-[10px] sm:text-[11px] font-mono tracking-widest font-bold uppercase text-slate-600 dark:text-slate-400 block">
                 // {plan.categoryLabel}
               </span>
               <div className="text-xs sm:text-sm font-mono font-bold text-slate-900 dark:text-slate-200">
@@ -196,7 +196,7 @@ function InteractivePricingCard({
             >
               *
             </sup>
-            <span className="text-xs text-slate-500 dark:text-slate-400 font-mono font-medium">
+            <span className="text-xs text-slate-600 dark:text-slate-400 font-mono font-medium">
               {plan.period}
             </span>
           </div>
@@ -554,7 +554,7 @@ function PricingFaqAccordion() {
       {/* FAQ Accordion List */}
       <div className="space-y-3">
         {filteredFaqs.length === 0 ? (
-          <div className="p-8 text-center rounded-3xl bg-white dark:bg-[#0D1424] border border-slate-200 dark:border-white/10 text-xs text-slate-500 font-mono">
+          <div className="p-8 text-center rounded-3xl bg-white dark:bg-[#0D1424] border border-slate-200 dark:border-white/10 text-xs text-slate-600 font-mono">
             No questions found matching &ldquo;{searchQuery}&rdquo;. Try another search or WhatsApp us directly.
           </div>
         ) : (
@@ -595,7 +595,7 @@ function PricingFaqAccordion() {
                     className={`p-1.5 rounded-xl border transition-transform duration-200 shrink-0 mt-1 ${
                       isOpen
                         ? "bg-[#0066FF] text-white border-[#0066FF] rotate-180"
-                        : "bg-slate-100 dark:bg-white/10 text-slate-500 dark:text-slate-300 border-slate-200 dark:border-white/10"
+                        : "bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-white/10"
                     }`}
                   >
                     <ChevronDown className="w-4 h-4" />
@@ -907,7 +907,7 @@ export default function PricingPage() {
           </div>
 
           {/* Minor footnote */}
-          <div className="text-center text-xs font-mono text-slate-500 dark:text-slate-400 pt-2">
+          <div className="text-center text-xs font-mono text-slate-600 dark:text-slate-400 pt-2">
             * All listed prices are annual platform license subscriptions supporting up to 750 active students with standard maintenance and updates. Applicable taxes extra.
           </div>
         </div>
@@ -939,7 +939,7 @@ export default function PricingPage() {
                 <div className="text-xl sm:text-2xl font-black font-display text-[#0066FF] dark:text-[#38BDF8]">
                   ₹0
                 </div>
-                <div className="text-[10px] sm:text-[11px] font-mono text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider mt-0.5">
+                <div className="text-[10px] sm:text-[11px] font-mono text-slate-600 dark:text-slate-400 font-bold uppercase tracking-wider mt-0.5">
                   Commission
                 </div>
               </div>
@@ -948,7 +948,7 @@ export default function PricingPage() {
                 <div className="text-xl sm:text-2xl font-black font-display text-emerald-800 dark:text-[#00E5A3]">
                   750
                 </div>
-                <div className="text-[10px] sm:text-[11px] font-mono text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider mt-0.5">
+                <div className="text-[10px] sm:text-[11px] font-mono text-slate-600 dark:text-slate-400 font-bold uppercase tracking-wider mt-0.5">
                   Students Cap
                 </div>
               </div>
@@ -957,7 +957,7 @@ export default function PricingPage() {
                 <div className="text-xl sm:text-2xl font-black font-display text-[#7C3AED] dark:text-[#A78BFA]">
                   100%
                 </div>
-                <div className="text-[10px] sm:text-[11px] font-mono text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider mt-0.5">
+                <div className="text-[10px] sm:text-[11px] font-mono text-slate-600 dark:text-slate-400 font-bold uppercase tracking-wider mt-0.5">
                   Your Bank Direct
                 </div>
               </div>
@@ -1114,13 +1114,13 @@ export default function PricingPage() {
 
             <div className="p-6 sm:p-7 rounded-3xl bg-slate-50 dark:bg-[#0A0E1A] border border-slate-200 dark:border-white/10 text-center sm:text-right shrink-0 w-full lg:w-auto shadow-xl space-y-3">
               <div>
-                <div className="text-[11px] font-mono uppercase text-slate-500 dark:text-slate-400 font-bold">
+                <div className="text-[11px] font-mono uppercase text-slate-600 dark:text-slate-400 font-bold">
                   // Custom Engineering
                 </div>
                 <div className="text-2xl sm:text-3xl font-extrabold font-display text-[#0066FF] dark:text-[#38BDF8]">
                   Custom Pricing
                 </div>
-                <div className="text-xs text-slate-500 dark:text-slate-400 font-sans mt-0.5">
+                <div className="text-xs text-slate-600 dark:text-slate-400 font-sans mt-0.5">
                   Scope-based quote &amp; dedicated SLA
                 </div>
               </div>
@@ -1184,7 +1184,7 @@ export default function PricingPage() {
                   <th className="pb-3 px-3">Platform Capability</th>
                   <th className="pb-3 px-3 text-center">
                     <div className="font-bold text-slate-900 dark:text-white">Simple App</div>
-                    <div className="text-[10px] text-slate-500 font-normal">₹9,000*</div>
+                    <div className="text-[10px] text-slate-600 font-normal">₹9,000*</div>
                   </th>
                   <th className="pb-3 px-3 text-center text-[#0066FF] dark:text-[#38BDF8] font-bold bg-[#0066FF]/[0.05] rounded-t-2xl">
                     <div>App + Admin</div>
@@ -1192,7 +1192,7 @@ export default function PricingPage() {
                   </th>
                   <th className="pb-3 px-3 text-center">
                     <div className="font-bold text-slate-900 dark:text-white">Live App</div>
-                    <div className="text-[10px] text-slate-500 font-normal">₹20,000*</div>
+                    <div className="text-[10px] text-slate-600 font-normal">₹20,000*</div>
                   </th>
                   <th className="pb-3 px-3 text-center text-emerald-800 dark:text-[#00E5A3] font-bold">
                     <div>Complete Suite</div>

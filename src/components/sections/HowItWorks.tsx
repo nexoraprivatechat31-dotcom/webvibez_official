@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import {
   Sparkles,
@@ -120,7 +121,7 @@ export default function HowItWorks({ onOpenConsultation }: HowItWorksProps) {
                     className={`p-4 sm:p-5 text-left transition-all duration-200 cursor-pointer relative ${
                       isActive
                         ? "bg-white dark:bg-[#0D121F] text-slate-900 dark:text-white"
-                        : "text-slate-500 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100/50 dark:hover:bg-white/[0.03]"
+                        : "text-slate-600 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100/50 dark:hover:bg-white/[0.03]"
                     }`}
                   >
                     {isActive && (
@@ -150,7 +151,7 @@ export default function HowItWorks({ onOpenConsultation }: HowItWorksProps) {
 
             {/* Quick Arrow Controls in Step Tab Bar (Visible on all devices) */}
             <div className="flex items-center justify-between lg:justify-center gap-2 px-4 py-2.5 lg:py-0 border-t lg:border-t-0 lg:border-l border-slate-200 dark:border-white/10 shrink-0 bg-slate-100/60 dark:bg-white/[0.01]">
-              <span className="text-[11px] font-mono font-bold text-slate-500 lg:hidden">
+              <span className="text-[11px] font-mono font-bold text-slate-600 lg:hidden">
                 STEP 0{activeStep + 1} OF 03
               </span>
               <div className="flex items-center gap-1.5">
@@ -221,11 +222,12 @@ export default function HowItWorks({ onOpenConsultation }: HowItWorksProps) {
                       Institute Identity
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0066FF] to-[#8B00FF] p-0.5 flex items-center justify-center">
-                        <img
+                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0066FF] to-[#8B00FF] p-0.5 flex items-center justify-center relative overflow-hidden">
+                        <Image
                           src="/images/square-image.jpg"
                           alt="WebVibez client institute brand identity"
-                          className="w-full h-full object-cover rounded-lg"
+                          fill
+                          className="object-cover rounded-lg"
                         />
                       </div>
                       <div>
@@ -417,7 +419,7 @@ export default function HowItWorks({ onOpenConsultation }: HowItWorksProps) {
               </div>
             )}
             {/* Step Bottom Navigation Controls */}
-            <div className="mt-6 sm:mt-8 pt-4 sm:pt-5 border-t border-slate-200 dark:border-white/10 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 text-xs text-slate-500">
+            <div className="mt-6 sm:mt-8 pt-4 sm:pt-5 border-t border-slate-200 dark:border-white/10 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 text-xs text-slate-600">
               <div className="flex items-center gap-2 font-mono">
                 <span className="w-2 h-2 rounded-full bg-[#0066FF] animate-pulse" />
                 <span>Phase {activeStep + 1} of 3: <strong className="text-slate-800 dark:text-white">{steps[activeStep].day}</strong></span>
@@ -474,7 +476,7 @@ export default function HowItWorks({ onOpenConsultation }: HowItWorksProps) {
               <h4 className="text-base font-bold font-display text-slate-900 dark:text-white">
                 Elastic Cloud Scaling
               </h4>
-              <p className="text-xs text-slate-500 dark:text-slate-400 font-sans leading-relaxed">
+              <p className="text-xs text-slate-600 dark:text-slate-400 font-sans leading-relaxed">
                 Kubernetes container clusters auto-scale from 10 to 100,000+ concurrent students without streaming lag or connection timeouts.
               </p>
               <div className="pt-2 text-[10px] font-mono text-[#0066FF] dark:text-[#38BDF8] font-bold flex items-center gap-1.5">
@@ -491,7 +493,7 @@ export default function HowItWorks({ onOpenConsultation }: HowItWorksProps) {
               <h4 className="text-base font-bold font-display text-slate-900 dark:text-white">
                 Hourly Geo-Redundant Backups
               </h4>
-              <p className="text-xs text-slate-500 dark:text-slate-400 font-sans leading-relaxed">
+              <p className="text-xs text-slate-600 dark:text-slate-400 font-sans leading-relaxed">
                 Automated hourly cryptographic snapshots of all student attendance records, test logs, and financial invoices replicated across multiple data centers.
               </p>
               <div className="pt-2 text-[10px] font-mono text-[#8B00FF] font-bold flex items-center gap-1.5">
@@ -508,7 +510,7 @@ export default function HowItWorks({ onOpenConsultation }: HowItWorksProps) {
               <h4 className="text-base font-bold font-display text-slate-900 dark:text-white">
                 24/7 Threat Mitigation & DRM
               </h4>
-              <p className="text-xs text-slate-500 dark:text-slate-400 font-sans leading-relaxed">
+              <p className="text-xs text-slate-600 dark:text-slate-400 font-sans leading-relaxed">
                 Continuous DDoS shielding, dynamic moving watermark injections, and hardware screen recording blackouts keeping your intellectual property safe.
               </p>
               <div className="pt-2 text-[10px] font-mono text-[#00E5A3] font-bold flex items-center gap-1.5">

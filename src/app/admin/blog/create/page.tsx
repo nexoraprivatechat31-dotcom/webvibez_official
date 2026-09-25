@@ -78,7 +78,7 @@ export default function CreateBlogPage() {
               placeholder="e.g. react native, ios, android, software"
               className="w-full px-4 py-3 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl focus:ring-2 focus:ring-[#0066FF] outline-none transition-all text-slate-900 dark:text-white"
             />
-            <p className="text-xs text-slate-500 mt-2">Tags are used to automatically link related services.</p>
+            <p className="text-xs text-slate-600 mt-2">Tags are used to automatically link related services.</p>
           </div>
 
           <div className="pt-4 border-t border-slate-200 dark:border-slate-800">

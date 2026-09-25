@@ -26,7 +26,7 @@ export default function AgreementsPage() {
           <h1 className="text-3xl sm:text-5xl font-extrabold font-display text-slate-900 dark:text-white tracking-tight">
             Client Service Agreement (SLA)
           </h1>
-          <p className="text-xs text-slate-500 dark:text-slate-400 font-mono">
+          <p className="text-xs text-slate-600 dark:text-slate-400 font-mono">
             Standard Master Services Framework &middot; WebVibez Software Developer &middot; Gujarat, India
           </p>
         </div>
@@ -133,7 +133,7 @@ export default function AgreementsPage() {
           </section>
 
           <section className="space-y-3 pt-4 border-t border-slate-200 dark:border-white/10">
-            <p className="text-xs text-slate-500">
+            <p className="text-xs text-slate-600">
               To request a signed master services contract (MSA) or customize enterprise SLA terms for your institution, please contact <a href="mailto:webvibezsoftdev@gmail.com" className="text-[#0066FF] dark:text-[#38BDF8] underline font-semibold">webvibezsoftdev@gmail.com</a>.
             </p>
           </section>

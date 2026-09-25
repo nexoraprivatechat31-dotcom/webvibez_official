@@ -61,7 +61,7 @@ export default function AdminLogin() {
             <Lock className="w-8 h-8 text-[#0066FF] dark:text-[#38BDF8]" />
           </div>
           <h1 className="text-2xl font-bold text-slate-900 dark:text-white font-display">WebVibez Secure</h1>
-          <p className="text-sm text-slate-500 mt-2">Restricted Area. Authorized Personnel Only.</p>
+          <p className="text-sm text-slate-600 mt-2">Restricted Area. Authorized Personnel Only.</p>
         </div>
 
         <div className="p-8">

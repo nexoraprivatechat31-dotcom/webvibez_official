@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { createPortal } from "react-dom";
 import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 import {
@@ -276,10 +277,11 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
         <div className="px-6 py-5 sm:px-8 sm:py-6 border-b border-slate-100 dark:border-white/[0.08] flex items-center justify-between gap-4 shrink-0 bg-white/95 dark:bg-[#070A12]/95 backdrop-blur-md relative z-20">
           <div className="flex items-center gap-4">
             <div className="relative h-12 w-12 rounded-2xl overflow-hidden p-0.5 bg-white dark:bg-white/[0.08] border border-slate-200/90 dark:border-white/[0.15] flex items-center justify-center shadow-md shadow-[#0066FF]/15 shrink-0">
-              <img
+              <Image
                 src="/images/square-image.jpg"
                 alt="WebVibez Software Developer"
-                className="w-full h-full object-cover rounded-xl"
+                fill
+                className="object-cover rounded-xl"
               />
             </div>
             <div>
@@ -292,7 +294,7 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
                   Custom App Studio
                 </span>
               </div>
-              <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-sans mt-0.5">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-sans mt-0.5">
                 Build your custom branded mobile app &bull; 100% White-Labeled &bull; 0% Commission
               </p>
             </div>
@@ -368,7 +370,7 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
                           <div className="text-sm font-bold font-display text-slate-900 dark:text-white group-hover:text-[#0066FF] dark:group-hover:text-[#38BDF8] transition-colors leading-snug">
                             {p.title}
                           </div>
-                          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">
+                          <p className="text-xs text-slate-600 dark:text-slate-400 mt-1.5 leading-relaxed">
                             {p.desc}
                           </p>
                         </div>
@@ -450,7 +452,7 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
                             <FeatIcon className="w-3.5 h-3.5 text-[#0066FF] shrink-0" />
                             <span className="truncate">{feat.label}</span>
                           </div>
-                          <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+                          <p className="text-[11px] text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
                             {feat.desc}
                           </p>
                         </div>
@@ -635,7 +637,7 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
               </div>
 
               {/* Direct Hotline Footer */}
-              <div className="pt-4 border-t border-slate-200/80 dark:border-white/10 flex items-center justify-between text-xs font-mono text-slate-500 dark:text-slate-400">
+              <div className="pt-4 border-t border-slate-200/80 dark:border-white/10 flex items-center justify-between text-xs font-mono text-slate-600 dark:text-slate-400">
                 <span className="flex items-center gap-2">
                   <Phone className="w-4 h-4 text-[#0066FF]" />
                   Call: <strong className="text-slate-900 dark:text-white">+91 92136 15531</strong>

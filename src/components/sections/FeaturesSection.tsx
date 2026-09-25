@@ -80,7 +80,7 @@ export default function FeaturesSection({ onOpenConsultation }: FeaturesSectionP
               <Sparkles className="w-3.5 h-3.5" />
               <span>SELECT SYSTEM ({String(selectedFeatureIndex + 1).padStart(2, "0")}/11)</span>
             </span>
-            <span className="text-slate-500 dark:text-slate-400 text-[10.5px]">Swipe to switch &rarr;</span>
+            <span className="text-slate-600 dark:text-slate-400 text-[10.5px]">Swipe to switch &rarr;</span>
           </div>
           <div
             ref={mobilePillsRef}
@@ -179,7 +179,7 @@ export default function FeaturesSection({ onOpenConsultation }: FeaturesSectionP
           {/* COLUMN 2 (lg:col-span-5): Active Feature Spec HUD Detail Box (Placed SIDE-BY-SIDE!) */}
           <div className="lg:col-span-5 lg:sticky lg:top-24 space-y-3">
             {/* System Status Banner */}
-            <div className="w-full flex items-center justify-between px-2 text-[10.5px] font-mono text-slate-500 dark:text-slate-300">
+            <div className="w-full flex items-center justify-between px-2 text-[10.5px] font-mono text-slate-600 dark:text-slate-300">
               <span className="tracking-[0.2em] text-[#0066FF] dark:text-[#38BDF8] uppercase font-bold flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF] dark:bg-[#38BDF8] animate-pulse" />
                 SYSTEM 04 // SYS {String(selectedFeatureIndex + 1).padStart(2, "0")}
@@ -221,7 +221,7 @@ export default function FeaturesSection({ onOpenConsultation }: FeaturesSectionP
                   <>
                     <div className="p-3.5 rounded-2xl bg-gradient-to-r from-[#0066FF]/10 to-[#8B00FF]/10 border border-[#0066FF]/20 flex items-center justify-between mb-3">
                       <div>
-                        <div className="text-[9.5px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-300 font-semibold">
+                        <div className="text-[9.5px] font-mono uppercase tracking-wider text-slate-600 dark:text-slate-300 font-semibold">
                           On-Time Fee Collection Rate
                         </div>
                         <div className="text-xl font-black text-[#0066FF] dark:text-[#38BDF8] font-display">
@@ -232,7 +232,7 @@ export default function FeaturesSection({ onOpenConsultation }: FeaturesSectionP
                         ● 1-CLICK UPI
                       </span>
                     </div>
-                    <div className="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-300 font-mono mb-2">
+                    <div className="text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 font-mono mb-2">
                       Core Capabilities
                     </div>
                     {[

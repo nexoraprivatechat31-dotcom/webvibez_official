@@ -89,7 +89,7 @@ export default function WebsiteDevelopmentPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-16 sm:space-y-24">
         
         {/* Breadcrumb Navigation */}
-        <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-mono text-slate-500 dark:text-slate-400">
+        <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-mono text-slate-600 dark:text-slate-400">
           <Link href="/" className="hover:text-[#0066FF] transition">Home</Link>
           <span>/</span>
           <Link href="/services" className="hover:text-[#0066FF] transition">Services</Link>
@@ -196,7 +196,7 @@ export default function WebsiteDevelopmentPage() {
                       {faq.q}
                     </span>
                     <ChevronDown
-                      className={`w-4 h-4 text-slate-500 transition-transform duration-200 shrink-0 ${
+                      className={`w-4 h-4 text-slate-600 transition-transform duration-200 shrink-0 ${
                         isOpen ? "rotate-180" : ""
                       }`}
                     />

@@ -72,7 +72,7 @@ export default function ThemeToggle() {
               className={`w-3.5 h-3.5 transition-all duration-400 ${
                 isLight
                   ? "text-amber-500 scale-100 opacity-100 drop-shadow-[0_0_8px_rgba(245,158,11,0.7)] rotate-0"
-                  : "text-slate-500 scale-85 opacity-40 -rotate-45 group-hover:opacity-70"
+                  : "text-slate-600 scale-85 opacity-40 -rotate-45 group-hover:opacity-70"
               }`}
             />
           </div>

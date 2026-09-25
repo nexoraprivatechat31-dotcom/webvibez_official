@@ -347,7 +347,7 @@ export default function HowItWorksPage() {
           {/* Top Scrubbing Bar with Left & Right Arrow HUD Controls */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-slate-200/80 dark:border-white/10">
             <div className="flex items-center gap-3">
-              <span className="text-xs font-mono font-bold uppercase text-slate-500 dark:text-slate-400">
+              <span className="text-xs font-mono font-bold uppercase text-slate-600 dark:text-slate-400">
                 Phase Progress:
               </span>
               <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0066FF]/10 text-[#0066FF] dark:text-[#38BDF8] border border-[#0066FF]/20 text-xs font-mono font-bold">
@@ -360,7 +360,7 @@ export default function HowItWorksPage() {
 
             {/* Top Quick Arrow Step Buttons */}
             <div className="flex items-center gap-2">
-              <span className="text-[11px] font-mono text-slate-400 dark:text-slate-500 hidden md:inline-flex items-center gap-1">
+              <span className="text-[11px] font-mono text-slate-400 dark:text-slate-600 hidden md:inline-flex items-center gap-1">
                 <MousePointerClick className="w-3.5 h-3.5 text-[#0066FF]" />
                 <span>Click pills or use arrows &larr; &rarr;</span>
               </span>
@@ -587,7 +587,7 @@ export default function HowItWorksPage() {
 
             {/* 4 Concrete Deliverables Grid */}
             <div key={`deliv-${current.day}`} className="space-y-3 sm:space-y-4 relative z-10 animate-in fade-in duration-300">
-              <div className="text-xs font-bold font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-2">
+              <div className="text-xs font-bold font-mono uppercase tracking-wider text-slate-600 dark:text-slate-400 flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-[#0066FF] dark:text-[#38BDF8]" />
                 <span>Day Deliverables &amp; Verification Checklist</span>
               </div>
@@ -605,7 +605,7 @@ export default function HowItWorksPage() {
                       <p className="text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200 font-sans leading-snug">
                         {item}
                       </p>
-                      <span className="text-[10px] sm:text-[11px] font-mono text-slate-400 dark:text-slate-500">
+                      <span className="text-[10px] sm:text-[11px] font-mono text-slate-400 dark:text-slate-600">
                         {current.deliverableDetails[i]?.value}
                       </span>
                     </div>
@@ -615,7 +615,7 @@ export default function HowItWorksPage() {
             </div>
 
             {/* Timeframe & Navigation Control Bar */}
-            <div className="pt-4 sm:pt-6 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4 border-t border-slate-100 dark:border-white/10 text-xs text-slate-500 dark:text-slate-400 relative z-10">
+            <div className="pt-4 sm:pt-6 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4 border-t border-slate-100 dark:border-white/10 text-xs text-slate-600 dark:text-slate-400 relative z-10">
               <div className="flex items-center gap-2 font-mono font-medium">
                 <Clock className="w-4 h-4 text-[#0066FF] dark:text-[#38BDF8] shrink-0" />
                 <span className="text-[11px] sm:text-xs">
@@ -697,7 +697,7 @@ export default function HowItWorksPage() {
                     <p className="text-xs text-slate-600 dark:text-slate-300 font-sans leading-relaxed font-semibold">
                       {item.desc}
                     </p>
-                    <p className="text-[11px] text-slate-400 dark:text-slate-500 font-sans leading-relaxed pt-1 border-t border-slate-100 dark:border-white/5">
+                    <p className="text-[11px] text-slate-400 dark:text-slate-600 font-sans leading-relaxed pt-1 border-t border-slate-100 dark:border-white/5">
                       {item.detail}
                     </p>
                   </div>
@@ -718,7 +718,7 @@ export default function HowItWorksPage() {
             <h3 className="text-sm sm:text-base font-bold font-display text-slate-900 dark:text-white">
               100% On-Time Delivery Guarantee
             </h3>
-            <p className="text-xs text-slate-500 dark:text-slate-400 font-sans leading-relaxed">
+            <p className="text-xs text-slate-600 dark:text-slate-400 font-sans leading-relaxed">
               Industrialized release pipelines ensure your platform launches in 7 days or we credit back your deployment fee.
             </p>
           </div>
@@ -730,7 +730,7 @@ export default function HowItWorksPage() {
             <h3 className="text-sm sm:text-base font-bold font-display text-slate-900 dark:text-white">
               VIP WhatsApp Engineering Bridge
             </h3>
-            <p className="text-xs text-slate-500 dark:text-slate-400 font-sans leading-relaxed">
+            <p className="text-xs text-slate-600 dark:text-slate-400 font-sans leading-relaxed">
               Direct real-time channel with your senior software architects throughout the 7-day sprint and beyond.
             </p>
           </div>
@@ -742,7 +742,7 @@ export default function HowItWorksPage() {
             <h3 className="text-sm sm:text-base font-bold font-display text-slate-900 dark:text-white">
               Zero Downtime Student Transition
             </h3>
-            <p className="text-xs text-slate-500 dark:text-slate-400 font-sans leading-relaxed">
+            <p className="text-xs text-slate-600 dark:text-slate-400 font-sans leading-relaxed">
               Seamlessly migrate from Zoom/Drive without missing a single live class or disrupting academic timetables.
             </p>
           </div>

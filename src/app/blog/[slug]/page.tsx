@@ -116,7 +116,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       <article className="max-w-[1080px] mx-auto px-6 sm:px-8 py-6 sm:py-10 space-y-10">
         {/* ── BREADCRUMBS ── */}
-        <nav className="flex items-center gap-2 text-xs font-mono text-slate-500 dark:text-slate-400">
+        <nav className="flex items-center gap-2 text-xs font-mono text-slate-600 dark:text-slate-400">
           <Link href="/" className="hover:text-[#0066FF] transition-colors">
             Home
           </Link>
@@ -136,11 +136,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <span className="px-3 py-1 rounded-full bg-[#0066FF]/10 text-[#0066FF] dark:text-[#38BDF8] font-bold border border-[#0066FF]/20 uppercase tracking-wider">
               {article.category}
             </span>
-            <span className="flex items-center gap-1 text-slate-500 dark:text-slate-400">
+            <span className="flex items-center gap-1 text-slate-600 dark:text-slate-400">
               <Clock className="w-3.5 h-3.5" />
               {article.readingTime || "5 min read"}
             </span>
-            <span className="flex items-center gap-1 text-slate-500 dark:text-slate-400">
+            <span className="flex items-center gap-1 text-slate-600 dark:text-slate-400">
               <Calendar className="w-3.5 h-3.5" />
               {new Date(article.publicationDate).toLocaleDateString("en-US", {
                 month: "long",
@@ -171,7 +171,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <div className="text-sm font-bold text-slate-900 dark:text-white font-display">
                 {article.author?.name || "Rudram Joshi"}
               </div>
-              <div className="text-xs text-slate-500 dark:text-slate-400 font-mono">
+              <div className="text-xs text-slate-600 dark:text-slate-400 font-mono">
                 {article.author?.role || "Lead Architect @ WebVibez"}
               </div>
             </div>

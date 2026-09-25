@@ -239,7 +239,7 @@ export default function StudentPricingCalculator({
                 <span className="text-xl sm:text-2xl font-black font-display text-[#0066FF] dark:text-[#38BDF8]">
                   {students.toLocaleString("en-IN")}
                 </span>
-                <span className="text-xs font-mono font-semibold text-slate-500 dark:text-slate-400">
+                <span className="text-xs font-mono font-semibold text-slate-600 dark:text-slate-400">
                   Students
                 </span>
               </div>
@@ -257,7 +257,7 @@ export default function StudentPricingCalculator({
                 className="w-full h-2.5 bg-slate-200 dark:bg-white/15 rounded-lg appearance-none cursor-pointer accent-[#0066FF] focus:outline-none"
               />
 
-              <div className="flex justify-between text-[10.5px] font-mono font-semibold text-slate-500 dark:text-slate-400 pt-1">
+              <div className="flex justify-between text-[10.5px] font-mono font-semibold text-slate-600 dark:text-slate-400 pt-1">
                 <span>50 Students</span>
                 <span
                   className={`font-bold flex items-center gap-1 ${
@@ -275,7 +275,7 @@ export default function StudentPricingCalculator({
 
             {/* Quick Preset Selector Buttons */}
             <div className="space-y-2 pt-3 border-t border-slate-200/60 dark:border-white/5">
-              <div className="text-[10.5px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 font-bold">
+              <div className="text-[10.5px] font-mono uppercase tracking-wider text-slate-600 dark:text-slate-400 font-bold">
                 Quick Select Student Strength:
               </div>
               <div className="flex flex-wrap gap-2">
@@ -305,7 +305,7 @@ export default function StudentPricingCalculator({
 
           {/* Plan Selector Cards (4 Options, Services Page Style) */}
           <div className="space-y-3">
-            <div className="text-xs font-bold font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400">
+            <div className="text-xs font-bold font-mono uppercase tracking-wider text-slate-600 dark:text-slate-400">
               Select Target Software Tier:
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
@@ -339,7 +339,7 @@ export default function StudentPricingCalculator({
                             <PlanIcon className="w-4 h-4" />
                           </div>
                           <div>
-                            <span className="text-[10px] font-mono tracking-wider uppercase text-slate-500 dark:text-slate-400 block font-bold">
+                            <span className="text-[10px] font-mono tracking-wider uppercase text-slate-600 dark:text-slate-400 block font-bold">
                               // {plan.categoryLabel}
                             </span>
                             <h4 className="text-xs font-bold font-display text-slate-900 dark:text-white">
@@ -362,7 +362,7 @@ export default function StudentPricingCalculator({
                         )}
                       </div>
 
-                      <p className="text-[11px] text-slate-500 dark:text-slate-400 font-sans line-clamp-2">
+                      <p className="text-[11px] text-slate-600 dark:text-slate-400 font-sans line-clamp-2">
                         {plan.tagline}
                       </p>
                     </div>
@@ -370,7 +370,7 @@ export default function StudentPricingCalculator({
                     <div className="flex items-center justify-between pt-3 mt-2 border-t border-slate-200/60 dark:border-white/5">
                       <span className="text-sm sm:text-base font-extrabold font-display text-slate-900 dark:text-white">
                         ₹{plan.basePrice.toLocaleString("en-IN")}
-                        <span className="text-[10px] font-mono text-slate-500 font-normal">
+                        <span className="text-[10px] font-mono text-slate-600 font-normal">
                           /yr
                         </span>
                       </span>
@@ -412,7 +412,7 @@ export default function StudentPricingCalculator({
                 <currentPlan.icon className="w-6 h-6" />
               </div>
               <div>
-                <span className="text-[10px] sm:text-[11px] font-mono tracking-widest font-bold uppercase text-slate-500 dark:text-slate-400">
+                <span className="text-[10px] sm:text-[11px] font-mono tracking-widest font-bold uppercase text-slate-600 dark:text-slate-400">
                   // {currentPlan.categoryLabel}
                 </span>
                 <div className="text-xs sm:text-sm font-mono font-bold text-slate-900 dark:text-white">
@@ -479,7 +479,7 @@ export default function StudentPricingCalculator({
                 >
                   ₹{totalAnnualCost.toLocaleString("en-IN")}
                 </span>
-                <span className="text-[10px] text-slate-500 dark:text-slate-400 block">
+                <span className="text-[10px] text-slate-600 dark:text-slate-400 block">
                   / year + GST
                 </span>
               </div>
@@ -489,25 +489,25 @@ export default function StudentPricingCalculator({
           {/* Micro Unit Cost Metrics (Per Student / Month & Day) */}
           <div className="grid grid-cols-2 gap-3 text-center">
             <div className="p-3 rounded-2xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200/80 dark:border-white/5 space-y-0.5">
-              <div className="text-[10px] font-mono text-slate-500 dark:text-slate-400 uppercase font-bold">
+              <div className="text-[10px] font-mono text-slate-600 dark:text-slate-400 uppercase font-bold">
                 Per Student / Month
               </div>
               <div className="text-lg font-bold font-display text-[#0066FF] dark:text-[#38BDF8]">
                 ₹{costPerStudentMonth.toFixed(2)}
               </div>
-              <div className="text-[9.5px] text-slate-500 dark:text-slate-400">
+              <div className="text-[9.5px] text-slate-600 dark:text-slate-400">
                 Less than a tea cup
               </div>
             </div>
 
             <div className="p-3 rounded-2xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200/80 dark:border-white/5 space-y-0.5">
-              <div className="text-[10px] font-mono text-slate-500 dark:text-slate-400 uppercase font-bold">
+              <div className="text-[10px] font-mono text-slate-600 dark:text-slate-400 uppercase font-bold">
                 Per Student / Day
               </div>
               <div className="text-lg font-bold font-display text-emerald-800 dark:text-[#00E5A3]">
                 ₹{costPerStudentDay.toFixed(2)}
               </div>
-              <div className="text-[9.5px] text-slate-500 dark:text-slate-400">
+              <div className="text-[9.5px] text-slate-600 dark:text-slate-400">
                 Near zero operational cost
               </div>
             </div>

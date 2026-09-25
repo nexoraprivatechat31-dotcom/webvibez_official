@@ -304,7 +304,7 @@ export default function ProductPage() {
               <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-display text-slate-900 dark:text-white">
                 {stat.value}
               </div>
-              <div className="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400 font-mono">
+              <div className="text-[10px] sm:text-[11px] text-slate-600 dark:text-slate-400 font-mono">
                 {stat.label}
               </div>
             </div>
@@ -370,7 +370,7 @@ export default function ProductPage() {
                     className={`px-2 py-0.5 rounded-lg text-[10.5px] font-mono font-bold transition-all cursor-pointer ${
                       activeSubsystem === idx
                         ? "bg-white dark:bg-[#0D1424] text-[#0066FF] dark:text-[#38BDF8] shadow-sm"
-                        : "text-slate-500 hover:text-slate-900 dark:hover:text-white"
+                        : "text-slate-600 hover:text-slate-900 dark:hover:text-white"
                     }`}
                   >
                     {sub.number}
@@ -436,7 +436,7 @@ export default function ProductPage() {
                         <span className="text-xs font-mono font-bold px-2.5 py-1 rounded-md bg-slate-100 dark:bg-white/[0.06] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10">
                           SYS {item.number}
                         </span>
-                        <span className="text-[10px] font-mono tracking-wider font-bold uppercase text-slate-500 dark:text-slate-400">
+                        <span className="text-[10px] font-mono tracking-wider font-bold uppercase text-slate-600 dark:text-slate-400">
                           // {item.categoryLabel}
                         </span>
                       </div>
@@ -476,7 +476,7 @@ export default function ProductPage() {
 
                     {/* Specifications List */}
                     <div className="space-y-2 pt-3 border-t border-slate-200/80 dark:border-white/10">
-                      <div className="text-[10.5px] font-mono uppercase tracking-widest text-slate-400 dark:text-slate-500 font-bold">
+                      <div className="text-[10.5px] font-mono uppercase tracking-widest text-slate-400 dark:text-slate-600 font-bold">
                         Architectural Specifications
                       </div>
                       <ul className="space-y-2">
@@ -498,7 +498,7 @@ export default function ProductPage() {
 
                   {/* Action Link Footer */}
                   <div className="pt-4 mt-4 border-t border-slate-200 dark:border-white/10 flex items-center justify-between">
-                    <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 uppercase">
+                    <span className="text-[10px] font-mono text-slate-600 dark:text-slate-400 uppercase">
                       Hardened Microservice
                     </span>
                     <Link
@@ -515,7 +515,7 @@ export default function ProductPage() {
             })}
           </div>
 
-          <div className="flex items-center justify-between text-xs font-mono text-slate-500 dark:text-slate-400 pt-1">
+          <div className="flex items-center justify-between text-xs font-mono text-slate-600 dark:text-slate-400 pt-1">
             <div className="flex items-center gap-2">
               <span className="font-bold text-slate-900 dark:text-white">
                 SYS {filteredSubsystems[activeSubsystem]?.number || "01"} / SYS 11
@@ -541,7 +541,7 @@ export default function ProductPage() {
               <h4 className="text-lg font-bold font-display text-slate-900 dark:text-white">
                 Sub-100ms API Response
               </h4>
-              <p className="text-xs text-slate-500 dark:text-slate-400 font-sans leading-relaxed">
+              <p className="text-xs text-slate-600 dark:text-slate-400 font-sans leading-relaxed">
                 Global CDN edge acceleration across Mumbai, Singapore, and Frankfurt nodes ensures zero screen lag for students.
               </p>
             </div>
@@ -554,7 +554,7 @@ export default function ProductPage() {
               <h4 className="text-lg font-bold font-display text-slate-900 dark:text-white">
                 100% Tenant Isolation
               </h4>
-              <p className="text-xs text-slate-500 dark:text-slate-400 font-sans leading-relaxed">
+              <p className="text-xs text-slate-600 dark:text-slate-400 font-sans leading-relaxed">
                 Your institutional records, questions, and student phone numbers are partitioned in dedicated encrypted database schemas.
               </p>
             </div>
@@ -567,7 +567,7 @@ export default function ProductPage() {
               <h4 className="text-lg font-bold font-display text-slate-900 dark:text-white">
                 Instant 1-Click Data Export
               </h4>
-              <p className="text-xs text-slate-500 dark:text-slate-400 font-sans leading-relaxed">
+              <p className="text-xs text-slate-600 dark:text-slate-400 font-sans leading-relaxed">
                 Full data sovereignty. Export all student records, CBT exam archives, and GST fee logs into standard CSV/JSON anytime.
               </p>
             </div>
@@ -766,7 +766,7 @@ export default function ProductPage() {
                           <h3 className="text-sm sm:text-base font-bold font-display text-slate-900 dark:text-white">
                             {item.title}
                           </h3>
-                          <span className="text-[10px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 hidden sm:inline-block">
+                          <span className="text-[10px] font-mono uppercase tracking-wider text-slate-600 dark:text-slate-400 hidden sm:inline-block">
                             · {item.category}
                           </span>
                         </div>

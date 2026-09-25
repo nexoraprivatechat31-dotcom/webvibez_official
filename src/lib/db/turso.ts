@@ -81,6 +81,128 @@ export async function initTursoSchema(): Promise<boolean> {
       );
     `);
 
+    // 3. Leads & Inquiries Table
+    await client.execute(`
+      CREATE TABLE IF NOT EXISTS leads (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        email TEXT,
+        phone TEXT,
+        project_type TEXT,
+        message TEXT,
+        source TEXT DEFAULT 'Website Form',
+        status TEXT DEFAULT 'New',
+        internal_notes TEXT,
+        follow_up_date TEXT,
+        created_at TEXT NOT NULL,
+        updated_at TEXT NOT NULL
+      );
+    `);
+
+    // 4. Portfolio Projects Table
+    await client.execute(`
+      CREATE TABLE IF NOT EXISTS portfolio_projects (
+        id TEXT PRIMARY KEY,
+        title TEXT NOT NULL,
+        slug TEXT UNIQUE NOT NULL,
+        type TEXT NOT NULL,
+        tech_stack TEXT NOT NULL,
+        description TEXT,
+        image_url TEXT,
+        live_url TEXT,
+        github_url TEXT,
+        featured INTEGER DEFAULT 0,
+        sort_order INTEGER DEFAULT 0,
+        created_at TEXT NOT NULL,
+        updated_at TEXT NOT NULL
+      );
+    `);
+
+    // --- NEW PHASE 1 TO 4 TABLES ---
+
+    // 5. Clients Table (Phase 1)
+    await client.execute(`
+      CREATE TABLE IF NOT EXISTS clients (
+        id TEXT PRIMARY KEY,
+        institute_name TEXT NOT NULL,
+        contact_person TEXT NOT NULL,
+        phone TEXT,
+        email TEXT,
+        tier TEXT NOT NULL,
+        deployment_date TEXT,
+        renewal_date TEXT,
+        ios_link TEXT,
+        android_link TEXT,
+        student_count INTEGER DEFAULT 0,
+        status TEXT DEFAULT 'active',
+        created_at TEXT NOT NULL,
+        updated_at TEXT NOT NULL
+      );
+    `);
+
+    // 6. Subscriptions Table (Phase 1)
+    await client.execute(`
+      CREATE TABLE IF NOT EXISTS subscriptions (
+        id TEXT PRIMARY KEY,
+        client_id TEXT NOT NULL,
+        tier TEXT NOT NULL,
+        amount INTEGER NOT NULL,
+        payment_status TEXT NOT NULL,
+        paid_at TEXT,
+        renewal_date TEXT NOT NULL,
+        created_at TEXT NOT NULL,
+        FOREIGN KEY(client_id) REFERENCES clients(id) ON DELETE CASCADE
+      );
+    `);
+
+    // 7. Roles Table (Phase 3)
+    await client.execute(`
+      CREATE TABLE IF NOT EXISTS roles (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL UNIQUE,
+        permissions_json TEXT NOT NULL
+      );
+    `);
+
+    // 8. Users Table (Phase 3)
+    await client.execute(`
+      CREATE TABLE IF NOT EXISTS users (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        email TEXT UNIQUE NOT NULL,
+        password_hash TEXT NOT NULL,
+        role_id TEXT,
+        created_at TEXT NOT NULL,
+        FOREIGN KEY(role_id) REFERENCES roles(id)
+      );
+    `);
+
+    // 9. Audit Log Table (Phase 3)
+    await client.execute(`
+      CREATE TABLE IF NOT EXISTS audit_log (
+        id TEXT PRIMARY KEY,
+        user_id TEXT,
+        action TEXT NOT NULL,
+        entity_type TEXT NOT NULL,
+        entity_id TEXT NOT NULL,
+        before_json TEXT,
+        after_json TEXT,
+        created_at TEXT NOT NULL,
+        FOREIGN KEY(user_id) REFERENCES users(id)
+      );
+    `);
+
+    // 10. Notifications Table (Phase 4)
+    await client.execute(`
+      CREATE TABLE IF NOT EXISTS notifications (
+        id TEXT PRIMARY KEY,
+        type TEXT NOT NULL,
+        message TEXT NOT NULL,
+        is_read INTEGER DEFAULT 0,
+        created_at TEXT NOT NULL
+      );
+    `);
+
     return true;
   } catch (err) {
     console.error("Failed to initialize Turso database schema:", err);

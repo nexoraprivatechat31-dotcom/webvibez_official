@@ -109,7 +109,7 @@ export default function DashboardShowcase({ onOpenConsultation }: DashboardShowc
                 <span className="w-3 h-3 rounded-full bg-[#FFBD2E] border border-[#DEA123]" />
                 <span className="w-3 h-3 rounded-full bg-[#27C93F] border border-[#1AAB29]" />
               </div>
-              <span className="text-xs font-mono text-slate-500 dark:text-slate-400 font-semibold pl-2 hidden sm:inline-block">
+              <span className="text-xs font-mono text-slate-600 dark:text-slate-400 font-semibold pl-2 hidden sm:inline-block">
                 WebVibez Institutional OS // Command Center v4.2
               </span>
             </div>
@@ -140,7 +140,7 @@ export default function DashboardShowcase({ onOpenConsultation }: DashboardShowc
                         key={idx}
                         className="p-4 rounded-xl bg-slate-50 dark:bg-white/[0.02] border border-slate-200 dark:border-white/5"
                       >
-                        <div className="flex items-center justify-between text-slate-500 text-xs mb-2 font-mono">
+                        <div className="flex items-center justify-between text-slate-600 text-xs mb-2 font-mono">
                           <span>{card.label}</span>
                           <Icon className="w-4 h-4" style={{ color: card.color }} />
                         </div>

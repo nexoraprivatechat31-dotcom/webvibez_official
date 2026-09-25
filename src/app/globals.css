@@ -597,12 +597,10 @@ html.dark .slim-scrollbar::-webkit-scrollbar-track,
   0% {
     opacity: 0;
     transform: translateY(28px);
-    filter: blur(4px);
   }
   100% {
     opacity: 1;
     transform: translateY(0);
-    filter: blur(0px);
   }
 }
 .reveal-up {

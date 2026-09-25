@@ -411,7 +411,7 @@ export default function SpatialServicesExperience() {
                     </div>
                   </div>
                   <div>
-                    <span className="text-[10px] sm:text-[11px] font-mono tracking-widest font-bold uppercase text-slate-500 dark:text-slate-400 block">
+                    <span className="text-[10px] sm:text-[11px] font-mono tracking-widest font-bold uppercase text-slate-600 dark:text-slate-400 block">
                       // {service.categoryLabel}
                     </span>
                     <div className="text-xs sm:text-sm font-mono font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
@@ -481,7 +481,7 @@ export default function SpatialServicesExperience() {
       </div>
 
       {/* BOTTOM HUD: Active Progress Tracker & Instructions */}
-      <div className="w-full flex items-center justify-between gap-4 pt-1 text-xs font-mono text-slate-500 dark:text-slate-400">
+      <div className="w-full flex items-center justify-between gap-4 pt-1 text-xs font-mono text-slate-600 dark:text-slate-400">
         <div className="flex items-center gap-2">
           <span className="font-bold text-slate-900 dark:text-white">
             0{activeIndex + 1} / 0{totalServices}

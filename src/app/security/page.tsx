@@ -96,7 +96,7 @@ export default function SecurityPage() {
               <h3 className="text-base font-bold font-display text-slate-900 dark:text-white">
                 {p.title}
               </h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-sans">
+              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-sans">
                 {p.description}
               </p>
             </div>

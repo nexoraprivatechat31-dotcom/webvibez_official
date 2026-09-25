@@ -26,7 +26,7 @@ export default function RefundPolicyPage() {
           <h1 className="text-3xl sm:text-5xl font-extrabold font-display text-slate-900 dark:text-white tracking-tight">
             Refund &amp; Cancellation Policy
           </h1>
-          <p className="text-xs text-slate-500 dark:text-slate-400 font-mono">
+          <p className="text-xs text-slate-600 dark:text-slate-400 font-mono">
             Effective Date: March 2025 &middot; WebVibez Software Developer &middot; Gujarat, India
           </p>
         </div>

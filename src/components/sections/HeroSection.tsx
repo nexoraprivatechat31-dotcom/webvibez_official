@@ -65,7 +65,7 @@ export default function HeroSection({ onOpenConsultation }: HeroSectionProps) {
 
             {/* Pure Editorial Eyebrow — Zero Capsules, Zero Pill Borders */}
             <div
-              className="reveal-up reveal-up-1 mb-8 flex items-center gap-3 text-slate-500 dark:text-slate-400 font-mono select-none"
+              className="reveal-up reveal-up-1 mb-8 flex items-center gap-3 text-slate-600 dark:text-slate-400 font-mono select-none"
               style={{
                 transform: `translate3d(0, ${badgeShiftY}px, 0)`,
                 opacity: badgeScrollOpacity,
@@ -109,7 +109,7 @@ export default function HeroSection({ onOpenConsultation }: HeroSectionProps) {
             </p>
 
             {/* Editorial Capabilities Strip — Pure Typography, No Floating Pills */}
-            <div className="reveal-up reveal-up-3 mb-8 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs font-mono text-slate-500 dark:text-slate-400">
+            <div className="reveal-up reveal-up-3 mb-8 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs font-mono text-slate-600 dark:text-slate-400">
               <span className="text-slate-900 dark:text-white font-bold tracking-wider uppercase text-[11px]">
                 WHAT WE BUILD //
               </span>
@@ -153,7 +153,7 @@ export default function HeroSection({ onOpenConsultation }: HeroSectionProps) {
                   100%
                 </div>
                 <div
-                  className="text-[11px] text-slate-500 dark:text-[#94A3B8] mt-1 uppercase tracking-wider font-semibold"
+                  className="text-[11px] text-slate-600 dark:text-[#94A3B8] mt-1 uppercase tracking-wider font-semibold"
                   style={{ fontFamily: "var(--font-mono)" }}
                 >
                   Your Brand
@@ -167,7 +167,7 @@ export default function HeroSection({ onOpenConsultation }: HeroSectionProps) {
                   7 Days
                 </div>
                 <div
-                  className="text-[11px] text-slate-500 dark:text-[#94A3B8] mt-1 uppercase tracking-wider font-semibold"
+                  className="text-[11px] text-slate-600 dark:text-[#94A3B8] mt-1 uppercase tracking-wider font-semibold"
                   style={{ fontFamily: "var(--font-mono)" }}
                 >
                   Deployment
@@ -181,7 +181,7 @@ export default function HeroSection({ onOpenConsultation }: HeroSectionProps) {
                   24/7
                 </div>
                 <div
-                  className="text-[11px] text-slate-500 dark:text-[#94A3B8] mt-1 uppercase tracking-wider font-semibold"
+                  className="text-[11px] text-slate-600 dark:text-[#94A3B8] mt-1 uppercase tracking-wider font-semibold"
                   style={{ fontFamily: "var(--font-mono)" }}
                 >
                   Live SLA

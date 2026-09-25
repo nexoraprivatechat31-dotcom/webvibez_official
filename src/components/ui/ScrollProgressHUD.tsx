@@ -58,7 +58,7 @@ export default function ScrollProgressHUD() {
           <span className="font-mono text-lg font-extrabold text-slate-900 dark:text-white transition-all duration-300">
             {activeChapter.id}
           </span>
-          <span className="font-mono text-[11px] text-slate-400 dark:text-slate-500">
+          <span className="font-mono text-[11px] text-slate-400 dark:text-slate-600">
             / 07
           </span>
         </div>
@@ -75,7 +75,7 @@ export default function ScrollProgressHUD() {
 
       {/* Chapter Title Tooltip rotated vertically */}
       <div
-        className="text-[10px] font-mono tracking-[0.2em] text-slate-500 dark:text-slate-400 uppercase whitespace-nowrap transition-all duration-300"
+        className="text-[10px] font-mono tracking-[0.2em] text-slate-600 dark:text-slate-400 uppercase whitespace-nowrap transition-all duration-300"
         style={{
           writingMode: "vertical-rl",
           transform: "rotate(180deg)",

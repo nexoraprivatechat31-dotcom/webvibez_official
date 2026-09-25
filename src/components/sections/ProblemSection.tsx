@@ -386,13 +386,13 @@ export default function ProblemSection({ onOpenConsultation }: ProblemSectionPro
                               >
                                 // {item.category}
                               </span>
-                              <span className="text-[10px] font-mono text-slate-400 dark:text-slate-500 font-semibold">
+                              <span className="text-[10px] font-mono text-slate-400 dark:text-slate-600 font-semibold">
                                 PITFALL {item.stepNumber}
                               </span>
                             </div>
                           </div>
 
-                          <span className="text-[10px] font-mono text-slate-400 dark:text-slate-500 group-hover:text-rose-500 transition-colors">
+                          <span className="text-[10px] font-mono text-slate-400 dark:text-slate-600 group-hover:text-rose-500 transition-colors">
                             {isSelected ? "Close ↑" : "Fix →"}
                           </span>
                         </div>
@@ -442,7 +442,7 @@ export default function ProblemSection({ onOpenConsultation }: ProblemSectionPro
                 </div>
 
                 {/* Subtext CTA */}
-                <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-slate-500 dark:text-slate-400">
+                <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-slate-600 dark:text-slate-400">
                   <p>Tap any pitfall above to reveal the automated WebVibez remedy.</p>
                   <button
                     onClick={() => setActiveTab("unified")}
@@ -524,7 +524,7 @@ export default function ProblemSection({ onOpenConsultation }: ProblemSectionPro
                 </div>
 
                 {/* Bottom stats ribbon (Services Specs Style) */}
-                <div className="pt-4 border-t border-slate-100 dark:border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-slate-500 dark:text-slate-400">
+                <div className="pt-4 border-t border-slate-100 dark:border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-slate-600 dark:text-slate-400">
                   <div className="flex items-center gap-2 text-emerald-800 dark:text-[#00E5A3] font-bold">
                     <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-[#00E5A3]" />
                     <span>Live in 7 Days on Play Store &amp; iOS</span>
@@ -539,7 +539,7 @@ export default function ProblemSection({ onOpenConsultation }: ProblemSectionPro
             )}
 
             {/* Bottom Action Hint */}
-            <div className="pt-2 flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+            <div className="pt-2 flex items-center gap-2 text-xs text-slate-600 dark:text-slate-400">
               <Sparkles className="w-3.5 h-3.5 text-[#0066FF]" />
               <span>
                 Want a personalized walkthrough for your coaching institute?{" "}
