@@ -151,6 +151,13 @@ export interface QualityGateResult {
     severity: "CRITICAL" | "WARNING" | "INFO";
     message: string;
   }>;
+  categoryScores?: {
+    contentQuality: number;
+    seoQuality: number;
+    aeoQuality: number;
+    technicalSeo: number;
+    overall: number;
+  };
 }
 
 export interface DailyPublishLog {

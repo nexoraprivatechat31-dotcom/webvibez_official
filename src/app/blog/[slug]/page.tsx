@@ -25,7 +25,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const article = await BlogRepository.getArticleBySlug(slug, false);
 
-  if (!article) {
+  if (!article || article.language === "hi") {
     return {
       title: "Article Not Found | WebVibez Blog",
       description: "The requested article could not be found.",
@@ -42,6 +42,17 @@ export async function generateMetadata({
     description,
     alternates: {
       canonical: url,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
     openGraph: {
       title: article.ogTitle || title,
@@ -69,11 +80,116 @@ export async function generateMetadata({
   };
 }
 
+function renderInlineContent(text: string) {
+  const regex = /(\[.*?\]\(.*?\)|\*\*.*?\*\*|`.*?`)/g;
+  const parts = text.split(regex);
+
+  return parts.map((part, i) => {
+    if (part.startsWith("[") && part.includes("](") && part.endsWith(")")) {
+      const match = part.match(/^\[(.*?)\]\((.*?)\)$/);
+      if (match) {
+        const [, linkText, linkHref] = match;
+        const isExternal = linkHref.startsWith("http");
+        if (isExternal) {
+          return (
+            <a
+              key={i}
+              href={linkHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#0066FF] dark:text-[#38BDF8] underline font-semibold hover:opacity-80"
+            >
+              {linkText}
+            </a>
+          );
+        }
+        return (
+          <Link
+            key={i}
+            href={linkHref}
+            className="text-[#0066FF] dark:text-[#38BDF8] underline font-semibold hover:opacity-80"
+          >
+            {linkText}
+          </Link>
+        );
+      }
+    }
+    if (part.startsWith("**") && part.endsWith("**") && part.length >= 4) {
+      return (
+        <strong key={i} className="font-semibold text-slate-900 dark:text-white">
+          {part.slice(2, -2)}
+        </strong>
+      );
+    }
+    if (part.startsWith("`") && part.endsWith("`") && part.length >= 2) {
+      return (
+        <code
+          key={i}
+          className="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-white/10 font-mono text-xs sm:text-sm text-slate-800 dark:text-slate-200"
+        >
+          {part.slice(1, -1)}
+        </code>
+      );
+    }
+    return part;
+  });
+}
+
+function isMarkdownTable(text: string): boolean {
+  const lines = text.split("\n").map((l) => l.trim()).filter(Boolean);
+  return lines.length >= 2 && lines.every((l) => l.startsWith("|") && l.endsWith("|"));
+}
+
+function renderMarkdownTable(tableText: string, key: number) {
+  const lines = tableText.split("\n").map((l) => l.trim()).filter(Boolean);
+  if (lines.length < 2) return null;
+
+  const headerCells = lines[0]
+    .split("|")
+    .map((c) => c.trim())
+    .filter((c, idx, arr) => idx > 0 && idx < arr.length - 1);
+
+  const bodyLines = lines.slice(1).filter((l) => !/^\|[-:\s|]+\|$/.test(l));
+
+  return (
+    <div key={key} className="overflow-x-auto my-6 rounded-2xl border border-slate-200 dark:border-white/10 shadow-sm">
+      <table className="w-full text-left border-collapse text-sm">
+        <thead className="bg-slate-50 dark:bg-white/[0.04] text-slate-900 dark:text-white font-mono uppercase text-xs">
+          <tr>
+            {headerCells.map((h, i) => (
+              <th key={i} className="p-3.5 border-b border-slate-200 dark:border-white/10 font-bold">
+                {renderInlineContent(h)}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody className="divide-y divide-slate-200 dark:divide-white/05 font-sans">
+          {bodyLines.map((line, rIdx) => {
+            const cells = line
+              .split("|")
+              .map((c) => c.trim())
+              .filter((c, idx, arr) => idx > 0 && idx < arr.length - 1);
+            return (
+              <tr key={rIdx} className="hover:bg-slate-50/50 dark:hover:bg-white/[0.02]">
+                {cells.map((cell, cIdx) => (
+                  <td key={cIdx} className="p-3.5 text-slate-700 dark:text-slate-300">
+                    {renderInlineContent(cell)}
+                  </td>
+                ))}
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
   const article = await BlogRepository.getArticleBySlug(slug, false);
 
-  if (!article) {
+  if (!article || article.language === "hi") {
     notFound();
   }
 
@@ -107,12 +223,65 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     },
   };
 
+  // Schema.org BreadcrumbList Structured Data
+  const jsonLdBreadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.webvibez.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: "https://www.webvibez.com/blog",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: article.title,
+        item: `https://www.webvibez.com/blog/${article.slug}`,
+      },
+    ],
+  };
+
+  // Schema.org FAQPage Structured Data (if FAQs exist)
+  const jsonLdFaq =
+    article.faq && article.faq.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: article.faq.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: item.answer,
+            },
+          })),
+        }
+      : null;
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdArticle) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
+      />
+      {jsonLdFaq && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
+        />
+      )}
 
       <article className="max-w-[1080px] mx-auto px-6 sm:px-8 py-6 sm:py-10 space-y-10">
         {/* ── BREADCRUMBS ── */}
@@ -208,6 +377,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             const trimmed = paragraph.trim();
             if (!trimmed) return null;
 
+            // Markdown Table
+            if (isMarkdownTable(trimmed)) {
+              return renderMarkdownTable(trimmed, index);
+            }
+
             // Heading 2
             if (trimmed.startsWith("## ")) {
               return (
@@ -239,7 +413,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <ul key={index} className="list-disc list-inside space-y-2 pl-2">
                   {items.map((item, i) => (
                     <li key={i} className="text-slate-700 dark:text-slate-300">
-                      {item}
+                      {renderInlineContent(item)}
                     </li>
                   ))}
                 </ul>
@@ -259,10 +433,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               );
             }
 
-            // Regular paragraph
+            // Regular paragraph with inline markdown parsing
             return (
               <p key={index} className="text-slate-700 dark:text-slate-300 leading-relaxed">
-                {trimmed}
+                {renderInlineContent(trimmed)}
               </p>
             );
           })}

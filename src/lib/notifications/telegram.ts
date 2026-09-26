@@ -178,6 +178,13 @@ export const TelegramNotifier = {
 
     if (buttonRow1.length > 0) inlineButtons.push(buttonRow1);
     if (buttonRow2.length > 0) inlineButtons.push(buttonRow2);
+
+    // Primary Canonical Source Button
+    if (!isHindi) {
+      inlineButtons.unshift([
+        { text: "🌐 Read on WebVibez (Canonical)", url: `https://www.webvibez.com/blog/${article.slug}` },
+      ]);
+    }
     
     const companyBtnText = isHindi ? "🚀 WebVibez सॉफ्टवेयर सॉल्यूशंस" : "🚀 WebVibez Software Solutions";
     inlineButtons.push([
@@ -185,6 +192,14 @@ export const TelegramNotifier = {
     ]);
 
     let message = "";
+
+    const kwBlock = article.primaryKeyword
+      ? `\n🎯 <b>Target Keyword:</b> <code>${article.primaryKeyword}</code>`
+      : "";
+
+    const seoScoreBlock = article.seoScores
+      ? `\n\n📊 <b>Diagnostic Quality Scores:</b>\n• Content Depth: ${article.seoScores.contentQuality}/100\n• SEO Structure: ${article.seoScores.seoQuality}/100\n• AEO Direct Answer: ${article.seoScores.aeoQuality}/100\n• Technical SEO: ${article.seoScores.technicalSeo}/100\n• Overall Score: <b>${article.seoScores.overall}/100</b>`
+      : "";
 
     if (isHindi) {
       const directAns = article.aeoDirectAnswer
@@ -196,11 +211,11 @@ export const TelegramNotifier = {
 
 📌 <b>शीर्षक:</b> ${article.title}
 🇮🇳 <b>भाषा:</b> हिन्दी (Hindi)
-🏷️ <b>श्रेणी:</b> ${article.category} | ⏱️ ${article.readingTime || "7 मिनट"}
+🏷️ <b>श्रेणी:</b> ${article.category} | ⏱️ ${article.readingTime || "7 मिनट"}${kwBlock}
 👨‍💻 <b>लेखक:</b> ${article.author?.name || "Rudram Joshi"} (WebVibez)
 ✉️ <b>ईमेल:</b> webvibezsoftdev@gmail.com
-🌐 <b>वेबसाइट:</b> https://www.webvibez.com
-🕒 <b>समय:</b> ${pubDateIST}${directAns}${syndicatedChannels}
+🌐 <b>कैनोनिकल:</b> ${article.canonicalUrl}
+🕒 <b>समय:</b> ${pubDateIST}${directAns}${seoScoreBlock}${syndicatedChannels}
 
 ✅ <i>रियल बैकलिंक्स और कैनोनिकल SEO के साथ ऑटोमैटिक डिस्ट्रीब्यूटेड!</i>
       `.trim();
@@ -214,11 +229,11 @@ export const TelegramNotifier = {
 
 📌 <b>Title:</b> ${article.title}
 🇬🇧 <b>Language:</b> English
-🏷️ <b>Category:</b> ${article.category} | ⏱️ ${article.readingTime || "7 min read"}
+🏷️ <b>Category:</b> ${article.category} | ⏱️ ${article.readingTime || "7 min read"}${kwBlock}
 👨‍💻 <b>Author:</b> ${article.author?.name || "Rudram Joshi"} (Founder & Lead Architect)
 ✉️ <b>Email:</b> webvibezsoftdev@gmail.com
-🌐 <b>Website:</b> https://www.webvibez.com
-🕒 <b>Time:</b> ${pubDateIST}${directAns}${syndicatedChannels}
+🌐 <b>Canonical:</b> https://www.webvibez.com/blog/${article.slug}
+🕒 <b>Time:</b> ${pubDateIST}${directAns}${seoScoreBlock}${syndicatedChannels}
 
 ✅ <i>Distributed automatically with real backlinks & canonical SEO!</i>
       `.trim();

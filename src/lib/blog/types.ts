@@ -111,6 +111,17 @@ export interface Article {
   distribution?: Record<DistributionPlatform, DistributionRecord>;
   language?: "en" | "hi";
   languageGroupKey?: string;
+  primaryKeyword?: string;
+  secondaryKeywords?: string[];
+  searchIntent?: string;
+  targetAudience?: string;
+  seoScores?: {
+    contentQuality: number;
+    seoQuality: number;
+    aeoQuality: number;
+    technicalSeo: number;
+    overall: number;
+  };
   createdAt: string;
   updatedAt: string;
 }

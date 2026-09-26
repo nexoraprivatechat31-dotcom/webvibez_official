@@ -58,10 +58,17 @@ export async function initTursoSchema(): Promise<boolean> {
         distribution TEXT,
         language TEXT DEFAULT 'en',
         language_group_key TEXT,
+        seo_metadata TEXT,
         created_at TEXT NOT NULL,
         updated_at TEXT NOT NULL
       );
     `);
+
+    try {
+      await client.execute(`ALTER TABLE articles ADD COLUMN seo_metadata TEXT;`);
+    } catch {
+      // Column already exists
+    }
 
     // 2. Daily Publish Logs with strict idempotency key unique constraint
     await client.execute(`

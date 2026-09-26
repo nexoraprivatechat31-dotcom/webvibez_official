@@ -1,13 +1,15 @@
 import { NextResponse } from "next/server";
 import { BlogRepository } from "@/lib/blog/repository";
+import { Article } from "@/lib/blog/types";
 
 export async function GET() {
-  const articles = await BlogRepository.getPublishedArticles();
+  const allPublished = await BlogRepository.getPublishedArticles();
+  const articles = allPublished.filter((a: Article) => !a.language || a.language === "en");
   const baseUrl = "https://www.webvibez.com";
 
   const feedItems = articles
     .map(
-      (a) => `
+      (a: Article) => `
     <item>
       <title><![CDATA[${a.title}]]></title>
       <link>${baseUrl}/blog/${a.slug}</link>

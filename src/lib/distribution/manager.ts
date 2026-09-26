@@ -62,8 +62,17 @@ export const DistributionManager = {
       };
     }
 
-    // Execute publication
-    const result = await adapter.publish(article);
+    let result: DistributionResult;
+    try {
+      result = await adapter.publish(article);
+    } catch (err: unknown) {
+      result = {
+        platform,
+        success: false,
+        errorMessage: `Adapter execution error: ${err instanceof Error ? err.message : String(err)}`,
+        timestamp,
+      };
+    }
 
     // Update distribution record in article
     const currentDistribution = article.distribution || ({} as Record<DistributionPlatform, DistributionRecord>);
@@ -83,9 +92,13 @@ export const DistributionManager = {
     };
 
     currentDistribution[platform] = record;
-    await BlogRepository.updateArticle(article.id, {
-      distribution: currentDistribution,
-    });
+    try {
+      await BlogRepository.updateArticle(article.id, {
+        distribution: currentDistribution,
+      });
+    } catch (dbErr) {
+      console.error(`Failed to update distribution record in DB for ${platform}:`, dbErr);
+    }
 
     return result;
   },

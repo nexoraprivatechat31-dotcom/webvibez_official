@@ -12,6 +12,8 @@ export function parseRowToArticle(row: any): Article {
     }
   };
 
+  const seoMeta = parseJson(row.seo_metadata, {});
+
   return {
     id: row.id as string,
     slug: row.slug as string,
@@ -43,6 +45,11 @@ export function parseRowToArticle(row: any): Article {
     distribution: parseJson(row.distribution, {}),
     language: row.language as any,
     languageGroupKey: row.language_group_key as string | undefined,
+    primaryKeyword: seoMeta.primaryKeyword || undefined,
+    secondaryKeywords: seoMeta.secondaryKeywords || undefined,
+    searchIntent: seoMeta.searchIntent || undefined,
+    targetAudience: seoMeta.targetAudience || undefined,
+    seoScores: seoMeta.seoScores || undefined,
     createdAt: row.created_at as string,
     updatedAt: row.updated_at as string,
   };
@@ -108,6 +115,13 @@ export const BlogRepository = {
     
     const id = article.id || `art-${Date.now()}`;
     const slug = article.slug || "";
+    const seoMetadataJson = JSON.stringify({
+      primaryKeyword: article.primaryKeyword || null,
+      secondaryKeywords: article.secondaryKeywords || [],
+      searchIntent: article.searchIntent || null,
+      targetAudience: article.targetAudience || null,
+      seoScores: article.seoScores || null,
+    });
     
     await client?.execute({
       sql: `
@@ -116,9 +130,9 @@ export const BlogRepository = {
           category, tags, author, featured_image, featured_image_alt, publication_date,
           modified_date, reading_time, status, featured, canonical_url, seo_title,
           seo_description, og_title, og_description, related_services, related_article_slugs,
-          faq, table_of_contents, distribution, language, language_group_key, created_at, updated_at
+          faq, table_of_contents, distribution, language, language_group_key, seo_metadata, created_at, updated_at
         ) VALUES (
-          ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+          ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
         )
       `,
       args: [
@@ -152,6 +166,7 @@ export const BlogRepository = {
         JSON.stringify(article.distribution || {}),
         article.language || "en",
         article.languageGroupKey || null,
+        seoMetadataJson,
         article.createdAt || now,
         now
       ]
@@ -166,6 +181,13 @@ export const BlogRepository = {
 
     const now = new Date().toISOString();
     const updated = { ...existing, ...updates };
+    const seoMetadataJson = JSON.stringify({
+      primaryKeyword: updated.primaryKeyword || null,
+      secondaryKeywords: updated.secondaryKeywords || [],
+      searchIntent: updated.searchIntent || null,
+      targetAudience: updated.targetAudience || null,
+      seoScores: updated.seoScores || null,
+    });
 
     const client = getTursoClient();
     await client?.execute({
@@ -176,7 +198,7 @@ export const BlogRepository = {
           featured_image_alt = ?, publication_date = ?, modified_date = ?, reading_time = ?,
           status = ?, featured = ?, canonical_url = ?, seo_title = ?, seo_description = ?,
           og_title = ?, og_description = ?, related_services = ?, related_article_slugs = ?,
-          faq = ?, table_of_contents = ?, distribution = ?, language = ?, language_group_key = ?, updated_at = ?
+          faq = ?, table_of_contents = ?, distribution = ?, language = ?, language_group_key = ?, seo_metadata = ?, updated_at = ?
         WHERE id = ?
       `,
       args: [
@@ -209,6 +231,7 @@ export const BlogRepository = {
         JSON.stringify(updated.distribution || {}),
         updated.language || "en",
         updated.languageGroupKey || null,
+        seoMetadataJson,
         now,
         id
       ]

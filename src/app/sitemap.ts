@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
+import { BlogRepository } from "@/lib/blog/repository";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://www.webvibez.com";
   const lastModified = new Date();
 
@@ -24,12 +25,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/refund-policy", priority: 0.4, changeFrequency: "monthly" as const },
     { path: "/agreements", priority: 0.4, changeFrequency: "monthly" as const },
     { path: "/disclaimer", priority: 0.4, changeFrequency: "monthly" as const },
+    { path: "/blog", priority: 0.9, changeFrequency: "daily" as const },
   ];
 
-  return staticRoutes.map((route) => ({
+  const routes = staticRoutes.map((route) => ({
     url: `${baseUrl}${route.path}`,
     lastModified,
     changeFrequency: route.changeFrequency,
     priority: route.priority,
   }));
+
+  try {
+    const allPublished = await BlogRepository.getPublishedArticles();
+    const englishArticles = allPublished.filter(a => !a.language || a.language === "en");
+    
+    englishArticles.forEach((article) => {
+      routes.push({
+        url: `${baseUrl}/blog/${article.slug}`,
+        lastModified: new Date(article.modifiedDate || article.publicationDate),
+        changeFrequency: "weekly" as const,
+        priority: 0.8,
+      });
+    });
+  } catch (error) {
+    console.error("Failed to fetch articles for sitemap", error);
+  }
+
+  return routes;
 }

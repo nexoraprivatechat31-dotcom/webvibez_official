@@ -20,12 +20,16 @@ export async function GET(request: NextRequest) {
       });
     }
 
-    // Public request: Return ONLY published articles (Security requirement #3)
+    // Public request: Return ONLY published English articles (Security requirement #3 + Language filter)
     const publishedArticles = await BlogRepository.getPublishedArticles();
+    const publicEnglishArticles = publishedArticles.filter(
+      (a: Article) => !a.language || a.language === "en"
+    );
+    
     return NextResponse.json({
       success: true,
-      count: publishedArticles.length,
-      articles: publishedArticles,
+      count: publicEnglishArticles.length,
+      articles: publicEnglishArticles,
     });
   } catch (err: any) {
     return NextResponse.json(
