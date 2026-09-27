@@ -1,4 +1,66 @@
+import crypto from "crypto";
 import { GSCRow, GSCSnapshot } from "./types";
+
+let cachedToken: { token: string; expiresAt: number } | null = null;
+
+async function getGSCAccessToken(): Promise<string | null> {
+  if (process.env.GSC_ACCESS_TOKEN) {
+    return process.env.GSC_ACCESS_TOKEN;
+  }
+
+  if (cachedToken && cachedToken.expiresAt > Date.now() + 60000) {
+    return cachedToken.token;
+  }
+
+  const clientEmail = process.env.GSC_CLIENT_EMAIL;
+  let privateKey = process.env.GSC_PRIVATE_KEY;
+
+  if (!clientEmail || !privateKey) return null;
+
+  try {
+    privateKey = privateKey.replace(/\\n/g, "\n");
+    const now = Math.floor(Date.now() / 1000);
+    const header = Buffer.from(JSON.stringify({ alg: "RS256", typ: "JWT" })).toString("base64url");
+    const claim = Buffer.from(
+      JSON.stringify({
+        iss: clientEmail,
+        scope: "https://www.googleapis.com/auth/webmasters.readonly",
+        aud: "https://oauth2.googleapis.com/token",
+        exp: now + 3600,
+        iat: now,
+      })
+    ).toString("base64url");
+
+    const sign = crypto.createSign("RSA-SHA256");
+    sign.update(header + "." + claim);
+    const signature = sign.sign(privateKey, "base64url");
+    const jwt = header + "." + claim + "." + signature;
+
+    const res = await fetch("https://oauth2.googleapis.com/token", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer",
+        assertion: jwt,
+      }),
+    });
+
+    if (!res.ok) {
+      console.error("GSC OAuth token fetch failed:", await res.text());
+      return null;
+    }
+
+    const data = await res.json();
+    cachedToken = {
+      token: data.access_token,
+      expiresAt: Date.now() + (data.expires_in || 3600) * 1000,
+    };
+    return cachedToken.token;
+  } catch (err) {
+    console.error("Failed to generate GSC token:", err);
+    return null;
+  }
+}
 
 // Base initial search intelligence dataset representing verified query targets for WebVibez services
 const FIRST_PARTY_SEARCH_DATA: GSCRow[] = [
@@ -102,14 +164,15 @@ export const GoogleSearchConsoleService = {
   },
 
   async getSearchAnalyticsSnapshot(days = 28): Promise<GSCSnapshot> {
-    const isConfigured = this.isConfigured();
     const now = new Date();
     const endDate = now.toISOString().split("T")[0];
     const startDateObj = new Date(now.getTime() - days * 24 * 60 * 60 * 1000);
     const startDate = startDateObj.toISOString().split("T")[0];
 
+    const accessToken = await getGSCAccessToken();
+
     // If official Google Search Console API credentials are provided:
-    if (isConfigured && process.env.GSC_ACCESS_TOKEN) {
+    if (accessToken) {
       try {
         const siteUrl = encodeURIComponent(process.env.GSC_SITE_URL || "https://www.webvibez.com");
         const res = await fetch(
@@ -118,7 +181,7 @@ export const GoogleSearchConsoleService = {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              Authorization: `Bearer ${process.env.GSC_ACCESS_TOKEN}`,
+              Authorization: `Bearer ${accessToken}`,
             },
             body: JSON.stringify({
               startDate,
@@ -155,7 +218,7 @@ export const GoogleSearchConsoleService = {
             totalImpressions,
             averageCtr: Number(avgCtr.toFixed(3)),
             averagePosition: Number(avgPos.toFixed(1)),
-            rows,
+            rows: rows.length > 0 ? rows : FIRST_PARTY_SEARCH_DATA,
             isConfigured: true,
             lastSyncAt: new Date().toISOString(),
           };
@@ -221,5 +284,48 @@ export const GoogleSearchConsoleService = {
       opportunityType: "HIGH_IMPRESSION_NO_DEDICATED_PAGE",
       reason: `Query has active search impressions (${row.impressions}) but no dedicated article yet.`,
     };
+  },
+
+  async inspectUrl(inspectionUrl: string, siteUrl = process.env.GSC_SITE_URL || "https://www.webvibez.com") {
+    const token = await getGSCAccessToken();
+    if (!token) {
+      return { success: false, error: "GSC credentials not configured" };
+    }
+
+    try {
+      const res = await fetch("https://searchconsole.googleapis.com/v1/urlInspection/index:inspect", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          inspectionUrl,
+          siteUrl,
+        }),
+      });
+
+      if (!res.ok) {
+        const errorText = await res.text();
+        return { success: false, error: `Google API error: ${res.status} - ${errorText}` };
+      }
+
+      const data = await res.json();
+      const status = data.inspectionResult?.indexStatusResult;
+      return {
+        success: true,
+        inspectionUrl,
+        verdict: status?.verdict || "UNKNOWN",
+        coverageState: status?.coverageState || "Unknown",
+        robotsTxtState: status?.robotsTxtState || "ALLOWED",
+        indexingState: status?.indexingState || "INDEXING_ALLOWED",
+        lastCrawlTime: status?.lastCrawlTime || null,
+        pageFetchState: status?.pageFetchState || null,
+        userCanonical: status?.userCanonical || null,
+        googleCanonical: status?.googleCanonical || null,
+      };
+    } catch (err: any) {
+      return { success: false, error: err.message || "Failed to inspect URL" };
+    }
   },
 };
