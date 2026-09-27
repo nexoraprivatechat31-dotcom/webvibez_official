@@ -31,10 +31,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/favicon-48x48.png", type: "image/png", sizes: "48x48" },
+      { url: "/favicon-96x96.png", type: "image/png", sizes: "96x96" },
+      { url: "/favicon-192x192.png", type: "image/png", sizes: "192x192" },
       { url: "/favicon.png", type: "image/png", sizes: "512x512" },
-      { url: "/favicon.png", type: "image/png", sizes: "192x192" },
-      { url: "/favicon.svg", type: "image/svg+xml" },
     ],
     apple: [
       { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
@@ -411,12 +412,6 @@ export default function RootLayout({
             --font-mono: 'JetBrains Mono', monospace;
           }
         `}} />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/favicon.png" type="image/png" sizes="512x512" />
-        <link rel="icon" href="/favicon.png" type="image/png" sizes="192x192" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-icon.png" sizes="180x180" />
-        <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="image_src" href="https://www.webvibez.com/logo.jpeg" />
         <meta property="og:image" content="https://www.webvibez.com/logo.jpeg" />
         <meta property="og:image:secure_url" content="https://www.webvibez.com/logo.jpeg" />

@@ -12,10 +12,22 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: "#F8FAFC",
     icons: [
       {
-        src: "/favicon.png",
+        src: "/favicon-48x48.png",
+        sizes: "48x48",
+        type: "image/png",
+        purpose: "any",
+      },
+      {
+        src: "/favicon-192x192.png",
         sizes: "192x192",
         type: "image/png",
         purpose: "maskable",
+      },
+      {
+        src: "/favicon-512x512.png",
+        sizes: "512x512",
+        type: "image/png",
+        purpose: "any",
       },
       {
         src: "/favicon.png",
@@ -25,7 +37,7 @@ export default function manifest(): MetadataRoute.Manifest {
       },
       {
         src: "/favicon.ico",
-        sizes: "32x32",
+        sizes: "48x48 32x32 16x16",
         type: "image/x-icon",
       },
     ],
