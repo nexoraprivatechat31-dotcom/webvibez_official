@@ -62,9 +62,22 @@ async function handleCron(request: NextRequest) {
       }
     }
 
+    // If today is Sunday (day 0), also dispatch Weekly Sunday SEO Digest to Telegram
+    let sundayDigestResult: any = null;
+    const isSunday = new Date().getUTCDay() === 0;
+    if (isSunday) {
+      try {
+        const { WeeklySeoDigestService } = await import("@/lib/seo-intelligence/weekly-digest");
+        sundayDigestResult = await WeeklySeoDigestService.generateAndSendDigest();
+      } catch (e: any) {
+        console.error("Sunday SEO digest error during cron:", e.message);
+      }
+    }
+
     return NextResponse.json({
       success: log.status === "SUCCESS" || log.status === "ALREADY_PUBLISHED",
       log,
+      sundayDigest: sundayDigestResult,
     });
   } catch (err: any) {
     return NextResponse.json(
