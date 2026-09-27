@@ -41,6 +41,9 @@ export default function SEOPage() {
   const [gscSnapshot, setGscSnapshot] = useState<GSCSnapshot | null>(null);
   const [isLoadingGsc, setIsLoadingGsc] = useState(false);
   const [queryFilter, setQueryFilter] = useState<"all" | "striking" | "low_ctr">("all");
+  const [isDeepAuditing, setIsDeepAuditing] = useState(false);
+  const [generatingDraftQuery, setGeneratingDraftQuery] = useState<string | null>(null);
+  const [customDraftQuery, setCustomDraftQuery] = useState("");
 
   const runAudit = async () => {
     setIsAuditing(true);
@@ -139,6 +142,53 @@ export default function SEOPage() {
     }
   };
 
+  const handleDeepAuditAndAlert = async () => {
+    setIsDeepAuditing(true);
+    setPingMessage(null);
+    try {
+      const res = await fetch("/api/admin/seo/indexing-health", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "audit_and_alert" }),
+      });
+      const data = await res.json();
+      if (data.success && data.report) {
+        setAuditReport(data.report);
+        setPingMessage("Deep Technical Audit complete! Real-time telemetry report sent to Telegram.");
+      } else {
+        setPingMessage(data.error || "Failed to run deep audit");
+      }
+    } catch (err: any) {
+      setPingMessage(`Error: ${err.message}`);
+    } finally {
+      setIsDeepAuditing(false);
+    }
+  };
+
+  const handleGenerateDraft = async (query: string) => {
+    if (!query || !query.trim()) return;
+    setGeneratingDraftQuery(query);
+    setPingMessage(null);
+    try {
+      const res = await fetch("/api/admin/seo/indexing-health", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "generate_article_from_query", query: query.trim() }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setPingMessage(`AI Article Draft generated for "${query}"! You can review and publish it under /admin/blog.`);
+        setCustomDraftQuery("");
+      } else {
+        setPingMessage(data.error || "Failed to generate AI draft");
+      }
+    } catch (err: any) {
+      setPingMessage(`Failed to generate draft: ${err.message}`);
+    } finally {
+      setGeneratingDraftQuery(null);
+    }
+  };
+
   const handleInspectUrl = async (urlToInspect?: string) => {
     const targetUrl = urlToInspect || inspectUrlInput;
     setIsInspecting(true);
@@ -196,6 +246,14 @@ export default function SEOPage() {
           >
             <RefreshCw className={`w-3.5 h-3.5 ${isAuditing ? "animate-spin" : ""}`} />
             {isAuditing ? "Auditing..." : "Live Audit"}
+          </button>
+          <button
+            onClick={handleDeepAuditAndAlert}
+            disabled={isDeepAuditing}
+            className="flex items-center gap-1.5 px-3.5 py-2 bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white rounded-xl font-bold transition-all shadow-md shadow-violet-500/20 active:scale-95 duration-200 disabled:opacity-50 cursor-pointer text-xs"
+          >
+            <ShieldCheck className={`w-3.5 h-3.5 ${isDeepAuditing ? "animate-spin" : ""}`} />
+            {isDeepAuditing ? "Auditing & Alerting..." : "Audit & Alert Telegram"}
           </button>
           <button
             onClick={pingIndexNow}
@@ -604,6 +662,44 @@ export default function SEOPage() {
       {/* ── TAB 3: KEYWORD INTELLIGENCE & STRIKING DISTANCE ── */}
       {activeTab === "analytics" && (
         <div className="space-y-6">
+          {/* Custom Query 1-Click AI Content Generator */}
+          <div className="bg-gradient-to-r from-blue-600/10 via-indigo-600/10 to-purple-600/10 dark:from-blue-950/40 dark:via-indigo-950/40 dark:to-purple-950/40 border border-blue-500/20 rounded-3xl p-6">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="px-2 py-0.5 rounded bg-blue-500/20 text-blue-600 dark:text-blue-400 font-mono text-[10px] font-bold uppercase">
+                    Opportunity Action
+                  </span>
+                  <Sparkles className="w-4 h-4 text-amber-500" />
+                </div>
+                <h4 className="text-lg font-extrabold text-slate-900 dark:text-white font-display">
+                  1-Click GSC AI Content Generator
+                </h4>
+                <p className="text-xs text-slate-600 dark:text-slate-400">
+                  Target search queries and generate a complete, high-ranking SEO blog draft in 1 click.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-3">
+              <input
+                type="text"
+                value={customDraftQuery}
+                onChange={(e) => setCustomDraftQuery(e.target.value)}
+                placeholder="Enter query (e.g., 'Coaching class mobile app benefits in 2026')..."
+                className="flex-1 px-4 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white font-sans text-sm focus:outline-none focus:border-[#0066FF]"
+              />
+              <button
+                onClick={() => handleGenerateDraft(customDraftQuery)}
+                disabled={!customDraftQuery.trim() || Boolean(generatingDraftQuery)}
+                className="px-5 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white rounded-xl font-bold transition-all shadow-md shadow-blue-500/20 active:scale-95 duration-200 disabled:opacity-50 cursor-pointer text-xs flex items-center justify-center gap-2"
+              >
+                <Zap className={`w-3.5 h-3.5 ${generatingDraftQuery === customDraftQuery ? "animate-spin" : ""}`} />
+                {generatingDraftQuery === customDraftQuery ? "Drafting with AI..." : "⚡ Generate AI Article Draft"}
+              </button>
+            </div>
+          </div>
+
           <div className="bg-white dark:bg-slate-900/40 backdrop-blur-2xl p-6 rounded-3xl border border-slate-200 dark:border-slate-800/80 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
               <h3 className="text-xl font-extrabold text-slate-900 dark:text-white font-display">
@@ -648,58 +744,143 @@ export default function SEOPage() {
                     <th className="py-3.5 px-4 text-center">Impressions</th>
                     <th className="py-3.5 px-4 text-center">CTR</th>
                     <th className="py-3.5 px-4 text-center">Avg. Position</th>
-                    <th className="py-3.5 px-6 text-right">Optimization Opportunity</th>
+                    <th className="py-3.5 px-6 text-right">Opportunity & AI Action</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100 dark:divide-slate-800/60 font-mono text-xs">
-                  {filteredQueries.map((q) => {
-                    const isStriking = q.position >= 4 && q.position <= 20;
-                    const isLowCtr = q.impressions > 2000 && q.ctr < 0.025;
+                  {filteredQueries.length > 0 ? (
+                    filteredQueries.map((q) => {
+                      const isStriking = q.position >= 4 && q.position <= 20;
+                      const isLowCtr = q.impressions > 2000 && q.ctr < 0.025;
 
-                    return (
-                      <tr key={q.query} className="hover:bg-slate-50/80 dark:hover:bg-slate-800/40 transition-colors">
-                        <td className="py-3.5 px-6 font-semibold text-slate-900 dark:text-white">
-                          <div className="font-sans font-bold text-slate-900 dark:text-white">{q.query}</div>
-                          <div className="text-[11px] text-slate-400 font-mono truncate max-w-sm">{q.page}</div>
-                        </td>
-                        <td className="py-3.5 px-4 text-center font-bold text-emerald-600 dark:text-emerald-400">
-                          {q.clicks}
-                        </td>
-                        <td className="py-3.5 px-4 text-center text-slate-600 dark:text-slate-400">
-                          {q.impressions.toLocaleString()}
-                        </td>
-                        <td className="py-3.5 px-4 text-center">{(q.ctr * 100).toFixed(1)}%</td>
-                        <td className="py-3.5 px-4 text-center font-bold">
-                          <span
-                            className={`px-2 py-0.5 rounded ${
-                              q.position <= 3
-                                ? "bg-emerald-500/10 text-emerald-600"
-                                : q.position <= 10
-                                ? "bg-blue-500/10 text-blue-600"
-                                : "bg-slate-100 dark:bg-slate-800 text-slate-500"
-                            }`}
-                          >
-                            #{q.position.toFixed(1)}
-                          </span>
-                        </td>
-                        <td className="py-3.5 px-6 text-right">
-                          {isStriking ? (
-                            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 font-bold text-[11px]">
-                              <Target className="w-3 h-3" /> Push to Top 3
+                      return (
+                        <tr key={q.query} className="hover:bg-slate-50/80 dark:hover:bg-slate-800/40 transition-colors">
+                          <td className="py-3.5 px-6 font-semibold text-slate-900 dark:text-white">
+                            <div className="font-sans font-bold text-slate-900 dark:text-white">{q.query}</div>
+                            <div className="text-[11px] text-slate-400 font-mono truncate max-w-sm">{q.page}</div>
+                          </td>
+                          <td className="py-3.5 px-4 text-center font-bold text-emerald-600 dark:text-emerald-400">
+                            {q.clicks}
+                          </td>
+                          <td className="py-3.5 px-4 text-center text-slate-600 dark:text-slate-400">
+                            {q.impressions.toLocaleString()}
+                          </td>
+                          <td className="py-3.5 px-4 text-center">{(q.ctr * 100).toFixed(1)}%</td>
+                          <td className="py-3.5 px-4 text-center font-bold">
+                            <span
+                              className={`px-2 py-0.5 rounded ${
+                                q.position <= 3
+                                  ? "bg-emerald-500/10 text-emerald-600"
+                                  : q.position <= 10
+                                  ? "bg-blue-500/10 text-blue-600"
+                                  : "bg-slate-100 dark:bg-slate-800 text-slate-500"
+                              }`}
+                            >
+                              #{q.position.toFixed(1)}
                             </span>
-                          ) : isLowCtr ? (
-                            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 font-bold text-[11px]">
-                              <Sparkles className="w-3 h-3" /> Optimize Title (CTR)
+                          </td>
+                          <td className="py-3.5 px-6 text-right">
+                            <div className="flex items-center justify-end gap-2">
+                              {isStriking ? (
+                                <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 font-bold text-[11px]">
+                                  <Target className="w-3 h-3" /> Push to Top 3
+                                </span>
+                              ) : isLowCtr ? (
+                                <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 font-bold text-[11px]">
+                                  <Sparkles className="w-3 h-3" /> Optimize Title
+                                </span>
+                              ) : (
+                                <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold text-[11px]">
+                                  <CheckCircle2 className="w-3 h-3" /> Top Performer
+                                </span>
+                              )}
+                              <button
+                                onClick={() => handleGenerateDraft(q.query)}
+                                disabled={generatingDraftQuery === q.query}
+                                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#0066FF] hover:bg-[#0052cc] text-white text-[11px] font-bold transition-all shadow-sm active:scale-95 disabled:opacity-50 cursor-pointer"
+                                title="Draft an AI article for this keyword"
+                              >
+                                <Zap className={`w-3 h-3 ${generatingDraftQuery === q.query ? "animate-spin" : ""}`} />
+                                {generatingDraftQuery === q.query ? "Drafting..." : "⚡ AI Draft"}
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                      );
+                    })
+                  ) : (
+                    <>
+                      <tr>
+                        <td colSpan={6} className="p-4 bg-blue-50/50 dark:bg-slate-900/80 border-b border-blue-100 dark:border-slate-800">
+                          <div className="flex items-center gap-2 text-xs font-semibold text-blue-700 dark:text-blue-300">
+                            <Bot className="w-4 h-4 shrink-0" />
+                            <span>
+                              Search Console data is syncing with Google. While new organic search impressions accumulate, here are target opportunity keywords ready for 1-Click AI Article Generation:
                             </span>
-                          ) : (
-                            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold text-[11px]">
-                              <CheckCircle2 className="w-3 h-3" /> Top Performer
-                            </span>
-                          )}
+                          </div>
                         </td>
                       </tr>
-                    );
-                  })}
+                      {[
+                        {
+                          query: "coaching class management software",
+                          page: "/services/coaching-class-management-app",
+                          opportunity: "Striking Distance",
+                          badgeColor: "bg-blue-500/10 text-blue-600",
+                        },
+                        {
+                          query: "custom mobile app development ahmedabad",
+                          page: "/services/mobile-app-development",
+                          opportunity: "Commercial Intent",
+                          badgeColor: "bg-emerald-500/10 text-emerald-600",
+                        },
+                        {
+                          query: "student attendance tracking mobile app",
+                          page: "/services/coaching-class-management-app",
+                          opportunity: "High Intent",
+                          badgeColor: "bg-purple-500/10 text-purple-600",
+                        },
+                        {
+                          query: "bespoke enterprise software solutions",
+                          page: "/services/custom-software-development",
+                          opportunity: "Core Service",
+                          badgeColor: "bg-indigo-500/10 text-indigo-600",
+                        },
+                        {
+                          query: "high performance website development ahmedabad",
+                          page: "/services/website-development",
+                          opportunity: "Local Authority",
+                          badgeColor: "bg-amber-500/10 text-amber-600",
+                        },
+                      ].map((seed) => (
+                        <tr key={seed.query} className="hover:bg-slate-50/80 dark:hover:bg-slate-800/40 transition-colors">
+                          <td className="py-3.5 px-6 font-semibold text-slate-900 dark:text-white">
+                            <div className="font-sans font-bold text-slate-900 dark:text-white">{seed.query}</div>
+                            <div className="text-[11px] text-slate-400 font-mono truncate max-w-sm">{seed.page}</div>
+                          </td>
+                          <td className="py-3.5 px-4 text-center text-slate-400">0</td>
+                          <td className="py-3.5 px-4 text-center text-slate-400">0</td>
+                          <td className="py-3.5 px-4 text-center text-slate-400">0.0%</td>
+                          <td className="py-3.5 px-4 text-center text-slate-400 font-bold">—</td>
+                          <td className="py-3.5 px-6 text-right">
+                            <div className="flex items-center justify-end gap-2">
+                              <span className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full font-bold text-[11px] ${seed.badgeColor}`}>
+                                <Target className="w-3 h-3" /> {seed.opportunity}
+                              </span>
+                              <button
+                                onClick={() => handleGenerateDraft(seed.query)}
+                                disabled={generatingDraftQuery === seed.query}
+                                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#0066FF] hover:bg-[#0052cc] text-white text-[11px] font-bold transition-all shadow-sm active:scale-95 disabled:opacity-50 cursor-pointer"
+                                title="Draft an AI article for this keyword"
+                              >
+                                <Zap className={`w-3 h-3 ${generatingDraftQuery === seed.query ? "animate-spin" : ""}`} />
+                                {generatingDraftQuery === seed.query ? "Drafting..." : "⚡ AI Draft"}
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                      ))}
+                    </>
+                  )}
                 </tbody>
               </table>
             </div>

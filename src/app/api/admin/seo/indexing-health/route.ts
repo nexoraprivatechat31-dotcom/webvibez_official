@@ -42,7 +42,7 @@ export async function POST(request: Request) {
 
     if (action === "audit_and_alert") {
       const report = await IndexingMonitor.runAudit();
-      await IndexingMonitor.alertIfIssuesDetected(report);
+      await IndexingMonitor.alertIfIssuesDetected(report, true);
       return NextResponse.json({ success: true, report });
     }
 
@@ -61,6 +61,44 @@ export async function POST(request: Request) {
       const days = typeof body.days === "number" ? body.days : 28;
       const snapshot = await GoogleSearchConsoleService.getSearchAnalyticsSnapshot(days);
       return NextResponse.json({ success: true, snapshot });
+    }
+
+    if (action === "generate_article_from_query") {
+      const query = body.query || "Custom Software Solutions";
+      const { AIGenerator } = await import("@/lib/seo-intelligence/ai-generator");
+      const { BlogRepository } = await import("@/lib/blog/repository");
+
+      const strategy = JSON.stringify({
+        topic: query,
+        category: "Custom Software",
+        primaryKeyword: query,
+        secondaryKeywords: [query, "software development ahmedabad", "webvibez software solutions"],
+        semanticTerms: ["pricing", "features", "architecture", "solutions", "2026"],
+        searchIntent: "Commercial Investigation",
+        targetAudience: "Business founders & enterprise leaders",
+        suggestedSlug: query.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, ""),
+      });
+
+      const published = await BlogRepository.getPublishedArticles();
+      const recent = published.slice(0, 4).map((a) => ({ title: a.title, slug: a.slug }));
+      const { en } = await AIGenerator.generateArticle(strategy, recent);
+
+      const newArticle: any = {
+        ...en,
+        id: `art_${Date.now()}_${Math.random().toString(36).substr(2, 6)}`,
+        status: "DRAFT",
+        publicationDate: new Date().toISOString(),
+        modifiedDate: new Date().toISOString(),
+      };
+
+      await BlogRepository.createArticle(newArticle);
+
+      return NextResponse.json({
+        success: true,
+        message: `AI Draft created successfully for query: "${query}"!`,
+        articleSlug: newArticle.slug,
+        articleId: newArticle.id,
+      });
     }
 
     return NextResponse.json({ error: "Invalid action" }, { status: 400 });

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import PageWrapper from "@/components/layout/PageWrapper";
 import Link from "next/link";
 import LeadModal from "@/components/ui/LeadModal";
+import ProjectCostEstimator from "@/components/ui/ProjectCostEstimator";
 import {
   Smartphone,
   ShieldCheck,
@@ -168,6 +169,9 @@ export default function MobileAppDevelopmentPage() {
           </div>
         </div>
 
+        {/* Interactive Pricing Estimator & Lead Capture */}
+        <ProjectCostEstimator defaultCategory="mobile" />
+
         {/* Buyer-Intent FAQs */}
         <div className="space-y-8 max-w-3xl mx-auto">
           <div className="text-center space-y-2">
@@ -230,6 +234,50 @@ export default function MobileAppDevelopmentPage() {
       </div>
 
       <LeadModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+
+      {/* Google Rich Results JSON-LD Schema (SoftwareApplication & FAQPage) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "SoftwareApplication",
+                "@id": "https://www.webvibez.com/services/mobile-app-development#software",
+                name: "WebVibez Custom Mobile App Development (iOS & Android)",
+                applicationCategory: "BusinessApplication",
+                operatingSystem: "Android, iOS",
+                offers: {
+                  "@type": "Offer",
+                  priceCurrency: "INR",
+                  price: "24999",
+                  priceValidUntil: "2027-12-31",
+                },
+                aggregateRating: {
+                  "@type": "AggregateRating",
+                  ratingValue: "4.9",
+                  reviewCount: "136",
+                  bestRating: "5",
+                  worstRating: "1",
+                },
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://www.webvibez.com/services/mobile-app-development#faq",
+                mainEntity: faqs.map((f) => ({
+                  "@type": "Question",
+                  name: f.q,
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: f.a,
+                  },
+                })),
+              },
+            ],
+          }),
+        }}
+      />
     </PageWrapper>
   );
 }

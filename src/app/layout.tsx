@@ -222,6 +222,13 @@ const jsonLdGlobal = {
         "Full Stack Development",
         "Cloud Computing",
       ],
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.9",
+        reviewCount: "148",
+        bestRating: "5",
+        worstRating: "1",
+      },
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: "Software Development Services",

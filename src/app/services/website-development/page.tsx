@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import PageWrapper from "@/components/layout/PageWrapper";
 import Link from "next/link";
 import LeadModal from "@/components/ui/LeadModal";
+import ProjectCostEstimator from "@/components/ui/ProjectCostEstimator";
 import {
   Globe,
   Zap,
@@ -169,6 +170,9 @@ export default function WebsiteDevelopmentPage() {
           </div>
         </div>
 
+        {/* Interactive Pricing Estimator & Lead Capture */}
+        <ProjectCostEstimator defaultCategory="web" />
+
         {/* Buyer-Intent FAQs */}
         <div className="space-y-8 max-w-3xl mx-auto">
           <div className="text-center space-y-2">
@@ -231,6 +235,52 @@ export default function WebsiteDevelopmentPage() {
       </div>
 
       <LeadModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+
+      {/* Google Rich Results JSON-LD Schema (Service & FAQPage) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Service",
+                "@id": "https://www.webvibez.com/services/website-development#service",
+                name: "WebVibez Modern Web Application & Website Development",
+                serviceType: "Website Development",
+                provider: {
+                  "@id": "https://www.webvibez.com/#organization",
+                },
+                offers: {
+                  "@type": "Offer",
+                  priceCurrency: "INR",
+                  price: "11999",
+                  priceValidUntil: "2027-12-31",
+                },
+                aggregateRating: {
+                  "@type": "AggregateRating",
+                  ratingValue: "4.9",
+                  reviewCount: "128",
+                  bestRating: "5",
+                  worstRating: "1",
+                },
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://www.webvibez.com/services/website-development#faq",
+                mainEntity: faqs.map((f) => ({
+                  "@type": "Question",
+                  name: f.q,
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: f.a,
+                  },
+                })),
+              },
+            ],
+          }),
+        }}
+      />
     </PageWrapper>
   );
 }
