@@ -21,6 +21,7 @@ export default function SEOPage() {
   const [isAuditing, setIsAuditing] = useState(false);
   const [isPinging, setIsPinging] = useState(false);
   const [pingMessage, setPingMessage] = useState<string | null>(null);
+  const [isSendingDigest, setIsSendingDigest] = useState(false);
 
   const runAudit = async () => {
     setIsAuditing(true);
@@ -60,6 +61,24 @@ export default function SEOPage() {
     }
   };
 
+  const sendWeeklyDigest = async () => {
+    setIsSendingDigest(true);
+    setPingMessage(null);
+    try {
+      const res = await fetch("/api/admin/seo/weekly-digest", { method: "POST" });
+      const data = await res.json();
+      if (data.success) {
+        setPingMessage("Weekly Sunday SEO Digest dispatched to Telegram successfully! Check your phone.");
+      } else {
+        setPingMessage(`Error sending Telegram digest: ${data.error || "Unknown error"}`);
+      }
+    } catch (err: any) {
+      setPingMessage(`Failed to send digest: ${err.message}`);
+    } finally {
+      setIsSendingDigest(false);
+    }
+  };
+
   useEffect(() => {
     runAudit();
   }, []);
@@ -76,11 +95,11 @@ export default function SEOPage() {
             Monitor search performance, Google crawl readiness, and technical indexing health.
           </p>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-3">
           <button
             onClick={runAudit}
             disabled={isAuditing}
-            className="flex items-center gap-2 px-5 py-2.5 bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-200 text-white dark:text-slate-900 rounded-xl font-bold transition-all shadow-lg active:scale-95 duration-300 disabled:opacity-50 cursor-pointer text-sm"
+            className="flex items-center gap-2 px-4 py-2.5 bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-200 text-white dark:text-slate-900 rounded-xl font-bold transition-all shadow-lg active:scale-95 duration-300 disabled:opacity-50 cursor-pointer text-xs sm:text-sm"
           >
             <RefreshCw className={`w-4 h-4 ${isAuditing ? "animate-spin" : ""}`} />
             {isAuditing ? "Auditing Site..." : "Live Audit"}
@@ -88,10 +107,18 @@ export default function SEOPage() {
           <button
             onClick={pingIndexNow}
             disabled={isPinging}
-            className="flex items-center gap-2 px-5 py-2.5 bg-[#0066FF] hover:bg-[#0052cc] text-white rounded-xl font-bold transition-all shadow-lg shadow-[#0066FF]/25 active:scale-95 duration-300 disabled:opacity-50 cursor-pointer text-sm"
+            className="flex items-center gap-2 px-4 py-2.5 bg-[#0066FF] hover:bg-[#0052cc] text-white rounded-xl font-bold transition-all shadow-lg shadow-[#0066FF]/25 active:scale-95 duration-300 disabled:opacity-50 cursor-pointer text-xs sm:text-sm"
           >
             <Radio className={`w-4 h-4 ${isPinging ? "animate-pulse" : ""}`} />
             {isPinging ? "Pinging..." : "Ping IndexNow"}
+          </button>
+          <button
+            onClick={sendWeeklyDigest}
+            disabled={isSendingDigest}
+            className="flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white rounded-xl font-bold transition-all shadow-lg shadow-sky-500/20 active:scale-95 duration-300 disabled:opacity-50 cursor-pointer text-xs sm:text-sm"
+          >
+            <Send className={`w-4 h-4 ${isSendingDigest ? "animate-pulse" : ""}`} />
+            {isSendingDigest ? "Sending..." : "Send Sunday Digest"}
           </button>
         </div>
       </div>
