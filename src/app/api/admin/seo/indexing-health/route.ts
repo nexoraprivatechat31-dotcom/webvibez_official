@@ -52,6 +52,11 @@ export async function POST(request: Request) {
       return NextResponse.json(inspectResult);
     }
 
+    if (action === "submit_sitemap") {
+      const result = await GoogleSearchConsoleService.submitSitemap();
+      return NextResponse.json(result);
+    }
+
     return NextResponse.json({ error: "Invalid action" }, { status: 400 });
   } catch (error: any) {
     return NextResponse.json(

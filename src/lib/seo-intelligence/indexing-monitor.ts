@@ -1,5 +1,6 @@
 import sitemap from "@/app/sitemap";
 import { TelegramNotifier } from "../notifications/telegram";
+import { GoogleSearchConsoleService } from "./google-search-console";
 
 export interface UrlAuditResult {
   url: string;
@@ -230,11 +231,12 @@ export const IndexingMonitor = {
         body: JSON.stringify(payload),
       });
 
-      // Also trigger Google sitemap ping
+      // Also trigger official Google Search Console API sitemap submission & ping
       try {
+        await GoogleSearchConsoleService.submitSitemap();
         await fetch(`https://www.google.com/ping?sitemap=${baseUrl}/sitemap.xml`);
       } catch (e) {
-        // Ping is best-effort
+        // Best-effort
       }
 
       if (res.status === 200 || res.status === 202) {

@@ -24,7 +24,7 @@ async function getGSCAccessToken(): Promise<string | null> {
     const claim = Buffer.from(
       JSON.stringify({
         iss: clientEmail,
-        scope: "https://www.googleapis.com/auth/webmasters.readonly",
+        scope: "https://www.googleapis.com/auth/webmasters",
         aud: "https://oauth2.googleapis.com/token",
         exp: now + 3600,
         iat: now,
@@ -326,6 +326,36 @@ export const GoogleSearchConsoleService = {
       };
     } catch (err: any) {
       return { success: false, error: err.message || "Failed to inspect URL" };
+    }
+  },
+
+  async submitSitemap(
+    feedpath = "https://www.webvibez.com/sitemap.xml",
+    siteUrl = "https://www.webvibez.com/"
+  ): Promise<{ success: boolean; message: string }> {
+    const token = await getGSCAccessToken();
+    if (!token) {
+      return { success: false, message: "GSC credentials not configured" };
+    }
+
+    try {
+      const submitUrl = `https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(siteUrl)}/sitemaps/${encodeURIComponent(feedpath)}`;
+      const res = await fetch(submitUrl, {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Length": "0",
+        },
+      });
+
+      if (res.status === 200 || res.status === 204) {
+        return { success: true, message: "Sitemap submitted successfully to Google Search Console." };
+      }
+
+      const text = await res.text();
+      return { success: false, message: `Google API error ${res.status}: ${text}` };
+    } catch (err: any) {
+      return { success: false, message: err.message || "Failed to submit sitemap" };
     }
   },
 };
