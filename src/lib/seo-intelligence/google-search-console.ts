@@ -174,9 +174,11 @@ export const GoogleSearchConsoleService = {
     // If official Google Search Console API credentials are provided:
     if (accessToken) {
       try {
-        const siteUrl = encodeURIComponent(process.env.GSC_SITE_URL || "https://www.webvibez.com");
+        const configuredUrl = process.env.GSC_SITE_URL || "https://www.webvibez.com/";
+        const siteUrlParam = encodeURIComponent(configuredUrl.endsWith("/") ? configuredUrl : `${configuredUrl}/`);
+        
         const res = await fetch(
-          `https://www.googleapis.com/webmasters/v3/sites/${siteUrl}/searchAnalytics/query`,
+          `https://www.googleapis.com/webmasters/v3/sites/${siteUrlParam}/searchAnalytics/query`,
           {
             method: "POST",
             headers: {
@@ -199,10 +201,10 @@ export const GoogleSearchConsoleService = {
             page: r.keys[1],
             country: r.keys[2],
             device: r.keys[3],
-            clicks: r.clicks,
-            impressions: r.impressions,
-            ctr: r.ctr,
-            position: r.position,
+            clicks: r.clicks || 0,
+            impressions: r.impressions || 0,
+            ctr: r.ctr || 0,
+            position: r.position || 0,
             date: endDate,
           }));
 
@@ -218,34 +220,26 @@ export const GoogleSearchConsoleService = {
             totalImpressions,
             averageCtr: Number(avgCtr.toFixed(3)),
             averagePosition: Number(avgPos.toFixed(1)),
-            rows: rows.length > 0 ? rows : FIRST_PARTY_SEARCH_DATA,
+            rows, // 100% REAL rows from Google Search Console!
             isConfigured: true,
             lastSyncAt: new Date().toISOString(),
           };
         }
       } catch (err) {
-        console.error("GSC API query error, using first-party snapshot:", err);
+        console.error("GSC API query error:", err);
       }
     }
 
-    // First-Party Search Analytics Mode
-    const rows = FIRST_PARTY_SEARCH_DATA;
-    const totalClicks = rows.reduce((sum, r) => sum + r.clicks, 0);
-    const totalImpressions = rows.reduce((sum, r) => sum + r.impressions, 0);
-    const averageCtr = Number((totalClicks / totalImpressions).toFixed(3));
-    const averagePosition = Number(
-      (rows.reduce((sum, r) => sum + r.position, 0) / rows.length).toFixed(1)
-    );
-
+    // Zero-data real state (no fake or demo clicks)
     return {
       startDate,
       endDate,
-      totalClicks,
-      totalImpressions,
-      averageCtr,
-      averagePosition,
-      rows,
-      isConfigured: false,
+      totalClicks: 0,
+      totalImpressions: 0,
+      averageCtr: 0,
+      averagePosition: 0,
+      rows: [],
+      isConfigured: Boolean(accessToken),
       lastSyncAt: new Date().toISOString(),
     };
   },
