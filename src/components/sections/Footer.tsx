@@ -42,6 +42,7 @@ export default function Footer({ onOpenConsultation }: FooterProps) {
     { name: "Products & Features", href: "/product" },
     { name: "How It Works", href: "/how-it-works" },
     { name: "Pricing & Plans", href: "/pricing" },
+    { name: "Blog & Software Insights", href: "/blog" },
     { name: "About WebVibez", href: "/about" },
     { name: "Contact & Consult", href: "/contact" },
   ];
