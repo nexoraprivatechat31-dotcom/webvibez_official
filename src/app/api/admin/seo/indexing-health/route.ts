@@ -57,6 +57,12 @@ export async function POST(request: Request) {
       return NextResponse.json(result);
     }
 
+    if (action === "get_analytics") {
+      const days = typeof body.days === "number" ? body.days : 28;
+      const snapshot = await GoogleSearchConsoleService.getSearchAnalyticsSnapshot(days);
+      return NextResponse.json({ success: true, snapshot });
+    }
+
     return NextResponse.json({ error: "Invalid action" }, { status: 400 });
   } catch (error: any) {
     return NextResponse.json(
