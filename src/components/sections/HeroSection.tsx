@@ -87,25 +87,24 @@ export default function HeroSection({ onOpenConsultation }: HeroSectionProps) {
                 className="reveal-up reveal-up-2 leading-[1.08] font-bold text-slate-900 dark:text-[#F8FAFC] tracking-tight"
                 style={{
                   fontFamily: "var(--font-display)",
-                  fontSize: "clamp(2.0rem, 5.8vw, 5.2rem)",
+                  fontSize: "clamp(2.0rem, 5.2vw, 4.8rem)",
                 }}
               >
-                Custom Digital Solutions{" "}
-                <br />
+                Custom Software & App <br />
                 <span className="text-gradient-azure">
-                  That Drive Real Growth.
+                  Development Company in Ahmedabad.
                 </span>
               </h1>
             </div>
 
             {/* Supporting copy — Manrope */}
             <p
-              className="reveal-up reveal-up-3 text-slate-600 dark:text-[#94A3B8] leading-relaxed max-w-[48ch] mb-6 text-sm sm:text-base"
+              className="reveal-up reveal-up-3 text-slate-600 dark:text-[#94A3B8] leading-relaxed max-w-[52ch] mb-6 text-sm sm:text-base"
               style={{
                 fontFamily: "var(--font-sans)",
               }}
             >
-              WebVibez builds custom mobile apps, websites, web platforms and coaching-class management software for high-growth institutions.
+              WebVibez is a premier custom software and website development company in Ahmedabad. We engineer native iOS & Android mobile apps, cloud ERP systems, and coaching institute management software with turnkey 1-year app rental subscriptions.
             </p>
 
             {/* Editorial Capabilities Strip — Pure Typography, No Floating Pills */}

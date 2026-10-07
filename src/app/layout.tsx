@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import SmoothScrollProvider from "@/components/ui/SmoothScrollProvider";
 import ScrollToTop from "@/components/ui/ScrollToTop";
+import FirebaseAnalytics from "@/components/analytics/FirebaseAnalytics";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -14,7 +15,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.webvibez.com"),
   title: {
-    default: "WebVibez | Software & App Development Company Ahmedabad",
+    default: "Software Development Company in Ahmedabad | WebVibez",
     template: "%s | WebVibez",
   },
   description:
@@ -450,6 +451,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-[var(--ink)] text-[var(--text-primary)] transition-colors duration-300 font-sans selection:bg-[#0066FF]/30 selection:text-[#0066FF] antialiased overflow-x-hidden">
+        <FirebaseAnalytics />
         <SmoothScrollProvider>
           {children}
           <ScrollToTop />

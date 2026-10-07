@@ -142,6 +142,14 @@ export default function ServicesPage() {
                   highlights: ["Modular Microservices", "Role-Based Access Control (RBAC)", "Custom API & CRM Integration", "PostgreSQL / Redis High Concurrency"],
                 },
                 {
+                  title: "Mobile Apps on Rent (1-Year Subscription)",
+                  href: "/services/mobile-apps-on-rent",
+                  badge: "APP SUBSCRIPTION & LEASING",
+                  color: "#EC4899",
+                  desc: "Turnkey iOS & Android mobile apps on flexible 1-year rental plans. Zero upfront development cost, 100% white-labeled, free server hosting & 24/7 SLA maintenance.",
+                  highlights: ["70% Cost Savings vs Scratch", "5–7 Days Play Store Launch", "Free Cloud Servers & Backups", "Full Technical SLA Support"],
+                },
+                {
                   title: "Coaching Class Management App",
                   href: "/services/coaching-class-management-app",
                   badge: "EDUCATION SOFTWARE",

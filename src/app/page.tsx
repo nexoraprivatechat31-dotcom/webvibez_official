@@ -12,6 +12,7 @@ import ServicesConveyor from "@/components/sections/ServicesConveyor";
 import ProductArchitecture from "@/components/sections/ProductArchitecture";
 import BrandCustomizer from "@/components/sections/BrandCustomizer";
 import HowItWorks from "@/components/sections/HowItWorks";
+import SEOAuthoritySection from "@/components/sections/SEOAuthoritySection";
 import CTASection from "@/components/sections/CTASection";
 import Footer from "@/components/sections/Footer";
 import LeadModal from "@/components/ui/LeadModal";
@@ -102,6 +103,9 @@ export default function Home() {
 
       {/* 9. Chapter 07 — How It Works (Live in 7 Days) */}
       <HowItWorks onOpenConsultation={handleOpenConsultation} />
+
+      {/* Semantic Authority & High-Intent FAQ Knowledge Section */}
+      <SEOAuthoritySection onOpenConsultation={handleOpenConsultation} />
 
       {/* 10. Cinematic CTA Finale */}
       <CTASection onOpenConsultation={handleOpenConsultation} />

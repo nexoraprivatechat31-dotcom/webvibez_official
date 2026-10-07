@@ -1,17 +1,17 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Website Development Company in Ahmedabad | Next.js & Custom Web",
+  title: "Mobile Apps on Rent | 1-Year Subscription & App Leasing",
   description:
-    "WebVibez is a top website development company in Ahmedabad, Gujarat. We engineer blazing fast Next.js websites, custom web applications, responsive UI/UX, and conversion-focused web solutions.",
+    "Get high-performance iOS and Android mobile apps on a 1-year rental plan from WebVibez. Turnkey white-label delivery apps, e-commerce apps, coaching apps, zero upfront development cost, free server hosting & Play Store publishing.",
   alternates: {
-    canonical: "https://www.webvibez.com/services/website-development",
+    canonical: "https://www.webvibez.com/services/mobile-apps-on-rent",
   },
   openGraph: {
-    title: "Website Development Company in Ahmedabad | WebVibez",
+    title: "Mobile Apps on Rent | 1-Year App Rental Subscription | WebVibez",
     description:
-      "Modern Next.js web development, high-speed responsive UI, technical SEO optimization, and custom web applications engineered in Ahmedabad, Gujarat.",
-    url: "https://www.webvibez.com/services/website-development",
+      "Save 70%+ on software costs. Rent readymade, custom-branded iOS & Android mobile apps with full 24/7 maintenance, cloud servers, and Google Play Store publishing in Ahmedabad.",
+    url: "https://www.webvibez.com/services/mobile-apps-on-rent",
     siteName: "WebVibez Software Developer",
     type: "website",
     images: [
@@ -19,15 +19,15 @@ export const metadata: Metadata = {
         url: "https://www.webvibez.com/logo.jpeg",
         width: 1200,
         height: 630,
-        alt: "Website Development Company in Ahmedabad — WebVibez",
+        alt: "Mobile Apps on Rent — 1-Year App Rental Subscription WebVibez",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Website Development Company in Ahmedabad | WebVibez",
+    title: "Mobile Apps on Rent | 1-Year Subscription | WebVibez",
     description:
-      "Modern Next.js web development, high-speed responsive UI, technical SEO optimization, and custom web applications engineered in Ahmedabad, Gujarat.",
+      "Turnkey white-label iOS and Android apps on a 1-year rental plan. Zero development risk, automated maintenance, and live store deployment in Ahmedabad.",
     images: ["https://www.webvibez.com/logo.jpeg"],
   },
 };
@@ -53,15 +53,15 @@ const jsonLd = {
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Website Development",
-          "item": "https://www.webvibez.com/services/website-development",
+          "name": "Mobile Apps on Rent",
+          "item": "https://www.webvibez.com/services/mobile-apps-on-rent",
         },
       ],
     },
     {
       "@type": "Service",
-      name: "Website Development Services in Ahmedabad",
-      serviceType: "Website Development, Next.js Web Engineering & Full Stack Web Apps",
+      name: "Mobile Apps on Rent & 1-Year App Leasing",
+      serviceType: "App Rental Subscription, White-Label App Leasing & Managed App Hosting",
       provider: {
         "@type": "Organization",
         name: "WebVibez Software Developer",
@@ -77,14 +77,15 @@ const jsonLd = {
         { "@type": "City", name: "Ahmedabad" },
         { "@type": "State", name: "Gujarat" },
         { "@type": "Country", name: "India" },
+        { "@type": "Country", name: "United States" },
       ],
       description:
-        "High-performance website development with Next.js, TypeScript, and modern UI/UX design. Optimized for speed, core web vitals, search indexing, and lead conversion.",
+        "Turnkey white-label iOS and Android mobile apps on flexible 1-year rental subscriptions. Includes complete branding, cloud hosting, bug fixes, and store management.",
     },
   ],
 };
 
-export default function WebsiteDevLayout({
+export default function MobileAppsOnRentLayout({
   children,
 }: {
   children: React.ReactNode;
