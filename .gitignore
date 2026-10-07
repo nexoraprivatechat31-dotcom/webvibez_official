@@ -46,3 +46,10 @@ Thumbs.db
 *.pem
 .idea/
 .vscode/
+
+# firebase build artifacts & cache
+.firebase/
+firebase-debug.log*
+firestore-debug.log*
+ui-debug.log*
+
