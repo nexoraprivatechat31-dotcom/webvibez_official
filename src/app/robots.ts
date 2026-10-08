@@ -5,18 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "*",
-        allow: [
-          "/",
-          "/blog",
-          "/blog/*",
-          "/favicon.ico",
-          "/favicon.png",
-          "/favicon-48x48.png",
-          "/favicon-96x96.png",
-          "/favicon-192x192.png",
-          "/apple-icon.png",
-          "/api/og",
-        ],
+        allow: "/",
         disallow: [
           "/admin",
           "/admin/*",
@@ -31,19 +20,9 @@ export default function robots(): MetadataRoute.Robots {
       },
       {
         userAgent: "Googlebot-Image",
-        allow: [
-          "/",
-          "/favicon.ico",
-          "/favicon.png",
-          "/favicon-48x48.png",
-          "/apple-icon.png",
-          "/logo.png",
-          "/logo.jpeg",
-          "/og-image.jpeg",
-        ],
+        allow: "/",
       },
     ],
     sitemap: "https://www.webvibez.com/sitemap.xml",
-    host: "https://www.webvibez.com",
   };
 }
