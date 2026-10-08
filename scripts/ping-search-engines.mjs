@@ -12,7 +12,6 @@
 const SITE_URL = "https://www.webvibez.com";
 const SITEMAP_URL = `${SITE_URL}/sitemap.xml`;
 
-// All public URLs from sitemap
 const ALL_URLS = [
   "",
   "/services",
@@ -20,8 +19,8 @@ const ALL_URLS = [
   "/services/mobile-app-development",
   "/services/custom-software-development",
   "/services/coaching-class-management-app",
+  "/services/mobile-apps-on-rent",
   "/product",
-  "/features",
   "/portfolio",
   "/how-it-works",
   "/pricing",
@@ -33,6 +32,16 @@ const ALL_URLS = [
   "/refund-policy",
   "/agreements",
   "/disclaimer",
+  "/blog",
+  "/blog/automating-coaching-institute-fee-collection-with-whatsapp",
+  "/blog/build-vs-buy-replacing-saas-with-custom-software-guide",
+  "/blog/custom-software-development-guide-for-business",
+  "/blog/how-much-does-mobile-app-development-cost-in-india",
+  "/blog/micro-saas-vs-enterprise-saas-architecture-scaling-2026",
+  "/blog/nextjs-enterprise-scalability-architecture",
+  "/blog/nextjs-for-business-websites-benefits-and-considerations",
+  "/blog/react-native-vs-native-ios-android-architecture-comparison-2026",
+  "/blog/what-is-coaching-class-management-software",
 ];
 
 async function pingGoogle() {
