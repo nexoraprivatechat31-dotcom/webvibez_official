@@ -56,11 +56,26 @@ const jsonLd = {
     },
     {
       "@type": "SoftwareApplication",
-      "name": "WebVibez Academy Coaching Class Management Platform",
-      "operatingSystem": "iOS, Android, Web",
+      "name": "WebVibez Software Devloper Coaching Application",
+      "operatingSystem": "Android, iOS",
       "applicationCategory": "EducationalApplication, BusinessApplication",
+      "installUrl": "https://play.google.com/store/apps/details?id=com.webvibez.classes",
       "description":
         "Complete coaching-class management software and branded mobile application featuring student records, real-time attendance, CBT test simulator, rank analysis, fee tracking, and push notifications.",
+      "provider": {
+        "@type": "Organization",
+        "name": "WebVibez Software Developer",
+        "url": "https://www.webvibez.com",
+      },
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "EnzoChat — Encrypted Private Messaging Platform",
+      "operatingSystem": "Web, iOS, Android",
+      "applicationCategory": "CommunicationApplication, SecurityApplication",
+      "url": "https://enzochat.webvibez.com",
+      "description":
+        "Zero-knowledge end-to-end encrypted messaging web platform engineered by WebVibez Software Developer with sub-50ms WebSocket tunneling and blind relay servers.",
       "provider": {
         "@type": "Organization",
         "name": "WebVibez Software Developer",

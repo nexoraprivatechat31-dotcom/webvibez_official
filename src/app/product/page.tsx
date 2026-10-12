@@ -3,6 +3,7 @@
 import React, { useState, useRef } from "react";
 import PageWrapper from "@/components/layout/PageWrapper";
 import Link from "next/link";
+import Image from "next/image";
 import LeadModal from "@/components/ui/LeadModal";
 import {
   Video,
@@ -265,6 +266,51 @@ export default function ProductPage() {
     scrollToSubsystem(nextIdx);
   };
 
+  const DEPLOYED_PRODUCTS = [
+    {
+      id: "webvibez-classes-app",
+      title: "WebVibez Software Devloper — Coaching Institute Management Application",
+      type: "Mobile Application (Android & iOS)",
+      badge: "Google Play Verified",
+      tech_stack: "React Native, Android, Node.js, Cloud Firestore, Real-Time Push Notifications",
+      description:
+        "Official coaching & tuition management mobile application engineered and published on Google Play Store by WebVibez Software Developer (Package: com.webvibez.classes). A complete white-labeled institute management platform featuring digital attendance, batch schedules, lecture notes library, test announcements, fee tracking, and real-time parent-teacher communications.",
+      screenshots: [
+        "/mobile-images/home.jpeg",
+        "/mobile-images/chat.jpeg",
+        "/mobile-images/profile.jpeg",
+      ],
+      live_url: "https://play.google.com/store/apps/details?id=com.webvibez.classes",
+      metrics: [
+        "Live on Google Play Store",
+        "Package: com.webvibez.classes",
+        "100% White-Labeled Demo",
+      ],
+      cta_label: "View on Google Play Store",
+    },
+    {
+      id: "enzochat-web-platform",
+      title: "EnzoChat — Enterprise Encrypted Private Messaging Web Platform",
+      type: "Web Application & Protocol",
+      badge: "Production Live",
+      tech_stack: "Next.js, Fastify, WebSockets, Zustand, AES-256-GCM, TypeScript, Tailwind CSS",
+      description:
+        "Production encrypted private chat web platform engineered by WebVibez Software Developer. Built with zero-knowledge end-to-end encryption, real-time sub-50ms WebSocket tunneling, ephemeral payloads, blind relay servers, and a responsive modern web interface.",
+      screenshots: [
+        "/images/enzochat-desktop.png",
+        "/images/enzochat-features.png",
+        "/images/enzochat-mobile.png",
+      ],
+      live_url: "https://enzochat.webvibez.com",
+      metrics: [
+        "Live on enzochat.webvibez.com",
+        "Sub-50ms WebSocket Latency",
+        "AES-256-GCM Zero-Knowledge",
+      ],
+      cta_label: "Visit Live Web Platform",
+    },
+  ];
+
   return (
     <PageWrapper>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 space-y-16 sm:space-y-24">
@@ -312,13 +358,139 @@ export default function ProductPage() {
         </div>
 
         {/* ========================================================================================= */}
-        {/* SECTION 1: SIDE-BY-SIDE SPATIAL 11 INTEGRATED SUBSYSTEMS HORIZON */}
+        {/* SECTION 1: LIVE DEPLOYED PRODUCTS & PLATFORMS (FROM PORTFOLIO) */}
+        {/* ========================================================================================= */}
+        <section className="space-y-8">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-slate-200 dark:border-white/10 pb-6">
+            <div>
+              <div className="text-[11px] font-mono tracking-[0.22em] text-[#0066FF] dark:text-[#38BDF8] uppercase font-bold flex items-center gap-2">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>02 / VERIFIED PRODUCTS &middot; LIVE DEPLOYMENTS</span>
+              </div>
+              <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight font-display text-slate-900 dark:text-white mt-1">
+                Featured Live Products &amp; Platforms
+              </h2>
+            </div>
+            <p className="text-xs sm:text-sm text-slate-500 font-mono">
+              Displaying {DEPLOYED_PRODUCTS.length} Production Deployed Platforms
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-10">
+            {DEPLOYED_PRODUCTS.map((product) => {
+              const techTags = product.tech_stack.split(",").map((t) => t.trim());
+              return (
+                <div
+                  key={product.id}
+                  className="group relative rounded-3xl bg-white dark:bg-[#0D1424] border border-slate-200 dark:border-white/10 p-7 sm:p-9 shadow-xl hover:border-[#0066FF]/50 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
+                >
+                  <div className="space-y-5">
+                    {/* Header Badges */}
+                    <div className="flex items-center justify-between gap-3">
+                      <span className="px-3 py-1 rounded-full bg-[#0066FF]/10 dark:bg-[#0066FF]/20 border border-[#0066FF]/30 text-[#0066FF] dark:text-[#38BDF8] text-xs font-mono font-bold">
+                        {product.type}
+                      </span>
+                      <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 text-[11px] font-mono font-bold flex items-center gap-1">
+                        <Award className="w-3 h-3" /> {product.badge}
+                      </span>
+                    </div>
+
+                    {/* Title & Description */}
+                    <h3 className="text-xl sm:text-2xl font-bold font-display text-slate-900 dark:text-white group-hover:text-[#0066FF] dark:group-hover:text-[#38BDF8] transition-colors leading-snug">
+                      {product.title}
+                    </h3>
+                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                      {product.description}
+                    </p>
+
+                    {/* Verified Screenshots Preview */}
+                    <div className="pt-1 space-y-2">
+                      <div className="text-[10.5px] uppercase font-mono text-slate-400 tracking-wider">
+                        Verified UI Screenshots &amp; Live Preview:
+                      </div>
+                      <div className="grid grid-cols-3 gap-2">
+                        {product.screenshots.map((ss, sIdx) => (
+                          <div
+                            key={sIdx}
+                            className="relative aspect-video rounded-xl overflow-hidden border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-slate-900 group/img"
+                          >
+                            <Image
+                              src={ss}
+                              alt={`${product.title} screenshot ${sIdx + 1}`}
+                              fill
+                              sizes="(max-width: 768px) 33vw, 20vw"
+                              className="object-cover object-top hover:scale-105 transition-transform duration-300"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Metric Pills */}
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-2">
+                      {product.metrics.map((metric, mIdx) => (
+                        <div
+                          key={mIdx}
+                          className="p-2.5 rounded-xl bg-slate-50 dark:bg-white/[0.04] border border-slate-100 dark:border-white/05 text-center"
+                        >
+                          <div className="text-[11px] font-mono text-[#0066FF] dark:text-[#38BDF8] font-bold truncate">
+                            {metric}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Tech Stack Chips */}
+                    <div className="pt-2">
+                      <div className="text-[10.5px] uppercase font-mono text-slate-400 mb-2 tracking-wider">
+                        Core Engineering Technologies:
+                      </div>
+                      <div className="flex flex-wrap gap-1.5">
+                        {techTags.map((tech, tIdx) => (
+                          <span
+                            key={tIdx}
+                            className="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-white/[0.05] border border-slate-200/80 dark:border-white/10 text-[11px] font-mono text-slate-700 dark:text-slate-300"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Card Bottom Actions */}
+                  <div className="pt-6 mt-6 border-t border-slate-100 dark:border-white/10 flex flex-wrap items-center justify-between gap-3">
+                    <a
+                      href={product.live_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold font-display text-[#0066FF] dark:text-[#38BDF8] group-hover:translate-x-1 transition-transform"
+                    >
+                      <span>{product.cta_label}</span>
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+
+                    <Link
+                      href="/contact"
+                      className="px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-white/[0.06] dark:hover:bg-white/[0.12] text-xs font-mono text-slate-800 dark:text-slate-200 transition-colors"
+                    >
+                      Request Walkthrough
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* ========================================================================================= */}
+        {/* SECTION 2: SIDE-BY-SIDE SPATIAL 11 INTEGRATED SUBSYSTEMS HORIZON */}
         {/* ========================================================================================= */}
         <div className="space-y-8">
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <div className="text-[11px] font-mono tracking-[0.22em] text-[#0066FF] dark:text-[#38BDF8] uppercase font-bold flex items-center justify-center gap-2">
               <Cpu className="w-3.5 h-3.5" />
-              <span>02 / PLATFORM SPECIFICATIONS &middot; 11 HARDENED SUBSYSTEMS</span>
+              <span>03 / PLATFORM SPECIFICATIONS &middot; 11 HARDENED SUBSYSTEMS</span>
             </div>
             <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight font-display text-slate-900 dark:text-white">
               The 11 Integrated Subsystems of{" "}
