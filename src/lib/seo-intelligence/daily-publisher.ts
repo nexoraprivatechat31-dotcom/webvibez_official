@@ -127,12 +127,16 @@ export const DailyPublishingEngine = {
         const validCategory: ArticleCategory =
           (en.category as ArticleCategory) || "Custom Software";
 
-        // Topic-specific verified image selection
+        // Collect existing images so that every new blog gets a guaranteed 100% unique image
+        const existingImageUrls = allArticles.map((a) => a.featuredImage).filter(Boolean) as string[];
+
+        // Topic-specific verified unique image selection
         const { imageUrl, imageAlt } = BlogImageService.selectTopicImage(
           en.title || "Custom Software Development",
           validCategory,
           en.tags || [],
-          cleanSlugEn
+          cleanSlugEn,
+          existingImageUrls
         );
 
         const authorInfo = {

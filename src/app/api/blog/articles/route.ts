@@ -73,6 +73,23 @@ export async function POST(request: NextRequest) {
     const readingTime = calculateReadingTime(body.content);
     const tableOfContents = extractTableOfContents(body.content);
 
+    let featuredImage = body.featuredImage;
+    let featuredImageAlt = body.featuredImageAlt;
+
+    if (!featuredImage) {
+      const existingArticles = await BlogRepository.getAllArticles();
+      const existingImageUrls = existingArticles.map((a) => a.featuredImage).filter(Boolean) as string[];
+      const selected = BlogImageService.selectTopicImage(
+        body.title,
+        body.category,
+        body.tags,
+        body.slug,
+        existingImageUrls
+      );
+      featuredImage = selected.imageUrl;
+      featuredImageAlt = featuredImageAlt || selected.imageAlt;
+    }
+
     const newArticle: Article = {
       id: `art-${Date.now()}`,
       slug: body.slug,
@@ -91,12 +108,8 @@ export async function POST(request: NextRequest) {
         avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
         url: "https://www.webvibez.com/about",
       },
-      featuredImage:
-        body.featuredImage ||
-        BlogImageService.selectTopicImage(body.title, body.category, body.tags, body.slug).imageUrl,
-      featuredImageAlt:
-        body.featuredImageAlt ||
-        BlogImageService.selectTopicImage(body.title, body.category, body.tags, body.slug).imageAlt,
+      featuredImage,
+      featuredImageAlt,
       publicationDate: body.publicationDate || new Date().toISOString(),
       modifiedDate: new Date().toISOString(),
       readingTime,
