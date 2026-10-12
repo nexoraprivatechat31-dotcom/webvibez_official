@@ -13,6 +13,8 @@ import {
   ArrowRight,
   HelpCircle,
   Tag,
+  ListOrdered,
+  Layers,
 } from "lucide-react";
 
 interface BlogPostPageProps {
@@ -78,6 +80,19 @@ export async function generateMetadata({
       images: [image],
     },
   };
+}
+
+function parseHeading(raw: string): { title: string; id: string } {
+  const match = raw.match(/^(.*?)\s*\{#([a-zA-Z0-9_-]+)\}\s*$/);
+  if (match) {
+    return { title: match[1].trim(), id: match[2].trim() };
+  }
+  const cleanTitle = raw.trim();
+  const id = cleanTitle
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+  return { title: cleanTitle, id };
 }
 
 function renderInlineContent(text: string) {
@@ -192,6 +207,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   if (!article) {
     notFound();
   }
+
+  // Fetch related articles
+  let relatedArticles: any[] = [];
+  try {
+    if (article.relatedArticleSlugs && article.relatedArticleSlugs.length > 0) {
+      const fetched = await Promise.all(
+        article.relatedArticleSlugs.map((s) => BlogRepository.getArticleBySlug(s, false))
+      );
+      relatedArticles = fetched.filter((a) => a !== null && a.id !== article.id);
+    }
+  } catch {}
 
   // Schema.org Article Structured Data
   const jsonLdArticle = {
@@ -371,6 +397,29 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
         )}
 
+        {/* ── TABLE OF CONTENTS ── */}
+        {article.tableOfContents && article.tableOfContents.length > 0 && (
+          <nav className="rounded-2xl p-6 bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 space-y-3">
+            <div className="flex items-center gap-2 text-xs font-mono font-bold text-slate-900 dark:text-white uppercase tracking-wider">
+              <ListOrdered className="w-4 h-4 text-[#0066FF]" />
+              <span>Table of Contents</span>
+            </div>
+            <ul className="space-y-2 text-sm">
+              {article.tableOfContents.map((toc, idx) => (
+                <li key={idx} style={{ paddingLeft: toc.level === 3 ? "1rem" : "0" }}>
+                  <a
+                    href={`#${toc.id}`}
+                    className="text-slate-600 dark:text-slate-400 hover:text-[#0066FF] dark:hover:text-[#38BDF8] transition-colors flex items-center gap-2"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#0066FF]/60 shrink-0" />
+                    <span>{toc.title.replace(/\{#.*?\}/, "").trim()}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
+
         {/* ── MAIN ARTICLE CONTENT BODY ── */}
         <div className="prose prose-slate dark:prose-invert max-w-none text-slate-800 dark:text-slate-200 leading-relaxed font-sans space-y-6 text-base sm:text-lg">
           {article.content.split("\n\n").map((paragraph, index) => {
@@ -384,24 +433,28 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
             // Heading 2
             if (trimmed.startsWith("## ")) {
+              const { title, id } = parseHeading(trimmed.replace("## ", ""));
               return (
                 <h2
                   key={index}
-                  className="text-2xl sm:text-3xl font-extrabold font-display text-slate-900 dark:text-white pt-6 pb-2 border-b border-slate-200 dark:border-white/10"
+                  id={id}
+                  className="scroll-mt-28 text-2xl sm:text-3xl font-extrabold font-display text-slate-900 dark:text-white pt-6 pb-2 border-b border-slate-200 dark:border-white/10"
                 >
-                  {trimmed.replace("## ", "")}
+                  {renderInlineContent(title)}
                 </h2>
               );
             }
 
             // Heading 3
             if (trimmed.startsWith("### ")) {
+              const { title, id } = parseHeading(trimmed.replace("### ", ""));
               return (
                 <h3
                   key={index}
-                  className="text-xl sm:text-2xl font-bold font-display text-slate-900 dark:text-white pt-4 pb-1"
+                  id={id}
+                  className="scroll-mt-28 text-xl sm:text-2xl font-bold font-display text-slate-900 dark:text-white pt-4 pb-1"
                 >
-                  {trimmed.replace("### ", "")}
+                  {renderInlineContent(title)}
                 </h3>
               );
             }
@@ -480,6 +533,69 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 #{t}
               </span>
             ))}
+          </div>
+        )}
+
+        {/* ── RELATED SERVICES ── */}
+        {article.relatedServices && article.relatedServices.length > 0 && (
+          <div className="space-y-4 pt-6 border-t border-slate-200 dark:border-white/10">
+            <h3 className="text-xl font-bold font-display text-slate-900 dark:text-white flex items-center gap-2">
+              <Layers className="w-5 h-5 text-[#0066FF]" />
+              <span>Related Software Services</span>
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {article.relatedServices.map((svc, i) => (
+                <Link
+                  key={i}
+                  href={svc.href}
+                  className="p-5 rounded-2xl bg-white dark:bg-[#0C1222] border border-slate-200 dark:border-white/10 hover:border-[#0066FF]/50 transition-all shadow-sm flex items-center justify-between group"
+                >
+                  <div className="space-y-1">
+                    <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-[#0066FF]/10 text-[#0066FF] dark:text-[#38BDF8]">
+                      {svc.badge || "Service"}
+                    </span>
+                    <h4 className="text-sm font-bold text-slate-900 dark:text-white group-hover:text-[#0066FF] transition-colors">
+                      {svc.title}
+                    </h4>
+                  </div>
+                  <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-[#0066FF] group-hover:translate-x-1 transition-all" />
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* ── RELATED ARTICLES ── */}
+        {relatedArticles.length > 0 && (
+          <div className="space-y-6 pt-6 border-t border-slate-200 dark:border-white/10">
+            <h3 className="text-xl sm:text-2xl font-bold font-display text-slate-900 dark:text-white">
+              Recommended Reading
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {relatedArticles.slice(0, 2).map((rel) => (
+                <Link
+                  key={rel.id}
+                  href={`/blog/${rel.slug}`}
+                  className="p-5 rounded-2xl bg-white dark:bg-[#0C1222] border border-slate-200 dark:border-white/10 hover:border-[#0066FF]/50 transition-all shadow-sm flex flex-col justify-between space-y-3 group"
+                >
+                  <div className="space-y-2">
+                    <span className="text-[10.5px] font-mono font-bold text-[#0066FF] dark:text-[#38BDF8]">
+                      {rel.category} &bull; {rel.readingTime || "5 min read"}
+                    </span>
+                    <h4 className="text-base font-bold text-slate-900 dark:text-white group-hover:text-[#0066FF] transition-colors line-clamp-2">
+                      {rel.title}
+                    </h4>
+                    <p className="text-xs text-slate-600 dark:text-slate-400 line-clamp-2">
+                      {rel.excerpt || rel.description}
+                    </p>
+                  </div>
+                  <div className="text-xs font-bold font-display text-[#0066FF] flex items-center gap-1">
+                    <span>Read Article</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
         )}
 

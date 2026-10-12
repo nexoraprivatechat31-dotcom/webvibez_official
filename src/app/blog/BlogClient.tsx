@@ -26,10 +26,14 @@ const CATEGORIES: Array<string> = [
 
 export default function BlogClient({ initialArticles }: { initialArticles: Article[] }) {
   const [articles] = useState<Article[]>(initialArticles);
+  const [selectedLanguage, setSelectedLanguage] = useState<"all" | "en" | "hi">("all");
   const [selectedCategory, setSelectedCategory] = useState("All Articles");
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredArticles = articles.filter((article) => {
+    const matchesLanguage =
+      selectedLanguage === "all" ||
+      (selectedLanguage === "en" ? (!article.language || article.language === "en") : article.language === "hi");
     const matchesCategory =
       selectedCategory === "All Articles" || article.category === selectedCategory;
     const matchesSearch =
@@ -38,7 +42,7 @@ export default function BlogClient({ initialArticles }: { initialArticles: Artic
       article.excerpt?.toLowerCase().includes(searchQuery.toLowerCase()) ||
       article.tags?.some((t) => t.toLowerCase().includes(searchQuery.toLowerCase()));
 
-    return matchesCategory && matchesSearch;
+    return matchesLanguage && matchesCategory && matchesSearch;
   });
 
   const featuredArticle = articles.find((a) => a.featured) || articles[0];
@@ -79,8 +83,34 @@ export default function BlogClient({ initialArticles }: { initialArticles: Artic
         </div>
       </div>
 
-      {/* ── CATEGORY FILTER PILLS ── */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none justify-start lg:justify-center">
+      {/* ── LANGUAGE SELECTOR & CATEGORY FILTER ── */}
+      <div className="space-y-4">
+        {/* Language Tabs */}
+        <div className="flex items-center justify-center gap-2">
+          {[
+            { id: "all", label: `All Languages (${articles.length})` },
+            { id: "en", label: `English (${articles.filter((a) => !a.language || a.language === "en").length})` },
+            { id: "hi", label: `हिंदी (${articles.filter((a) => a.language === "hi").length})` },
+          ].map((lang) => {
+            const isActive = selectedLanguage === lang.id;
+            return (
+              <button
+                key={lang.id}
+                onClick={() => setSelectedLanguage(lang.id as any)}
+                className={`px-3.5 py-1.5 rounded-full text-xs font-mono font-bold transition-all cursor-pointer ${
+                  isActive
+                    ? "bg-slate-900 dark:bg-white text-white dark:text-slate-900 shadow-sm"
+                    : "bg-slate-100 dark:bg-white/[0.05] text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                }`}
+              >
+                {lang.label}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Category Pills */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none justify-start lg:justify-center">
         {CATEGORIES.map((cat) => {
           const isActive = selectedCategory === cat;
           return (
@@ -97,6 +127,7 @@ export default function BlogClient({ initialArticles }: { initialArticles: Artic
             </button>
           );
         })}
+        </div>
       </div>
 
       {articles.length === 0 && (
