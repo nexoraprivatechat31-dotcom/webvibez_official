@@ -112,30 +112,31 @@ export default function ProjectCostEstimator({
   const waUrl = `https://wa.me/919213615531?text=${waText}`;
 
   return (
-    <div className="relative my-16 p-6 sm:p-10 rounded-3xl bg-gradient-to-br from-slate-900/90 via-slate-950 to-black border border-slate-800 shadow-2xl overflow-hidden text-white">
+    <div className="relative my-16 p-6 sm:p-10 rounded-3xl bg-white dark:bg-[#0A101D] border border-slate-200 dark:border-white/10 shadow-2xl overflow-hidden text-slate-900 dark:text-white transition-colors duration-300">
       {/* Ambient background light */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#0066FF]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#0066FF]/10 dark:bg-[#0066FF]/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-purple-500/10 dark:bg-purple-500/15 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-4xl mx-auto space-y-8">
         {/* Header */}
         <div className="text-center space-y-2">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0066FF]/20 border border-[#0066FF]/40 text-[#38BDF8] text-xs font-mono font-bold tracking-wider uppercase mb-2">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0066FF]/10 dark:bg-[#0066FF]/20 border border-[#0066FF]/30 dark:border-[#0066FF]/40 text-[#0066FF] dark:text-[#38BDF8] text-xs font-mono font-bold tracking-wider uppercase mb-2">
             <Calculator className="w-3.5 h-3.5" />
             Transparent Project Pricing Calculator
           </div>
-          <h3 className="text-2xl sm:text-4xl font-extrabold font-display tracking-tight text-white">
-            Estimate Your Software & App Development Cost
+          <h3 className="text-2xl sm:text-4xl font-extrabold font-display tracking-tight text-slate-900 dark:text-white">
+            Estimate Your Software &amp; App Development Cost
           </h3>
-          <p className="text-slate-400 text-xs sm:text-sm max-w-xl mx-auto">
+          <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed">
             Select your requirements to calculate an instant budget estimation and receive a verified technical proposal on WhatsApp.
           </p>
         </div>
 
         {/* Step 1: Select Service */}
         <div className="space-y-3">
-          <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block">
-            1. Select Solution Type:
+          <label className="text-xs font-mono font-bold text-slate-700 dark:text-slate-200 uppercase tracking-wider flex items-center gap-2">
+            <span className="w-5 h-5 rounded-full bg-[#0066FF] text-white flex items-center justify-center text-[11px] font-bold">1</span>
+            Select Solution Type:
           </label>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {services.map((s) => (
@@ -145,19 +146,19 @@ export default function ProjectCostEstimator({
                 onClick={() => setSelectedService(s.id as any)}
                 className={`p-4 rounded-2xl text-left border transition-all cursor-pointer flex flex-col justify-between ${
                   selectedService === s.id
-                    ? "bg-[#0066FF]/15 border-[#0066FF] shadow-lg shadow-[#0066FF]/20"
-                    : "bg-white/[0.03] border-white/10 hover:bg-white/[0.06] hover:border-white/20"
+                    ? "bg-[#0066FF]/10 dark:bg-[#0066FF]/20 border-[#0066FF] dark:border-[#0066FF] shadow-lg shadow-[#0066FF]/15 ring-2 ring-[#0066FF]/50"
+                    : "bg-slate-50 dark:bg-white/[0.04] border-slate-200 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/[0.08] hover:border-slate-300 dark:hover:border-white/20"
                 }`}
               >
                 <div className="flex items-center justify-between mb-3">
-                  <div className="p-2 rounded-xl bg-white/[0.08]">{s.icon}</div>
+                  <div className="p-2.5 rounded-xl bg-white dark:bg-white/10 border border-slate-200/80 dark:border-white/10 shadow-sm">{s.icon}</div>
                   {selectedService === s.id && (
-                    <CheckCircle2 className="w-4 h-4 text-[#0066FF]" />
+                    <CheckCircle2 className="w-4 h-4 text-[#0066FF] dark:text-[#38BDF8]" />
                   )}
                 </div>
                 <div>
-                  <h4 className="font-bold text-sm text-white mb-0.5">{s.name}</h4>
-                  <p className="text-[11px] text-slate-400 leading-relaxed">{s.desc}</p>
+                  <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">{s.name}</h4>
+                  <p className="text-[11.5px] text-slate-600 dark:text-slate-300 leading-relaxed font-sans">{s.desc}</p>
                 </div>
               </button>
             ))}
@@ -166,8 +167,9 @@ export default function ProjectCostEstimator({
 
         {/* Step 2: Select Modules & Platforms */}
         <div className="space-y-3">
-          <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block">
-            2. Required Modules & Integrations:
+          <label className="text-xs font-mono font-bold text-slate-700 dark:text-slate-200 uppercase tracking-wider flex items-center gap-2">
+            <span className="w-5 h-5 rounded-full bg-[#0066FF] text-white flex items-center justify-center text-[11px] font-bold">2</span>
+            Required Modules &amp; Integrations:
           </label>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
             {platformOptions.map((opt) => (
@@ -177,22 +179,28 @@ export default function ProjectCostEstimator({
                 onClick={() => togglePlatform(opt.id)}
                 className={`px-4 py-3 rounded-xl border text-xs font-bold flex items-center justify-between transition-all cursor-pointer ${
                   platforms[opt.id]
-                    ? "bg-white/10 border-white/30 text-white"
-                    : "bg-white/[0.02] border-white/5 text-slate-400 hover:bg-white/[0.05]"
+                    ? "bg-[#0066FF]/10 dark:bg-[#0066FF]/20 border-[#0066FF] dark:border-[#0066FF] text-slate-900 dark:text-white shadow-sm ring-1 ring-[#0066FF]/50"
+                    : "bg-slate-50 dark:bg-white/[0.04] border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/[0.08] hover:border-slate-300 dark:hover:border-white/20"
                 }`}
               >
-                <span className="flex items-center gap-2">
+                <span className="flex items-center gap-2.5">
                   <span
-                    className={`w-3.5 h-3.5 rounded flex items-center justify-center text-[10px] ${
-                      platforms[opt.id] ? "bg-[#0066FF] text-white" : "border border-slate-600"
+                    className={`w-4 h-4 rounded flex items-center justify-center text-[10px] transition-colors ${
+                      platforms[opt.id] ? "bg-[#0066FF] text-white font-black" : "border-2 border-slate-400 dark:border-slate-500 bg-white dark:bg-slate-800"
                     }`}
                   >
                     {platforms[opt.id] && "✓"}
                   </span>
-                  {opt.label}
+                  <span className="font-semibold text-xs text-slate-900 dark:text-white">{opt.label}</span>
                 </span>
                 {opt.cost > 0 && (
-                  <span className="text-[10px] text-slate-500 font-mono">+₹{opt.cost.toLocaleString()}</span>
+                  <span className={`text-[11px] font-mono px-2 py-0.5 rounded-md ${
+                    platforms[opt.id]
+                      ? "bg-[#0066FF]/15 dark:bg-[#0066FF]/30 text-[#0066FF] dark:text-[#38BDF8] font-bold"
+                      : "bg-slate-200/70 dark:bg-white/10 text-slate-600 dark:text-slate-300 font-medium"
+                  }`}>
+                    +₹{opt.cost.toLocaleString("en-IN")}
+                  </span>
                 )}
               </button>
             ))}
@@ -201,8 +209,9 @@ export default function ProjectCostEstimator({
 
         {/* Step 3: Scale */}
         <div className="space-y-3">
-          <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block">
-            3. User / Student Capacity:
+          <label className="text-xs font-mono font-bold text-slate-700 dark:text-slate-200 uppercase tracking-wider flex items-center gap-2">
+            <span className="w-5 h-5 rounded-full bg-[#0066FF] text-white flex items-center justify-center text-[11px] font-bold">3</span>
+            User / Student Capacity:
           </label>
           <div className="grid grid-cols-3 gap-3">
             {[
@@ -214,39 +223,39 @@ export default function ProjectCostEstimator({
                 key={sc.id}
                 type="button"
                 onClick={() => setScale(sc.id as any)}
-                className={`p-3 rounded-xl border text-center transition-all cursor-pointer ${
+                className={`p-3.5 rounded-xl border text-center transition-all cursor-pointer ${
                   scale === sc.id
-                    ? "bg-[#0066FF]/20 border-[#0066FF] text-white font-bold"
-                    : "bg-white/[0.02] border-white/5 text-slate-400 hover:bg-white/[0.05]"
+                    ? "bg-[#0066FF]/10 dark:bg-[#0066FF]/25 border-[#0066FF] dark:border-[#0066FF] text-slate-900 dark:text-white ring-2 ring-[#0066FF]/50 shadow-md shadow-[#0066FF]/15 font-bold"
+                    : "bg-slate-50 dark:bg-white/[0.04] border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/[0.08] hover:border-slate-300 dark:hover:border-white/20"
                 }`}
               >
-                <p className="text-xs font-bold">{sc.label}</p>
-                <p className="text-[10px] text-slate-400 mt-0.5">{sc.desc}</p>
+                <p className={`text-xs font-bold ${scale === sc.id ? "text-[#0066FF] dark:text-[#38BDF8]" : "text-slate-900 dark:text-white"}`}>{sc.label}</p>
+                <p className="text-[11px] text-slate-600 dark:text-slate-300 mt-1 font-sans">{sc.desc}</p>
               </button>
             ))}
           </div>
         </div>
 
         {/* Live Calculation Output Card */}
-        <div className="p-6 rounded-2xl bg-gradient-to-r from-blue-950/60 to-purple-950/60 border border-blue-500/30 flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="space-y-1">
-            <span className="text-xs font-bold text-sky-400 uppercase tracking-wider flex items-center gap-1.5">
+        <div className="p-6 sm:p-7 rounded-2xl bg-gradient-to-r from-blue-50/90 via-indigo-50/50 to-slate-50 dark:from-[#0B1528] dark:via-[#0F1C36] dark:to-[#14122B] border border-blue-200 dark:border-blue-500/40 shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div className="space-y-1.5">
+            <span className="text-xs font-bold font-mono text-[#0066FF] dark:text-sky-400 uppercase tracking-wider flex items-center gap-1.5">
               <Sparkles className="w-3.5 h-3.5" />
               Estimated Investment Range
             </span>
-            <div className="text-3xl sm:text-4xl font-extrabold font-display text-white tracking-tight">
+            <div className="text-3xl sm:text-4xl font-extrabold font-display text-slate-900 dark:text-white tracking-tight">
               ₹{priceMin.toLocaleString("en-IN")} – ₹{priceMax.toLocaleString("en-IN")}
-              <span className="text-xs font-normal text-slate-400 font-sans ml-2">(One-time / Transparent)</span>
+              <span className="text-xs font-medium text-slate-500 dark:text-slate-300 font-sans ml-2">(One-time / Transparent)</span>
             </div>
-            <div className="flex flex-wrap items-center gap-3 pt-2 text-xs text-slate-300">
+            <div className="flex flex-wrap items-center gap-3 pt-2 text-xs text-slate-700 dark:text-slate-200 font-medium">
               <span className="flex items-center gap-1">
-                <Clock className="w-3.5 h-3.5 text-emerald-400" />
-                Est. Delivery: <b>{currentServiceObj.baseTimeline}</b>
+                <Clock className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+                Est. Delivery: <b className="text-slate-900 dark:text-white">{currentServiceObj.baseTimeline}</b>
               </span>
               <span>•</span>
               <span className="flex items-center gap-1">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                100% White-Labeled Ownership
+                <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+                <span className="text-slate-900 dark:text-white font-semibold">100% White-Labeled Ownership</span>
               </span>
             </div>
           </div>
@@ -255,10 +264,10 @@ export default function ProjectCostEstimator({
             href={waUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-emerald-500/25 transition-all active:scale-95 duration-200 cursor-pointer shrink-0"
+            className="inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white font-extrabold text-sm sm:text-base shadow-xl shadow-emerald-500/25 transition-all active:scale-95 duration-200 cursor-pointer shrink-0"
           >
             <MessageSquare className="w-5 h-5 fill-current" />
-            Get Live Demo & Quote on WhatsApp
+            Get Live Demo &amp; Quote on WhatsApp
             <ArrowRight className="w-4 h-4" />
           </a>
         </div>
