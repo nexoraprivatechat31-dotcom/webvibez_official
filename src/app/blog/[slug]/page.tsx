@@ -25,7 +25,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const article = await BlogRepository.getArticleBySlug(slug, false);
 
-  if (!article || article.language === "hi") {
+  if (!article) {
     return {
       title: "Article Not Found | WebVibez Blog",
       description: "The requested article could not be found.",
@@ -189,7 +189,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
   const article = await BlogRepository.getArticleBySlug(slug, false);
 
-  if (!article || article.language === "hi") {
+  if (!article) {
     notFound();
   }
 

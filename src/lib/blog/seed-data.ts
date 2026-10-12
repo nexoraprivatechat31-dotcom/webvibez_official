@@ -35,12 +35,12 @@ export const SEED_ARTICLES: Article[] = [
     relatedServices: [
       {
         title: "Coaching Class Software Solution",
-        href: "/services/coaching-management-software",
+        href: "/services/coaching-class-management-app",
         badge: "Flagship Software",
       },
       {
         title: "Custom Web Application Development",
-        href: "/services/web-development",
+        href: "/services/website-development",
         badge: "Web Tech",
       },
     ],
@@ -114,7 +114,7 @@ Whether adopting a ready SaaS platform or building a custom white-labeled instit
 2. **High Availability (99.9% Uptime):** Scalable cloud infrastructure during exam test submission surges.
 3. **Data Export & Portability:** Easy one-click CSV and PDF data exports for auditing and backup compliance.
 
-Explore our dedicated [Coaching Class Software Solution](/services/coaching-management-software) to see how WebVibez builds custom, high-speed software tailored for growing institutes.`,
+Explore our dedicated [Coaching Class Software Solution](/services/coaching-class-management-app) to see how WebVibez builds custom, high-speed software tailored for growing institutes.`,
     createdAt: "2026-03-10T09:00:00.000Z",
     updatedAt: "2026-03-15T10:30:00.000Z",
   },

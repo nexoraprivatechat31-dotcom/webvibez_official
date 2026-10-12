@@ -37,9 +37,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   try {
     const allPublished = await BlogRepository.getPublishedArticles();
-    const englishArticles = allPublished.filter(a => !a.language || a.language === "en");
     
-    englishArticles.forEach((article) => {
+    allPublished.forEach((article) => {
       routes.push({
         url: `${baseUrl}/blog/${article.slug}`,
         lastModified: new Date(article.modifiedDate || article.publicationDate),

@@ -47,7 +47,12 @@ const nextConfig: NextConfig = {
       { source: "/coaching-app", destination: "/services/coaching-class-management-app", permanent: true },
       { source: "/coaching-software", destination: "/services/coaching-class-management-app", permanent: true },
       { source: "/coaching-classes-app", destination: "/services/coaching-class-management-app", permanent: true },
-      { source: "/coaching-class-management-app", destination: "/services/coaching-class-management-app", permanent: true },
+      { source: "/coaching-management-software", destination: "/services/coaching-class-management-app", permanent: true },
+      { source: "/services/coaching-management-software", destination: "/services/coaching-class-management-app", permanent: true },
+      { source: "/services/ecommerce-solutions", destination: "/services/custom-software-development", permanent: true },
+      { source: "/services/digital-marketing", destination: "/services", permanent: true },
+      { source: "/ecommerce-solutions", destination: "/services/custom-software-development", permanent: true },
+      { source: "/digital-marketing", destination: "/services", permanent: true },
 
       // Policy & Legal aliases
       { source: "/terms-and-conditions", destination: "/terms", permanent: true },
