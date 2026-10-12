@@ -231,7 +231,7 @@ export const BlogImageService = {
     const encodedTitle = encodeURIComponent(title);
     const encodedCategory = encodeURIComponent(category || "Software Development");
     return {
-      imageUrl: `https://www.webvibez.com/api/blog/og?title=${encodedTitle}&category=${encodedCategory}`,
+      imageUrl: `https://www.webvibez.com/api/og?title=${encodedTitle}&category=${encodedCategory}`,
       imageAlt: `${title} — WebVibez Architecture Guide`,
     };
   },
