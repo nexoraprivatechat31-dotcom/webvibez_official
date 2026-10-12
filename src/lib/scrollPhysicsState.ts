@@ -96,20 +96,29 @@ export function subscribePhysicsState(listener: Listener): () => void {
 }
 
 let isNotifying = false;
+let physicsRafPending = false;
+
 export function notifyPhysicsListeners() {
-  if (isNotifying) return;
-  isNotifying = true;
-  try {
-    listeners.forEach((fn) => {
-      try {
-        fn();
-      } catch (err) {
-        console.error("Physics listener error:", err);
-      }
-    });
-  } finally {
-    isNotifying = false;
-  }
+  if (typeof window === "undefined") return;
+  if (physicsRafPending) return;
+  physicsRafPending = true;
+
+  requestAnimationFrame(() => {
+    physicsRafPending = false;
+    if (isNotifying) return;
+    isNotifying = true;
+    try {
+      listeners.forEach((fn) => {
+        try {
+          fn();
+        } catch (err) {
+          console.error("Physics listener error:", err);
+        }
+      });
+    } finally {
+      isNotifying = false;
+    }
+  });
 }
 
 export function openPhoneApp(appIndex: number) {

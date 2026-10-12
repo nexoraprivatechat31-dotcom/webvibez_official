@@ -2,7 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactCompiler: true,
+  compress: true,
   images: {
+    formats: ["image/avif", "image/webp"],
     remotePatterns: [
       {
         protocol: "https",
@@ -12,6 +14,14 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "webvibez.com",
       },
+    ],
+  },
+  experimental: {
+    optimizePackageImports: [
+      "lucide-react",
+      "@react-three/fiber",
+      "@react-three/drei",
+      "three",
     ],
   },
   trailingSlash: false,

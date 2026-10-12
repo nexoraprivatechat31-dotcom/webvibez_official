@@ -81,7 +81,7 @@ export default function AboutPage() {
       icon: Radio,
       color: "#38BDF8",
       stat: "< 1.2s Glass-to-Glass",
-      subdetails: ["Adaptive Multi-Bitrate HLS", "Real-Time Encrypted Doubt Chat", "99.98% Edge CDN Uptime"],
+      subdetails: ["Adaptive Multi-Bitrate HLS", "Real-Time Encrypted Doubt Chat", "99.9% Edge CDN Uptime"],
     },
   ];
 
@@ -103,7 +103,7 @@ export default function AboutPage() {
       number: "01",
       title: "Direct Account Publishing",
       badge: "Brand Identity",
-      desc: "Your app is published directly under your own Google Play & Apple developer accounts with full source code ownership.",
+      desc: "Your app is published directly under your own Google Play & Apple developer accounts with 100% white-labeled brand authority.",
       icon: Smartphone,
       color: "#0066FF",
       stat: "100% White-Labeled",

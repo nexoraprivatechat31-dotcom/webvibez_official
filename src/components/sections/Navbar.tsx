@@ -50,6 +50,8 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
               src="/images/square-image.jpg"
               alt="WebVibez Software Developer"
               fill
+              sizes="48px"
+              priority
               className="object-cover rounded-xl"
             />
           </div>

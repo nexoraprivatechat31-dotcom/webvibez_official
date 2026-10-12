@@ -356,7 +356,7 @@ export default function ContactPage() {
                       Response SLA Commitment
                     </div>
                     <div className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white">
-                      Guaranteed within 2 Business Hours
+                      Target within 2–4 Business Hours
                     </div>
                     <div className="text-[10.5px] text-slate-600 dark:text-slate-400 font-sans">
                       Direct senior software architect review
@@ -496,7 +496,7 @@ export default function ContactPage() {
                     Tell Us About Your Project
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-sans leading-relaxed">
-                    Configure your coaching ecosystem below for an exact scope blueprint and guaranteed quote.
+                    Configure your coaching ecosystem below for an exact scope blueprint and itemized fixed quote.
                   </p>
                 </div>
 

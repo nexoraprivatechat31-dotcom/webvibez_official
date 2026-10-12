@@ -14,7 +14,9 @@ import {
   MapPin,
   Clock,
   Sparkles,
+  MessageSquare,
 } from "lucide-react";
+import FeedbackModal from "@/components/ui/FeedbackModal";
 
 interface FooterProps {
   onOpenConsultation?: () => void;
@@ -22,6 +24,7 @@ interface FooterProps {
 
 export default function Footer({ onOpenConsultation }: FooterProps) {
   const [copied, setCopied] = useState(false);
+  const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText("webvibezsoftdev@gmail.com");
@@ -317,10 +320,20 @@ export default function Footer({ onOpenConsultation }: FooterProps) {
             >
               Disclaimer
             </Link>
+            <span className="text-slate-300 dark:text-slate-700 select-none">•</span>
+            <button
+              onClick={() => setIsFeedbackOpen(true)}
+              className="text-pink-600 dark:text-pink-400 hover:text-pink-700 dark:hover:text-pink-300 font-semibold transition-colors cursor-pointer flex items-center gap-1"
+            >
+              <MessageSquare className="w-3.5 h-3.5" />
+              <span>Share Feedback</span>
+            </button>
           </div>
         </div>
 
       </div>
+
+      <FeedbackModal isOpen={isFeedbackOpen} onClose={() => setIsFeedbackOpen(false)} />
     </footer>
   );
 }

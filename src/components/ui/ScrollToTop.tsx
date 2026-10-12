@@ -24,7 +24,7 @@ export default function ScrollToTop() {
     const unsubscribe = subscribePhysicsState(() => {
       const p = scrollPhysicsState.scrollProgress;
       if (p > 0.03) {
-        setVisible(true);
+        setVisible((prev) => (!prev ? true : prev));
       }
     });
 

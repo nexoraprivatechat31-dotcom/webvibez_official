@@ -397,10 +397,10 @@ const FAQ_DATA: FAQItem[] = [
     id: "faq-8",
     category: "apps",
     categoryLabel: "App Capabilities & DRM",
-    badge: "MILITARY DRM",
+    badge: "CONTENT PIRACY SHIELD",
     question: "Is our study material, video lectures, and PDF notes protected from piracy?",
     answer:
-      "Yes! We implement military-grade DRM content protection. It features dynamic student roll-number and name watermarks stamped across all video lectures and PDF documents, along with hardware-accelerated screen capture and recording blocks.",
+      "Yes! We implement multi-layered content protection. It features dynamic student roll-number and name watermarks stamped across video lectures and PDF documents, along with native screen capture and screen recording prevention.",
     highlights: [
       "Dynamic Roll-Number Watermarks",
       "Screen Recording & Capture Blocking",
@@ -439,7 +439,7 @@ const FAQ_DATA: FAQItem[] = [
     id: "faq-11",
     category: "deployment",
     categoryLabel: "7-Day Deployment & Migration",
-    badge: "7 DAYS FAST TRACK",
+    badge: "7 BUSINESS DAYS SETUP",
     question: "How long does it take to launch our custom branded mobile app on Play Store & iOS?",
     answer:
       "Your fully whitelabeled mobile apps are prepared, tested, and submitted within 7 business days. We configure your custom institute logo, brand colors, splash screen, and initial batch structure ready for onboarding.",
@@ -1282,7 +1282,7 @@ export default function PricingPage() {
 
           <div className="flex items-center gap-2 text-xs font-semibold text-slate-800 dark:text-slate-200 font-sans">
             <Award className="w-4 h-4 text-[#38BDF8]" />
-            <span>99.99% Production Uptime</span>
+            <span>99.9% Production Uptime</span>
           </div>
         </div>
 

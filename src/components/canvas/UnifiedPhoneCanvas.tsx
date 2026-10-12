@@ -14,11 +14,19 @@ export default function UnifiedPhoneCanvas() {
     if (typeof document !== "undefined") {
       setEventSource(document.body);
     }
-    // Delay rendering the 3D scene to prioritize initial page load (fixes Lighthouse TBT)
-    const timer = setTimeout(() => {
-      setShouldRender(true);
-    }, 1500);
-    return () => clearTimeout(timer);
+    // Mount the 3D scene when browser is idle so initial hydration & FCP/TBT are crystal clean
+    if (typeof window !== "undefined" && "requestIdleCallback" in window) {
+      const handle = (window as any).requestIdleCallback(
+        () => setShouldRender(true),
+        { timeout: 2200 }
+      );
+      return () => (window as any).cancelIdleCallback(handle);
+    } else {
+      const timer = setTimeout(() => {
+        setShouldRender(true);
+      }, 1500);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   if (!shouldRender) return null;
@@ -29,7 +37,7 @@ export default function UnifiedPhoneCanvas() {
         eventSource={eventSource}
         eventPrefix="client"
         camera={{ position: [0, 0, 8.2], fov: 42 }}
-        dpr={[1, 1.75]}
+        dpr={[1, 1.5]}
         gl={{ antialias: true, powerPreference: "high-performance", alpha: true, stencil: false, depth: true }}
         className="w-full h-full"
       >

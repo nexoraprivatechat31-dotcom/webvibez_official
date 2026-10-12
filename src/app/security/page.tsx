@@ -43,9 +43,9 @@ export default function SecurityPage() {
     },
     {
       icon: <FileCheck className="w-6 h-6 text-[#F59E0B]" />,
-      title: "Hourly Geo-Redundant Backups",
+      title: "Scheduled Encrypted Backups",
       description:
-        "Automated snapshots are captured every 60 minutes, encrypted with AES-256 keys, and replicated across geographically separated cloud data centers with a 15-minute RPO guarantee.",
+        "Automated database snapshots are captured on schedule, encrypted with AES-256 keys, and stored securely off-site for rapid disaster recovery.",
     },
     {
       icon: <ShieldCheck className="w-6 h-6 text-[#EC4899]" />,
@@ -105,16 +105,21 @@ export default function SecurityPage() {
 
         {/* Compliance Certifications Banner */}
         <div className="p-8 sm:p-12 rounded-3xl bg-slate-50 dark:bg-[#090D14] border border-[var(--border-subtle)] space-y-6 text-center">
-          <h2 className="text-2xl font-bold font-display text-slate-900 dark:text-white">
-            Security Compliance Standards
-          </h2>
+          <div className="space-y-2">
+            <h2 className="text-2xl font-bold font-display text-slate-900 dark:text-white">
+              Cloud Infrastructure &amp; Security Standards
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-sans max-w-2xl mx-auto">
+              Our cloud deployments utilize industry-standard data center infrastructure (AWS &amp; Cloudflare) that comply with global security benchmarks.
+            </p>
+          </div>
           <div className="flex flex-wrap items-center justify-center gap-4">
             {[
-              "ISO 27001 Certified Infrastructure",
-              "SOC 2 Type II Aligned",
-              "PCI-DSS Level 1 Merchant Ready",
-              "GDPR & Data Protection Compliant",
-              "OWASP Top 10 Hardened",
+              "AWS Cloud Tier-3 Certified Data Centers",
+              "Underlying Cloud ISO 27001 & SOC 2 Audited",
+              "PCI-DSS Level 1 Merchant Gateway Compatible",
+              "GDPR & Data Protection Principles Applied",
+              "OWASP Top 10 Security Hardened",
             ].map((cert, i) => (
               <span
                 key={i}

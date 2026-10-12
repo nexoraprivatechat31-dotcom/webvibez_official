@@ -9,25 +9,25 @@ export const MOBILE_SCREENS: MobileScreenDef[] = [
   {
     id: "home",
     name: "Home Dashboard",
-    src: "/mobile-images/home.jpeg",
+    src: "/mobile-images/home.webp",
     category: "Overview",
   },
   {
     id: "chat",
     name: "Direct Chat",
-    src: "/mobile-images/chat.jpeg",
+    src: "/mobile-images/chat.webp",
     category: "Messaging",
   },
   {
     id: "conversation",
     name: "Conversation Thread",
-    src: "/mobile-images/conversation.jpeg",
+    src: "/mobile-images/conversation.webp",
     category: "Communication",
   },
   {
     id: "profile",
     name: "Member Profile",
-    src: "/mobile-images/profile.jpeg",
+    src: "/mobile-images/profile.webp",
     category: "Account & Hub",
   },
 ];
@@ -41,9 +41,11 @@ export function setOnMobileImageLoaded(cb: () => void) {
 }
 
 if (typeof window !== "undefined") {
-  MOBILE_SCREENS.forEach((screen, index) => {
+  // Load initial home screen immediately
+  const loadScreen = (index: number) => {
+    if (imageCache[index]) return;
     const img = new Image();
-    img.src = screen.src;
+    img.src = MOBILE_SCREENS[index].src;
     img.onload = () => {
       imageCache[index] = img;
       if (onImageLoadedCallback) {
@@ -51,7 +53,22 @@ if (typeof window !== "undefined") {
       }
     };
     imageCache[index] = img;
-  });
+  };
+
+  loadScreen(0);
+
+  // Defer remaining 3 screen images to browser idle to prevent bandwidth contention during LCP
+  const loadRemaining = () => {
+    for (let i = 1; i < MOBILE_SCREENS.length; i++) {
+      loadScreen(i);
+    }
+  };
+
+  if ("requestIdleCallback" in window) {
+    (window as any).requestIdleCallback(loadRemaining, { timeout: 3000 });
+  } else {
+    setTimeout(loadRemaining, 1500);
+  }
 }
 
 // Draw image covering the entire target rectangle without distortion

@@ -18,19 +18,19 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex selection:bg-[#0066FF]/30 selection:text-[#0066FF]">
+    <div className="min-h-screen bg-slate-50 text-slate-900 flex selection:bg-[#0066FF]/20 selection:text-[#0066FF] antialiased font-sans">
       {/* Dynamic Sidebar Component */}
       <AdminSidebar />
 
       {/* Main Content Area */}
-      <main className="flex-1 flex flex-col relative overflow-hidden">
-        {/* Decorative Background Elements */}
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#0066FF]/5 rounded-full filter blur-[100px] pointer-events-none" />
-        
+      <main className="flex-1 flex flex-col relative overflow-hidden bg-slate-50/60">
+        {/* Subtle Ambient Background Light Glow */}
+        <div className="absolute top-0 right-1/4 w-[600px] h-[300px] bg-blue-500/[0.03] rounded-full blur-[140px] pointer-events-none" />
+
         {/* Dynamic Header Component */}
         <AdminHeader />
-        
-        <div className="flex-1 p-6 md:p-10 overflow-y-auto relative z-10 scroll-smooth">
+
+        <div className="flex-1 p-3 sm:p-5 lg:p-6 overflow-y-auto relative z-10 scroll-smooth">
           {children}
         </div>
       </main>

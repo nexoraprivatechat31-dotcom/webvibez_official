@@ -321,7 +321,7 @@ export const BRAND_VARIANTS = [
       "Sub-second sync across mobile and web",
       "Enterprise encryption & anti-piracy DRM",
       "Integrated UPI zero-friction checkout",
-      "99.98% guaranteed cloud uptime"
+      "High-availability architecture designed for 99.9% uptime"
     ]
   },
   {
@@ -329,7 +329,7 @@ export const BRAND_VARIANTS = [
     name: "Your Branded Platform",
     subtitle: "What your students and parents experience",
     brandName: "Apex Medical & IIT Academy",
-    tagline: "Empowering 2,400+ Future Rankers",
+    tagline: "Sample Institute Brand Experience",
     bgGradient: "from-emerald-950/40 via-black to-black",
     deviceColor: "#064e3b",
     primaryAccent: "#FF9A6B",

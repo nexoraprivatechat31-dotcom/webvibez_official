@@ -66,7 +66,7 @@ export default function ProductPage() {
       category: "academics",
       categoryLabel: "Academics & Streaming",
       name: "Ultra-Low Latency Live Class Engine",
-      lead: "Deliver crisp 1080p interactive lectures to 100,000+ simultaneous students with sub-second delay, live polls, and doubts queue.",
+      lead: "Deliver crisp 1080p interactive lectures to thousands of simultaneous students with sub-second delay, live polls, and doubts queue.",
       specs: [
         "Multi-bitrate adaptive HLS streaming for seamless 3G/4G playback",
         "Integrated real-time live poll and student engagement tracker",
@@ -335,8 +335,8 @@ export default function ProductPage() {
         {/* Global Impact Telemetry */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
           {[
-            { label: "Active Enrolled Learners", value: "400,000+", icon: <Users className="w-4 h-4 text-[#0066FF]" /> },
-            { label: "Production System Uptime", value: "99.99%", icon: <TrendingUp className="w-4 h-4 text-[#00E5A3]" /> },
+            { label: "Active Platform Architecture", value: "Scalable", icon: <Users className="w-4 h-4 text-[#0066FF]" /> },
+            { label: "Production System Uptime", value: "99.9%", icon: <TrendingUp className="w-4 h-4 text-[#00E5A3]" /> },
             { label: "Direct Bank Settlements", value: "100%", icon: <ShieldCheck className="w-4 h-4 text-[#38BDF8]" /> },
             { label: "Average App Store Rating", value: "4.9 / 5.0", icon: <Star className="w-4 h-4 text-[#F59E0B] fill-[#F59E0B]" /> },
           ].map((stat, i) => (

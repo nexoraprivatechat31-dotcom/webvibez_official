@@ -20,9 +20,19 @@ export function useFocusDepth(): FocusDepthState {
 
   useEffect(() => {
     const unsubscribe = subscribePhysicsState(() => {
-      setState({
-        phoneFocusIntensity: scrollPhysicsState.phoneFocusIntensity,
-        phoneSideX: scrollPhysicsState.phoneSideX,
+      setState((prev) => {
+        const curIntensity = scrollPhysicsState.phoneFocusIntensity;
+        const curSide = scrollPhysicsState.phoneSideX;
+        if (
+          Math.abs(prev.phoneFocusIntensity - curIntensity) < 0.04 &&
+          Math.abs(prev.phoneSideX - curSide) < 0.04
+        ) {
+          return prev;
+        }
+        return {
+          phoneFocusIntensity: curIntensity,
+          phoneSideX: curSide,
+        };
       });
     });
     return () => unsubscribe();

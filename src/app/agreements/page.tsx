@@ -36,10 +36,10 @@ export default function AgreementsPage() {
           <div className="p-4 rounded-2xl bg-slate-50 dark:bg-white/[0.04] border border-slate-200 dark:border-white/10 space-y-1.5">
             <div className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-mono text-xs font-bold">
               <Server className="w-4 h-4" />
-              <span>99.99% UPTIME</span>
+              <span>99.9% TARGET UPTIME</span>
             </div>
             <p className="text-xs text-slate-600 dark:text-slate-300">
-              Guaranteed infrastructure uptime backed by Cloudflare &amp; AWS cluster failover.
+              High-availability cloud architecture deployed on AWS &amp; Cloudflare edge infrastructure.
             </p>
           </div>
 

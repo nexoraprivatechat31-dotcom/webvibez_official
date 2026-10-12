@@ -64,19 +64,80 @@ export async function POST(request: Request) {
     }
 
     if (action === "generate_article_from_query") {
-      const query = body.query || "Custom Software Solutions";
+      const rawQuery = String(body.query || "Custom Software Solutions");
+      // Clean search operators (-site:..., inurl:..., extra quotes)
+      const cleanQ = rawQuery
+        .replace(/-site:\S+/gi, "")
+        .replace(/site:\S+/gi, "")
+        .replace(/inurl:\S+/gi, "")
+        .replace(/["']/g, "")
+        .replace(/\s+/g, " ")
+        .trim() || rawQuery.trim();
+
       const { AIGenerator } = await import("@/lib/seo-intelligence/ai-generator");
       const { BlogRepository } = await import("@/lib/blog/repository");
 
+      const qLower = cleanQ.toLowerCase();
+      let category = "Custom Software";
+      let targetAudience = "Business founders, tech leaders, and growing companies in India";
+
+      if (
+        qLower.includes("coaching") ||
+        qLower.includes("lms") ||
+        qLower.includes("student") ||
+        qLower.includes("attendance") ||
+        qLower.includes("tuition") ||
+        qLower.includes("institute") ||
+        qLower.includes("lecture") ||
+        qLower.includes("test series")
+      ) {
+        category = "Education Technology";
+        targetAudience = "Coaching institute owners, tutors, and educational academy directors in India";
+      } else if (
+        qLower.includes("mobile") ||
+        qLower.includes("app") ||
+        qLower.includes("ios") ||
+        qLower.includes("android") ||
+        qLower.includes("react native") ||
+        qLower.includes("flutter")
+      ) {
+        category = "Mobile App Development";
+        targetAudience = "Entrepreneurs and business leaders looking to build high-performance mobile applications";
+      } else if (
+        qLower.includes("web") ||
+        qLower.includes("website") ||
+        qLower.includes("next.js") ||
+        qLower.includes("frontend") ||
+        qLower.includes("full stack")
+      ) {
+        category = "Website Development";
+        targetAudience = "Modern business owners looking for high-speed, SEO-optimized web development";
+      } else if (
+        qLower.includes("automation") ||
+        qLower.includes("crm") ||
+        qLower.includes("erp") ||
+        qLower.includes("whatsapp") ||
+        qLower.includes("billing")
+      ) {
+        category = "Business Automation";
+        targetAudience = "Founders and operations managers aiming to automate manual workflows and billing";
+      }
+
       const strategy = JSON.stringify({
-        topic: query,
-        category: "Custom Software",
-        primaryKeyword: query,
-        secondaryKeywords: [query, "software development ahmedabad", "webvibez software solutions"],
-        semanticTerms: ["pricing", "features", "architecture", "solutions", "2026"],
+        topic: cleanQ,
+        category,
+        primaryKeyword: cleanQ,
+        secondaryKeywords: [
+          cleanQ,
+          "software development company ahmedabad",
+          "webvibez software solutions",
+          "custom software development india 2026",
+          "best tech agency gujarat"
+        ],
+        semanticTerms: ["pricing", "features", "architecture", "solutions", "2026", "automation", "roi"],
         searchIntent: "Commercial Investigation",
-        targetAudience: "Business founders & enterprise leaders",
-        suggestedSlug: query.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, ""),
+        targetAudience,
+        suggestedSlug: cleanQ.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, ""),
       });
 
       const published = await BlogRepository.getPublishedArticles();
@@ -95,7 +156,7 @@ export async function POST(request: Request) {
 
       return NextResponse.json({
         success: true,
-        message: `AI Draft created successfully for query: "${query}"!`,
+        message: `AI Draft created successfully for query: "${cleanQ}"!`,
         articleSlug: newArticle.slug,
         articleId: newArticle.id,
       });

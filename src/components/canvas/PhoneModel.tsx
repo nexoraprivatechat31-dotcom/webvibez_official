@@ -13,7 +13,6 @@ import {
   subscribePhysicsState,
   openPhoneApp,
   returnToHomeScreen,
-  notifyPhysicsListeners,
 } from "@/lib/scrollPhysicsState";
 
 // 8 Distinct 3D Showcase Rotation Perspectives for the 8 Product Modules
@@ -427,6 +426,77 @@ export default function PhoneModel({
     let rotZ = 0.00;
     let sc = scale ?? 0.88;
 
+    // Direct DOM element viewport intersection detection for Section 05 & Brand Section
+    let isServicesActive = false;
+    let servicesT = 0;
+    let isBrandActive = false;
+    let brandT = 0;
+
+    if (typeof document !== "undefined") {
+      const servicesEl = document.getElementById("services");
+      if (servicesEl) {
+        const sRect = servicesEl.getBoundingClientRect();
+        const vh = window.innerHeight || 800;
+        // As soon as #services enters the viewport:
+        if (sRect.top <= vh * 0.85 && sRect.bottom >= -100) {
+          isServicesActive = true;
+          servicesT = THREE.MathUtils.clamp((vh * 0.85 - sRect.top) / (vh * 0.40), 0, 1);
+        }
+      }
+
+      const brandEl = document.getElementById("brand");
+      if (brandEl) {
+        const bRect = brandEl.getBoundingClientRect();
+        const vh = window.innerHeight || 800;
+        if (bRect.top <= vh * 0.75 && bRect.bottom >= -50) {
+          isBrandActive = true;
+          brandT = THREE.MathUtils.clamp((vh * 0.75 - bRect.top) / (vh * 0.40), 0, 1);
+        }
+      }
+    }
+
+    if (isBrandActive && brandT > 0) {
+      // Swapping into Brand on Left Bay
+      const smoothT = brandT * brandT * (3 - 2 * brandT);
+      const bx = THREE.MathUtils.lerp(3.15, -3.2, smoothT);
+      const by = THREE.MathUtils.lerp(-0.22, -0.28, smoothT);
+      const bz = THREE.MathUtils.lerp(-1.8, 0.24, smoothT);
+      const brotX = THREE.MathUtils.lerp(0.03, -0.01, smoothT);
+      const brotY = THREE.MathUtils.lerp(-0.16, 0.15, smoothT);
+      const brotZ = THREE.MathUtils.lerp(0.01, 0.00, smoothT);
+      const bsc = THREE.MathUtils.lerp(0.24, 0.95, smoothT);
+      return {
+        x: isMobile ? 0 : bx,
+        y: by,
+        z: isMobile ? Math.min(bz, -0.2) : bz,
+        rotX: brotX,
+        rotY: brotY,
+        rotZ: brotZ,
+        scale: isMobile ? bsc * 0.78 : bsc,
+      };
+    }
+
+    if (isServicesActive) {
+      // 05 / SERVICES · WHAT WE BUILD is arriving or visible on screen -> NANO MODE!
+      const smoothT = servicesT * servicesT * (3 - 2 * servicesT);
+      const sx = THREE.MathUtils.lerp(3.2, 3.15, smoothT);
+      const sy = THREE.MathUtils.lerp(-0.28, -0.22, smoothT);
+      const sz = THREE.MathUtils.lerp(0.24, -1.8, smoothT);
+      const srotX = THREE.MathUtils.lerp(0.00, 0.03, smoothT);
+      const srotY = THREE.MathUtils.lerp(-0.15, -0.16, smoothT);
+      const srotZ = THREE.MathUtils.lerp(0.00, 0.01, smoothT);
+      const ssc = THREE.MathUtils.lerp(0.92, 0.24, smoothT); // Instantly shrinks to true NANO mode (0.24)!
+      return {
+        x: isMobile ? 0 : sx,
+        y: sy,
+        z: isMobile ? Math.min(sz, -0.2) : sz,
+        rotX: srotX,
+        rotY: srotY,
+        rotZ: srotZ,
+        scale: isMobile ? ssc * 0.78 : ssc,
+      };
+    }
+
     if (p <= 0.01) {
       // 1. HERO (0.00 - 0.01) — RIGHT bay (+3.2), FRONT screen
       x = 3.2;
@@ -439,33 +509,30 @@ export default function PhoneModel({
 
     } else if (p <= 0.04) {
       // 2. CRISP & FAST SWEEP: RIGHT → LEFT BAY FOR PROBLEM SECTION (0.01 - 0.04)
-      // Phone sweeps smoothly, crisply, and immediately to the Left Bay as soon as scrolling starts!
       const t = (p - 0.01) / 0.03;
       const smoothT = t * t * (3 - 2 * t);
-      const depthDip = Math.sin(t * Math.PI) * 0.35; // Crisp low dip for immediate, clean travel
+      const depthDip = Math.sin(t * Math.PI) * 0.35;
 
       x = THREE.MathUtils.lerp(3.2, -3.2, smoothT);
       y = THREE.MathUtils.lerp(-0.28, -0.28, smoothT);
       z = THREE.MathUtils.lerp(0.22, 0.24, smoothT) - depthDip;
       rotX = THREE.MathUtils.lerp(-0.02, 0.00, smoothT);
-      rotY = THREE.MathUtils.lerp(-0.04, 0.14, smoothT); // Angled towards right problem content
+      rotY = THREE.MathUtils.lerp(-0.04, 0.14, smoothT);
       rotZ = THREE.MathUtils.lerp(0.00, 0.00, smoothT);
       sc = THREE.MathUtils.lerp(0.94, 0.95, smoothT);
 
     } else if (p <= 0.14) {
       // 3. PROBLEM SECTION (0.04 - 0.14) — RESTING ON LEFT BAY (-3.2), FULL BIG SIZE
-      // Stays locked in full big mode on Left bay right beside "01 / REALITY CHECK · THE FRAGMENTATION PROBLEM"
       x = -3.2;
       y = -0.28;
       z = 0.24;
       rotX = 0.00;
-      rotY = 0.14; // Angled towards right-hand problem details
+      rotY = 0.14;
       rotZ = 0.00;
-      sc = 0.95; // Full BIG size on Left bay
+      sc = 0.95;
 
     } else if (p <= 0.17) {
       // 4A. EARLY NANO TRANSITION BEFORE PRODUCT SHOWCASE TEXT (0.14 - 0.17)
-      // Phone shrinks to nano mode and glides to the RIGHT bay BEFORE the heading/module text arrives!
       const t = (p - 0.14) / 0.03;
       const smoothT = t * t * (3 - 2 * t);
 
@@ -475,12 +542,10 @@ export default function PhoneModel({
       rotX = THREE.MathUtils.lerp(-0.02, 0.02, smoothT);
       rotY = THREE.MathUtils.lerp(0.14, -0.08, smoothT);
       rotZ = THREE.MathUtils.lerp(0.00, 0.01, smoothT);
-      sc = THREE.MathUtils.lerp(0.95, 0.38, smoothT); // Shrinks to nano mode on the right
+      sc = THREE.MathUtils.lerp(0.95, 0.38, smoothT);
 
     } else if (p <= 0.20) {
       // 4B. DRAMATIC EXPANSION TO BIG AS PRODUCT SHOWCASE TEXT ARRIVES (0.17 - 0.20)
-      // Right as "03 / PRODUCT · THE ENZOCHAT ECOSYSTEM" and "Module 01 · Live Engine" arrives,
-      // the phone expands smoothly from nano mode into full BIG showcase size!
       const t = (p - 0.17) / 0.03;
       const smoothT = t * t * (3 - 2 * t);
 
@@ -488,70 +553,71 @@ export default function PhoneModel({
       y = THREE.MathUtils.lerp(-0.16, -0.28, smoothT);
       z = THREE.MathUtils.lerp(-2.4, 0.24, smoothT);
       rotX = THREE.MathUtils.lerp(0.02, 0.00, smoothT);
-      rotY = THREE.MathUtils.lerp(-0.08, -0.15, smoothT); // Angled facing the left module details
+      rotY = THREE.MathUtils.lerp(-0.08, -0.15, smoothT);
       rotZ = THREE.MathUtils.lerp(0.01, 0.00, smoothT);
-      sc = THREE.MathUtils.lerp(0.38, 0.95, smoothT); // Expands to BIG mode
+      sc = THREE.MathUtils.lerp(0.38, 0.95, smoothT);
+
+    } else if (p <= 0.34) {
+      // 5. PRODUCT SHOWCASE (0.20 - 0.34): Phone is BIG on the RIGHT bay (x = +3.2)
+      x = 3.2;
+      y = -0.28;
+      z = 0.24;
+      rotX = 0.00;
+      rotY = -0.15;
+      rotZ = 0.00;
+      sc = 0.95;
 
     } else if (p <= 0.38) {
-      // 5. PRODUCT SHOWCASE (0.20 - 0.38): Phone is BIG on the RIGHT bay (x = +3.2)
-      // Stays locked in full big mode on the right bay beside the left module details
+      // 6. FEATURES SECTION (11 CORE SYSTEMS) (0.34 - 0.38)
       x = 3.2;
       y = -0.28;
       z = 0.24;
       rotX = 0.00;
-      rotY = -0.15; // Angled facing the left-hand module details
+      rotY = -0.15;
       rotZ = 0.00;
-      sc = 0.95; // Full BIG mode on the Right bay
+      sc = 0.92;
 
-    } else if (p <= 0.48) {
-      // 6. FEATURES SECTION (11 CORE SYSTEMS) (0.38 - 0.48)
-      // Phone rests cleanly in the RIGHT bay side-by-side with the Spec HUD Card
-      x = 3.2;
-      y = -0.28;
-      z = 0.24;
-      rotX = 0.00;
-      rotY = -0.15; // Angled facing the center Spec HUD card
-      rotZ = 0.00;
-      sc = 0.92; // Full crisp showcase scale in right bay
-
-    } else if (p <= 0.52) {
-      // 7. SMOOTH TRANSITION TO DEEP BACKGROUND BEFORE SERVICES CONVEYOR (0.48 - 0.52)
-      // Glides smoothly away so it NEVER covers Services Conveyor cards or Architecture diagrams
-      const t = (p - 0.48) / 0.04;
+    } else if (p <= 0.42) {
+      // 7. SMOOTH NANO TRANSITION FOR 05 / SERVICES (0.38 - 0.42)
+      // "05 / SERVICES · WHAT WE BUILD" arrives: phone smoothly shrinks into nano mode in the right bay!
+      const t = (p - 0.38) / 0.04;
       const smoothT = t * t * (3 - 2 * t);
 
-      x = THREE.MathUtils.lerp(3.2, 0.0, smoothT);
-      y = THREE.MathUtils.lerp(-0.28, -6.0, smoothT);
-      z = THREE.MathUtils.lerp(0.24, -30.0, smoothT);
-      rotX = THREE.MathUtils.lerp(0.00, 0.25, smoothT);
-      rotY = THREE.MathUtils.lerp(-0.15, 0.00, smoothT);
-      rotZ = 0.00;
-      sc = THREE.MathUtils.lerp(0.92, 0.0001, smoothT);
+      x = THREE.MathUtils.lerp(3.2, 3.15, smoothT);
+      y = THREE.MathUtils.lerp(-0.28, -0.22, smoothT);
+      z = THREE.MathUtils.lerp(0.24, -1.8, smoothT);
+      rotX = THREE.MathUtils.lerp(0.00, 0.03, smoothT);
+      rotY = THREE.MathUtils.lerp(-0.15, -0.16, smoothT);
+      rotZ = THREE.MathUtils.lerp(0.00, 0.01, smoothT);
+      sc = THREE.MathUtils.lerp(0.92, 0.24, smoothT); // Smoothly shrinks into nano mode!
 
-    } else if (p <= 0.67) {
-      // 8. SERVICES CONVEYOR & PRODUCT ARCHITECTURE (0.52 - 0.67)
-      // Phone stays completely tucked in deep background with zero visual interference
-      x = 0.0;
-      y = -10.0;
-      z = -30.0;
-      rotX = 0.0;
-      rotY = 0.0;
-      rotZ = 0.0;
-      sc = 0.0001;
+    } else if (p <= 0.65) {
+      // 8. 05 / SERVICES · WHAT WE BUILD & 06 / ARCHITECTURE (0.42 - 0.65)
+      // Phone stays cleanly in TRUE NANO mode on the right bay without blocking conveyor rows or cards
+      const t = (p - 0.42) / 0.23;
+      const smoothT = t * t * (3 - 2 * t);
+
+      x = THREE.MathUtils.lerp(3.15, 3.18, smoothT);
+      y = THREE.MathUtils.lerp(-0.22, -0.26, smoothT);
+      z = -1.8;
+      rotX = THREE.MathUtils.lerp(0.03, 0.02, smoothT);
+      rotY = THREE.MathUtils.lerp(-0.16, -0.14, smoothT);
+      rotZ = 0.01;
+      sc = 0.24; // TRUE NANO SIZE throughout Section 05!
 
     } else if (p <= 0.70) {
-      // 9A. TIGHT ENTRY TO TRANSFORMATION IMPACT (0.67 - 0.70)
-      // As "Transformation Impact" arrives, phone swoops from background to Left Bay and expands to FULL BIG SIZE!
-      const t = (p - 0.67) / 0.03;
+      // 9A. DRAMATIC SWEEP: NANO (RIGHT BAY) -> BIG (LEFT BAY) FOR TRANSFORMATION IMPACT (0.65 - 0.70)
+      // As "Transformation Impact" arrives, phone sweeps from nano on right bay across to Left Bay and expands to FULL BIG SIZE!
+      const t = (p - 0.65) / 0.05;
       const smoothT = t * t * (3 - 2 * t);
 
-      x = THREE.MathUtils.lerp(0.0, -3.2, smoothT);
-      y = THREE.MathUtils.lerp(-6.0, -0.28, smoothT);
-      z = THREE.MathUtils.lerp(-30.0, 0.24, smoothT);
-      rotX = THREE.MathUtils.lerp(0.25, -0.01, smoothT);
-      rotY = THREE.MathUtils.lerp(0.00, 0.15, smoothT);
-      rotZ = 0.00;
-      sc = THREE.MathUtils.lerp(0.0001, 0.95, smoothT); // Expands to full big mode at Transformation Impact!
+      x = THREE.MathUtils.lerp(3.18, -3.2, smoothT);
+      y = THREE.MathUtils.lerp(-0.26, -0.28, smoothT);
+      z = THREE.MathUtils.lerp(-1.8, 0.24, smoothT);
+      rotX = THREE.MathUtils.lerp(0.02, -0.01, smoothT);
+      rotY = THREE.MathUtils.lerp(-0.14, 0.15, smoothT);
+      rotZ = THREE.MathUtils.lerp(0.01, 0.00, smoothT);
+      sc = THREE.MathUtils.lerp(0.24, 0.95, smoothT); // Expands from nano to full big size!
 
     } else if (p <= 0.73) {
       // 9B. TRANSFORMATION IMPACT & CUSTOMIZATION PILLARS (0.70 - 0.73) — FULL BIG MODE ON LEFT BAY!
@@ -882,8 +948,6 @@ export default function PhoneModel({
         5.5,
         delta
       );
-
-      notifyPhysicsListeners();
     }
   });
 

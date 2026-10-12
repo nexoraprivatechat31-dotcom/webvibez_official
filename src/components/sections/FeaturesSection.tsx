@@ -139,7 +139,7 @@ export default function FeaturesSection({ onOpenConsultation }: FeaturesSectionP
                       className={`shrink-0 text-xs sm:text-sm font-mono tracking-widest transition-colors ${
                         isSelected
                           ? "text-[#0066FF] dark:text-[#38BDF8] font-black"
-                          : "text-slate-400 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white"
+                          : "text-slate-600 dark:text-slate-300 font-bold group-hover:text-slate-900 dark:group-hover:text-white"
                       }`}
                     >
                       {String(idx + 1).padStart(2, "0")}
@@ -160,14 +160,14 @@ export default function FeaturesSection({ onOpenConsultation }: FeaturesSectionP
 
                   {/* Right: Category Label & Link Arrow */}
                   <div className="flex items-center gap-2 shrink-0 ml-2">
-                    <span className="text-[9.5px] sm:text-[10.5px] font-mono tracking-widest uppercase font-semibold text-slate-400 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
+                    <span className="text-[9.5px] sm:text-[10.5px] font-mono tracking-widest uppercase font-bold text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
                       {feat.category}
                     </span>
                     <ArrowUpRight
                       className={`w-3.5 h-3.5 transition-all duration-300 ${
                         isSelected
                           ? "text-[#0066FF] dark:text-[#38BDF8] opacity-100 translate-x-0.5 -translate-y-0.5"
-                          : "text-slate-400 opacity-0 group-hover:opacity-70"
+                          : "text-slate-500 opacity-0 group-hover:opacity-80"
                       }`}
                     />
                   </div>

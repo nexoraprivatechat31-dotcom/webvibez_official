@@ -51,7 +51,7 @@ export default function HowItWorks({ onOpenConsultation }: HowItWorksProps) {
       step: "03",
       day: "DAY 08 & BEYOND",
       title: "Launch your coaching app",
-      subtitle: "Production Release & 24/7 VIP Support",
+      subtitle: "Production Release & Priority Support",
       desc: "Go live to hundreds or thousands of students with zero server maintenance hassle. We handle cloud scaling, security patches, and ongoing tech support.",
     },
   ];
@@ -131,17 +131,17 @@ export default function HowItWorks({ onOpenConsultation }: HowItWorksProps) {
                       <span
                         className={`text-xs font-mono font-bold px-2 py-0.5 rounded-md ${
                           isActive
-                            ? "bg-[#0066FF]/10 text-[#0066FF] dark:text-[#38BDF8] border border-[#0066FF]/20"
-                            : "bg-slate-200/60 dark:bg-white/[0.05] text-slate-400"
+                            ? "bg-blue-50 dark:bg-blue-900/40 text-blue-700 dark:text-[#38BDF8] border border-blue-200 dark:border-blue-700/50"
+                            : "bg-slate-200/60 dark:bg-white/[0.05] text-slate-600 dark:text-slate-300"
                         }`}
                       >
                         {item.day}
                       </span>
-                      <span className="text-[11px] font-mono text-slate-400 font-semibold uppercase tracking-wider">
+                      <span className="text-[11px] font-mono text-slate-600 dark:text-slate-300 font-bold uppercase tracking-wider">
                         STEP {item.step}
                       </span>
                     </div>
-                    <div className="text-sm sm:text-base font-bold font-display tracking-tight">
+                    <div className="text-sm sm:text-base font-bold font-display tracking-tight text-slate-900 dark:text-white">
                       {item.title}
                     </div>
                   </button>
@@ -218,7 +218,7 @@ export default function HowItWorks({ onOpenConsultation }: HowItWorksProps) {
                 <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* Card 1: Institute Identity */}
                   <div className="p-4 rounded-xl bg-slate-50 dark:bg-white/[0.02] border border-slate-200 dark:border-white/5 space-y-3">
-                    <div className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider">
+                    <div className="text-[10px] font-mono font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
                       Institute Identity
                     </div>
                     <div className="flex items-center gap-3">
@@ -227,6 +227,7 @@ export default function HowItWorks({ onOpenConsultation }: HowItWorksProps) {
                           src="/images/square-image.jpg"
                           alt="WebVibez client institute brand identity"
                           fill
+                          sizes="40px"
                           className="object-cover rounded-lg"
                         />
                       </div>
@@ -243,14 +244,14 @@ export default function HowItWorks({ onOpenConsultation }: HowItWorksProps) {
 
                   {/* Card 2: Curriculum */}
                   <div className="p-4 rounded-xl bg-slate-50 dark:bg-white/[0.02] border border-slate-200 dark:border-white/5 space-y-3">
-                    <div className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider">
+                    <div className="text-[10px] font-mono font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
                       Curriculum & Target Exams
                     </div>
                     <div className="flex flex-wrap gap-1.5">
                       {["JEE Main & Adv", "NEET-UG", "UPSC Civil", "K-12", "Commerce"].map((c) => (
                         <span
                           key={c}
-                          className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded bg-[#0066FF]/10 text-[#0066FF] dark:text-[#38BDF8] border border-[#0066FF]/20"
+                          className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-900/40 text-blue-700 dark:text-[#38BDF8] border border-blue-200 dark:border-blue-700/50"
                         >
                           {c}
                         </span>
@@ -260,7 +261,7 @@ export default function HowItWorks({ onOpenConsultation }: HowItWorksProps) {
 
                   {/* Card 3: Batch Structure */}
                   <div className="p-4 rounded-xl bg-slate-50 dark:bg-white/[0.02] border border-slate-200 dark:border-white/5 space-y-3">
-                    <div className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider">
+                    <div className="text-[10px] font-mono font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
                       Batch Hierarchy
                     </div>
                     <div className="grid grid-cols-3 gap-1.5 text-center text-[10px] font-mono">
@@ -274,7 +275,7 @@ export default function HowItWorks({ onOpenConsultation }: HowItWorksProps) {
 
                   {/* Card 4: Feature Wishlist */}
                   <div className="p-4 rounded-xl bg-slate-50 dark:bg-white/[0.02] border border-slate-200 dark:border-white/5 space-y-3">
-                    <div className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider">
+                    <div className="text-[10px] font-mono font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
                       Platform Feature Wishlist
                     </div>
                     <div className="grid grid-cols-2 gap-1.5 text-xs font-sans">
@@ -411,7 +412,7 @@ export default function HowItWorks({ onOpenConsultation }: HowItWorksProps) {
                     <div className="flex items-center justify-between text-xs font-sans text-slate-700 dark:text-slate-300 pt-2 border-t border-slate-200 dark:border-white/5">
                       <span className="font-semibold">Dedicated Account Manager</span>
                       <span className="text-[11px] font-mono text-[#0066FF] dark:text-[#38BDF8] font-bold">
-                        24/7 VIP Escalation SLA
+                        Priority Escalation SLA
                       </span>
                     </div>
                   </div>
@@ -477,11 +478,11 @@ export default function HowItWorks({ onOpenConsultation }: HowItWorksProps) {
                 Elastic Cloud Scaling
               </h4>
               <p className="text-xs text-slate-600 dark:text-slate-400 font-sans leading-relaxed">
-                Kubernetes container clusters auto-scale from 10 to 100,000+ concurrent students without streaming lag or connection timeouts.
+                Kubernetes container clusters auto-scale with your institute&apos;s growth without streaming lag or connection timeouts.
               </p>
               <div className="pt-2 text-[10px] font-mono text-[#0066FF] dark:text-[#38BDF8] font-bold flex items-center gap-1.5">
                 <Check className="w-3.5 h-3.5" />
-                <span>99.98% SLA UPTIME GUARANTEE</span>
+                <span>99.9% HIGH AVAILABILITY TARGET</span>
               </div>
             </div>
 
@@ -491,14 +492,14 @@ export default function HowItWorks({ onOpenConsultation }: HowItWorksProps) {
                 <Database className="w-5 h-5" />
               </div>
               <h4 className="text-base font-bold font-display text-slate-900 dark:text-white">
-                Hourly Geo-Redundant Backups
+                Automated Encrypted Backups
               </h4>
               <p className="text-xs text-slate-600 dark:text-slate-400 font-sans leading-relaxed">
-                Automated hourly cryptographic snapshots of all student attendance records, test logs, and financial invoices replicated across multiple data centers.
+                Scheduled database snapshots of student attendance records, test logs, and financial invoices with secure off-site storage.
               </p>
               <div className="pt-2 text-[10px] font-mono text-[#8B00FF] font-bold flex items-center gap-1.5">
                 <Check className="w-3.5 h-3.5" />
-                <span>AES-256 REST & TRANSIT ENCRYPTED</span>
+                <span>AES-256 REST &amp; TRANSIT ENCRYPTED</span>
               </div>
             </div>
 
@@ -508,14 +509,14 @@ export default function HowItWorks({ onOpenConsultation }: HowItWorksProps) {
                 <Shield className="w-5 h-5" />
               </div>
               <h4 className="text-base font-bold font-display text-slate-900 dark:text-white">
-                24/7 Threat Mitigation & DRM
+                Automated Threat Mitigation & DRM
               </h4>
               <p className="text-xs text-slate-600 dark:text-slate-400 font-sans leading-relaxed">
                 Continuous DDoS shielding, dynamic moving watermark injections, and hardware screen recording blackouts keeping your intellectual property safe.
               </p>
               <div className="pt-2 text-[10px] font-mono text-[#00E5A3] font-bold flex items-center gap-1.5">
                 <Check className="w-3.5 h-3.5" />
-                <span>ZERO-LEAKAGE PIRACY SHIELD</span>
+                <span>ANTI-SCREEN CAPTURE &amp; WATERMARKING</span>
               </div>
             </div>
           </div>
@@ -534,7 +535,7 @@ export default function HowItWorks({ onOpenConsultation }: HowItWorksProps) {
             </h3>
 
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-sans leading-relaxed">
-              Tell us what you need. We'll take care of everything from architecture to production launch in 7 days.
+              Tell us what you need. We&apos;ll take care of everything from architecture to production launch in 7 business days. App store publishing follows standard review timelines.
             </p>
           </div>
 

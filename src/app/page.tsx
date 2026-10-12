@@ -6,16 +6,6 @@ import Navbar from "@/components/sections/Navbar";
 import HeroSection from "@/components/sections/HeroSection";
 import MarqueeTicker from "@/components/ui/MarqueeTicker";
 import ProblemSection from "@/components/sections/ProblemSection";
-import ProductShowcase from "@/components/sections/ProductShowcase";
-import FeaturesSection from "@/components/sections/FeaturesSection";
-import ServicesConveyor from "@/components/sections/ServicesConveyor";
-import ProductArchitecture from "@/components/sections/ProductArchitecture";
-import BrandCustomizer from "@/components/sections/BrandCustomizer";
-import HowItWorks from "@/components/sections/HowItWorks";
-import SEOAuthoritySection from "@/components/sections/SEOAuthoritySection";
-import CTASection from "@/components/sections/CTASection";
-import Footer from "@/components/sections/Footer";
-import LeadModal from "@/components/ui/LeadModal";
 import ScrollProgressHUD from "@/components/ui/ScrollProgressHUD";
 
 // Dynamically import Unified 3D Canvas with SSR disabled
@@ -23,6 +13,18 @@ const UnifiedPhoneCanvas = dynamic(
   () => import("@/components/canvas/UnifiedPhoneCanvas"),
   { ssr: false }
 );
+
+// Dynamically import heavy below-the-fold sections to reduce initial JS execution and TBT
+const ProductShowcase = dynamic(() => import("@/components/sections/ProductShowcase"));
+const FeaturesSection = dynamic(() => import("@/components/sections/FeaturesSection"));
+const ServicesConveyor = dynamic(() => import("@/components/sections/ServicesConveyor"));
+const ProductArchitecture = dynamic(() => import("@/components/sections/ProductArchitecture"));
+const BrandCustomizer = dynamic(() => import("@/components/sections/BrandCustomizer"));
+const HowItWorks = dynamic(() => import("@/components/sections/HowItWorks"));
+const SEOAuthoritySection = dynamic(() => import("@/components/sections/SEOAuthoritySection"));
+const CTASection = dynamic(() => import("@/components/sections/CTASection"));
+const Footer = dynamic(() => import("@/components/sections/Footer"));
+const LeadModal = dynamic(() => import("@/components/ui/LeadModal"), { ssr: false });
 
 function AmbientCursorLight() {
   const lightRef = React.useRef<HTMLDivElement>(null);

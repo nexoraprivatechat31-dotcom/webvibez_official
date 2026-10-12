@@ -76,11 +76,11 @@ export default function ServicesPage() {
       step: "04",
       tag: "LAUNCH · DAY 7+",
       title: "Deployment & Growth",
-      subtitle: "Stores Release & 24/7 SLA Uptime",
+      subtitle: "Stores Release & Priority SLA Uptime",
       color: "#38BDF8",
       gradient: "from-[#38BDF8]/20 via-[#00E5A3]/10 to-transparent",
       icon: <Rocket className="w-5 h-5 text-white" />,
-      desc: "App Store & Play Store release under your official brand, DNS edge acceleration, stress testing, and ongoing round-the-clock SLA maintenance.",
+      desc: "App Store & Play Store release under your official brand, DNS edge acceleration, stress testing, and ongoing priority SLA maintenance.",
       deliverables: [
         "Apple App Store & Google Play Publishing",
         "Global CDN Edge & Cloudflare DDoS Shield",
@@ -146,7 +146,7 @@ export default function ServicesPage() {
                   href: "/services/mobile-apps-on-rent",
                   badge: "APP SUBSCRIPTION & LEASING",
                   color: "#EC4899",
-                  desc: "Turnkey iOS & Android mobile apps on flexible 1-year rental plans. Zero upfront development cost, 100% white-labeled, free server hosting & 24/7 SLA maintenance.",
+                  desc: "Turnkey iOS & Android mobile apps on flexible 1-year rental plans. Low upfront commitment, 100% white-labeled, inclusive cloud hosting & priority SLA maintenance.",
                   highlights: ["70% Cost Savings vs Scratch", "5–7 Days Play Store Launch", "Free Cloud Servers & Backups", "Full Technical SLA Support"],
                 },
                 {
@@ -327,7 +327,7 @@ export default function ServicesPage() {
 
               <div className="flex items-center gap-2 text-xs font-semibold text-slate-800 dark:text-slate-200 font-sans">
                 <Award className="w-4 h-4 text-[#38BDF8]" />
-                <span>99.99% Production Uptime</span>
+                <span>99.9% Production Uptime</span>
               </div>
             </div>
 

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Mobile Apps on Rent | 1-Year App Rental Subscription | WebVibez",
     description:
-      "Save 70%+ on software costs. Rent readymade, custom-branded iOS & Android mobile apps with full 24/7 maintenance, cloud servers, and Google Play Store publishing in Ahmedabad.",
+      "Save 70%+ on software costs. Rent readymade, custom-branded iOS & Android mobile apps with full priority SLA maintenance, cloud servers, and Google Play Store publishing in Ahmedabad.",
     url: "https://www.webvibez.com/services/mobile-apps-on-rent",
     siteName: "WebVibez Software Developer",
     type: "website",

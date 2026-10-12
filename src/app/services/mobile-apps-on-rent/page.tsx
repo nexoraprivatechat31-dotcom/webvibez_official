@@ -83,7 +83,7 @@ export default function MobileAppsOnRentPage() {
     {
       feature: "Bug Fixes, Security & OS Updates",
       scratch: "Charged Hourly or Monthly AMC",
-      rental: "100% Free 24/7 Developer Support",
+      rental: "Inclusive Priority Developer Support",
       winner: "rental",
     },
     {
@@ -97,7 +97,7 @@ export default function MobileAppsOnRentPage() {
   const faqs = [
     {
       q: "What is included in the 1-Year Mobile App Rental package?",
-      a: "The package includes 100% white-label Android & iOS mobile apps customized with your brand logo, name, and color theme. It also includes Google Play Store publishing, dedicated cloud server hosting, database backups, bug fixes, OS compatibility updates, and 24/7 technical developer support throughout the 1-year period.",
+      a: "The package includes 100% white-label Android & iOS mobile apps customized with your brand logo, name, and color theme. It also includes Google Play Store publishing, dedicated cloud server hosting, database backups, bug fixes, OS compatibility updates, and priority technical developer support throughout the 1-year period.",
     },
     {
       q: "Can I renew the app rental after the 1st year?",
@@ -113,7 +113,7 @@ export default function MobileAppsOnRentPage() {
     },
     {
       q: "Do you offer app rental services outside Ahmedabad?",
-      a: "Yes. WebVibez serves clients across Gujarat (Surat, Vadodara, Rajkot), pan-India, and global clients in the US, UK, and Middle East with seamless remote onboarding and 24/7 SLA developer support.",
+      a: "Yes. WebVibez serves clients across Gujarat (Surat, Vadodara, Rajkot), pan-India, and global clients in the US, UK, and Middle East with seamless remote onboarding and priority developer support.",
     },
   ];
 
@@ -145,7 +145,7 @@ export default function MobileAppsOnRentPage() {
             </h1>
 
             <p className="text-slate-600 dark:text-slate-300 text-base sm:text-xl leading-relaxed max-w-2xl mx-auto mb-8">
-              Why spend lakhs building an app from scratch? Rent custom-branded, native-performance iOS & Android mobile apps with zero development hassle, free cloud servers, and 24/7 developer support.
+              Why spend lakhs building an app from scratch? Rent custom-branded, native-performance iOS & Android mobile apps with zero development hassle, inclusive cloud hosting, and priority developer support.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -176,18 +176,18 @@ export default function MobileAppsOnRentPage() {
             <div className="p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200/80 dark:border-white/[0.08] text-center">
               <Clock className="w-8 h-8 text-[#0066FF] mx-auto mb-3" />
               <div className="text-2xl font-bold text-slate-900 dark:text-white font-mono">5–7 Days</div>
-              <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Guaranteed Play Store Launch</p>
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Target Build &amp; Submission</p>
             </div>
 
             <div className="p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200/80 dark:border-white/[0.08] text-center">
               <Server className="w-8 h-8 text-[#8B00FF] mx-auto mb-3" />
-              <div className="text-2xl font-bold text-slate-900 dark:text-white font-mono">100% Free</div>
-              <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Cloud Servers & Backups</p>
+              <div className="text-2xl font-bold text-slate-900 dark:text-white font-mono">Included</div>
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Cloud Servers &amp; Backups</p>
             </div>
 
             <div className="p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200/80 dark:border-white/[0.08] text-center">
               <Headphones className="w-8 h-8 text-[#38BDF8] mx-auto mb-3" />
-              <div className="text-2xl font-bold text-slate-900 dark:text-white font-mono">24/7 SLA</div>
+              <div className="text-2xl font-bold text-slate-900 dark:text-white font-mono">Priority SLA</div>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Dedicated Developer Support</p>
             </div>
           </div>

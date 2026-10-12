@@ -1,8 +1,30 @@
 import type { Metadata, Viewport } from "next";
+import { Space_Grotesk, Manrope, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import SmoothScrollProvider from "@/components/ui/SmoothScrollProvider";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 import FirebaseAnalytics from "@/components/analytics/FirebaseAnalytics";
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+  weight: ["400", "500"],
+});
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -323,7 +345,7 @@ const jsonLdGlobal = {
         "@type": "Offer",
         price: "0",
         priceCurrency: "INR",
-        description: "Official demo and white-label custom license with 100% source code ownership.",
+        description: "Official demo and 100% white-label custom mobile & web platform for coaching institutes.",
       },
     },
     {
@@ -431,10 +453,10 @@ const jsonLdGlobal = {
         },
         {
           "@type": "Question",
-          name: "Does WebVibez provide 100% source code ownership and white-labeling?",
+          name: "Does WebVibez provide white-labeling and ownership of client data?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes. WebVibez delivers 100% white-labeled solutions with full intellectual property and source code ownership with zero recurring per-student commissions or vendor lock-in.",
+            text: "Yes. WebVibez delivers 100% white-labeled solutions under your brand. For annual platform subscriptions, clients own their data, students, and content with a platform usage license. Custom development projects include full source code transfer as specified in the signed agreement.",
           },
         },
       ],
@@ -525,23 +547,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="light"
+      className={`light ${spaceGrotesk.variable} ${manrope.variable} ${jetbrainsMono.variable}`}
       data-theme="light"
       style={{ colorScheme: "light" }}
       suppressHydrationWarning
     >
       <head>
         <meta name="color-scheme" content="light" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-        <style dangerouslySetInnerHTML={{__html: `
-          :root {
-            --font-display: 'Space Grotesk', sans-serif;
-            --font-sans: 'Manrope', sans-serif;
-            --font-mono: 'JetBrains Mono', monospace;
-          }
-        `}} />
+        <link rel="preconnect" href="https://firebase.googleapis.com" />
         <link rel="image_src" href="https://www.webvibez.com/logo.jpeg" />
         <meta property="og:image" content="https://www.webvibez.com/logo.jpeg" />
         <meta property="og:image:secure_url" content="https://www.webvibez.com/logo.jpeg" />

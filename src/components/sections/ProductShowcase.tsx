@@ -51,7 +51,7 @@ export default function ProductShowcase({ onOpenConsultation }: ProductShowcaseP
     const unsubscribe = subscribePhysicsState(() => {
       const targetIdx = scrollPhysicsState.targetScreenIndex;
       if (targetIdx >= 0 && targetIdx < SHOWCASE_SCREENS.length) {
-        setActiveIndex(targetIdx);
+        setActiveIndex((prev) => (prev !== targetIdx ? targetIdx : prev));
       }
     });
     return () => unsubscribe();
@@ -110,7 +110,7 @@ export default function ProductShowcase({ onOpenConsultation }: ProductShowcaseP
                 </button>
                 <div className="text-xs font-bold tracking-widest px-2.5 font-mono select-none">
                   <span className="text-[#0066FF] dark:text-[#38BDF8] text-sm">{currentScreen.number}</span>{" "}
-                  <span className="text-slate-400 dark:text-[#64748B]">/ 08</span>
+                  <span className="text-slate-600 dark:text-slate-400 font-semibold">/ 08</span>
                 </div>
                 <button
                   type="button"

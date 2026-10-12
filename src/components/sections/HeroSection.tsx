@@ -18,6 +18,7 @@ export default function HeroSection({ onOpenConsultation }: HeroSectionProps) {
       const p = scrollPhysicsState.scrollProgress;
       setScrollP((prev) => {
         if (p > 0.25 && prev >= 0.25) return prev;
+        if (Math.abs(p - prev) < 0.004) return prev;
         return p;
       });
     });
@@ -177,13 +178,13 @@ export default function HeroSection({ onOpenConsultation }: HeroSectionProps) {
                   className="text-xl sm:text-2xl font-bold text-[#7C3AED] dark:text-[#A855F7] tracking-tight"
                   style={{ fontFamily: "var(--font-mono)" }}
                 >
-                  24/7
+                  99.9%
                 </div>
                 <div
                   className="text-[11px] text-slate-600 dark:text-[#94A3B8] mt-1 uppercase tracking-wider font-semibold"
                   style={{ fontFamily: "var(--font-mono)" }}
                 >
-                  Live SLA
+                  Uptime SLA
                 </div>
               </div>
             </div>

@@ -26,7 +26,7 @@ export default function CTASection({ onOpenConsultation }: CTASectionProps) {
             className="text-[11px] tracking-[0.22em] text-[#0066FF] dark:text-[#38BDF8] uppercase font-bold"
             style={{ fontFamily: "var(--font-mono)" }}
           >
-            08 / DEPLOYMENT · LIVE IN 7 DAYS
+            08 / DEPLOYMENT · READY IN 7 BUSINESS DAYS
           </span>
         </div>
 

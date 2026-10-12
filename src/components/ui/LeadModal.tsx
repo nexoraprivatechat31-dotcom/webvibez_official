@@ -55,6 +55,7 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
   ]);
   const [students, setStudents] = useState("200 to 500 Students");
   const [timeline, setTimeline] = useState("Ready in 7 Days (Fast-Track)");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Contact State
   const [contactData, setContactData] = useState({
@@ -248,9 +249,42 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
     setTimeout(() => setCopied(false), 3000);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const submitToIntakeApi = async () => {
+    try {
+      await fetch("/api/contact/intake", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          directorName: contactData.name,
+          instituteName: contactData.instituteName,
+          phone: contactData.phone,
+          city: contactData.city,
+          email: contactData.email,
+          notes: contactData.notes,
+          platform,
+          stream: category,
+          selectedFeatures,
+          studentScale: students,
+          timeline,
+        }),
+      });
+    } catch (e) {
+      console.warn("Intake API submission warning:", e);
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    await submitToIntakeApi();
+    setIsSubmitting(false);
     setSubmitted(true);
+  };
+
+  const handleWhatsAppAction = () => {
+    if (contactData.phone || contactData.name) {
+      submitToIntakeApi();
+    }
   };
 
   return createPortal(
@@ -619,6 +653,7 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
                       href={getWhatsAppUrl()}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={handleWhatsAppAction}
                       className="w-full py-4 px-6 rounded-2xl bg-[#25D366] hover:bg-[#20bd5a] text-slate-950 font-extrabold text-sm sm:text-base shadow-xl shadow-emerald-600/25 transition-all flex items-center justify-center gap-3 cursor-pointer active:scale-98"
                     >
                       <WhatsAppIcon className="w-5 h-5 sm:w-6 sm:h-6 text-slate-950 shrink-0" />
@@ -627,10 +662,11 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
 
                     <button
                       type="submit"
-                      className="w-full py-3 px-5 rounded-xl bg-slate-200/80 dark:bg-white/[0.08] hover:bg-slate-300 dark:hover:bg-white/[0.14] text-slate-800 dark:text-white text-xs sm:text-sm font-semibold font-sans transition cursor-pointer flex items-center justify-center gap-2"
+                      disabled={isSubmitting}
+                      className="w-full py-3.5 px-5 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-200 text-white dark:text-slate-900 text-xs sm:text-sm font-bold font-sans transition cursor-pointer flex items-center justify-center gap-2 disabled:opacity-50 shadow-md"
                     >
-                      <Send className="w-4 h-4 text-[#0066FF]" />
-                      <span>Or Submit Intake Form</span>
+                      <Send className={`w-4 h-4 ${isSubmitting ? "animate-spin" : "text-[#0066FF]"}`} />
+                      <span>{isSubmitting ? "Submitting Blueprint to CRM..." : "Or Submit Intake Form"}</span>
                     </button>
                   </div>
                 </form>

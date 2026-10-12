@@ -105,7 +105,7 @@ export default async function PortfolioPage() {
 
           <div className="flex flex-wrap items-center justify-center gap-6 pt-2 text-xs sm:text-sm font-mono text-slate-600 dark:text-slate-400">
             <span className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-bold">
-              <CheckCircle2 className="w-4 h-4" /> 100% Source Code Ownership
+              <CheckCircle2 className="w-4 h-4" /> 100% White-Labeled &amp; Your Data
             </span>
             <span className="flex items-center gap-1.5 text-blue-600 dark:text-blue-400 font-bold">
               <ShieldCheck className="w-4 h-4" /> Zero Third-Party Lock-In

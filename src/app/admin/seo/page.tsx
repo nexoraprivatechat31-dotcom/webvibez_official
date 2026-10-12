@@ -20,9 +20,111 @@ import {
   Bot,
   Clock,
   Filter,
+  Plus,
+  Trash2,
+  Copy,
+  Check,
+  Flame,
+  Layers,
+  Lightbulb,
+  Tag,
+  SlidersHorizontal,
 } from "lucide-react";
 import { IndexingAuditReport } from "@/lib/seo-intelligence/indexing-monitor";
 import { GSCSnapshot, GSCRow } from "@/lib/seo-intelligence/types";
+
+export interface SEOTargetOpportunity {
+  keyword: string;
+  category: "Coaching & LMS" | "Mobile Apps" | "Web & Full-Stack" | "Local SEO" | "Custom Software";
+  intent: string;
+  badge: string;
+  badgeColor: string;
+  suggestedPage: string;
+  isCustom?: boolean;
+}
+
+const PRESET_OPPORTUNITIES: SEOTargetOpportunity[] = [
+  {
+    keyword: "Coaching class mobile app development in India 2026",
+    category: "Coaching & LMS",
+    intent: "Commercial Intent",
+    badge: "🔥 Top Buyer Intent",
+    badgeColor: "bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20",
+    suggestedPage: "/services/coaching-class-management-app",
+  },
+  {
+    keyword: "Best white-label coaching institute management app features and cost",
+    category: "Coaching & LMS",
+    intent: "Commercial Investigation",
+    badge: "💰 High Conversion",
+    badgeColor: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20",
+    suggestedPage: "/services/coaching-class-management-app",
+  },
+  {
+    keyword: "Student attendance and automated fee collection app Ahmedabad",
+    category: "Local SEO",
+    intent: "Local Commercial",
+    badge: "📍 Ahmedabad Local #1",
+    badgeColor: "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20",
+    suggestedPage: "/services/coaching-class-management-app",
+  },
+  {
+    keyword: "How coaching institutes can launch their own branded Android iOS app",
+    category: "Coaching & LMS",
+    intent: "Informational to Buyer",
+    badge: "🏆 Rank #1 Snippet Target",
+    badgeColor: "bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/20",
+    suggestedPage: "/how-it-works",
+  },
+  {
+    keyword: "Custom mobile app development company Ahmedabad",
+    category: "Mobile Apps",
+    intent: "Commercial Intent",
+    badge: "🚀 Local Top Agency",
+    badgeColor: "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20",
+    suggestedPage: "/services/mobile-app-development",
+  },
+  {
+    keyword: "Next.js full stack web application development agency India",
+    category: "Web & Full-Stack",
+    intent: "Enterprise Lead",
+    badge: "⚡ Next.js Leader",
+    badgeColor: "bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-500/20",
+    suggestedPage: "/services/website-development",
+  },
+  {
+    keyword: "Custom CRM and ERP software development for coaching institutes",
+    category: "Custom Software",
+    intent: "B2B Enterprise",
+    badge: "🏢 High Ticket Deal",
+    badgeColor: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20",
+    suggestedPage: "/services/custom-software-development",
+  },
+  {
+    keyword: "React Native vs Flutter for coaching institute apps 2026",
+    category: "Mobile Apps",
+    intent: "Technical Comparison",
+    badge: "📊 Tech Authority",
+    badgeColor: "bg-pink-500/10 text-pink-600 dark:text-pink-400 border-pink-500/20",
+    suggestedPage: "/blog",
+  },
+  {
+    keyword: "Automated WhatsApp fee reminders and UPI payment integration for classes",
+    category: "Coaching & LMS",
+    intent: "High Demand Problem",
+    badge: "💬 Direct Conversion",
+    badgeColor: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20",
+    suggestedPage: "/services/coaching-class-management-app",
+  },
+  {
+    keyword: "Online test series and AI question bank app development cost in India",
+    category: "Coaching & LMS",
+    intent: "Buyer Investigation",
+    badge: "🤖 EdTech AI Trending",
+    badgeColor: "bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/20",
+    suggestedPage: "/services/coaching-class-management-app",
+  },
+];
 
 export default function SEOPage() {
   const [activeTab, setActiveTab] = useState<"audit" | "inspector" | "analytics">("audit");
@@ -44,6 +146,12 @@ export default function SEOPage() {
   const [isDeepAuditing, setIsDeepAuditing] = useState(false);
   const [generatingDraftQuery, setGeneratingDraftQuery] = useState<string | null>(null);
   const [customDraftQuery, setCustomDraftQuery] = useState("");
+  const [filterNoise, setFilterNoise] = useState(true);
+  const [targetCategoryFilter, setTargetCategoryFilter] = useState<string>("all");
+  const [newTargetInput, setNewTargetInput] = useState("");
+  const [newTargetCategory, setNewTargetCategory] = useState<SEOTargetOpportunity["category"]>("Coaching & LMS");
+  const [customTargets, setCustomTargets] = useState<SEOTargetOpportunity[]>([]);
+  const [copiedKeyword, setCopiedKeyword] = useState<string | null>(null);
 
   const runAudit = async () => {
     setIsAuditing(true);
@@ -211,9 +319,74 @@ export default function SEOPage() {
   useEffect(() => {
     runAudit();
     loadGscAnalytics();
+
+    try {
+      const saved = localStorage.getItem("webvibez_seo_custom_targets");
+      if (saved) {
+        setCustomTargets(JSON.parse(saved));
+      }
+    } catch (e) {
+      console.error("Failed to load custom targets:", e);
+    }
   }, []);
 
+  const handleAddCustomTarget = (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    if (!newTargetInput.trim()) return;
+
+    const newItem: SEOTargetOpportunity = {
+      keyword: newTargetInput.trim(),
+      category: newTargetCategory,
+      intent: "High Commercial Intent",
+      badge: "⭐ Custom Target",
+      badgeColor: "bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/20",
+      suggestedPage: "/services",
+      isCustom: true,
+    };
+
+    const updated = [newItem, ...customTargets];
+    setCustomTargets(updated);
+    try {
+      localStorage.setItem("webvibez_seo_custom_targets", JSON.stringify(updated));
+    } catch (e) {}
+    setNewTargetInput("");
+  };
+
+  const handleRemoveCustomTarget = (kw: string) => {
+    const updated = customTargets.filter((t) => t.keyword !== kw);
+    setCustomTargets(updated);
+    try {
+      localStorage.setItem("webvibez_seo_custom_targets", JSON.stringify(updated));
+    } catch (e) {}
+  };
+
+  const handleCopyKeyword = (kw: string) => {
+    navigator.clipboard.writeText(kw);
+    setCopiedKeyword(kw);
+    setTimeout(() => setCopiedKeyword(null), 2000);
+  };
+
+  const cleanGscQuery = (q: string) => {
+    return q
+      .replace(/-site:\S+/gi, "")
+      .replace(/site:\S+/gi, "")
+      .replace(/inurl:\S+/gi, "")
+      .replace(/["']/g, "")
+      .replace(/\s+/g, " ")
+      .trim();
+  };
+
+  const allOpportunities = [...customTargets, ...PRESET_OPPORTUNITIES];
+  const displayedOpportunities = allOpportunities.filter((item) => {
+    if (targetCategoryFilter === "all") return true;
+    if (targetCategoryFilter === "custom") return item.isCustom;
+    return item.category === targetCategoryFilter;
+  });
+
   const filteredQueries = (gscSnapshot?.rows || []).filter((r) => {
+    if (filterNoise && (r.query.includes("-site:") || r.query.includes("k8s-prod") || r.query.length > 80)) {
+      return false;
+    }
     if (queryFilter === "striking") return r.position >= 4 && r.position <= 20;
     if (queryFilter === "low_ctr") return r.impressions > 2000 && r.ctr < 0.025;
     return true;
@@ -661,9 +834,9 @@ export default function SEOPage() {
 
       {/* ── TAB 3: KEYWORD INTELLIGENCE & STRIKING DISTANCE ── */}
       {activeTab === "analytics" && (
-        <div className="space-y-6">
-          {/* Custom Query 1-Click AI Content Generator */}
-          <div className="bg-gradient-to-r from-blue-600/10 via-indigo-600/10 to-purple-600/10 dark:from-blue-950/40 dark:via-indigo-950/40 dark:to-purple-950/40 border border-blue-500/20 rounded-3xl p-6">
+        <div className="space-y-8">
+          {/* 1. Custom Query 1-Click AI Content Generator */}
+          <div className="bg-gradient-to-r from-blue-600/10 via-indigo-600/10 to-purple-600/10 dark:from-blue-950/40 dark:via-indigo-950/40 dark:to-purple-950/40 border border-blue-500/20 rounded-3xl p-6 shadow-sm">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
               <div>
                 <div className="flex items-center gap-2 mb-1">
@@ -700,18 +873,181 @@ export default function SEOPage() {
             </div>
           </div>
 
+          {/* 2. 🔥 HIGH-RANK SEO TARGET KEYWORD OPPORTUNITIES (CURATED + CUSTOM) */}
+          <div className="bg-white dark:bg-slate-900/40 backdrop-blur-2xl p-6 sm:p-7 rounded-3xl border border-slate-200 dark:border-slate-800/80 shadow-sm space-y-6">
+            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-slate-100 dark:border-slate-800/60 pb-5">
+              <div>
+                <div className="flex items-center gap-2 mb-1.5">
+                  <span className="px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 font-mono text-[11px] font-bold uppercase flex items-center gap-1 border border-amber-500/20">
+                    <Flame className="w-3.5 h-3.5" /> Google Rank #1 Strategy
+                  </span>
+                  <span className="text-xs font-mono text-slate-400">
+                    {displayedOpportunities.length} Available Target Keywords
+                  </span>
+                </div>
+                <h3 className="text-xl font-extrabold text-slate-900 dark:text-white font-display">
+                  Target Search Opportunities Hub
+                </h3>
+                <p className="text-xs text-slate-500 mt-1">
+                  High-intent keyword opportunities tailored to get clients for coaching class apps, custom software, and Ahmedabad local SEO.
+                </p>
+              </div>
+
+              {/* Add Custom Target Keyword Form */}
+              <form onSubmit={handleAddCustomTarget} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+                <input
+                  type="text"
+                  value={newTargetInput}
+                  onChange={(e) => setNewTargetInput(e.target.value)}
+                  placeholder="Add new target keyword to rank..."
+                  className="px-3.5 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#0066FF] min-w-[220px]"
+                />
+                <select
+                  value={newTargetCategory}
+                  onChange={(e) => setNewTargetCategory(e.target.value as any)}
+                  className="px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs text-slate-700 dark:text-slate-300 focus:outline-none"
+                >
+                  <option value="Coaching & LMS">Coaching & LMS</option>
+                  <option value="Mobile Apps">Mobile Apps</option>
+                  <option value="Web & Full-Stack">Web & Full-Stack</option>
+                  <option value="Local SEO">Local SEO</option>
+                  <option value="Custom Software">Custom Software</option>
+                </select>
+                <button
+                  type="submit"
+                  disabled={!newTargetInput.trim()}
+                  className="px-4 py-2 bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-200 text-white dark:text-slate-900 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 transition-all disabled:opacity-50 cursor-pointer shadow-sm"
+                >
+                  <Plus className="w-3.5 h-3.5" />
+                  <span>Add Target</span>
+                </button>
+              </form>
+            </div>
+
+            {/* Category Filter Pills */}
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-xs text-slate-400 font-semibold flex items-center gap-1 mr-1">
+                <Layers className="w-3.5 h-3.5" /> Categories:
+              </span>
+              {[
+                { id: "all", label: `All Targets (${allOpportunities.length})` },
+                { id: "Coaching & LMS", label: "Coaching & LMS" },
+                { id: "Mobile Apps", label: "Mobile Apps" },
+                { id: "Web & Full-Stack", label: "Web & Full-Stack" },
+                { id: "Local SEO", label: "Ahmedabad Local SEO" },
+                { id: "Custom Software", label: "Custom Software" },
+                { id: "custom", label: `My Custom (${customTargets.length})` },
+              ].map((c) => (
+                <button
+                  key={c.id}
+                  onClick={() => setTargetCategoryFilter(c.id)}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                    targetCategoryFilter === c.id
+                      ? "bg-[#0066FF] text-white shadow-sm"
+                      : "bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-400 hover:bg-slate-200"
+                  }`}
+                >
+                  {c.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Opportunities Cards Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+              {displayedOpportunities.map((op) => {
+                const isDrafting = generatingDraftQuery === op.keyword;
+                return (
+                  <div
+                    key={op.keyword}
+                    className="p-4 rounded-2xl bg-slate-50/80 dark:bg-slate-950/60 border border-slate-200/80 dark:border-slate-800/80 hover:border-blue-500/40 transition-all flex flex-col justify-between gap-3 group"
+                  >
+                    <div>
+                      <div className="flex items-center justify-between gap-2 mb-2">
+                        <span className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-bold text-[10px] border ${op.badgeColor}`}>
+                          {op.badge}
+                        </span>
+                        <span className="text-[10px] font-mono text-slate-400 uppercase">
+                          {op.category}
+                        </span>
+                      </div>
+                      <h5 className="font-semibold text-slate-900 dark:text-white text-sm group-hover:text-[#0066FF] transition-colors">
+                        {op.keyword}
+                      </h5>
+                      <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1 flex items-center gap-1">
+                        <Target className="w-3 h-3 text-blue-500" />
+                        Target Page: <span className="font-mono text-blue-600 dark:text-blue-400">{op.suggestedPage}</span>
+                      </p>
+                    </div>
+
+                    <div className="flex items-center justify-between gap-2 pt-2 border-t border-slate-200/50 dark:border-slate-800/50">
+                      <div className="flex items-center gap-1.5">
+                        <button
+                          onClick={() => handleCopyKeyword(op.keyword)}
+                          className="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors"
+                          title="Copy keyword"
+                        >
+                          {copiedKeyword === op.keyword ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5" />}
+                        </button>
+                        <button
+                          onClick={() => setCustomDraftQuery(op.keyword)}
+                          className="px-2 py-1 rounded-lg text-[11px] font-medium text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors"
+                          title="Insert into top prompt box"
+                        >
+                          ✏️ Insert
+                        </button>
+                        {op.isCustom && (
+                          <button
+                            onClick={() => handleRemoveCustomTarget(op.keyword)}
+                            className="p-1.5 rounded-lg text-rose-400 hover:text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/40 transition-colors"
+                            title="Remove custom target"
+                          >
+                            <Trash2 className="w-3.5 h-3.5" />
+                          </button>
+                        )}
+                      </div>
+
+                      <button
+                        onClick={() => handleGenerateDraft(op.keyword)}
+                        disabled={Boolean(generatingDraftQuery)}
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold text-xs shadow-sm shadow-blue-500/20 active:scale-95 disabled:opacity-50 cursor-pointer transition-all"
+                      >
+                        <Zap className={`w-3 h-3 ${isDrafting ? "animate-spin" : ""}`} />
+                        {isDrafting ? "Drafting..." : "⚡ 1-Click Draft"}
+                      </button>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* 3. Search Performance & Live GSC Query Intelligence */}
           <div className="bg-white dark:bg-slate-900/40 backdrop-blur-2xl p-6 rounded-3xl border border-slate-200 dark:border-slate-800/80 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
               <h3 className="text-xl font-extrabold text-slate-900 dark:text-white font-display">
                 Search Performance & Query Intelligence
               </h3>
               <p className="text-xs text-slate-500 mt-1">
-                Real queries driving impressions & clicks to WebVibez services and blog articles.
+                Live Google Search Console queries driving organic impressions and ranking positions.
               </p>
             </div>
 
-            <div className="flex items-center gap-2">
-              <span className="text-xs text-slate-400 font-semibold flex items-center gap-1">
+            <div className="flex flex-wrap items-center gap-2">
+              {/* Noise cleaner toggle */}
+              <button
+                onClick={() => setFilterNoise(!filterNoise)}
+                className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 border cursor-pointer ${
+                  filterNoise
+                    ? "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20"
+                    : "bg-slate-100 dark:bg-slate-800 text-slate-600 border-slate-200 dark:border-slate-700"
+                }`}
+                title="Filter out automated site scraper queries (-site: operators)"
+              >
+                <SlidersHorizontal className="w-3.5 h-3.5" />
+                <span>{filterNoise ? "Clean Mode (No Scraper Noise)" : "Raw Mode (All Queries)"}</span>
+              </button>
+
+              <span className="text-xs text-slate-400 font-semibold flex items-center gap-1 ml-1">
                 <Filter className="w-3.5 h-3.5" /> Filter:
               </span>
               {[
@@ -752,11 +1088,19 @@ export default function SEOPage() {
                     filteredQueries.map((q) => {
                       const isStriking = q.position >= 4 && q.position <= 20;
                       const isLowCtr = q.impressions > 2000 && q.ctr < 0.025;
+                      const cleanedQuery = cleanGscQuery(q.query);
 
                       return (
                         <tr key={q.query} className="hover:bg-slate-50/80 dark:hover:bg-slate-800/40 transition-colors">
                           <td className="py-3.5 px-6 font-semibold text-slate-900 dark:text-white">
-                            <div className="font-sans font-bold text-slate-900 dark:text-white">{q.query}</div>
+                            <div className="font-sans font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
+                              <span>{cleanedQuery || q.query}</span>
+                              {cleanedQuery !== q.query && (
+                                <span className="px-1.5 py-0.2 rounded bg-slate-100 dark:bg-slate-800 text-[10px] text-slate-400 font-mono">
+                                  cleaned
+                                </span>
+                              )}
+                            </div>
                             <div className="text-[11px] text-slate-400 font-mono truncate max-w-sm">{q.page}</div>
                           </td>
                           <td className="py-3.5 px-4 text-center font-bold text-emerald-600 dark:text-emerald-400">
@@ -795,13 +1139,13 @@ export default function SEOPage() {
                                 </span>
                               )}
                               <button
-                                onClick={() => handleGenerateDraft(q.query)}
-                                disabled={generatingDraftQuery === q.query}
+                                onClick={() => handleGenerateDraft(cleanedQuery || q.query)}
+                                disabled={generatingDraftQuery === (cleanedQuery || q.query)}
                                 className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#0066FF] hover:bg-[#0052cc] text-white text-[11px] font-bold transition-all shadow-sm active:scale-95 disabled:opacity-50 cursor-pointer"
                                 title="Draft an AI article for this keyword"
                               >
-                                <Zap className={`w-3 h-3 ${generatingDraftQuery === q.query ? "animate-spin" : ""}`} />
-                                {generatingDraftQuery === q.query ? "Drafting..." : "⚡ AI Draft"}
+                                <Zap className={`w-3 h-3 ${generatingDraftQuery === (cleanedQuery || q.query) ? "animate-spin" : ""}`} />
+                                {generatingDraftQuery === (cleanedQuery || q.query) ? "Drafting..." : "⚡ AI Draft"}
                               </button>
                             </div>
                           </td>

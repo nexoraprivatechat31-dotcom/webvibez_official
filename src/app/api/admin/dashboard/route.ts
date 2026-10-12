@@ -47,7 +47,7 @@ export async function GET() {
     });
     
     // Recent Leads for Activity Feed
-    const recentLeads = await client.execute("SELECT id, name, service, created_at FROM leads ORDER BY created_at DESC LIMIT 4");
+    const recentLeads = await client.execute("SELECT id, name, project_type, created_at FROM leads ORDER BY created_at DESC LIMIT 4");
 
     const stats = {
       totalLeads: leadsCount.rows[0]?.count || 0,
@@ -61,7 +61,7 @@ export async function GET() {
     const activityFeed = recentLeads.rows.map((lead: any) => ({
       name: lead.name,
       action: "submitted a new inquiry for",
-      target: lead.service || "General Inquiry",
+      target: lead.project_type || "General Inquiry",
       time: lead.created_at,
       type: "lead"
     }));

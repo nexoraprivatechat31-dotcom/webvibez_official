@@ -23,7 +23,7 @@ const FAQ_DATA: FAQItem[] = [
   },
   {
     q: "How does the 1-Year Mobile App Rental / Subscription model work?",
-    a: "Instead of paying huge upfront development costs (₹1.5L – ₹3L), businesses can rent ready-made white-label iOS and Android mobile apps for a predictable 1-year subscription fee. This package includes custom branding, Google Play Store publishing, cloud server hosting, automated backups, and 24/7 technical support.",
+    a: "Instead of paying huge upfront development costs (₹1.5L – ₹3L), businesses can rent ready-made white-label iOS and Android mobile apps for a predictable 1-year subscription fee. This package includes custom branding, Google Play Store publishing, cloud server hosting, automated backups, and priority technical support.",
     keywords: ["mobile app development company ahmedabad", "app on rent", "educational app development services"],
   },
   {

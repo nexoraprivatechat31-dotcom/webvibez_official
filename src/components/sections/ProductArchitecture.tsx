@@ -103,7 +103,7 @@ export default function ProductArchitecture({ onOpenConsultation }: ProductArchi
           <div className="flex items-center gap-3 bg-emerald-500/10 border border-emerald-500/25 px-4 py-2 rounded-xl w-fit">
             <Activity className="w-4 h-4 text-emerald-500 animate-pulse" />
             <span className="text-xs font-mono font-semibold text-emerald-600 dark:text-emerald-400">
-              System Health: 99.98% High Availability
+              System Health: 99.9% High Availability
             </span>
           </div>
         </div>

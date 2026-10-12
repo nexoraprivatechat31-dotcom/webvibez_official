@@ -203,13 +203,13 @@ export default function HowItWorksPage() {
         "Live 90-minute Zoom workshop training your teachers and reception staff",
         "Student onboarding guide & video tutorials formatted with your logo",
         "Official launch broadcast notification sent to all enrolled students",
-        "Handoff to 24/7 dedicated engineering support with guaranteed SLA",
+        "Handoff to priority engineering support with defined SLA response times",
       ],
       deliverableDetails: [
         { label: "Faculty Clinic", value: "90-Min Hands-On Live Training" },
         { label: "Student Guide", value: "Branded PDF & Video Manuals" },
         { label: "Broadcast", value: "WhatsApp & SMS Announcement Sent" },
-        { label: "SLA Support", value: "24/7 Dedicated Architect Hotline" },
+        { label: "SLA Support", value: "Priority Architect Support Channel" },
       ],
     },
   ];
@@ -716,10 +716,10 @@ export default function HowItWorksPage() {
               <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5" />
             </div>
             <h3 className="text-sm sm:text-base font-bold font-display text-slate-900 dark:text-white">
-              100% On-Time Delivery Guarantee
+              7-Day Sprint Delivery Commitment
             </h3>
             <p className="text-xs text-slate-600 dark:text-slate-400 font-sans leading-relaxed">
-              Industrialized release pipelines ensure your platform launches in 7 days or we credit back your deployment fee.
+              Industrialized release pipelines structured to ensure your platform build is ready in 7 business days with transparent progress tracking.
             </p>
           </div>
 
