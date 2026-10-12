@@ -297,6 +297,7 @@ const jsonLdGlobal = {
         ],
       },
       sameAs: [
+        "https://play.google.com/store/apps/details?id=com.webvibez.classes",
         "https://www.linkedin.com/company/webvibez-software-devlopers/",
         "https://in.linkedin.com/in/rudram-joshi-963a48332",
         "https://github.com/webvibez",
@@ -470,12 +471,24 @@ const jsonLdGlobal = {
         {
           "@type": "SiteNavigationElement",
           position: 5,
+          name: "Portfolio & Verified Work",
+          url: "https://www.webvibez.com/portfolio",
+        },
+        {
+          "@type": "SiteNavigationElement",
+          position: 6,
+          name: "Products & White-Label Software",
+          url: "https://www.webvibez.com/product",
+        },
+        {
+          "@type": "SiteNavigationElement",
+          position: 7,
           name: "Pricing & Calculator",
           url: "https://www.webvibez.com/pricing",
         },
         {
           "@type": "SiteNavigationElement",
-          position: 6,
+          position: 8,
           name: "Contact & Consultation",
           url: "https://www.webvibez.com/contact",
         },

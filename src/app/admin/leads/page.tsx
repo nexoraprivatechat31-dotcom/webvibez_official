@@ -25,6 +25,24 @@ export default function LeadsPipelinePage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
+  const [crmSyncing, setCrmSyncing] = useState(false);
+  const [crmStatusMsg, setCrmStatusMsg] = useState<string | null>(null);
+
+  const handleSyncWithCrm = async () => {
+    try {
+      setCrmSyncing(true);
+      const res = await fetch("/api/admin/crm-sync", { method: "POST" });
+      const data = await res.json();
+      if (data.success) {
+        setCrmStatusMsg(`Synced ${data.syncedCount} leads to Mobile CRM!`);
+        setTimeout(() => setCrmStatusMsg(null), 4000);
+      }
+    } catch (err) {
+      console.error("CRM Sync error:", err);
+    } finally {
+      setCrmSyncing(false);
+    }
+  };
 
   useEffect(() => {
     fetchLeads();
@@ -87,7 +105,24 @@ export default function LeadsPipelinePage() {
           <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white font-display tracking-tight">Sales Pipeline</h2>
           <p className="text-slate-600 dark:text-slate-400 mt-1">Drag and drop leads through the conversion funnel.</p>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 flex-wrap">
+          {crmStatusMsg && (
+            <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 px-2.5 py-1 rounded-lg border border-emerald-500/20">
+              {crmStatusMsg}
+            </span>
+          )}
+          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-xs font-bold">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span>Mobile CRM Link</span>
+          </div>
+          <button
+            onClick={handleSyncWithCrm}
+            disabled={crmSyncing}
+            className="flex items-center gap-1.5 px-3 py-2 bg-[#0066FF] hover:bg-[#0055D4] text-white rounded-xl text-xs font-bold shadow-md shadow-blue-500/20 active:scale-95 transition-all cursor-pointer disabled:opacity-70"
+          >
+            <Globe className="w-3.5 h-3.5" />
+            <span>{crmSyncing ? "Syncing..." : "Push to CRM"}</span>
+          </button>
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
             <input 

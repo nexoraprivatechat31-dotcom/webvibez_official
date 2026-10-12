@@ -1,4 +1,4 @@
-import { Article } from "../blog/types";
+﻿import { Article } from "../blog/types";
 import { DistributionResult } from "../distribution/types";
 
 export interface TelegramNotificationResult {
@@ -134,12 +134,12 @@ export const TelegramNotifier = {
     const buttonRow2: Array<{ text: string; url: string }> = [];
 
     const platformIcons: Record<string, string> = {
-      DEVTO: "🌐 DEV.to",
-      HASHNODE: "⚡ Hashnode",
-      MEDIUM: "✍️ Medium",
-      TUMBLR: "🔷 Tumblr",
-      BLOGGER: "🅱️ Blogger",
-      NOTION: "📓 Notion",
+      DEVTO: "ðŸŒ DEV.to",
+      HASHNODE: "âš¡ Hashnode",
+      MEDIUM: "âœï¸ Medium",
+      TUMBLR: "ðŸ”· Tumblr",
+      BLOGGER: "ðŸ…±ï¸ Blogger",
+      NOTION: "ðŸ““ Notion",
     };
 
     const isHindi = article.language === "hi";
@@ -148,30 +148,30 @@ export const TelegramNotifier = {
     if (distributionResults && Object.keys(distributionResults).length > 0) {
       const channelLines: string[] = [];
       for (const [plat, res] of Object.entries(distributionResults)) {
-        const platLabel = platformIcons[plat] || `🌐 ${plat}`;
-        const viewLinkText = isHindi ? "लाइव पोस्ट देखें ↗" : "View Live Post ↗";
-        const importLinkText = isHindi ? "ऑफिशियल मीडियम इंपोर्ट ↗" : "Official Import Link ↗";
-        const readOnText = isHindi ? `📖 ${plat} पर पढ़ें` : `📖 Read on ${plat}`;
-        const mediumBtnText = isHindi ? "📖 Medium इंपोर्ट" : "📖 Medium Import";
+        const platLabel = platformIcons[plat] || `ðŸŒ ${plat}`;
+        const viewLinkText = isHindi ? "à¤²à¤¾à¤‡à¤µ à¤ªà¥‹à¤¸à¥à¤Ÿ à¤¦à¥‡à¤–à¥‡à¤‚ â†—" : "View Live Post â†—";
+        const importLinkText = isHindi ? "à¤‘à¤«à¤¿à¤¶à¤¿à¤¯à¤² à¤®à¥€à¤¡à¤¿à¤¯à¤® à¤‡à¤‚à¤ªà¥‹à¤°à¥à¤Ÿ â†—" : "Official Import Link â†—";
+        const readOnText = isHindi ? `ðŸ“– ${plat} à¤ªà¤° à¤ªà¤¢à¤¼à¥‡à¤‚` : `ðŸ“– Read on ${plat}`;
+        const mediumBtnText = isHindi ? "ðŸ“– Medium à¤‡à¤‚à¤ªà¥‹à¤°à¥à¤Ÿ" : "ðŸ“– Medium Import";
 
         if (res.success && res.externalUrl) {
-          channelLines.push(`• <b>${platLabel}:</b> <a href="${res.externalUrl}">${viewLinkText}</a>`);
+          channelLines.push(`â€¢ <b>${platLabel}:</b> <a href="${res.externalUrl}">${viewLinkText}</a>`);
           if (buttonRow1.length < 2) {
             buttonRow1.push({ text: readOnText, url: res.externalUrl });
           } else if (buttonRow2.length < 2) {
             buttonRow2.push({ text: readOnText, url: res.externalUrl });
           }
         } else if (plat === "MEDIUM" && res.manualActionUrl) {
-          channelLines.push(`• <b>${platLabel}:</b> <a href="${res.manualActionUrl}">${importLinkText}</a>`);
+          channelLines.push(`â€¢ <b>${platLabel}:</b> <a href="${res.manualActionUrl}">${importLinkText}</a>`);
           if (buttonRow2.length < 2) {
             buttonRow2.push({ text: mediumBtnText, url: res.manualActionUrl });
           }
         } else if (res.success) {
-          channelLines.push(`• <b>${platLabel}:</b> ✅ ${isHindi ? "सिंक हुआ" : "Synced"}`);
+          channelLines.push(`â€¢ <b>${platLabel}:</b> âœ… ${isHindi ? "à¤¸à¤¿à¤‚à¤• à¤¹à¥à¤†" : "Synced"}`);
         }
       }
       if (channelLines.length > 0) {
-        const channelHeading = isHindi ? "📡 <b>लाइव प्लेटफॉर्म लिंक्स:</b>" : "📡 <b>Live Platform Links:</b>";
+        const channelHeading = isHindi ? "ðŸ“¡ <b>à¤²à¤¾à¤‡à¤µ à¤ªà¥à¤²à¥‡à¤Ÿà¤«à¥‰à¤°à¥à¤® à¤²à¤¿à¤‚à¤•à¥à¤¸:</b>" : "ðŸ“¡ <b>Live Platform Links:</b>";
         syndicatedChannels = `\n\n${channelHeading}\n${channelLines.join("\n")}`;
       }
     }
@@ -182,11 +182,11 @@ export const TelegramNotifier = {
     // Primary Canonical Source Button
     if (!isHindi) {
       inlineButtons.unshift([
-        { text: "🌐 Read on WebVibez (Canonical)", url: `https://www.webvibez.com/blog/${article.slug}` },
+        { text: "ðŸŒ Read on WebVibez (Canonical)", url: `https://www.webvibez.com/blog/${article.slug}` },
       ]);
     }
     
-    const companyBtnText = isHindi ? "🚀 WebVibez सॉफ्टवेयर सॉल्यूशंस" : "🚀 WebVibez Software Solutions";
+    const companyBtnText = isHindi ? "ðŸš€ WebVibez à¤¸à¥‰à¤«à¥à¤Ÿà¤µà¥‡à¤¯à¤° à¤¸à¥‰à¤²à¥à¤¯à¥‚à¤¶à¤‚à¤¸" : "ðŸš€ WebVibez Software Solutions";
     inlineButtons.push([
       { text: companyBtnText, url: "https://www.webvibez.com/services" },
     ]);
@@ -194,48 +194,48 @@ export const TelegramNotifier = {
     let message = "";
 
     const kwBlock = article.primaryKeyword
-      ? `\n🎯 <b>Target Keyword:</b> <code>${article.primaryKeyword}</code>`
+      ? `\nðŸŽ¯ <b>Target Keyword:</b> <code>${article.primaryKeyword}</code>`
       : "";
 
     const seoScoreBlock = article.seoScores
-      ? `\n\n📊 <b>Diagnostic Quality Scores:</b>\n• Content Depth: ${article.seoScores.contentQuality}/100\n• SEO Structure: ${article.seoScores.seoQuality}/100\n• AEO Direct Answer: ${article.seoScores.aeoQuality}/100\n• Technical SEO: ${article.seoScores.technicalSeo}/100\n• Overall Score: <b>${article.seoScores.overall}/100</b>`
+      ? `\n\nðŸ“Š <b>Diagnostic Quality Scores:</b>\nâ€¢ Content Depth: ${article.seoScores.contentQuality}/100\nâ€¢ SEO Structure: ${article.seoScores.seoQuality}/100\nâ€¢ AEO Direct Answer: ${article.seoScores.aeoQuality}/100\nâ€¢ Technical SEO: ${article.seoScores.technicalSeo}/100\nâ€¢ Overall Score: <b>${article.seoScores.overall}/100</b>`
       : "";
 
     if (isHindi) {
       const directAns = article.aeoDirectAnswer
-        ? `\n\n💡 <b>मुख्य सारांश (Direct Answer):</b>\n<i>${article.aeoDirectAnswer.slice(0, 140)}...</i>`
+        ? `\n\nðŸ’¡ <b>à¤®à¥à¤–à¥à¤¯ à¤¸à¤¾à¤°à¤¾à¤‚à¤¶ (Direct Answer):</b>\n<i>${article.aeoDirectAnswer.slice(0, 140)}...</i>`
         : "";
 
       message = `
-🚀 <b>WebVibez नया ब्लॉग प्रकाशित! (09:30 AM IST)</b>
+ðŸš€ <b>WebVibez à¤¨à¤¯à¤¾ à¤¬à¥à¤²à¥‰à¤— à¤ªà¥à¤°à¤•à¤¾à¤¶à¤¿à¤¤! (09:30 AM IST)</b>
 
-📌 <b>शीर्षक:</b> ${article.title}
-🇮🇳 <b>भाषा:</b> हिन्दी (Hindi)
-🏷️ <b>श्रेणी:</b> ${article.category} | ⏱️ ${article.readingTime || "7 मिनट"}${kwBlock}
-👨‍💻 <b>लेखक:</b> ${article.author?.name || "Rudram Joshi"} (WebVibez)
-✉️ <b>ईमेल:</b> webvibezsoftdev@gmail.com
-🌐 <b>कैनोनिकल:</b> ${article.canonicalUrl}
-🕒 <b>समय:</b> ${pubDateIST}${directAns}${seoScoreBlock}${syndicatedChannels}
+ðŸ“Œ <b>à¤¶à¥€à¤°à¥à¤·à¤•:</b> ${article.title}
+ðŸ‡®ðŸ‡³ <b>à¤­à¤¾à¤·à¤¾:</b> à¤¹à¤¿à¤¨à¥à¤¦à¥€ (Hindi)
+ðŸ·ï¸ <b>à¤¶à¥à¤°à¥‡à¤£à¥€:</b> ${article.category} | â±ï¸ ${article.readingTime || "7 à¤®à¤¿à¤¨à¤Ÿ"}${kwBlock}
+ðŸ‘¨â€ðŸ’» <b>à¤²à¥‡à¤–à¤•:</b> ${article.author?.name || "Rudram Joshi"} (WebVibez)
+âœ‰ï¸ <b>à¤ˆà¤®à¥‡à¤²:</b> webvibezsoftdev@gmail.com
+ðŸŒ <b>à¤•à¥ˆà¤¨à¥‹à¤¨à¤¿à¤•à¤²:</b> ${article.canonicalUrl}
+ðŸ•’ <b>à¤¸à¤®à¤¯:</b> ${pubDateIST}${directAns}${seoScoreBlock}${syndicatedChannels}
 
-✅ <i>रियल बैकलिंक्स और कैनोनिकल SEO के साथ ऑटोमैटिक डिस्ट्रीब्यूटेड!</i>
+âœ… <i>à¤°à¤¿à¤¯à¤² à¤¬à¥ˆà¤•à¤²à¤¿à¤‚à¤•à¥à¤¸ à¤”à¤° à¤•à¥ˆà¤¨à¥‹à¤¨à¤¿à¤•à¤² SEO à¤•à¥‡ à¤¸à¤¾à¤¥ à¤‘à¤Ÿà¥‹à¤®à¥ˆà¤Ÿà¤¿à¤• à¤¡à¤¿à¤¸à¥à¤Ÿà¥à¤°à¥€à¤¬à¥à¤¯à¥‚à¤Ÿà¥‡à¤¡!</i>
       `.trim();
     } else {
       const directAns = article.aeoDirectAnswer
-        ? `\n\n💡 <b>Direct Answer:</b>\n<i>${article.aeoDirectAnswer.slice(0, 140)}...</i>`
+        ? `\n\nðŸ’¡ <b>Direct Answer:</b>\n<i>${article.aeoDirectAnswer.slice(0, 140)}...</i>`
         : "";
 
       message = `
-🚀 <b>WebVibez Article Published! (09:30 AM IST)</b>
+ðŸš€ <b>WebVibez Article Published! (09:30 AM IST)</b>
 
-📌 <b>Title:</b> ${article.title}
-🇬🇧 <b>Language:</b> English
-🏷️ <b>Category:</b> ${article.category} | ⏱️ ${article.readingTime || "7 min read"}${kwBlock}
-👨‍💻 <b>Author:</b> ${article.author?.name || "Rudram Joshi"} (Founder & Lead Architect)
-✉️ <b>Email:</b> webvibezsoftdev@gmail.com
-🌐 <b>Canonical:</b> https://www.webvibez.com/blog/${article.slug}
-🕒 <b>Time:</b> ${pubDateIST}${directAns}${seoScoreBlock}${syndicatedChannels}
+ðŸ“Œ <b>Title:</b> ${article.title}
+ðŸ‡¬ðŸ‡§ <b>Language:</b> English
+ðŸ·ï¸ <b>Category:</b> ${article.category} | â±ï¸ ${article.readingTime || "7 min read"}${kwBlock}
+ðŸ‘¨â€ðŸ’» <b>Author:</b> ${article.author?.name || "Rudram Joshi"} (Founder & Lead Architect)
+âœ‰ï¸ <b>Email:</b> webvibezsoftdev@gmail.com
+ðŸŒ <b>Canonical:</b> https://www.webvibez.com/blog/${article.slug}
+ðŸ•’ <b>Time:</b> ${pubDateIST}${directAns}${seoScoreBlock}${syndicatedChannels}
 
-✅ <i>Distributed automatically with real backlinks & canonical SEO!</i>
+âœ… <i>Distributed automatically with real backlinks & canonical SEO!</i>
       `.trim();
     }
 
@@ -255,12 +255,46 @@ export const TelegramNotifier = {
     }).format(new Date());
 
     const message = `
-⚠️ <b>WebVibez Publishing Engine Alert</b>
+âš ï¸ <b>WebVibez Publishing Engine Alert</b>
 
-🕒 <b>Time (IST):</b> ${nowIST}
-📝 <b>Notice:</b> ${warningMessage}
+ðŸ•’ <b>Time (IST):</b> ${nowIST}
+ðŸ“ <b>Notice:</b> ${warningMessage}
 
-🛡️ <i>Anti-spam quality gate prevented publishing low-quality filler.</i>
+ðŸ›¡ï¸ <i>Anti-spam quality gate prevented publishing low-quality filler.</i>
+    `.trim();
+
+    return this.sendMessage(message);
+  },
+  async sendLeadAlert(lead: {
+    name: string;
+    phone: string;
+    email?: string;
+    organization?: string;
+    solutionType?: string;
+    studentVolume?: string;
+    timeline?: string;
+    message?: string;
+  }): Promise<TelegramNotificationResult> {
+    const nowIST = new Intl.DateTimeFormat("en-IN", {
+      timeZone: "Asia/Kolkata",
+      dateStyle: "medium",
+      timeStyle: "short",
+    }).format(new Date());
+
+    const message = `
+🚀 <b>NEW CLIENT INQUIRY RECEIVED! (webvibez.com)</b>
+
+🏢 <b>Organization:</b> ${lead.organization || "Direct Prospect"}
+👤 <b>Contact Person:</b> ${lead.name}
+📞 <b>Phone:</b> <code>${lead.phone}</code>
+✉️ <b>Email:</b> ${lead.email || "N/A"}
+🛠️ <b>Solution:</b> ${lead.solutionType || "Mobile App + ERP"}
+👥 <b>Volume:</b> ${lead.studentVolume || "N/A"}
+⏱️ <b>Timeline:</b> ${lead.timeline || "7-Day Fast Track"}
+💬 <b>Message:</b> <i>${lead.message || "No custom note"}</i>
+
+🕒 <b>Received At:</b> ${nowIST}
+📲 <i>Lead automatically synced to WebVibez Mobile CRM!</i>
     `.trim();
 
     return this.sendMessage(message);
