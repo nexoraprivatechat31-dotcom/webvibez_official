@@ -23,56 +23,50 @@ export const revalidate = 60; // Incremental static regeneration
 
 const DEFAULT_PROJECTS = [
   {
-    id: "zenith-coaching-erp",
-    title: "Zenith Coaching Academy — Full-Stack Institute ERP & Mobile App",
-    slug: "zenith-coaching-erp",
-    type: "EdTech & Mobile Apps",
-    tech_stack: "React Native, Next.js, Node.js, PostgreSQL, Razorpay, WhatsApp Cloud API",
+    id: "webvibez-classes-app",
+    title: "WebVibez Software Devloper — Coaching Institute Management Application",
+    slug: "webvibez-classes-app",
+    type: "Mobile Application (Android & iOS)",
+    tech_stack: "React Native, Android, Node.js, Cloud Firestore, Real-Time Push Notifications",
     description:
-      "A complete white-labeled coaching management ecosystem designed for 1,200+ enrolled students. Features real-time biometric and QR attendance syncing, automated WhatsApp fee collection reminders with direct UPI payment links, mock test percentile rankings, and parent notifications.",
-    image_url: "/mobile-images/phone-mockup.png",
-    live_url: "/product",
-    metrics: ["1,200+ Active Students", "98% On-Time Fee Collection", "0.4s Attendance Scan"],
+      "Official coaching & tuition management mobile application engineered and published on Google Play Store by WebVibez Software Developer (Package: com.webvibez.classes). A complete white-labeled institute management platform featuring digital attendance, batch schedules, lecture notes library, test announcements, fee tracking, and real-time parent-teacher communications.",
+    image_url: "/mobile-images/home.jpeg",
+    screenshots: [
+      "/mobile-images/home.jpeg",
+      "/mobile-images/chat.jpeg",
+      "/mobile-images/profile.jpeg",
+    ],
+    live_url: "https://play.google.com/store/apps/details?id=com.webvibez.classes",
+    metrics: [
+      "Live on Google Play Store",
+      "Package: com.webvibez.classes",
+      "100% White-Labeled Demo",
+    ],
+    cta_label: "View on Google Play Store",
     featured: true,
   },
   {
-    id: "nexora-telehealth",
-    title: "Nexora Health — Enterprise Telemedicine & Patient EMR",
-    slug: "nexora-telehealth",
-    type: "Healthcare SaaS",
-    tech_stack: "Next.js 15, WebRTC, Tailwind CSS, Turso SQLite, HIPAA Cryptography",
+    id: "enzochat-web-platform",
+    title: "EnzoChat — Enterprise Encrypted Private Messaging Web Platform",
+    slug: "enzochat-web-platform",
+    type: "Web Application & Protocol",
+    tech_stack: "Next.js, Fastify, WebSockets, Zustand, AES-256-GCM, TypeScript, Tailwind CSS",
     description:
-      "High-security healthcare management platform with encrypted video consultations, digital prescription signing, patient appointment booking calendar, and laboratory test result tracking. Compliant with international medical privacy standards.",
-    image_url: "/images/og-image.jpeg",
-    live_url: "https://www.webvibez.com",
-    metrics: ["Sub-80ms WebRTC Latency", "100% HIPAA Ready", "50+ Doctor Clinics"],
+      "Production encrypted private chat web platform engineered by WebVibez Software Developer. Built with zero-knowledge end-to-end encryption, real-time sub-50ms WebSocket tunneling, ephemeral payloads, blind relay servers, and a responsive modern web interface.",
+    image_url: "/images/enzochat-desktop.png",
+    screenshots: [
+      "/images/enzochat-desktop.png",
+      "/images/enzochat-features.png",
+      "/images/enzochat-mobile.png",
+    ],
+    live_url: "https://enzochat.webvibez.com",
+    metrics: [
+      "Live on enzochat.webvibez.com",
+      "Sub-50ms WebSocket Latency",
+      "AES-256-GCM Zero-Knowledge",
+    ],
+    cta_label: "Visit Live Web Platform",
     featured: true,
-  },
-  {
-    id: "hyperfleet-telematics",
-    title: "HyperFleet — Real-Time IoT Fleet Telematics & Logistics Dashboard",
-    slug: "hyperfleet-telematics",
-    type: "IoT & Cloud Software",
-    tech_stack: "React, WebSockets, Go Microservices, Leaflet GIS, TimescaleDB",
-    description:
-      "Telemetry dispatch platform tracking 350+ commercial freight trucks across western India in real time. Provides fuel theft alerts, automated geo-fencing route optimization, driver trip logging, and vehicle maintenance predictive analytics.",
-    image_url: "/og-image.jpeg",
-    live_url: "https://www.webvibez.com",
-    metrics: ["350+ Commercial Trucks", "15-sec GPS Ping Rate", "14% Fuel Savings"],
-    featured: true,
-  },
-  {
-    id: "apex-capital-fintech",
-    title: "Apex Capital — Multi-Tenant Investment & Payout Portal",
-    slug: "apex-capital-fintech",
-    type: "FinTech & Payments",
-    tech_stack: "Next.js, TypeScript, Stripe, Razorpay Route, Redis, Docker",
-    description:
-      "Multi-tenant corporate treasury and dividend disbursement portal automating payout batches for private equity investors. Features 2-factor hardware auth, bank-grade webhook reconciliation, and automated tax statement generation.",
-    image_url: "/images/square-image.jpg",
-    live_url: "https://www.webvibez.com",
-    metrics: ["₹4.2 Cr Disbursed", "Zero Payout Failures", "Bank-Grade Encryption"],
-    featured: false,
   },
 ];
 
@@ -106,7 +100,7 @@ export default async function PortfolioPage() {
           </h1>
 
           <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 font-sans max-w-2xl mx-auto leading-relaxed">
-            Explore verified engineering projects engineered by WebVibez Software Developer. From white-labeled coaching institute mobile apps to real-time telemetry and enterprise cloud platforms.
+            Explore verified engineering projects engineered by WebVibez Software Developer. From white-labeled coaching institute mobile apps on Google Play Store to high-security encrypted web platforms.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-6 pt-2 text-xs sm:text-sm font-mono text-slate-600 dark:text-slate-400">
@@ -177,8 +171,33 @@ export default async function PortfolioPage() {
                       {project.description}
                     </p>
 
+                    {/* Verified Screenshots Preview */}
+                    {project.screenshots && project.screenshots.length > 0 && (
+                      <div className="pt-1 space-y-2">
+                        <div className="text-[10.5px] uppercase font-mono text-slate-400 tracking-wider">
+                          Verified Screenshots &amp; UI Preview:
+                        </div>
+                        <div className="grid grid-cols-3 gap-2">
+                          {project.screenshots.map((ss: string, sIdx: number) => (
+                            <div
+                              key={sIdx}
+                              className="relative aspect-video rounded-xl overflow-hidden border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-slate-900 group/img"
+                            >
+                              <Image
+                                src={ss}
+                                alt={`${project.title} screenshot ${sIdx + 1}`}
+                                fill
+                                sizes="(max-width: 768px) 33vw, 20vw"
+                                className="object-cover object-top hover:scale-105 transition-transform duration-300"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
                     {/* Impact / Metric Pills */}
-                    <div className="grid grid-cols-3 gap-2.5 pt-2">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-2">
                       {metrics.map((metric: string, mIdx: number) => (
                         <div
                           key={mIdx}
@@ -210,20 +229,32 @@ export default async function PortfolioPage() {
                   </div>
 
                   {/* Card Bottom Action */}
-                  <div className="pt-6 mt-6 border-t border-slate-100 dark:border-white/10 flex items-center justify-between">
-                    <Link
-                      href={project.live_url || "/contact"}
-                      className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold font-display text-[#0066FF] dark:text-[#38BDF8] group-hover:translate-x-1 transition-transform"
-                    >
-                      <span>Explore Architecture &amp; System Specs</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
+                  <div className="pt-6 mt-6 border-t border-slate-100 dark:border-white/10 flex flex-wrap items-center justify-between gap-3">
+                    {project.live_url?.startsWith("http") ? (
+                      <a
+                        href={project.live_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold font-display text-[#0066FF] dark:text-[#38BDF8] group-hover:translate-x-1 transition-transform"
+                      >
+                        <span>{project.cta_label || "Explore Live Platform"}</span>
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
+                    ) : (
+                      <Link
+                        href={project.live_url || "/contact"}
+                        className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold font-display text-[#0066FF] dark:text-[#38BDF8] group-hover:translate-x-1 transition-transform"
+                      >
+                        <span>Explore Architecture &amp; System Specs</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    )}
 
                     <Link
                       href="/contact"
                       className="px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-white/[0.06] dark:hover:bg-white/[0.12] text-xs font-mono text-slate-800 dark:text-slate-200 transition-colors"
                     >
-                      Request Demo
+                      Request Consultation
                     </Link>
                   </div>
                 </div>

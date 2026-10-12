@@ -92,6 +92,12 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  other: {
+    "geo.region": "IN-GJ",
+    "geo.placename": "Ahmedabad",
+    "geo.position": "23.0225;72.5714",
+    "ICBM": "23.0225, 72.5714",
+  },
   keywords: [
     // 1. Primary Brand Variations
     "webvibez",
@@ -160,7 +166,7 @@ const jsonLdGlobal = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": ["Organization", "SoftwareApplication", "ProfessionalService"],
+      "@type": ["Organization", "ProfessionalService"],
       "@id": "https://www.webvibez.com/#organization",
       name: "WebVibez Software Developer",
       alternateName: [
@@ -175,17 +181,20 @@ const jsonLdGlobal = {
       logo: "https://www.webvibez.com/favicon.png",
       image: "https://www.webvibez.com/logo.jpeg",
       description:
-        "WebVibez Software Developer is a premier software development company in Ahmedabad, Gujarat, India. We build custom web applications, React Native mobile apps, institute management platforms, and enterprise cloud software solutions.",
+        "WebVibez Software Developer is a premier custom software development company in Ahmedabad, Gujarat, India. WebVibez engineers high-performance web applications, React Native mobile apps (iOS & Android), coaching institute management software, and enterprise cloud solutions.",
       founder: {
         "@type": "Person",
         "@id": "https://www.webvibez.com/#founder",
         name: "Rudram Joshi",
-        jobTitle: "Founder & Lead Developer",
+        jobTitle: "Founder & Lead Software Engineer",
         image: "https://www.webvibez.com/images/square-image.jpg",
         url: "https://www.webvibez.com/about",
         sameAs: [
           "https://wa.me/919213615531",
+          "https://in.linkedin.com/in/rudram-joshi-963a48332",
           "https://github.com/webvibez",
+          "https://dev.to/rudram_joshi",
+          "https://x.com/Rudram9524",
         ],
       },
       telephone: "+91-92136-15531",
@@ -219,17 +228,12 @@ const jsonLdGlobal = {
         "React Native",
         "Next.js",
         "Coaching Management Software",
+        "Institute Management Systems",
         "Enterprise ERP Software",
+        "AI Solutions and Automation",
         "Full Stack Development",
         "Cloud Computing",
       ],
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: "4.9",
-        reviewCount: "148",
-        bestRating: "5",
-        worstRating: "1",
-      },
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: "Software Development Services",
@@ -239,42 +243,105 @@ const jsonLdGlobal = {
             itemOffered: {
               "@type": "Service",
               name: "Custom Software Development",
-              description: "Tailored software development for business automation, ERP, and cloud platforms.",
+              description: "Tailored software development for business automation, custom ERP systems, and cloud architectures.",
             },
           },
           {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "Mobile App Development",
-              description: "High performance iOS and Android mobile app development with React Native.",
+              name: "Mobile Application Development",
+              description: "Native-performance iOS and Android mobile app development using React Native with offline sync.",
             },
           },
           {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "Website Development",
-              description: "Modern, ultra-fast custom website development using Next.js and Tailwind CSS.",
+              name: "Website & Web Application Development",
+              description: "Ultra-fast custom web applications engineered with Next.js, TypeScript, and modern responsive design.",
             },
           },
           {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "Coaching Class Management Software",
-              description: "100% white-labeled mobile app and management software for coaching institutes.",
+              name: "Coaching Institute Management Software",
+              description: "100% white-labeled mobile app and ERP software for tuition classes and coaching institutes with attendance, test results, and automated fee collection.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "AI Solutions & Business Automation",
+              description: "Automated business workflows, intelligent bots, and LLM-powered integrations.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "UI/UX Design & Prototyping",
+              description: "Modern, high-conversion UI/UX interface design and dynamic digital design systems.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "API Development & Backend Integration",
+              description: "Scalable REST & WebSocket backend services with robust database architecture.",
             },
           },
         ],
       },
       sameAs: [
         "https://www.linkedin.com/company/webvibez-software-devlopers/",
+        "https://in.linkedin.com/in/rudram-joshi-963a48332",
+        "https://github.com/webvibez",
+        "https://dev.to/rudram_joshi",
+        "https://goodfirms.co/company/webvibez-software-developer",
         "https://www.instagram.com/webvibez_softdev?stkn=amd6a3B4MDF4bzJy",
         "https://x.com/Rudram9524",
         "https://www.facebook.com/share/19k7jWKD2H/",
-        "https://github.com/webvibez",
       ],
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://www.webvibez.com/#webvibez-classes-app",
+      name: "WebVibez Software Devloper Coaching Application",
+      operatingSystem: "Android, iOS",
+      applicationCategory: "EducationalApplication, BusinessApplication",
+      description: "Official white-label coaching institute management mobile application engineered and published on Google Play Store by WebVibez Software Developer (Package: com.webvibez.classes).",
+      author: {
+        "@id": "https://www.webvibez.com/#organization",
+      },
+      installUrl: "https://play.google.com/store/apps/details?id=com.webvibez.classes",
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "INR",
+        description: "Official demo and white-label custom license with 100% source code ownership.",
+      },
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://www.webvibez.com/#enzochat-platform",
+      name: "EnzoChat — Encrypted Private Messaging Platform",
+      operatingSystem: "Web, iOS, Android",
+      applicationCategory: "CommunicationApplication, SecurityApplication",
+      description: "Zero-knowledge end-to-end encrypted messaging web platform engineered by WebVibez Software Developer with sub-50ms WebSocket tunneling, ephemeral payloads, and blind relay servers.",
+      author: {
+        "@id": "https://www.webvibez.com/#organization",
+      },
+      url: "https://enzochat.webvibez.com",
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD",
+        description: "Live web platform and communication protocol.",
+      },
     },
     {
       "@type": "WebSite",
@@ -299,34 +366,74 @@ const jsonLdGlobal = {
       mainEntity: [
         {
           "@type": "Question",
-          name: "Who is the best software developer in Ahmedabad?",
+          name: "What is WebVibez Software Developer?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "WebVibez Software Developer is a top custom software and mobile app development company in Ahmedabad, Gujarat, India. WebVibez engineers custom web applications, React Native mobile apps, ERP software, and coaching institute platforms.",
+            text: "WebVibez Software Developer is a software development company located in Ahmedabad, Gujarat, India. WebVibez specializes in custom software development, mobile application engineering (iOS & Android using React Native), high-performance Next.js websites, and white-label coaching institute management software.",
           },
         },
         {
           "@type": "Question",
-          name: "What software development services does WebVibez provide?",
+          name: "Where is WebVibez located?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "WebVibez offers full-stack custom software development, mobile app development (iOS & Android), Next.js website development, coaching class management software, and cloud architecture solutions.",
+            text: "WebVibez Software Developer is headquartered in Ahmedabad, Gujarat, India (PIN: 380001), serving clients locally across Gujarat, nationally across India, and globally in the US and UK.",
           },
         },
         {
           "@type": "Question",
-          name: "How can I hire WebVibez for custom software development?",
+          name: "Who founded WebVibez?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "You can book a direct consultation with WebVibez Software Developer at https://www.webvibez.com/contact or chat directly via WhatsApp on +91-92136-15531.",
+            text: "WebVibez was founded by Rudram Joshi, lead software developer and full-stack systems architect.",
           },
         },
         {
           "@type": "Question",
-          name: "Does WebVibez provide white-label software and 100% source code ownership?",
+          name: "Does WebVibez develop Android and iOS mobile applications?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes, WebVibez delivers 100% white-labeled solutions with complete intellectual property, branding, and full source code ownership with zero recurring commissions.",
+            text: "Yes. WebVibez designs and engineers production-ready Android and iOS mobile applications using React Native. This includes official published applications such as 'WebVibez Software Devloper' (Package: com.webvibez.classes) on Google Play Store as well as high-performance secure web applications like EnzoChat (https://enzochat.webvibez.com).",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Does WebVibez develop coaching institute management software?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. WebVibez develops complete white-labeled coaching class management systems and custom branded mobile apps. Features include biometric and QR student attendance, automated WhatsApp fee collection with direct UPI links, test series percentile tracking, study material sharing, and parent communication portals.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Can WebVibez build custom business software and web applications?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. WebVibez builds bespoke business software, custom ERP platforms, web dashboards, and automation tools using modern tech stacks including Next.js, React, Node.js, TypeScript, PostgreSQL, and cloud APIs.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What services does WebVibez provide?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "WebVibez provides Custom Software Development, Mobile Application Development (iOS & Android), Website & Web App Development, Coaching Institute Management Software, AI Solutions & Automation, UI/UX Design, and API & Backend Integration.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How can businesses contact or hire WebVibez?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Businesses can contact WebVibez through their official website at https://www.webvibez.com/contact, email at contact@webvibez.com, or direct WhatsApp consultation at +91-92136-15531.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Does WebVibez provide 100% source code ownership and white-labeling?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. WebVibez delivers 100% white-labeled solutions with full intellectual property and source code ownership with zero recurring per-student commissions or vendor lock-in.",
           },
         },
       ],
@@ -385,11 +492,13 @@ const jsonLdGlobal = {
       image: "https://www.webvibez.com/images/square-image.jpg",
       url: "https://www.webvibez.com/about",
       description:
-        "Rudram Joshi is the Founder and Lead Developer of WebVibez Software Developer, architecting full-stack custom web applications, React Native mobile apps, and institutional management software.",
+        "Rudram Joshi is the Founder and Lead Developer of WebVibez Software Developer, architecting full-stack custom web applications, React Native mobile apps, and institutional management software in Ahmedabad, Gujarat.",
       sameAs: [
         "https://wa.me/919213615531",
-        "https://x.com/Rudram9524",
+        "https://in.linkedin.com/in/rudram-joshi-963a48332",
         "https://github.com/webvibez",
+        "https://dev.to/rudram_joshi",
+        "https://x.com/Rudram9524",
       ],
     },
   ],
