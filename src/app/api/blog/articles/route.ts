@@ -3,6 +3,7 @@ import { BlogRepository } from "@/lib/blog/repository";
 import { isAuthenticatedAdmin } from "@/lib/blog/auth";
 import { Article, ArticleStatus } from "@/lib/blog/types";
 import { calculateReadingTime, extractTableOfContents } from "@/lib/blog/seo";
+import { BlogImageService } from "@/lib/blog/image-service";
 
 export async function GET(request: NextRequest) {
   try {
@@ -92,8 +93,10 @@ export async function POST(request: NextRequest) {
       },
       featuredImage:
         body.featuredImage ||
-        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&auto=format&fit=crop&q=80",
-      featuredImageAlt: body.featuredImageAlt || body.title,
+        BlogImageService.selectTopicImage(body.title, body.category, body.tags, body.slug).imageUrl,
+      featuredImageAlt:
+        body.featuredImageAlt ||
+        BlogImageService.selectTopicImage(body.title, body.category, body.tags, body.slug).imageAlt,
       publicationDate: body.publicationDate || new Date().toISOString(),
       modifiedDate: new Date().toISOString(),
       readingTime,

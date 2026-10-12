@@ -129,7 +129,7 @@ Explore our dedicated [Coaching Class Software Solution](/services/coaching-clas
     category: "Mobile App Development",
     tags: ["App Development Cost", "Mobile Apps", "React Native", "Flutter", "India Tech", "Software Pricing"],
     author: SEED_AUTHOR,
-    featuredImage: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1200&auto=format&fit=crop&q=80",
+    featuredImage: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1200&auto=format&fit=crop&q=80",
     featuredImageAlt: "Mobile application development code editor and smartphone wireframe layout",
     publicationDate: "2026-03-05T11:00:00.000Z",
     modifiedDate: "2026-03-14T14:00:00.000Z",
@@ -263,9 +263,9 @@ Learn how WebVibez can engineer your application on our [Mobile App Development]
         badge: "Tailored Architecture",
       },
       {
-        title: "E-Commerce Solutions",
-        href: "/services/ecommerce-solutions",
-        badge: "Custom Stores",
+        title: "Custom ERP & SaaS Platforms",
+        href: "/services/custom-software-development",
+        badge: "Custom Systems",
       },
     ],
     relatedArticleSlugs: [
@@ -346,7 +346,7 @@ Discover how we turn complex business ideas into scalable web and mobile applica
     category: "Website Development",
     tags: ["Next.js", "React", "Technical SEO", "Web Performance", "Core Web Vitals", "App Router"],
     author: SEED_AUTHOR,
-    featuredImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&auto=format&fit=crop&q=80",
+    featuredImage: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&auto=format&fit=crop&q=80",
     featuredImageAlt: "Modern Next.js React code editor demonstrating React Server Components and fast rendering",
     publicationDate: "2026-02-20T08:30:00.000Z",
     modifiedDate: "2026-03-10T12:00:00.000Z",
@@ -360,14 +360,14 @@ Discover how we turn complex business ideas into scalable web and mobile applica
     ogDescription: "Discover how Next.js delivers 100/100 Google Lighthouse scores, instant page navigation, and seamless search engine crawlability for business websites.",
     relatedServices: [
       {
-        title: "Web Application Development",
-        href: "/services/web-development",
+        title: "Website & Web Application Development",
+        href: "/services/website-development",
         badge: "Next.js Specialists",
       },
       {
-        title: "Digital Marketing & SEO",
-        href: "/services/digital-marketing",
-        badge: "Technical SEO",
+        title: "Custom Software Engineering",
+        href: "/services/custom-software-development",
+        badge: "Full-Stack Tech",
       },
     ],
     relatedArticleSlugs: [

@@ -5,6 +5,7 @@ import { DistributionManager } from "../distribution/manager";
 import { DailyPublishLog } from "./types";
 import { TelegramNotifier } from "../notifications/telegram";
 import { AIGenerator } from "./ai-generator";
+import { BlogImageService } from "../blog/image-service";
 import fs from "fs";
 import path from "path";
 
@@ -113,8 +114,6 @@ export const DailyPublishingEngine = {
         const { en, hi } = await AIGenerator.generateArticle(topicJsonStr, recentArticlesForLinking);
 
         const groupKey = `gen-${Date.now()}`;
-        const defaultImage =
-          "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1200&auto=format&fit=crop&q=80";
 
         // Clean & sanitize slugs: lowercase alphanumeric & hyphens only
         const cleanSlugEn = (en.slug || `article-${groupKey}`)
@@ -127,6 +126,14 @@ export const DailyPublishingEngine = {
 
         const validCategory: ArticleCategory =
           (en.category as ArticleCategory) || "Custom Software";
+
+        // Topic-specific verified image selection
+        const { imageUrl, imageAlt } = BlogImageService.selectTopicImage(
+          en.title || "Custom Software Development",
+          validCategory,
+          en.tags || [],
+          cleanSlugEn
+        );
 
         const authorInfo = {
           name: "Rudram Joshi",
@@ -163,8 +170,8 @@ export const DailyPublishingEngine = {
               ? en.tags
               : ["software development", "custom software", "business automation", "technology"],
           content: en.content || "",
-          featuredImage: en.featuredImage || defaultImage,
-          featuredImageAlt: en.featuredImageAlt || en.title || "WebVibez Tech Architecture",
+          featuredImage: en.featuredImage || imageUrl,
+          featuredImageAlt: en.featuredImageAlt || imageAlt,
           author: authorInfo,
           publicationDate: futureDate,
           modifiedDate: futureDate,
