@@ -221,38 +221,51 @@ export const IndexingMonitor = {
       urlList = sitemapEntries.map((e) => e.url);
     }
 
+    const INDEXNOW_KEY = "f873e09b5ddd43f1844efe33a5837594";
     const payload = {
       host: "www.webvibez.com",
-      key: "webvibez-indexnow-key",
-      keyLocation: `${baseUrl}/webvibez-indexnow-key.txt`,
+      key: INDEXNOW_KEY,
+      keyLocation: `${baseUrl}/${INDEXNOW_KEY}.txt`,
       urlList: urlList.slice(0, 100), // Max 100 per batch
     };
 
     try {
-      const res = await fetch("https://api.indexnow.org/indexnow", {
-        method: "POST",
-        headers: { "Content-Type": "application/json; charset=utf-8" },
-        body: JSON.stringify(payload),
-      });
+      // Dispatch to both central IndexNow aggregator and direct Bing endpoint
+      const [resApi, resBing] = await Promise.allSettled([
+        fetch("https://api.indexnow.org/indexnow", {
+          method: "POST",
+          headers: { "Content-Type": "application/json; charset=utf-8" },
+          body: JSON.stringify(payload),
+        }),
+        fetch("https://www.bing.com/indexnow", {
+          method: "POST",
+          headers: { "Content-Type": "application/json; charset=utf-8" },
+          body: JSON.stringify(payload),
+        }),
+      ]);
 
-      // Also trigger official Google Search Console API sitemap submission & ping
+      // Also trigger official Google Search Console API sitemap submission
       try {
         await GoogleSearchConsoleService.submitSitemap();
-        await fetch(`https://www.google.com/ping?sitemap=${baseUrl}/sitemap.xml`);
       } catch (e) {
         // Best-effort
       }
 
-      if (res.status === 200 || res.status === 202) {
+      const isSuccess =
+        (resApi.status === "fulfilled" && (resApi.value.status === 200 || resApi.value.status === 202)) ||
+        (resBing.status === "fulfilled" && (resBing.value.status === 200 || resBing.value.status === 202));
+
+      if (isSuccess) {
         return {
           success: true,
-          message: `IndexNow ping dispatched successfully for ${payload.urlList.length} URLs.`,
+          message: `IndexNow ping dispatched successfully to Bing & Search Engines for ${payload.urlList.length} URLs.`,
         };
       }
 
+      const statusApi = resApi.status === "fulfilled" ? resApi.value.status : "network_error";
       return {
         success: false,
-        message: `IndexNow returned status ${res.status}`,
+        message: `IndexNow returned status ${statusApi}`,
       };
     } catch (err: any) {
       return {
