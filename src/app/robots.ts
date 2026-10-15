@@ -7,9 +7,13 @@ const privateRoutes = [
   "/api/admin/*",
   "/api/checkout",
   "/api/payment",
+  "/api/contact",
+  "/api/leads",
   "/api/blog/cron",
   "/api/blog/distribute",
   "/api/blog/auth",
+  "/content-drafts",
+  "/content-drafts/*",
 ];
 
 export default function robots(): MetadataRoute.Robots {
@@ -17,7 +21,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "*",
-        allow: "/",
+        allow: ["/", "/api/og"],
         disallow: privateRoutes,
       },
       // Search Engines

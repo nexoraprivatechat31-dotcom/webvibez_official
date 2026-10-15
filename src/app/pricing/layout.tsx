@@ -1,36 +1,36 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Predictable Investment & Pricing Plans",
+  title: "Coaching App & Software Pricing Plans",
   description:
-    "Explore transparent software engineering packages: custom mobile apps, web applications, and coaching management software with no hidden fees.",
+    "Transparent software packages for coaching apps, custom websites, and mobile applications with zero per-student commissions and flat annual pricing.",
   alternates: {
     canonical: "https://www.webvibez.com/pricing",
   },
   openGraph: {
-    title: "Predictable Investment & Pricing Plans",
+    title: "Coaching App & Software Pricing Plans | WebVibez",
     description:
-      "Explore transparent software engineering packages: custom mobile apps, web applications, and coaching management software with no hidden fees.",
+      "Flat, transparent software pricing for coaching apps, mobile applications, and Next.js websites with zero commissions and direct bank settlements.",
     url: "https://www.webvibez.com/pricing",
     siteName: "WebVibez Software Developer",
+    locale: "en_IN",
     type: "website",
     images: [
       {
-        url: "https://www.webvibez.com/logo.jpeg",
+        url: "https://www.webvibez.com/og-image.jpeg",
         width: 1200,
         height: 630,
+        type: "image/jpeg",
         alt: "WebVibez Pricing and Investment Plans",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Predictable Investment & Pricing Plans",
+    title: "Coaching App & Software Pricing Plans | WebVibez",
     description:
-      "Explore transparent software engineering packages: custom mobile apps, web applications, and coaching management software with no hidden fees.",
-    images: [
-      "https://www.webvibez.com/logo.jpeg",
-    ],
+      "Flat, transparent software pricing for coaching apps, mobile applications, and Next.js websites with zero commissions.",
+    images: ["https://www.webvibez.com/og-image.jpeg"],
   },
 };
 

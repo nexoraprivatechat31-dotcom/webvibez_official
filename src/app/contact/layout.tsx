@@ -1,36 +1,36 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact WebVibez | Ahmedabad, Gujarat",
+  title: "Contact Our Engineering Team in Ahmedabad",
   description:
-    "Get in touch with WebVibez Software Developer. Discuss your custom software, mobile app, or coaching institute software requirements with our engineering team in Ahmedabad.",
+    "Contact WebVibez Software Developer in Ahmedabad. Discuss your mobile app, coaching software, or custom web development project with our engineers.",
   alternates: {
     canonical: "https://www.webvibez.com/contact",
   },
   openGraph: {
-    title: "Contact WebVibez | Ahmedabad, Gujarat",
+    title: "Contact Our Engineering Team in Ahmedabad | WebVibez",
     description:
-      "Get in touch with WebVibez Software Developer. Discuss your custom software, mobile app, or coaching institute software requirements with our engineering team in Ahmedabad.",
+      "Contact WebVibez Software Developer in Ahmedabad. Discuss your mobile app, coaching software, or custom web development project with our engineers.",
     url: "https://www.webvibez.com/contact",
     siteName: "WebVibez Software Developer",
+    locale: "en_IN",
     type: "website",
     images: [
       {
-        url: "https://www.webvibez.com/logo.jpeg",
+        url: "https://www.webvibez.com/og-image.jpeg",
         width: 1200,
         height: 630,
+        type: "image/jpeg",
         alt: "Contact WebVibez Software Developer in Ahmedabad",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact WebVibez | Ahmedabad, Gujarat",
+    title: "Contact Our Engineering Team in Ahmedabad | WebVibez",
     description:
-      "Get in touch with WebVibez Software Developer. Discuss your custom software, mobile app, or coaching institute software requirements with our engineering team in Ahmedabad.",
-    images: [
-      "https://www.webvibez.com/logo.jpeg",
-    ],
+      "Contact WebVibez Software Developer in Ahmedabad. Discuss your mobile app, coaching software, or custom web development project with our engineers.",
+    images: ["https://www.webvibez.com/og-image.jpeg"],
   },
 };
 

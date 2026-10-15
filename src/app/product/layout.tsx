@@ -1,36 +1,36 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Coaching Class Management Software & Mobile Platform",
+  title: "Coaching Management Software Platform",
   description:
-    "Explore WebVibez coaching institute software: 100% white-labeled iOS and Android mobile apps, live lecture streaming, CBT exam engine, hardware DRM anti-piracy, and automated UPI fee collection.",
+    "White-label coaching management software & mobile apps. Features CBT mock test engine, attendance tracking, secure video streaming, and UPI fee collection.",
   alternates: {
     canonical: "https://www.webvibez.com/product",
   },
   openGraph: {
-    title: "Coaching Class Management Software & Mobile Platform",
+    title: "Coaching Management Software Platform | WebVibez",
     description:
-      "Explore WebVibez coaching institute software: 100% white-labeled iOS and Android mobile apps, live lecture streaming, CBT exam engine, hardware DRM anti-piracy, and automated UPI fee collection.",
+      "White-label coaching management software & mobile apps. Features CBT mock test engine, attendance tracking, secure video streaming, and UPI fee collection.",
     url: "https://www.webvibez.com/product",
     siteName: "WebVibez Software Developer",
+    locale: "en_IN",
     type: "website",
     images: [
       {
-        url: "https://www.webvibez.com/logo.jpeg",
+        url: "https://www.webvibez.com/og-image.jpeg",
         width: 1200,
         height: 630,
+        type: "image/jpeg",
         alt: "WebVibez Coaching Class Software & Mobile App Platform",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Coaching Class Management Software & Mobile Platform",
+    title: "Coaching Management Software Platform | WebVibez",
     description:
-      "Explore WebVibez coaching institute software: 100% white-labeled iOS and Android mobile apps, live lecture streaming, CBT exam engine, hardware DRM anti-piracy, and automated UPI fee collection.",
-    images: [
-      "https://www.webvibez.com/logo.jpeg",
-    ],
+      "White-label coaching management software & mobile apps. Features CBT mock test engine, attendance tracking, secure video streaming, and UPI fee collection.",
+    images: ["https://www.webvibez.com/og-image.jpeg"],
   },
 };
 

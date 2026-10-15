@@ -1,36 +1,36 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Engineering Portfolio & Client Case Studies",
+  title: "Software Engineering & App Portfolio",
   description:
     "Explore real-world software engineering case studies, mobile applications, and web platforms delivered by WebVibez Software Developer.",
   alternates: {
     canonical: "https://www.webvibez.com/portfolio",
   },
   openGraph: {
-    title: "Engineering Portfolio & Client Case Studies",
+    title: "Software Engineering & App Portfolio | WebVibez",
     description:
       "Explore real-world software engineering case studies, mobile applications, and web platforms delivered by WebVibez Software Developer.",
     url: "https://www.webvibez.com/portfolio",
     siteName: "WebVibez Software Developer",
+    locale: "en_IN",
     type: "website",
     images: [
       {
-        url: "https://www.webvibez.com/logo.jpeg",
+        url: "https://www.webvibez.com/og-image.jpeg",
         width: 1200,
         height: 630,
+        type: "image/jpeg",
         alt: "WebVibez Engineering Portfolio and Case Studies",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Engineering Portfolio & Client Case Studies",
+    title: "Software Engineering & App Portfolio | WebVibez",
     description:
       "Explore real-world software engineering case studies, mobile applications, and web platforms delivered by WebVibez Software Developer.",
-    images: [
-      "https://www.webvibez.com/logo.jpeg",
-    ],
+    images: ["https://www.webvibez.com/og-image.jpeg"],
   },
 };
 

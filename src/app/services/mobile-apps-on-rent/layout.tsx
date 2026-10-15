@@ -1,34 +1,36 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Mobile Apps on Rent | 1-Year Subscription & App Leasing",
+  title: "Mobile Apps on Rent & 1-Year Subscription",
   description:
-    "Get high-performance iOS and Android mobile apps on a 1-year rental plan from WebVibez. Turnkey white-label delivery apps, e-commerce apps, coaching apps, zero upfront development cost, free server hosting & Play Store publishing.",
+    "Rent turnkey white-label iOS and Android apps on flexible 1-year plans. Zero upfront development cost, cloud hosting included, and Play Store publishing.",
   alternates: {
     canonical: "https://www.webvibez.com/services/mobile-apps-on-rent",
   },
   openGraph: {
-    title: "Mobile Apps on Rent | 1-Year App Rental Subscription | WebVibez",
+    title: "Mobile Apps on Rent & 1-Year Subscription | WebVibez",
     description:
-      "Save 70%+ on software costs. Rent readymade, custom-branded iOS & Android mobile apps with full priority SLA maintenance, cloud servers, and Google Play Store publishing in Ahmedabad.",
+      "Rent readymade custom-branded iOS & Android mobile apps with full maintenance, cloud servers, and Google Play Store publishing from Ahmedabad.",
     url: "https://www.webvibez.com/services/mobile-apps-on-rent",
     siteName: "WebVibez Software Developer",
+    locale: "en_IN",
     type: "website",
     images: [
       {
-        url: "https://www.webvibez.com/logo.jpeg",
+        url: "https://www.webvibez.com/og-image.jpeg",
         width: 1200,
         height: 630,
+        type: "image/jpeg",
         alt: "Mobile Apps on Rent — 1-Year App Rental Subscription WebVibez",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mobile Apps on Rent | 1-Year Subscription | WebVibez",
+    title: "Mobile Apps on Rent & 1-Year Subscription | WebVibez",
     description:
-      "Turnkey white-label iOS and Android apps on a 1-year rental plan. Zero development risk, automated maintenance, and live store deployment in Ahmedabad.",
-    images: ["https://www.webvibez.com/logo.jpeg"],
+      "Rent readymade custom-branded iOS & Android mobile apps with full maintenance, cloud servers, and Google Play Store publishing from Ahmedabad.",
+    images: ["https://www.webvibez.com/og-image.jpeg"],
   },
 };
 

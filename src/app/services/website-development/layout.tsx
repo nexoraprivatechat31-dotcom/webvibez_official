@@ -1,24 +1,26 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Website Development Company in Ahmedabad | Next.js & Custom Web",
+  title: "Website Development Company in Ahmedabad",
   description:
-    "WebVibez is a top website development company in Ahmedabad, Gujarat. We engineer blazing fast Next.js websites, custom web applications, responsive UI/UX, and conversion-focused web solutions.",
+    "Top website development company in Ahmedabad. We engineer blazing fast Next.js websites, modern responsive UI/UX, and SEO-optimized business web platforms.",
   alternates: {
     canonical: "https://www.webvibez.com/services/website-development",
   },
   openGraph: {
     title: "Website Development Company in Ahmedabad | WebVibez",
     description:
-      "Modern Next.js web development, high-speed responsive UI, technical SEO optimization, and custom web applications engineered in Ahmedabad, Gujarat.",
+      "Fast Next.js website development, responsive UI/UX design, technical SEO, and conversion-focused web engineering in Ahmedabad, Gujarat.",
     url: "https://www.webvibez.com/services/website-development",
     siteName: "WebVibez Software Developer",
+    locale: "en_IN",
     type: "website",
     images: [
       {
-        url: "https://www.webvibez.com/logo.jpeg",
+        url: "https://www.webvibez.com/og-image.jpeg",
         width: 1200,
         height: 630,
+        type: "image/jpeg",
         alt: "Website Development Company in Ahmedabad — WebVibez",
       },
     ],
@@ -27,8 +29,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Website Development Company in Ahmedabad | WebVibez",
     description:
-      "Modern Next.js web development, high-speed responsive UI, technical SEO optimization, and custom web applications engineered in Ahmedabad, Gujarat.",
-    images: ["https://www.webvibez.com/logo.jpeg"],
+      "Fast Next.js website development, responsive UI/UX design, technical SEO, and conversion-focused web engineering in Ahmedabad, Gujarat.",
+    images: ["https://www.webvibez.com/og-image.jpeg"],
   },
 };
 

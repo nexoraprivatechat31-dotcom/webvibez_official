@@ -1,36 +1,36 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About WebVibez | Product Studio & Developer, Ahmedabad",
+  title: "About Our Software Development Studio",
   description:
-    "WebVibez Software Developer is a digital product studio based in Ahmedabad, Gujarat, engineering high-impact mobile apps, websites, and institutional management systems.",
+    "WebVibez is a digital product studio in Ahmedabad, Gujarat, engineering high-impact mobile apps, Next.js websites, and coaching management platforms.",
   alternates: {
     canonical: "https://www.webvibez.com/about",
   },
   openGraph: {
-    title: "About WebVibez | Product Studio & Developer, Ahmedabad",
+    title: "About Our Software Development Studio | WebVibez",
     description:
-      "WebVibez Software Developer is a digital product studio based in Ahmedabad, Gujarat, engineering high-impact mobile apps, websites, and institutional management systems.",
+      "WebVibez is a digital product studio in Ahmedabad, Gujarat, engineering high-impact mobile apps, Next.js websites, and coaching management platforms.",
     url: "https://www.webvibez.com/about",
     siteName: "WebVibez Software Developer",
+    locale: "en_IN",
     type: "website",
     images: [
       {
-        url: "https://www.webvibez.com/logo.jpeg",
+        url: "https://www.webvibez.com/og-image.jpeg",
         width: 1200,
         height: 630,
+        type: "image/jpeg",
         alt: "About WebVibez Software Developer in Ahmedabad",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "About WebVibez | Product Studio & Developer, Ahmedabad",
+    title: "About Our Software Development Studio | WebVibez",
     description:
-      "WebVibez Software Developer is a digital product studio based in Ahmedabad, Gujarat, engineering high-impact mobile apps, websites, and institutional management systems.",
-    images: [
-      "https://www.webvibez.com/logo.jpeg",
-    ],
+      "WebVibez is a digital product studio in Ahmedabad, Gujarat, engineering high-impact mobile apps, Next.js websites, and coaching management platforms.",
+    images: ["https://www.webvibez.com/og-image.jpeg"],
   },
 };
 

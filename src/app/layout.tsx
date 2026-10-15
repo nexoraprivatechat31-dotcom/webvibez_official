@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     template: "%s | WebVibez",
   },
   description:
-    "WebVibez is a leading custom software development company in Ahmedabad, Gujarat, India. Expert software developers creating high-performance websites, React Native mobile apps, enterprise cloud software, and white-label coaching management systems.",
+    "Top software development company in Ahmedabad. We engineer custom Next.js websites, React Native mobile apps, and white-label coaching class management systems.",
   applicationName: "WebVibez Software Developer",
   authors: [
     { name: "Rudram Joshi", url: "https://www.webvibez.com/about" },
@@ -68,21 +68,13 @@ export const metadata: Metadata = {
   manifest: "/manifest.webmanifest",
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en_IN",
     url: "https://www.webvibez.com",
     siteName: "WebVibez Software Developer",
-    title: "WebVibez | Custom Software & Mobile App Development",
+    title: "Software Development Company in Ahmedabad | WebVibez",
     description:
-      "Looking for top software developers? WebVibez engineers custom software, high-speed Next.js websites, iOS & Android mobile apps, and coaching institute ERP platforms.",
+      "WebVibez is a custom software development company in Ahmedabad, Gujarat, India. We engineer Next.js websites, React Native mobile apps, and white-label coaching class management software.",
     images: [
-      {
-        url: "https://www.webvibez.com/logo.jpeg",
-        secureUrl: "https://www.webvibez.com/logo.jpeg",
-        width: 1080,
-        height: 987,
-        type: "image/jpeg",
-        alt: "WebVibez Software Developer Logo",
-      },
       {
         url: "https://www.webvibez.com/og-image.jpeg",
         secureUrl: "https://www.webvibez.com/og-image.jpeg",
@@ -95,13 +87,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "WebVibez | Custom Software & Mobile App Development",
+    title: "Software Development Company in Ahmedabad | WebVibez",
     description:
-      "Top custom software developers in Ahmedabad. We build custom websites, iOS/Android mobile apps, and cloud software platforms.",
-    images: [
-      "https://www.webvibez.com/og-image.jpeg",
-      "https://www.webvibez.com/logo.jpeg",
-    ],
+      "Custom software development, React Native mobile apps, and Next.js web applications in Ahmedabad, Gujarat.",
+    images: ["https://www.webvibez.com/og-image.jpeg"],
   },
   robots: {
     index: true,
@@ -120,68 +109,6 @@ export const metadata: Metadata = {
     "geo.position": "23.0225;72.5714",
     "ICBM": "23.0225, 72.5714",
   },
-  keywords: [
-    // 1. Primary Brand Variations
-    "webvibez",
-    "web vibez",
-    "webvibez software",
-    "webvibez software developer",
-    "webvibez developer",
-    "webvibez.com",
-    "webvibez ahmedabad",
-    "webvibez official",
-
-    // 2. Core Software & Developer Queries
-    "software developer",
-    "software developers",
-    "software development",
-    "software company",
-    "software development company",
-    "custom software development",
-    "custom software developer",
-    "custom software development company",
-    "software development agency",
-    "software solutions",
-    "software developer near me",
-    "software engineer",
-
-    // 3. Web & App Developer Queries
-    "website developer",
-    "web developer",
-    "web development company",
-    "website development company",
-    "mobile app developer",
-    "app developer",
-    "app development company",
-    "mobile app development company",
-    "react native developer",
-    "nextjs developer",
-    "full stack software developer",
-    "frontend developer",
-    "backend developer",
-
-    // 4. Localized Ahmedabad & India Queries
-    "software developer in ahmedabad",
-    "software development company in ahmedabad",
-    "software company in ahmedabad",
-    "best software developer in ahmedabad",
-    "top software company ahmedabad",
-    "website development company in ahmedabad",
-    "mobile app development company ahmedabad",
-    "web development ahmedabad",
-    "app developer in ahmedabad",
-    "software company in gujarat",
-    "software development company india",
-
-    // 5. Product & Domain Niche Queries
-    "coaching class management software",
-    "coaching management app",
-    "institute management software",
-    "tuition class management software developer",
-    "white label mobile app developer",
-    "custom erp software developer",
-    "saas software developer",
-  ],
 };
 
 const jsonLdGlobal = {
@@ -555,16 +482,6 @@ export default function RootLayout({
       <head>
         <meta name="color-scheme" content="light" />
         <link rel="preconnect" href="https://firebase.googleapis.com" />
-        <link rel="image_src" href="https://www.webvibez.com/logo.jpeg" />
-        <meta property="og:image" content="https://www.webvibez.com/logo.jpeg" />
-        <meta property="og:image:secure_url" content="https://www.webvibez.com/logo.jpeg" />
-        <meta property="og:image:type" content="image/jpeg" />
-        <meta property="og:image:width" content="1080" />
-        <meta property="og:image:height" content="987" />
-        <meta property="og:image:alt" content="WebVibez Software Developer Logo" />
-        <meta name="twitter:image" content="https://www.webvibez.com/og-image.jpeg" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta itemProp="image" content="https://www.webvibez.com/logo.jpeg" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGlobal) }}

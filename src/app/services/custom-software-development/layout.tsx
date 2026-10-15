@@ -1,36 +1,36 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Custom Software Development in Ahmedabad",
+  title: "Custom Software Development Company in Ahmedabad",
   description:
-    "WebVibez is a custom software development company in Ahmedabad, Gujarat. We engineer tailored enterprise software, scalable SaaS platforms, automated ERPs, and cloud APIs.",
+    "Custom software development in Ahmedabad. We build tailored enterprise web systems, scalable SaaS platforms, ERP automation, and high-security cloud APIs.",
   alternates: {
     canonical: "https://www.webvibez.com/services/custom-software-development",
   },
   openGraph: {
-    title: "Custom Software Development in Ahmedabad",
+    title: "Custom Software Development Company in Ahmedabad | WebVibez",
     description:
-      "Bespoke enterprise software, scalable SaaS architectures, automated ERP workflows, and secure APIs engineered for growing businesses in Ahmedabad, Gujarat.",
+      "Bespoke enterprise software, scalable SaaS platforms, automated ERP workflows, and secure cloud APIs engineered in Ahmedabad, Gujarat.",
     url: "https://www.webvibez.com/services/custom-software-development",
     siteName: "WebVibez Software Developer",
+    locale: "en_IN",
     type: "website",
     images: [
       {
-        url: "https://www.webvibez.com/logo.jpeg",
+        url: "https://www.webvibez.com/og-image.jpeg",
         width: 1200,
         height: 630,
+        type: "image/jpeg",
         alt: "Custom Software Development Company in Ahmedabad — WebVibez",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Custom Software Development in Ahmedabad",
+    title: "Custom Software Development Company in Ahmedabad | WebVibez",
     description:
-      "Bespoke enterprise software, scalable SaaS architectures, automated ERP workflows, and secure APIs engineered for growing businesses in Ahmedabad, Gujarat.",
-    images: [
-      "https://www.webvibez.com/logo.jpeg",
-    ],
+      "Bespoke enterprise software, scalable SaaS platforms, automated ERP workflows, and secure cloud APIs engineered in Ahmedabad, Gujarat.",
+    images: ["https://www.webvibez.com/og-image.jpeg"],
   },
 };
 

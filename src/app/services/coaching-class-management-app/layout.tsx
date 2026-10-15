@@ -1,36 +1,36 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Coaching Class Management App Development",
+  title: "White-Label Coaching App Development India",
   description:
-    "WebVibez builds custom branded coaching class management applications, student portal systems, CBT exam engines, and automated fee collection platforms in Ahmedabad, Gujarat.",
+    "Custom white-label coaching class management apps with CBT mock tests, biometric attendance sync, and automated fee collection in Ahmedabad, India.",
   alternates: {
     canonical: "https://www.webvibez.com/services/coaching-class-management-app",
   },
   openGraph: {
-    title: "Coaching Class Management App Development",
+    title: "White-Label Coaching App Development India | WebVibez",
     description:
-      "Custom branded coaching institute apps, NTA CBT mock exam engine, hardware DRM lecture protection, and automated UPI fee collection in Ahmedabad, Gujarat.",
+      "Custom branded coaching apps with CBT mock test simulator, biometric attendance, and automated UPI fee collection for institutes across India.",
     url: "https://www.webvibez.com/services/coaching-class-management-app",
     siteName: "WebVibez Software Developer",
+    locale: "en_IN",
     type: "website",
     images: [
       {
-        url: "https://www.webvibez.com/logo.jpeg",
+        url: "https://www.webvibez.com/og-image.jpeg",
         width: 1200,
         height: 630,
-        alt: "Coaching Class Management App Development in Ahmedabad — WebVibez",
+        type: "image/jpeg",
+        alt: "White-Label Coaching App Development India — WebVibez",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Coaching Class Management App Development",
+    title: "White-Label Coaching App Development India | WebVibez",
     description:
-      "Custom branded coaching institute apps, NTA CBT mock exam engine, hardware DRM lecture protection, and automated UPI fee collection in Ahmedabad, Gujarat.",
-    images: [
-      "https://www.webvibez.com/logo.jpeg",
-    ],
+      "Custom branded coaching apps with CBT mock test simulator, biometric attendance, and automated UPI fee collection for institutes across India.",
+    images: ["https://www.webvibez.com/og-image.jpeg"],
   },
 };
 

@@ -1,24 +1,26 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Software & App Development Services in Ahmedabad",
+  title: "Software & App Development Services Ahmedabad",
   description:
-    "Explore WebVibez engineering services: custom software development, high-performance Next.js websites, React Native iOS and Android apps, and coaching management platforms in Ahmedabad, Gujarat.",
+    "Custom software development, Next.js websites, React Native apps, and coaching management software engineered by WebVibez in Ahmedabad, Gujarat.",
   alternates: {
     canonical: "https://www.webvibez.com/services",
   },
   openGraph: {
     title: "Software & App Development Services Ahmedabad | WebVibez",
     description:
-      "Explore WebVibez engineering services: custom software development, high-performance Next.js websites, React Native iOS and Android apps, and coaching management platforms in Ahmedabad, Gujarat.",
+      "Custom software development, Next.js websites, React Native apps, and coaching management software engineered by WebVibez in Ahmedabad, Gujarat.",
     url: "https://www.webvibez.com/services",
     siteName: "WebVibez Software Developer",
+    locale: "en_IN",
     type: "website",
     images: [
       {
-        url: "https://www.webvibez.com/logo.jpeg",
+        url: "https://www.webvibez.com/og-image.jpeg",
         width: 1200,
         height: 630,
+        type: "image/jpeg",
         alt: "WebVibez Software Development Services in Ahmedabad",
       },
     ],
@@ -27,10 +29,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Software & App Development Services Ahmedabad | WebVibez",
     description:
-      "Explore WebVibez engineering services: custom software development, high-performance Next.js websites, React Native iOS and Android apps, and coaching management platforms in Ahmedabad, Gujarat.",
-    images: [
-      "https://www.webvibez.com/logo.jpeg",
-    ],
+      "Custom software development, Next.js websites, React Native apps, and coaching management software engineered by WebVibez in Ahmedabad, Gujarat.",
+    images: ["https://www.webvibez.com/og-image.jpeg"],
   },
 };
 

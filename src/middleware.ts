@@ -2,7 +2,17 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
+  const host = request.headers.get('host') || '';
   const path = request.nextUrl.pathname;
+
+  // Enforce 301 canonical host redirect: apex webvibez.com -> www.webvibez.com
+  if (host === 'webvibez.com') {
+    const canonicalUrl = new URL(
+      `${request.nextUrl.pathname}${request.nextUrl.search}`,
+      'https://www.webvibez.com'
+    );
+    return NextResponse.redirect(canonicalUrl, { status: 301 });
+  }
   
   // Protect all /admin routes except /admin/login
   if (path.startsWith('/admin') && !path.startsWith('/admin/login')) {
@@ -25,5 +35,7 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/admin/:path*'],
+  matcher: [
+    '/((?!_next/static|_next/image|favicon\\.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|webmanifest)$).*)',
+  ],
 };

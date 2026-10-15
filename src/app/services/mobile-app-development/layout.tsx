@@ -3,34 +3,34 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Mobile App Development Company in Ahmedabad",
   description:
-    "WebVibez is a mobile app development company in Ahmedabad, Gujarat. We engineer high-performance cross-platform iOS and Android mobile apps using React Native.",
+    "Top mobile app development company in Ahmedabad. We build high-performance iOS and Android apps with React Native, offline encryption, and Play Store launch.",
   alternates: {
     canonical: "https://www.webvibez.com/services/mobile-app-development",
   },
   openGraph: {
-    title: "Mobile App Development Company in Ahmedabad",
+    title: "Mobile App Development Company in Ahmedabad | WebVibez",
     description:
-      "Native-performance iOS and Android mobile applications built with React Native, offline encryption, and official store publishing in Ahmedabad, Gujarat.",
+      "Native-performance iOS and Android apps engineered with React Native, offline security caching, and direct store publishing in Ahmedabad, Gujarat.",
     url: "https://www.webvibez.com/services/mobile-app-development",
     siteName: "WebVibez Software Developer",
+    locale: "en_IN",
     type: "website",
     images: [
       {
-        url: "https://www.webvibez.com/logo.jpeg",
+        url: "https://www.webvibez.com/og-image.jpeg",
         width: 1200,
         height: 630,
+        type: "image/jpeg",
         alt: "Mobile App Development Company in Ahmedabad — WebVibez",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mobile App Development Company in Ahmedabad",
+    title: "Mobile App Development Company in Ahmedabad | WebVibez",
     description:
-      "Native-performance iOS and Android mobile applications built with React Native, offline encryption, and official store publishing in Ahmedabad, Gujarat.",
-    images: [
-      "https://www.webvibez.com/logo.jpeg",
-    ],
+      "Native-performance iOS and Android apps engineered with React Native, offline security caching, and direct store publishing in Ahmedabad, Gujarat.",
+    images: ["https://www.webvibez.com/og-image.jpeg"],
   },
 };
 
