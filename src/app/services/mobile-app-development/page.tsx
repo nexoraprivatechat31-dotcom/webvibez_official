@@ -46,9 +46,9 @@ export default function MobileAppDevelopmentPage() {
     {
       icon: <ShieldCheck className="w-5 h-5 text-[#00E5A3]" />,
       title: "Content Security & Offline Protection",
-      desc: "Protect proprietary video content and study PDFs with hardware DRM encryption and encrypted local sandboxing.",
+      desc: "Protect proprietary video content and study PDFs with native OS-level anti-recording protection and encrypted local sandboxing.",
       features: [
-        "Hardware-enforced screen capture protection where supported",
+        "Native OS screen capture protection (FLAG_SECURE & blur safeguards)",
         "Dynamic floating user watermark for traceability",
         "Encrypted local storage for offline revision materials",
       ],
@@ -253,13 +253,6 @@ export default function MobileAppDevelopmentPage() {
                   priceCurrency: "INR",
                   price: "24999",
                   priceValidUntil: "2027-12-31",
-                },
-                aggregateRating: {
-                  "@type": "AggregateRating",
-                  ratingValue: "4.9",
-                  reviewCount: "136",
-                  bestRating: "5",
-                  worstRating: "1",
                 },
               },
               {

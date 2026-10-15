@@ -44,7 +44,7 @@ export default function ProjectCostEstimator({
       icon: <GraduationCap className="w-5 h-5 text-[#0066FF]" />,
       basePrice: 14999,
       baseTimeline: "10–14 Days",
-      desc: "White-labeled student app, tests, fees & DRM classes",
+      desc: "White-labeled student app, tests, fees & secure classes",
     },
     {
       id: "mobile",

@@ -121,9 +121,9 @@ const PLANS: PlanConfig[] = [
       "All Mobile Apps + Live Studio",
       "Custom Coaching Website & Domain",
       "Online Inquiries & Admissions CRM",
-      "Hardware-Grade Anti-Piracy DRM",
+      "Anti-Piracy Screen Protection",
     ],
-    tech: ["Widevine DRM", "Next.js", "FairPlay", "AWS S3"],
+    tech: ["Screen Blackout", "Next.js", "Watermarking", "AWS S3"],
   },
 ];
 

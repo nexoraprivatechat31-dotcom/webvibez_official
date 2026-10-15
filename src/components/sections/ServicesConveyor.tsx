@@ -1,8 +1,9 @@
 import React from "react";
+import Link from "next/link";
 import { ArrowRight, Smartphone, Globe, Code2, Database, LayoutDashboard, ShoppingCart, Server, Palette, Cloud, Wrench } from "lucide-react";
 
 interface ServicesConveyorProps {
-  onOpenConsultation: () => void;
+  onOpenConsultation?: () => void;
 }
 
 const SERVICES_ROWS = [
@@ -11,21 +12,24 @@ const SERVICES_ROWS = [
     items: [
       {
         title: "Mobile App Development",
-        tag: "iOS & Android Native",
+        tag: "iOS & Android",
         icon: Smartphone,
-        desc: "High-speed Swift & Kotlin white-labeled apps with offline storage & zero latency.",
+        desc: "High-performance React Native white-labeled apps with offline caching & low latency.",
+        href: "/services/mobile-app-development",
       },
       {
         title: "Website Development",
-        tag: "High Conversion",
+        tag: "Next.js Engineering",
         icon: Globe,
-        desc: "Cinematic web experiences built with Next.js, WebGL & Three.js 3D physics.",
+        desc: "Fast, conversion-driven web experiences built with Next.js, TypeScript & responsive UI.",
+        href: "/services/website-development",
       },
       {
         title: "Web Application Development",
         tag: "Full-Stack SaaS",
         icon: Code2,
         desc: "Enterprise portals with real-time WebSockets, microservices & scalable backends.",
+        href: "/services/custom-software-development",
       },
     ],
   },
@@ -37,18 +41,21 @@ const SERVICES_ROWS = [
         tag: "Tailored Architecture",
         icon: Database,
         desc: "Bespoke digital engines built specifically for unique academic & business models.",
+        href: "/services/custom-software-development",
       },
       {
         title: "Coaching Class Management Apps",
         tag: "Flagship Suite",
         icon: LayoutDashboard,
         desc: "All-in-one attendance, online tests, student results, and WhatsApp fee collection.",
+        href: "/services/coaching-class-management-app",
       },
       {
         title: "Admin Panels & Dashboards",
         tag: "Executive Analytics",
         icon: LayoutDashboard,
         desc: "Multi-branch telemetry command centers with role-based access & financial auditing.",
+        href: "/product",
       },
     ],
   },
@@ -60,18 +67,21 @@ const SERVICES_ROWS = [
         tag: "Course & Notes Sales",
         icon: ShoppingCart,
         desc: "Instant UPI checkouts, digital notes watermarking & automated GST invoices.",
+        href: "/services/website-development",
       },
       {
         title: "Backend & API Development",
         tag: "Ultra Low Latency",
         icon: Server,
         desc: "Distributed microservices, GraphQL gateways & high-throughput database clusters.",
+        href: "/services/custom-software-development",
       },
       {
         title: "UI/UX Development",
-        tag: "Apple Aesthetic",
+        tag: "Modern Design",
         icon: Palette,
         desc: "Tactile micro-animations, glassmorphism design systems & responsive interfaces.",
+        href: "/services/website-development",
       },
     ],
   },
@@ -80,21 +90,24 @@ const SERVICES_ROWS = [
     items: [
       {
         title: "Cloud & Deployment",
-        tag: "AWS & Bare Metal",
+        tag: "Cloud Infrastructure",
         icon: Cloud,
-        desc: "99.9% uptime infrastructure, CDN caching, autoscaling & zero-downtime releases.",
+        desc: "High-availability cloud infrastructure, CDN caching, autoscaling & zero-downtime releases.",
+        href: "/services/custom-software-development",
       },
       {
         title: "Maintenance & Support",
         tag: "Auto Monitoring",
         icon: Wrench,
         desc: "Continuous security patching, automated backups & priority developer support.",
+        href: "/pricing",
       },
       {
-        title: "WebVibez Software Developer",
-        tag: "End-to-End Partner",
-        icon: Code2,
-        desc: "From blueprint concept to production build in 7 business days with standard store review support.",
+        title: "Mobile Apps on Rent",
+        tag: "1-Year Leasing",
+        icon: Smartphone,
+        desc: "Turnkey iOS & Android white-label apps with zero upfront development cost & cloud hosting.",
+        href: "/services/mobile-apps-on-rent",
       },
     ],
   },
@@ -154,11 +167,14 @@ export default function ServicesConveyor({ onOpenConsultation }: ServicesConveyo
               >
                 {/* 4 loops of items creates infinite seamless continuous scrolling on any screen size */}
                 {[...row.items, ...row.items, ...row.items, ...row.items].map((service, i) => {
+                  const isClone = i >= row.items.length;
                   const IconComponent = service.icon;
                   return (
-                    <div
+                    <Link
                       key={i}
-                      onClick={onOpenConsultation}
+                      href={service.href}
+                      aria-hidden={isClone ? "true" : undefined}
+                      tabIndex={isClone ? -1 : undefined}
                       className="group min-w-[280px] sm:min-w-[380px] max-w-[380px] p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-slate-200/80 dark:border-white/10 bg-white/55 dark:bg-[#070B14]/55 backdrop-blur-2xl shadow-xl shadow-[#0066FF]/5 hover:border-[#0066FF]/60 hover:shadow-2xl hover:shadow-[#0066FF]/15 transition-all duration-300 cursor-pointer flex flex-col justify-between"
                     >
                       <div>
@@ -188,10 +204,10 @@ export default function ServicesConveyor({ onOpenConsultation }: ServicesConveyo
 
                       {/* Bottom Action Link */}
                       <div className="mt-5 pt-3 border-t border-slate-100 dark:border-white/10 flex items-center justify-between text-xs font-mono text-slate-600 dark:text-slate-300 group-hover:text-[#0066FF] dark:group-hover:text-[#38BDF8] transition-colors">
-                        <span className="font-bold">Explore Solution</span>
+                        <span className="font-bold">Explore {service.title}</span>
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </div>
-                    </div>
+                    </Link>
                   );
                 })}
               </div>

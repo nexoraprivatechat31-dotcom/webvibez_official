@@ -42,17 +42,17 @@ export default function HowItWorks({ onOpenConsultation }: HowItWorksProps) {
     },
     {
       step: "02",
-      day: "DAYS 02–07",
-      title: "We build your platform",
+      day: "DAYS 02–05",
+      title: "We configure your platform",
       subtitle: "Engineering Build & Customization",
       desc: "Our engineering team compiles your production-grade mobile app (Android & iOS) and web portal, styled precisely with your institute's logo, colors, and curriculum.",
     },
     {
       step: "03",
-      day: "DAY 08 & BEYOND",
+      day: "DAYS 06–07 & BEYOND",
       title: "Launch your coaching app",
       subtitle: "Production Release & Priority Support",
-      desc: "Go live to hundreds or thousands of students with zero server maintenance hassle. We handle cloud scaling, security patches, and ongoing tech support.",
+      desc: "Go live to your students with zero server maintenance hassle. We handle cloud scaling, security patches, and ongoing tech support.",
     },
   ];
 
@@ -95,7 +95,7 @@ export default function HowItWorks({ onOpenConsultation }: HowItWorksProps) {
               Live on student phones{" "}
               <br className="hidden sm:inline" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0066FF] via-[#7C3AED] to-[#A855F7]">
-                in seven days.
+                in 5 to 7 days.
               </span>
             </h2>
           </div>
@@ -333,12 +333,12 @@ export default function HowItWorks({ onOpenConsultation }: HowItWorksProps) {
                 <div className="lg:col-span-7 space-y-4">
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                     {[
-                      { name: "Android App", sub: "Kotlin / Compose", icon: <Smartphone className="w-4 h-4 text-[#0066FF]" /> },
-                      { name: "iOS App", sub: "Swift / SwiftUI", icon: <Smartphone className="w-4 h-4 text-[#8B00FF]" /> },
+                      { name: "Android App", sub: "React Native / Android", icon: <Smartphone className="w-4 h-4 text-[#0066FF]" /> },
+                      { name: "iOS App", sub: "React Native / iOS", icon: <Smartphone className="w-4 h-4 text-[#8B00FF]" /> },
                       { name: "Web Portal", sub: "Next.js SSR", icon: <Globe className="w-4 h-4 text-[#00E5A3]" /> },
                       { name: "Admin Panel", sub: "Role-Based ERP", icon: <Layers className="w-4 h-4 text-[#38BDF8]" /> },
                       { name: "Backend API", sub: "Node / GraphQL", icon: <Server className="w-4 h-4 text-[#F59E0B]" /> },
-                      { name: "DRM Shield", sub: "Hardware Crypto", icon: <Lock className="w-4 h-4 text-[#EC4899]" /> },
+                      { name: "Screen Shield", sub: "Anti-Capture Blackout", icon: <Lock className="w-4 h-4 text-[#EC4899]" /> },
                     ].map((node) => (
                       <div key={node.name} className="p-3 rounded-xl bg-slate-50 dark:bg-white/[0.02] border border-slate-200 dark:border-white/5 space-y-1 shadow-sm">
                         <div className="flex items-center gap-2">
@@ -355,7 +355,7 @@ export default function HowItWorks({ onOpenConsultation }: HowItWorksProps) {
                       <Check className="w-3 h-3" /> [STAGE 1] Theme Tokens Compiled: Apex Navy #0B192C & Emerald Accent
                     </div>
                     <div className="text-emerald-400 flex items-center gap-1.5">
-                      <Check className="w-3 h-3" /> [STAGE 2] DRM Encrypted Video Transcoding Pipeline Active
+                      <Check className="w-3 h-3" /> [STAGE 2] Encrypted HLS Video Delivery & Dynamic Watermark Active
                     </div>
                     <div className="text-sky-400 flex items-center gap-1.5">
                       <Terminal className="w-3 h-3" /> [STAGE 3] Direct UPI Razorpay Webhook Verified (HTTP 200)
@@ -509,10 +509,10 @@ export default function HowItWorks({ onOpenConsultation }: HowItWorksProps) {
                 <Shield className="w-5 h-5" />
               </div>
               <h4 className="text-base font-bold font-display text-slate-900 dark:text-white">
-                Automated Threat Mitigation & DRM
+                Automated Threat Mitigation & Anti-Piracy
               </h4>
               <p className="text-xs text-slate-600 dark:text-slate-400 font-sans leading-relaxed">
-                Continuous DDoS shielding, dynamic moving watermark injections, and hardware screen recording blackouts keeping your intellectual property safe.
+                Continuous DDoS shielding, dynamic moving watermark injections, and native screen recording blackouts keeping your intellectual property safe.
               </p>
               <div className="pt-2 text-[10px] font-mono text-[#00E5A3] font-bold flex items-center gap-1.5">
                 <Check className="w-3.5 h-3.5" />

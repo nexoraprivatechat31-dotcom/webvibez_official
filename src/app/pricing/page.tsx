@@ -740,10 +740,10 @@ export default function PricingPage() {
         "All 3 Mobile Apps + Live Studio",
         "Custom Coaching Website & Domain",
         "Online Inquiries & Lead Capture",
-        "Hardware Anti-Piracy DRM",
+        "Anti-Piracy Screen Protection",
         "Up to 750 Students Included",
       ],
-      techStack: ["Widevine DRM", "Next.js", "FairPlay", "AWS S3"],
+      techStack: ["Screen Blackout", "Next.js", "Watermarking", "AWS S3"],
       ctaText: "Get Started",
     },
   ];
@@ -815,7 +815,7 @@ export default function PricingPage() {
       custom: true,
     },
     {
-      feature: "Hardware DRM Screen Protection",
+      feature: "Anti-Screen-Recording Protection",
       simple: true,
       appAdmin: true,
       liveApp: true,
@@ -1300,7 +1300,7 @@ export default function PricingPage() {
               Everything You Need to Know About WebVibez Pricing
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-sans max-w-xl mx-auto">
-              Clear, transparent answers regarding student limits, mobile apps included, 0% payment commission, DRM security, and 7-day deployment.
+              Clear, transparent answers regarding student limits, mobile apps included, 0% payment commission, video security, and 5–7 days onboarding.
             </p>
           </div>
 

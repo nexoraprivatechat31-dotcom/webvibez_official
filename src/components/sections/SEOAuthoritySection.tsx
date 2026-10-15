@@ -18,7 +18,7 @@ const FAQ_DATA: FAQItem[] = [
   },
   {
     q: "What makes our coaching class management software & ERP unique?",
-    a: "Our cloud based coaching institute management software empowers educational institutes, coaching centers, and private tutors to manage class schedules, biometric attendance, student test results, and automated UPI fee management in one unified platform. We also offer turnkey educational app development services with hardware-level DRM video encryption.",
+    a: "Our cloud based coaching institute management software empowers educational institutes, coaching centers, and private tutors to manage class schedules, biometric attendance, student test results, and automated UPI fee management in one unified platform. We also offer turnkey educational app development services with native anti-screen-recording protection and dynamic watermarking.",
     keywords: ["coaching class management software", "coaching institute management software", "coaching erp software", "fee management", "class schedules"],
   },
   {
@@ -132,7 +132,7 @@ export default function SEOAuthoritySection({
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
-                <span>DRM Protected Video Lectures</span>
+                <span>Anti-Piracy Video Protection</span>
               </li>
             </ul>
           </div>

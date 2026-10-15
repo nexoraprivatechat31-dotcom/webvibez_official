@@ -58,10 +58,10 @@ export default function CustomSoftwareDevelopmentPage() {
     },
     {
       icon: <Lock className="w-5 h-5 text-[#38BDF8]" />,
-      title: "Content Security & DRM Architecture",
+      title: "Content Security & Anti-Piracy Architecture",
       desc: "Enterprise AES-256 data encryption, role-based access controls, and screen capture prevention safeguards.",
       features: [
-        "Hardware Widevine L1 & FairPlay DRM compliance",
+        "OS-level screen recording & screenshot blackout",
         "Dynamic floating user watermark overlays",
         "Rooted and jailbroken device anomaly handling",
       ],
@@ -256,13 +256,6 @@ export default function CustomSoftwareDevelopmentPage() {
                   priceCurrency: "INR",
                   price: "34999",
                   priceValidUntil: "2027-12-31",
-                },
-                aggregateRating: {
-                  "@type": "AggregateRating",
-                  ratingValue: "4.9",
-                  reviewCount: "115",
-                  bestRating: "5",
-                  worstRating: "1",
                 },
               },
               {

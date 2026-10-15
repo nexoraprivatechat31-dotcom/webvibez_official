@@ -32,8 +32,8 @@ export default function MobileAppsOnRentPage() {
     {
       icon: <GraduationCap className="w-6 h-6 text-[#0066FF]" />,
       title: "Coaching & Institute Apps",
-      desc: "Live lecture streaming, DRM video protection, CBT mock tests, student attendance, and automated WhatsApp fee reminders on a yearly subscription.",
-      tags: ["DRM Video", "CBT Exams", "Fee Receipts"],
+      desc: "Live lecture streaming, anti-piracy video protection, CBT mock tests, student attendance, and automated WhatsApp fee reminders on a yearly subscription.",
+      tags: ["Secure Video", "CBT Exams", "Fee Receipts"],
     },
     {
       icon: <ShoppingBag className="w-6 h-6 text-[#8B00FF]" />,

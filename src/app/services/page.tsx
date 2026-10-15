@@ -64,10 +64,10 @@ export default function ServicesPage() {
       color: "#00E5A3",
       gradient: "from-[#00E5A3]/20 via-[#0066FF]/10 to-transparent",
       icon: <Code2 className="w-5 h-5 text-white" />,
-      desc: "Clean, typed TypeScript codebase with test-driven validation, native hardware DRM encryption, and automated CI/CD pipeline builds.",
+      desc: "Clean, typed TypeScript codebase with test-driven validation, OS-level anti-recording security, and automated CI/CD pipeline builds.",
       deliverables: [
         "Strict TypeScript 5 Clean Architecture",
-        "Hardware DRM & Anti-Piracy Protection",
+        "OS-Level Anti-Recording & Anti-Piracy Protection",
         "Automated CI/CD & Unit Test Coverage",
       ],
       artifact: "Production TypeScript Codebase",
@@ -154,8 +154,8 @@ export default function ServicesPage() {
                   href: "/services/coaching-class-management-app",
                   badge: "EDUCATION SOFTWARE",
                   color: "#38BDF8",
-                  desc: "End-to-end coaching institute management applications with hardware DRM video protection, computerized mock test engines, and automated fees tracking.",
-                  highlights: ["Screen Recording Blackout (DRM)", "CBT Mock Test Simulator", "Live Attendance & QR Tracking", "Automated Fee Invoicing & Reminders"],
+                  desc: "End-to-end coaching institute management applications with anti-recording video protection, computerized mock test engines, and automated fees tracking.",
+                  highlights: ["Screen Recording Blackout Protection", "CBT Mock Test Simulator", "Live Attendance & QR Tracking", "Automated Fee Invoicing & Reminders"],
                 },
               ].map((practice) => (
                 <Link

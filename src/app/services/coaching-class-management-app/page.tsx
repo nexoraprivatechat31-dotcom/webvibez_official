@@ -25,8 +25,8 @@ export default function CoachingClassManagementAppPage() {
   const capabilities = [
     {
       icon: <Video className="w-5 h-5 text-[#0066FF]" />,
-      title: "Interactive Live Classes & Video DRM",
-      desc: "Live classes with hardware-enforced screen capture blackout and dynamic floating watermarks to prevent video leaks.",
+      title: "Interactive Live Classes & Video Protection",
+      desc: "Live classes with OS-level screen capture blackout and dynamic floating watermarks to prevent video leaks.",
       features: [
         "Adaptive bitrate live streaming with real-time doubts queue",
         "Anti-piracy screen blackout preventing unauthorized recording",
@@ -72,7 +72,7 @@ export default function CoachingClassManagementAppPage() {
     },
     {
       q: "How does the app protect video lectures from being leaked?",
-      a: "We implement hardware-enforced DRM that blacks out screen recorders on mobile devices, combined with real-time floating student watermarks showing user phone number and dynamic timestamp.",
+      a: "We implement native OS-level protection (FLAG_SECURE) that blacks out screen recorders on mobile devices, combined with real-time floating student watermarks showing user phone number and dynamic timestamp.",
     },
     {
       q: "Is the application published under our institute's name?",
@@ -110,7 +110,7 @@ export default function CoachingClassManagementAppPage() {
             </span>
           </h1>
           <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 font-sans leading-relaxed max-w-3xl">
-            Empower your coaching academy with a dedicated mobile application: hardware DRM anti-piracy video lectures, CBT mock exam engine, biometric attendance sync, and automated UPI fee collection.
+            Empower your coaching academy with a dedicated mobile application: anti-piracy protected video lectures, CBT mock exam engine, biometric attendance sync, and automated UPI fee collection.
           </p>
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <button
@@ -253,13 +253,6 @@ export default function CoachingClassManagementAppPage() {
                   priceCurrency: "INR",
                   price: "14999",
                   priceValidUntil: "2027-12-31",
-                },
-                aggregateRating: {
-                  "@type": "AggregateRating",
-                  ratingValue: "4.9",
-                  reviewCount: "142",
-                  bestRating: "5",
-                  worstRating: "1",
                 },
               },
               {

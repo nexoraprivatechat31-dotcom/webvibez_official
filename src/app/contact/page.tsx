@@ -397,7 +397,7 @@ export default function ContactPage() {
 
                 <div className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200/60 dark:border-white/5">
                   <span className="text-slate-600 dark:text-slate-400 font-mono text-[11px]">Security:</span>
-                  <strong className="text-emerald-800 dark:text-[#00E5A3] font-mono text-[11.5px]">Hardware DRM Widevine L1</strong>
+                  <strong className="text-emerald-800 dark:text-[#00E5A3] font-mono text-[11.5px]">FLAG_SECURE Anti-Capture</strong>
                 </div>
 
                 <div className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200/60 dark:border-white/5">

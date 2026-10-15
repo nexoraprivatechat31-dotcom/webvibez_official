@@ -80,9 +80,9 @@ export default function ProductPage() {
     {
       number: "02",
       category: "security",
-      categoryLabel: "Hardware Security",
-      name: "Hardware DRM & Dynamic Watermark Security",
-      lead: "Stop piracy before it starts with hardware-level screen recording blackouts and moving student watermark overlays.",
+      categoryLabel: "Anti-Piracy Security",
+      name: "OS Screen Blackout & Dynamic Watermark Security",
+      lead: "Stop piracy before it starts with OS-level screen recording blackouts and moving student watermark overlays.",
       specs: [
         "Dynamic floating overlay of student's phone number, IP, and dynamic timestamp",
         "Native Android FLAG_SECURE & Apple AVFoundation FairPlay screen capture block",
@@ -786,9 +786,9 @@ export default function ProductPage() {
               },
               webvibez: {
                 title: "WebVibez Dedicated App & Software Platform",
-                mainPoint: "Hardware DRM black-screen protection + dynamic student watermark",
-                detail: "Hardware-enforced Widevine L1 screen capture blackout. Dynamic floating watermark displays student mobile number, IP address, and timestamp in real-time.",
-                badge: "Hardened DRM & Leak Traceability",
+                mainPoint: "OS screen recording blackout + dynamic student watermark",
+                detail: "Native OS-level screen capture blackout (FLAG_SECURE) prevents recording. Dynamic floating watermark displays student mobile number, IP address, and timestamp in real-time.",
+                badge: "Anti-Piracy Shield & Leak Traceability",
               },
             },
             {
@@ -1026,7 +1026,7 @@ export default function ProductPage() {
                     <span className="text-xs font-mono font-bold uppercase">100% Sovereign Security</span>
                   </div>
                   <p className="text-[11px] text-slate-600 dark:text-slate-400 font-sans leading-relaxed">
-                    Dedicated database isolation, zero competitor student poaching, and hardware DRM black-screen protection.
+                    Dedicated database isolation, zero competitor student poaching, and native screen capture blackout protection.
                   </p>
                 </div>
               </div>
@@ -1042,7 +1042,7 @@ export default function ProductPage() {
             Ready to deploy your customized software platform?
           </h2>
           <p className="text-slate-600 dark:text-slate-300 text-sm max-w-xl mx-auto font-sans">
-            Join 400,000+ students and premier institutions who rely on WebVibez Software Developer every day. Live turnkey production delivery in 7 days.
+            Empower your institute with WebVibez Software Developer. Live turnkey white-label production onboarding in 5 to 7 business days.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link

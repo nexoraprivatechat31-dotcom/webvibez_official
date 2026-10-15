@@ -257,13 +257,6 @@ export default function WebsiteDevelopmentPage() {
                   price: "11999",
                   priceValidUntil: "2027-12-31",
                 },
-                aggregateRating: {
-                  "@type": "AggregateRating",
-                  ratingValue: "4.9",
-                  reviewCount: "128",
-                  bestRating: "5",
-                  worstRating: "1",
-                },
               },
               {
                 "@type": "FAQPage",

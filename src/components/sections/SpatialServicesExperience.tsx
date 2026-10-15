@@ -62,7 +62,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       "Single codebase or pure native iOS (Swift) / Android (Kotlin)",
       "Offline-first synchronization with SQLite & WatermelonDB",
       "Instant push notifications via Apple APNs & Google FCM",
-      "Hardware DRM protection, screen recording & screenshot block",
+      "OS-level anti-recording protection & screenshot blackout",
     ],
     tech: ["React Native", "Expo", "Swift", "Kotlin", "WatermelonDB"],
   },

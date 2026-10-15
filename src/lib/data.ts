@@ -219,7 +219,7 @@ export const FEATURES_LIST = [
     id: "study-material",
     name: "Study Material & Notes",
     category: "Content",
-    short: "DRM-protected digital library with dynamic student watermarking.",
+    short: "Protected digital library with dynamic student watermarking.",
     details: "Upload notes, formula sheets, and mock tests with user-specific watermark overlays to prevent unauthorized piracy and file sharing."
   },
   {
@@ -319,9 +319,9 @@ export const BRAND_VARIANTS = [
     description: "Our proprietary high-speed mobile and cloud architecture powering instantaneous tests, video security, and real-time synchronization.",
     features: [
       "Sub-second sync across mobile and web",
-      "Enterprise encryption & anti-piracy DRM",
+      "Enterprise encryption & anti-piracy security",
       "Integrated UPI zero-friction checkout",
-      "High-availability architecture designed for 99.9% uptime"
+      "High-availability architecture with zero single point of failure"
     ]
   },
   {

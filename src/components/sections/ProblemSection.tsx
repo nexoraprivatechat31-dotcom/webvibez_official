@@ -155,7 +155,7 @@ const PITFALL_ITEMS: PitfallItem[] = [
     accentColor: "#DC2626",
     bgGlow: "rgba(220, 38, 38, 0.12)",
     solution: {
-      title: "Dynamic Student Watermarking (DRM)",
+      title: "Dynamic Student Watermarking & Blackout",
       description: "Screen capture blocking with dynamic roll number watermarks stamped across every lecture and document.",
       feature: "Multi-Layer Content Security",
       metric: "Anti-Capture Protected",
@@ -195,8 +195,8 @@ const UNIFIED_SOLUTIONS = [
   {
     icon: Lock,
     accentColor: "#FF9A6B",
-    title: "DRM Anti-Piracy Watermarking",
-    desc: "Hardware-accelerated content protection with student name and roll watermarked across all files.",
+    title: "Anti-Piracy Screen Blackout",
+    desc: "Screen capture blocking with student name, phone, and roll number watermarked across all files.",
     badge: "Protects Curriculum",
   },
   {

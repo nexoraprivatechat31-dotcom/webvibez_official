@@ -55,13 +55,13 @@ export default function AboutPage() {
     },
     {
       label: "Security",
-      spec: "Hardware DRM & Anti-Piracy",
+      spec: "Anti-Capture & Content Protection",
       badge: "CONTENT PROTECTION",
-      desc: "Hardware-level screen blackout, dynamic student watermarking, and secure tokenized media stream encryption.",
+      desc: "OS-level screen blackout, dynamic student watermarking, and secure tokenized media stream encryption.",
       icon: Lock,
       color: "#00E5A3",
-      stat: "Hardware DRM Protected",
-      subdetails: ["Hardware Screen Recording Block", "Dynamic Moving Watermarks", "Encrypted Stream Delivery"],
+      stat: "Anti-Capture Protected",
+      subdetails: ["OS Screen Recording Block", "Dynamic Moving Watermarks", "Encrypted Stream Delivery"],
     },
     {
       label: "Performance",
@@ -88,7 +88,7 @@ export default function AboutPage() {
   // Running Marquee Items (Right to Left Tech & Milestone Stream)
   const tickerItems = [
     { label: "Architecture", value: "Next.js 16 + React Native", icon: Code2, color: "#0066FF" },
-    { label: "Security", value: "Hardware DRM Anti-Piracy", icon: Lock, color: "#00E5A3" },
+    { label: "Security", value: "Anti-Capture & Watermark", icon: Lock, color: "#00E5A3" },
     { label: "Performance", value: "Optimized 60 FPS Native UI", icon: Zap, color: "#7C3AED" },
     { label: "Streaming", value: "Low-Latency HLS Video", icon: Activity, color: "#38BDF8" },
     { label: "Isolation", value: "Dedicated Database Instances", icon: Database, color: "#F59E0B" },
@@ -378,13 +378,13 @@ export default function AboutPage() {
               </h2>
 
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-sans leading-relaxed">
-                We believe that software should be blazing-fast, beautiful to use, and uncompromisingly secure. We write strictly-typed TypeScript, engineer 60 FPS mobile interfaces, and enforce hardware DRM encryption so your intellectual property and student roster stay completely protected.
+                We believe that software should be blazing-fast, beautiful to use, and uncompromisingly secure. We write strictly-typed TypeScript, engineer 60 FPS mobile interfaces, and enforce OS-level anti-recording security so your intellectual property and student roster stay completely protected.
               </p>
             </div>
 
             <div className="pt-4 border-t border-slate-100 dark:border-white/10 flex items-center justify-between text-xs font-mono text-[#7C3AED] dark:text-[#A78BFA] font-bold relative z-10">
               <span>// ZERO COMPROMISE ON SECURITY.</span>
-              <span className="text-slate-400 font-normal">Hardened DRM</span>
+              <span className="text-slate-400 font-normal">Content Protection</span>
             </div>
           </div>
         </div>
@@ -549,7 +549,7 @@ export default function AboutPage() {
                     Security Lead
                   </div>
                   <div className="text-xs font-semibold text-slate-800 dark:text-slate-200">
-                    Hardware DRM &amp; IP Protection
+                    Anti-Recording &amp; IP Protection
                   </div>
                   <div className="text-[10.5px] text-slate-600 dark:text-slate-400">
                     Zero screenshot piracy
@@ -561,7 +561,7 @@ export default function AboutPage() {
                     Execution
                   </div>
                   <div className="text-xs font-semibold text-slate-800 dark:text-slate-200">
-                    7-Day Fast Track
+                    5–7 Day Fast Track
                   </div>
                   <div className="text-[10.5px] text-slate-600 dark:text-slate-400">
                     Direct developer oversight

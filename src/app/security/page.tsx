@@ -19,7 +19,7 @@ export default function SecurityPage() {
   const securityPillars = [
     {
       icon: <EyeOff className="w-6 h-6 text-[#0066FF]" />,
-      title: "Anti-Screen Capture & Hardware DRM",
+      title: "Anti-Screen Capture & Recording Blackout",
       description:
         "Native Android `FLAG_SECURE` and Apple AVFoundation FairPlay protocols cause third-party screen recording utilities, screen casting cables, and screenshots to render as a pitch-black frame.",
     },

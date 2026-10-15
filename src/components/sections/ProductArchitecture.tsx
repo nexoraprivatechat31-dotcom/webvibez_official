@@ -13,7 +13,7 @@ const ARCHITECTURE_NODES = [
     title: "Students & Parents",
     subtitle: "End-User Layer",
     icon: Users,
-    detail: "Over 50,000+ daily active student sessions",
+    detail: "Engineered for high concurrent student throughput",
     tech: "Biometric & Push Sync",
     color: "#0066FF",
   },
@@ -22,7 +22,7 @@ const ARCHITECTURE_NODES = [
     title: "Branded Mobile Apps",
     subtitle: "Client Application",
     icon: Smartphone,
-    detail: "Native Swift & Kotlin with offline SQLite caching",
+    detail: "React Native (iOS & Android) with offline SQLite caching",
     tech: "iOS & Android",
     color: "#7C3AED",
   },
@@ -31,7 +31,7 @@ const ARCHITECTURE_NODES = [
     title: "API Gateway & Edge",
     subtitle: "Traffic & Security",
     icon: Zap,
-    detail: "Cloudflare enterprise CDN & DDoS mitigation",
+    detail: "Cloudflare edge CDN & DDoS mitigation",
     tech: "< 24ms Response",
     color: "#8B00FF",
   },
@@ -41,15 +41,15 @@ const ARCHITECTURE_NODES = [
     subtitle: "Microservices Core",
     icon: Server,
     detail: "High-concurrency cluster for exams & attendance",
-    tech: "Docker & K8s",
+    tech: "Containerized Microservices",
     color: "#00E5A3",
   },
   {
     step: "05",
-    title: "Database & DRM Vault",
+    title: "Database & Security Vault",
     subtitle: "Persistence Layer",
     icon: Database,
-    detail: "PostgreSQL ACID compliance + encrypted S3 storage",
+    detail: "PostgreSQL ACID compliance + encrypted storage",
     tech: "AES-256 Encryption",
     color: "#F59E0B",
   },
@@ -103,7 +103,7 @@ export default function ProductArchitecture({ onOpenConsultation }: ProductArchi
           <div className="flex items-center gap-3 bg-emerald-500/10 border border-emerald-500/25 px-4 py-2 rounded-xl w-fit">
             <Activity className="w-4 h-4 text-emerald-500 animate-pulse" />
             <span className="text-xs font-mono font-semibold text-emerald-600 dark:text-emerald-400">
-              System Health: 99.9% High Availability
+              System Architecture: High Availability
             </span>
           </div>
         </div>
