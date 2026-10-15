@@ -60,6 +60,18 @@ async function handleCron(request: NextRequest) {
       } catch (e) {
         // Revalidation in dev/static
       }
+
+      // Automatically dispatch real-time IndexNow ping for the newly published article!
+      try {
+        const { IndexingMonitor } = await import("@/lib/seo-intelligence/indexing-monitor");
+        await IndexingMonitor.pingIndexNow([
+          `https://www.webvibez.com/blog/${log.articleSlug}`,
+          `https://www.webvibez.com/blog`,
+          `https://www.webvibez.com/sitemap.xml`,
+        ]);
+      } catch (indexNowErr: any) {
+        console.error("Failed to dispatch IndexNow during daily cron:", indexNowErr.message);
+      }
     }
 
     // If today is Sunday (day 0), also dispatch Weekly Sunday SEO Digest to Telegram

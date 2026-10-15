@@ -51,9 +51,10 @@ export const AIGenerator = {
   async generateArticleTopic(history: string[]): Promise<string> {
     const prompt = `You are a Principal SEO Architect and Technical Content Strategist for WebVibez, a premium software engineering firm specializing in:
 - Custom Software Development (ERP, bespoke business systems, CRM, workflow automation)
-- Web Development (Next.js, React, Node.js, TypeScript, high-performance web applications)
+- Web Development (Next.js, React, Node.js, TypeScript, high-performance web applications, website development cost guides in Ahmedabad & Gujarat)
 - Mobile App Development (React Native, iOS, Android, cross-platform architecture)
-- Education Technology & Coaching Class Management Software (WhatsApp billing, dynamic UPI, attendance, student portals)
+- Education Technology & Coaching Class Management Software (WhatsApp billing, dynamic UPI, attendance, student portals, flat pricing vs per-student commission comparisons)
+- Mobile Apps on Rent (1-Year White-Label Mobile App Subscriptions, managed cloud infrastructure, flat annual rental starting at ₹20,000/year)
 
 TASK:
 Research and generate a high-demand, SEO-focused blog topic that has NOT been covered recently.
@@ -64,9 +65,9 @@ ${history.slice(0, 35).join("\n")}
 
 CONTENT CLUSTERS TO PRIORITIZE:
 1. Software Development / Custom Software / Business Automation / SaaS Architecture
-2. Web Development / Next.js / React / TypeScript / Modern Web Apps
-3. Mobile App Development / React Native vs Native / Cross-Platform Engineering
-4. Education Technology / Coaching Class Automation / WhatsApp Invoicing / UPI Billing
+2. Web Development / Next.js / React / TypeScript / Website Development Cost in Ahmedabad
+3. Mobile App Development / React Native vs Native / Mobile Apps on Rent / White-Label App Subscriptions
+4. Education Technology / Coaching Class Management App / Flat Pricing vs Per-Student Commissions / Anti-Piracy Notes Vault
 
 Respond ONLY with a RAW JSON object matching this schema:
 {
