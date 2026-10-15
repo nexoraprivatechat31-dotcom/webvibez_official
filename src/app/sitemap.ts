@@ -15,6 +15,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: "/services/mobile-apps-on-rent", priority: 0.95, changeFrequency: "weekly" as const, lastModified: staticLastMod },
     { path: "/product", priority: 0.9, changeFrequency: "weekly" as const, lastModified: staticLastMod },
     { path: "/portfolio", priority: 0.8, changeFrequency: "weekly" as const, lastModified: staticLastMod },
+    { path: "/portfolio/enzochat-web-platform", priority: 0.85, changeFrequency: "weekly" as const, lastModified: staticLastMod },
     { path: "/how-it-works", priority: 0.8, changeFrequency: "weekly" as const, lastModified: staticLastMod },
     { path: "/pricing", priority: 0.8, changeFrequency: "weekly" as const, lastModified: staticLastMod },
     { path: "/about", priority: 0.7, changeFrequency: "monthly" as const, lastModified: staticLastMod },

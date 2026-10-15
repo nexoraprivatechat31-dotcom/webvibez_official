@@ -20,6 +20,7 @@ const URL_LIST = [
   `${BASE_URL}/pricing`,
   `${BASE_URL}/how-it-works`,
   `${BASE_URL}/portfolio`,
+  `${BASE_URL}/portfolio/enzochat-web-platform`,
   `${BASE_URL}/about`,
   `${BASE_URL}/contact`,
   `${BASE_URL}/security`,

@@ -16,137 +16,137 @@ export const SHOWCASE_SCREENS: ShowcaseScreen[] = [
   {
     id: "module-01",
     number: "01",
-    badge: "Live Engine",
-    title: "Real-Time Messaging & Dynamic Chat",
-    tagline: "Sub-Millisecond Encrypted Communication & Dynamic Chat Matrix",
-    description: "A lightning-fast conversation engine powered by raw WebSockets, persistent MMKV offline outbox, real-time read receipts, and zero-jank FlashList rendering.",
+    badge: "Student Hub",
+    title: "Student & Parent Mobile Portal",
+    tagline: "Real-Time Academic Dashboard & Institute Communication Hub",
+    description: "A high-performance student mobile application featuring personalized timetables, upcoming test countdowns, attendance stats, and instant faculty announcements.",
     accentColor: "#0066FF",
     highlights: [
-      "Sub-12ms Raw WebSocket Delivery & Persistent Offline Outbox",
-      "In-Chat Interactive Polls, Music Cards & Custom Sticker Packs",
-      "3-Tier Disappearing Messages (Fixed, View-Once, After-View)"
+      "1-Tap Daily Timetable, Syllabus Tracking & Subject Milestones",
+      "Real-Time Attendance Summary & Absentee Notifications",
+      "Batch-Isolated Broadcast Notifications & Direct Teacher Q&A"
     ],
-    stats: { label: "Real-Time Latency", value: "< 12ms" },
-    ctaText: "Explore Chat Engine",
+    stats: { label: "App Responsiveness", value: "60 FPS" },
+    ctaText: "Request Student App Demo",
     screenKey: "chat"
   },
   {
     id: "module-02",
     number: "02",
-    badge: "Exclusive Campus",
-    title: "My College Campus Hub & Peer Directory",
-    tagline: "Campus-Isolated WhatsApp Communities & Student Phonebook",
-    description: "An exclusive, verified campus ecosystem featuring a 4-tier branch & year hierarchy, student peer phonebook with skill discovery, and campus-isolated group messaging.",
+    badge: "Smart Sync",
+    title: "Smart Attendance & Multi-Branch Sync",
+    tagline: "Automated Check-In with Instant Parent Notifications",
+    description: "Real-time presence tracking integrating in-app QR verification and biometric hardware with automated WhatsApp/SMS parent notifications.",
     accentColor: "#8B00FF",
     highlights: [
-      "4-Tier College Group Hierarchy (Main, Branch, Year Batches, Lounges)",
-      "Verified Student Phonebook with Skill Search & Direct 1-Tap Chat",
-      "Zero Campus Clutter — 100% Strict Campus Isolation for Students"
+      "Instant Automated Parent Notification on Student Punch-In",
+      "Multi-Branch Unified Attendance Telemetry & Teacher Roll Calls",
+      "Unexcused Absence Follow-Up Automation & Defaulter Tracking"
     ],
-    stats: { label: "Campus Engagement", value: "98.4%" },
-    ctaText: "View Campus Hub",
+    stats: { label: "Check-In Speed", value: "< 1.5s" },
+    ctaText: "Explore Attendance Engine",
     screenKey: "college"
   },
   {
     id: "module-03",
     number: "03",
-    badge: "Visual Canvas",
-    title: "Ephemeral Stories & Interactive Canvas",
-    tagline: "Full-Bleed 60 FPS Visual Stories with Dynamic Overlays",
-    description: "A rich media ephemeral storytelling system with normalized 0.0–1.0 coordinate sticker rendering, interactive polls, quizzes, SVG drawing, and fluid gesture navigation.",
+    badge: "NTA-Grade",
+    title: "Computerized CBT Mock Test Engine",
+    tagline: "National Testing Interface for JEE, NEET & Competitive Exams",
+    description: "Realistic online examination simulator matching national test UI with question paletting, sectional timers, negative marking, and anti-cheat window-lock.",
     accentColor: "#EC4899",
     highlights: [
-      "60 FPS Full-Bleed Viewer with Tap Navigation & Hold-to-Pause",
-      "Interactive Widgets (Polls, Sliders, Music Stickers, Quizzes)",
-      "Multi-Source Friend Story Resolution & Dynamic Duration Sync"
+      "Question Status Grid (Answered, Marked for Review, Unvisited)",
+      "Anti-Cheating Window Blur Detector & App Lock Mechanism",
+      "Subject-Wise Percentile Ranking & Instant Answer Key"
     ],
-    stats: { label: "Story Completion", value: "94.8%" },
-    ctaText: "Experience Stories",
+    stats: { label: "Evaluation Time", value: "Instant" },
+    ctaText: "Try CBT Simulator",
     screenKey: "stories"
   },
   {
     id: "module-04",
     number: "04",
-    badge: "Discovery Feed",
-    title: "Social Feed & Infinite Discovery",
-    tagline: "Zero-Frame-Drop Content Network & Smart Media Feed",
-    description: "A curated social feed engineered with @shopify/flash-list for smooth 60 FPS infinite scrolling, multi-ratio media carousels, smart user mentions, and real-time engagement telemetry.",
+    badge: "Diagnostics",
+    title: "Student Performance & Radar Analytics",
+    tagline: "Deep Diagnostic Weak-Topic Maps & Rank Trajectory",
+    description: "Automated student report cards with graphical progress curves, subject mastery radars, accuracy analysis, and comparative batch percentiles.",
     accentColor: "#00E5A3",
     highlights: [
-      "Zero-Jank 60 FPS Infinite FlashList with Memory Pruning",
-      "Rich Media Carousels, Video Feeds & Instant Interaction Sync",
-      "Real-Time Post Analytics, Saves & Smart Tagging Engine"
+      "Visual Radar Charts Highlighting Subject Weaknesses",
+      "Historic Test Trend Curves & Accuracy vs Speed Metrics",
+      "1-Click Printable PDF Report Cards for Parent-Teacher Meets"
     ],
-    stats: { label: "UI Performance", value: "60 FPS Locked" },
-    ctaText: "Browse Social Feed",
+    stats: { label: "Analytics Depth", value: "Sub-Topic Level" },
+    ctaText: "View Scorecard System",
     screenKey: "feed"
   },
   {
     id: "module-05",
     number: "05",
-    badge: "Hardware WebRTC",
-    title: "Ultra-HD Voice & Video Matrix",
-    tagline: "Low-Latency Calling with Native Hardware Audio Routing",
-    description: "Enterprise-grade crystal-clear voice and video calling backed by WebRTC peer routing, proximity screen detection, and native Bluetooth/SCO hardware audio switching.",
+    badge: "Live Studio",
+    title: "Interactive Live Classes & Video Streaming",
+    tagline: "Ultra-Low Latency Classrooms with Real-Time Doubts",
+    description: "Adaptive bitrate live lecture delivery with interactive student chat, raising hand doubts queue, and automated recording archival.",
     accentColor: "#38BDF8",
     highlights: [
-      "Low-Latency WebRTC Multi-Party Video & Voice Conferencing",
-      "Native CallAudioRoutingService (Bluetooth SCO / Speaker / Earpiece)",
-      "Hardware Proximity Sensor Integration & Auto-Recovery Engine"
+      "Low-Latency HLS Live Streaming with Bandwidth Auto-Adaptation",
+      "Moderated In-Class Doubt Queue & Teacher Q&A Controls",
+      "Instant Auto-Archival of Recorded Lectures into Student Vault"
     ],
-    stats: { label: "Call Reliability", value: "99.8%" },
-    ctaText: "Launch Voice & Video",
+    stats: { label: "Stream Latency", value: "< 1.5s" },
+    ctaText: "Experience Live Studio",
     screenKey: "call"
   },
   {
     id: "module-06",
     number: "06",
-    badge: "Military Security",
-    title: "Zero-Knowledge Encrypted Private Vault",
-    tagline: "Hardware-Backed Client-Side AES-256 Storage & Steganography",
-    description: "A zero-knowledge secure enclosure protected by native PBKDF2 key derivation, biometric pattern locks, and client-side AES-GCM encryption for private media and secret chats.",
+    badge: "Anti-Piracy",
+    title: "Anti-Piracy Study Material & Notes Library",
+    tagline: "Dynamic User Watermarking & Native Screenshot Blackout",
+    description: "Centralized digital library for lecture notes, formula sheets, and DPPs with dynamic student watermark overlays and screenshot prevention.",
     accentColor: "#F59E0B",
     highlights: [
-      "Hardware-Accelerated Client-Side AES-256-GCM Encryption",
-      "Biometric Pattern Lock, PIN Access & Steganographic Camouflage",
-      "Encrypted Local Storage via Native SQLite & MMKV Secure Layer"
+      "Dynamic Moving Watermark Overlay (Student Phone & Dynamic Timestamp)",
+      "Native Screen Capture Blackout (FLAG_SECURE on Android, iOS blur)",
+      "Categorized Subject-Wise Folders with Offline Revision Caching"
     ],
-    stats: { label: "Plaintext Exposure", value: "0.00%" },
-    ctaText: "Unlock Secure Vault",
+    stats: { label: "Curriculum Leakage", value: "Zero" },
+    ctaText: "Inspect Notes Security",
     screenKey: "vault"
   },
   {
     id: "module-07",
     number: "07",
-    badge: "Synchronized Live",
-    title: "Watch Party & Synchronized Live Media",
-    tagline: "Frame-Accurate Shared Media Theater with Floating Reactions",
-    description: "A shared social viewing experience allowing users to stream video together in real-time with sub-50ms websocket synchronization and interactive floating reaction overlays.",
+    badge: "0% Commission",
+    title: "Automated UPI Fee Collection & Receipts",
+    tagline: "0% Commission Direct Bank Settlements & WhatsApp Alerts",
+    description: "Frictionless tuition fee collection with 1-click UPI links sent to parents, automated installment reminders, and instant digital GST receipts.",
     accentColor: "#A855F7",
     highlights: [
-      "Sub-50ms Real-Time Playback State Machine Synchronization",
-      "Live Floating Emoji Reactions & Real-Time Group Side-Chat",
-      "Picture-in-Picture (PiP) Support & Adaptive Buffer Management"
+      "1-Tap UPI, Debit/Credit Card, and NetBanking Payment Integration",
+      "Automated WhatsApp Fee Due Reminders with Personalized Link",
+      "Instant Digital GST Invoices & Payment Ledger Reconciliation"
     ],
-    stats: { label: "Sync Accuracy", value: "< 35ms Drift" },
-    ctaText: "Start Watch Party",
+    stats: { label: "Platform Commission", value: "0%" },
+    ctaText: "Calculate Fee Savings",
     screenKey: "watch"
   },
   {
     id: "module-08",
     number: "08",
-    badge: "Autonomous AI",
-    title: "EnzoChatOS & Administrative Command",
-    tagline: "Autonomous Operations Agents & Real-Time Control Cockpit",
-    description: "An autonomous operations engine powered by a multi-LLM fallback matrix (DeepSeek / Groq / Gemini), automated student verification lightbox, and live server telemetry.",
+    badge: "Command ERP",
+    title: "Executive Multi-Branch ERP Cockpit",
+    tagline: "Role-Based Administrative Controls & Telemetry",
+    description: "Unified web command center for directors, branch managers, and accountants to control admissions, batch allocations, faculty payroll, and growth metrics.",
     accentColor: "#06B6D4",
     highlights: [
-      "Autonomous AI Ops (Verification, Moderation, Automated Crons)",
-      "Web Admin Cockpit with 1-Tap Verification Lightbox Inspection",
-      "Multi-LLM Autonomous Agent Pipeline with Instant Fallbacks"
+      "Granular Role-Based Access Trees (Directors, Teachers, Accountants)",
+      "Multi-Branch Revenue, Attendance, and Enrollment Dashboards",
+      "Complete Data Sovereignty with Isolated Database Instances"
     ],
-    stats: { label: "Automation Uptime", value: "99.9%" },
-    ctaText: "Access Admin Cockpit",
+    stats: { label: "Data Isolation", value: "100%" },
+    ctaText: "Schedule Executive Walkthrough",
     screenKey: "admin"
   }
 ];
@@ -165,19 +165,144 @@ export interface AppEcosystemModule {
   screenKey: "chat" | "college" | "stories" | "feed" | "call" | "vault" | "watch" | "admin";
 }
 
-export const ENZOCHAT_ECOSYSTEM_MODULES: AppEcosystemModule[] = SHOWCASE_SCREENS.map((s) => ({
-  id: s.id,
-  moduleNumber: `${s.number} / 08`,
-  badge: s.badge || "Live Engine",
-  title: s.title,
-  subtitle: s.tagline,
-  description: s.description,
-  capabilities: s.highlights,
-  metricLabel: s.stats.label,
-  metricValue: s.stats.value,
-  ctaText: s.ctaText || "Explore Module",
-  screenKey: s.screenKey || "chat",
-}));
+export const ENZOCHAT_ECOSYSTEM_MODULES: AppEcosystemModule[] = [
+  {
+    id: "enzo-01",
+    moduleNumber: "01 / 08",
+    badge: "Live Engine",
+    title: "Real-Time Messaging & Dynamic Chat",
+    subtitle: "Sub-Millisecond Encrypted Communication & Dynamic Chat Matrix",
+    description: "A lightning-fast conversation engine powered by raw WebSockets, persistent MMKV offline outbox, real-time read receipts, and zero-jank FlashList rendering.",
+    capabilities: [
+      "Sub-12ms Raw WebSocket Delivery & Persistent Offline Outbox",
+      "In-Chat Interactive Polls, Music Cards & Custom Sticker Packs",
+      "3-Tier Disappearing Messages (Fixed, View-Once, After-View)"
+    ],
+    metricLabel: "Real-Time Latency",
+    metricValue: "< 12ms",
+    ctaText: "Explore Chat Engine",
+    screenKey: "chat"
+  },
+  {
+    id: "enzo-02",
+    moduleNumber: "02 / 08",
+    badge: "Exclusive Campus",
+    title: "My College Campus Hub & Peer Directory",
+    subtitle: "Campus-Isolated WhatsApp Communities & Student Phonebook",
+    description: "An exclusive, verified campus ecosystem featuring a 4-tier branch & year hierarchy, student peer phonebook with skill discovery, and campus-isolated group messaging.",
+    capabilities: [
+      "4-Tier College Group Hierarchy (Main, Branch, Year Batches, Lounges)",
+      "Verified Student Phonebook with Skill Search & Direct 1-Tap Chat",
+      "Zero Campus Clutter — 100% Strict Campus Isolation for Students"
+    ],
+    metricLabel: "Campus Engagement",
+    metricValue: "98.4%",
+    ctaText: "View Campus Hub",
+    screenKey: "college"
+  },
+  {
+    id: "enzo-03",
+    moduleNumber: "03 / 08",
+    badge: "Visual Canvas",
+    title: "Ephemeral Stories & Interactive Canvas",
+    subtitle: "Full-Bleed 60 FPS Visual Stories with Dynamic Overlays",
+    description: "A rich media ephemeral storytelling system with normalized 0.0–1.0 coordinate sticker rendering, interactive polls, quizzes, SVG drawing, and fluid gesture navigation.",
+    capabilities: [
+      "60 FPS Full-Bleed Viewer with Tap Navigation & Hold-to-Pause",
+      "Interactive Widgets (Polls, Sliders, Music Stickers, Quizzes)",
+      "Multi-Source Friend Story Resolution & Dynamic Duration Sync"
+    ],
+    metricLabel: "Story Completion",
+    metricValue: "94.8%",
+    ctaText: "Experience Stories",
+    screenKey: "stories"
+  },
+  {
+    id: "enzo-04",
+    moduleNumber: "04 / 08",
+    badge: "Discovery Feed",
+    title: "Social Feed & Infinite Discovery",
+    subtitle: "Zero-Frame-Drop Content Network & Smart Media Feed",
+    description: "A curated social feed engineered with @shopify/flash-list for smooth 60 FPS infinite scrolling, multi-ratio media carousels, smart user mentions, and real-time engagement telemetry.",
+    capabilities: [
+      "Zero-Jank 60 FPS Infinite FlashList with Memory Pruning",
+      "Rich Media Carousels, Video Feeds & Instant Interaction Sync",
+      "Real-Time Post Analytics, Saves & Smart Tagging Engine"
+    ],
+    metricLabel: "UI Performance",
+    metricValue: "60 FPS Locked",
+    ctaText: "Browse Social Feed",
+    screenKey: "feed"
+  },
+  {
+    id: "enzo-05",
+    moduleNumber: "05 / 08",
+    badge: "Hardware WebRTC",
+    title: "Ultra-HD Voice & Video Matrix",
+    subtitle: "Low-Latency Calling with Native Hardware Audio Routing",
+    description: "Enterprise-grade crystal-clear voice and video calling backed by WebRTC peer routing, proximity screen detection, and native Bluetooth/SCO hardware audio switching.",
+    capabilities: [
+      "Low-Latency WebRTC Multi-Party Video & Voice Conferencing",
+      "Native CallAudioRoutingService (Bluetooth SCO / Speaker / Earpiece)",
+      "Hardware Proximity Sensor Integration & Auto-Recovery Engine"
+    ],
+    metricLabel: "Call Reliability",
+    metricValue: "99.8%",
+    ctaText: "Launch Voice & Video",
+    screenKey: "call"
+  },
+  {
+    id: "enzo-06",
+    moduleNumber: "06 / 08",
+    badge: "Military Security",
+    title: "Zero-Knowledge Encrypted Private Vault",
+    subtitle: "Hardware-Backed Client-Side AES-256 Storage & Steganography",
+    description: "A zero-knowledge secure enclosure protected by native PBKDF2 key derivation, biometric pattern locks, and client-side AES-GCM encryption for private media and secret chats.",
+    capabilities: [
+      "Hardware-Accelerated Client-Side AES-256-GCM Encryption",
+      "Biometric Pattern Lock, PIN Access & Steganographic Camouflage",
+      "Encrypted Local Storage via Native SQLite & MMKV Secure Layer"
+    ],
+    metricLabel: "Plaintext Exposure",
+    metricValue: "0.00%",
+    ctaText: "Unlock Secure Vault",
+    screenKey: "vault"
+  },
+  {
+    id: "enzo-07",
+    moduleNumber: "07 / 08",
+    badge: "Synchronized Live",
+    title: "Watch Party & Synchronized Live Media",
+    subtitle: "Frame-Accurate Shared Media Theater with Floating Reactions",
+    description: "A shared social viewing experience allowing users to stream video together in real-time with sub-50ms websocket synchronization and interactive floating reaction overlays.",
+    capabilities: [
+      "Sub-50ms Real-Time Playback State Machine Synchronization",
+      "Live Floating Emoji Reactions & Real-Time Group Side-Chat",
+      "Picture-in-Picture (PiP) Support & Adaptive Buffer Management"
+    ],
+    metricLabel: "Sync Accuracy",
+    metricValue: "< 35ms Drift",
+    ctaText: "Start Watch Party",
+    screenKey: "watch"
+  },
+  {
+    id: "enzo-08",
+    moduleNumber: "08 / 08",
+    badge: "Autonomous AI",
+    title: "EnzoChatOS & Administrative Command",
+    subtitle: "Autonomous Operations Agents & Real-Time Control Cockpit",
+    description: "An autonomous operations engine powered by a multi-LLM fallback matrix (DeepSeek / Groq / Gemini), automated student verification lightbox, and live server telemetry.",
+    capabilities: [
+      "Autonomous AI Ops (Verification, Moderation, Automated Crons)",
+      "Web Admin Cockpit with 1-Tap Verification Lightbox Inspection",
+      "Multi-LLM Autonomous Agent Pipeline with Instant Fallbacks"
+    ],
+    metricLabel: "Automation Uptime",
+    metricValue: "99.9%",
+    ctaText: "Access Admin Cockpit",
+    screenKey: "admin"
+  }
+];
 
 export const FEATURES_LIST = [
   {

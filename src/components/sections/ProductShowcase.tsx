@@ -75,16 +75,16 @@ export default function ProductShowcase({ onOpenConsultation }: ProductShowcaseP
         <div className="mb-8 sm:mb-10 max-w-3xl">
           <div className="flex items-center gap-2 mb-3 sm:mb-4 text-[11px] font-mono tracking-[0.22em] text-[#0066FF] dark:text-[#38BDF8] uppercase font-bold">
             <Layers className="w-3.5 h-3.5" />
-            <span>03 / PRODUCT &middot; THE ENZOCHAT ECOSYSTEM</span>
+            <span>03 / PRODUCT &middot; COACHING INSTITUTE PLATFORM</span>
           </div>
           <h2
             className="font-bold text-slate-900 dark:text-[#F4F1EA] leading-[1.08] tracking-tight mb-3 sm:mb-4"
             style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4.8vw, 4.2rem)" }}
           >
-            Every screen engineered<br />for modern communication excellence.
+            Every screen engineered<br />for your institute&apos;s growth.
           </h2>
           <p className="text-slate-600 dark:text-[#A9B0BA] leading-relaxed max-w-[56ch] text-xs sm:text-base font-sans">
-            Explore EnzoChat&apos;s 8 core subsystems engineered for native high-performance speed.
+            Explore the 8 core operational modules of our white-label coaching class management application and student portal.
           </p>
         </div>
 
@@ -229,7 +229,7 @@ export default function ProductShowcase({ onOpenConsultation }: ProductShowcaseP
               </div>
 
               {/* Metric + CTA Bar */}
-              <div className="p-3.5 rounded-2xl flex items-center justify-between border border-slate-200/80 dark:border-white/5 bg-slate-50/60 dark:bg-white/[0.03] pt-3">
+              <div className="p-3.5 rounded-2xl flex flex-wrap items-center justify-between gap-3 border border-slate-200/80 dark:border-white/5 bg-slate-50/60 dark:bg-white/[0.03] pt-3">
                 <div>
                   <div className="text-[10px] uppercase font-mono tracking-wider text-slate-600 dark:text-slate-300 font-bold">
                     {currentScreen.stats.label}
@@ -239,13 +239,22 @@ export default function ProductShowcase({ onOpenConsultation }: ProductShowcaseP
                     {currentScreen.stats.value}
                   </div>
                 </div>
-                <button
-                  onClick={onOpenConsultation}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-[#0066FF] to-[#8B00FF] hover:brightness-110 transition shadow-md shadow-[#0066FF]/20 cursor-pointer"
-                >
-                  <span>{currentScreen.ctaText || "Explore Module"}</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
+                <div className="flex items-center gap-3">
+                  <a
+                    href="/services/coaching-class-management-app"
+                    className="text-xs font-semibold text-[#0066FF] dark:text-[#38BDF8] hover:underline"
+                  >
+                    View All Features
+                  </a>
+                  <button
+                    type="button"
+                    onClick={onOpenConsultation}
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-[#0066FF] to-[#8B00FF] hover:brightness-110 transition shadow-md shadow-[#0066FF]/20 cursor-pointer"
+                  >
+                    <span>{currentScreen.ctaText || "Explore Module"}</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
               </div>
             </div>
           </div>

@@ -230,25 +230,36 @@ export default async function PortfolioPage() {
 
                   {/* Card Bottom Action */}
                   <div className="pt-6 mt-6 border-t border-slate-100 dark:border-white/10 flex flex-wrap items-center justify-between gap-3">
-                    {project.live_url?.startsWith("http") ? (
-                      <a
-                        href={project.live_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold font-display text-[#0066FF] dark:text-[#38BDF8] group-hover:translate-x-1 transition-transform"
-                      >
-                        <span>{project.cta_label || "Explore Live Platform"}</span>
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
-                    ) : (
-                      <Link
-                        href={project.live_url || "/contact"}
-                        className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold font-display text-[#0066FF] dark:text-[#38BDF8] group-hover:translate-x-1 transition-transform"
-                      >
-                        <span>Explore Architecture &amp; System Specs</span>
-                        <ArrowRight className="w-4 h-4" />
-                      </Link>
-                    )}
+                    <div className="flex items-center gap-4 flex-wrap">
+                      {project.slug === "enzochat-web-platform" && (
+                        <Link
+                          href="/portfolio/enzochat-web-platform"
+                          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold font-display text-[#0066FF] dark:text-[#38BDF8] hover:underline"
+                        >
+                          <span>Read Full Case Study</span>
+                          <ArrowRight className="w-4 h-4" />
+                        </Link>
+                      )}
+                      {project.live_url?.startsWith("http") ? (
+                        <a
+                          href={project.live_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-[#0066FF] dark:hover:text-[#38BDF8] transition-colors"
+                        >
+                          <span>{project.cta_label || "Explore Live Platform"}</span>
+                          <ExternalLink className="w-3.5 h-3.5" />
+                        </a>
+                      ) : (
+                        <Link
+                          href={project.live_url || "/contact"}
+                          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold font-display text-[#0066FF] dark:text-[#38BDF8] group-hover:translate-x-1 transition-transform"
+                        >
+                          <span>Explore Architecture &amp; System Specs</span>
+                          <ArrowRight className="w-4 h-4" />
+                        </Link>
+                      )}
+                    </div>
 
                     <Link
                       href="/contact"
