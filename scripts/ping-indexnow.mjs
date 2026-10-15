@@ -3,7 +3,7 @@
  * Submits all public URLs to api.indexnow.org and bing.com/indexnow
  */
 
-const INDEXNOW_KEY = "f9e0106c25b24521a821af53af2a740c";
+const INDEXNOW_KEY = "8c3cb199af4f49c8abf8691aecba13ca";
 const HOST = "www.webvibez.com";
 const BASE_URL = `https://${HOST}`;
 const KEY_LOCATION = `${BASE_URL}/${INDEXNOW_KEY}.txt`;

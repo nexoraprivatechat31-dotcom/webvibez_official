@@ -221,7 +221,7 @@ export const IndexingMonitor = {
       urlList = sitemapEntries.map((e) => e.url);
     }
 
-    const INDEXNOW_KEY = "f9e0106c25b24521a821af53af2a740c";
+    const INDEXNOW_KEY = "8c3cb199af4f49c8abf8691aecba13ca";
     const payload = {
       host: "www.webvibez.com",
       key: INDEXNOW_KEY,
